@@ -1783,7 +1783,7 @@ scan_swaps(struct names *names_head, struct inode_list *ino_head,
  * Execute stat(2) system call with timeout to avoid deadlock
  * on network based file systems.
  */
-#ifdef HAVE_TIMEOUT_STAT
+#ifdef WITH_TIMEOUT_STAT
 
 static sigjmp_buf jenv;
 
@@ -1843,7 +1843,7 @@ timeout(stat_t func, const char *path, struct stat *buf, unsigned int seconds)
 err:
 	return -1;
 }
-#endif /* HAVE_TIMEOUT_STAT */
+#endif /* WITH_TIMEOUT_STAT */
 
 #ifdef _LISTS_H
 /*
