@@ -1917,7 +1917,11 @@ init_mntinfo(void)
 		}
 	}
 	if (!list_empty(&mntinfo)) {
+#ifdef EBADE
 		errno = EBADE;
+#else
+        errno = ENOENT;
+#endif /* EBADE */
 	}
 	join(&sort, &mntinfo);
 }
