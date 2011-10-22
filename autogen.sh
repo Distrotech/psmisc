@@ -55,7 +55,7 @@ for dir in .
 do
   echo processing $dir
   cd $dir
-  configdir="config"
+  configdir="m4"
   test -d $configdir || mkdir $configdir
   aclocalinclude="$ACLOCAL_FLAGS"
   $AUTOPOINT
