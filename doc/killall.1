@@ -91,7 +91,7 @@ any of the killed processes still exist and only returns if none are left.
 Note that \fBkillall\fP may wait forever if the signal was ignored, had no
 effect, or if the process stays in zombie state.
 .IP "\fB\-y\fP, \fB\-\-younger\-than\fP"
-Match only processes that are older (started after) the time specified.
+Match only processes that are younger (started after) the time specified.
 The time is specified as a float then a unit. The units are s,m,h,d,w,M,y for
 seconds, minutes, hours, days, weeks, Months and years respectively.
 .IP "\fB\-Z\fP, \fB\-\-context\fP"
