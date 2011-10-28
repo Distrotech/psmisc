@@ -1,8 +1,11 @@
 Changes in 22.15
 ================
 	* Really apply patch for SF#31110178 RH#651794
-	* Conditionally use fork before stat calls
+	* Conditionally use fork before stat calls SF#3427522
 	* Patch from Corrina Vinschen for compiling on cygwin
+	* Use ENOENT not EBADE for FreeBSD Debian #631566
+	* Fix prstat typos
+	* Stop zombies by using waitpid Ubuntu #876387 by Peter Holik
 
 Changes in 22.14
 ================

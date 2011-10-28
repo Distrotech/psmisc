@@ -1835,6 +1835,7 @@ timeout(stat_t func, const char *path, struct stat *buf, unsigned int seconds)
 		(void) alarm(0);
 		(void) signal(SIGALRM, SIG_DFL);
 		close(pipes[0]);
+        waitpid(pid, NULL, 0);
 		break;
 	}
 	return ret;
