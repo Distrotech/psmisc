@@ -231,7 +231,7 @@ static void print_stat(const int pid, const opt_type options)
   }
   free(pathname);
 
-  fgets(buf,BUFSIZ,fp);
+  if (fgets(buf,BUFSIZ,fp) == NULL) return;
   bptr = strchr(buf, '(');
   if (bptr == NULL) return;
   bptr++;
