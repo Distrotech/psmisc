@@ -68,8 +68,8 @@ AC_CHECK_MEMBERS([struct stat.st_rdev])
 AC_TYPE_UID_T
 
 dnl Check for language stuff
-AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.16.1])
+AM_GNU_GETTEXT([external])
 
 dnl Must be after the gettext stuff as it sets build_cpu
 AC_CHECK_MEMBERS([struct user_regs_struct.orig_eax,
