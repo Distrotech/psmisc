@@ -135,7 +135,7 @@ uptime()
    }
    savelocale = setlocale(LC_NUMERIC, NULL);
    setlocale(LC_NUMERIC,"C");
-   fscanf(file, "%s", buf);
+   if (fscanf(file, "%s", buf) == EOF) perror("uptime");
    fclose(file);
    setlocale(LC_NUMERIC,savelocale);
    return atof(buf);
