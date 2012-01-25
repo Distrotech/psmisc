@@ -7,10 +7,13 @@ Changes in 22.15
 	* Fix prstat typos
 	* Stop zombies by using waitpid Ubuntu #876387 by Peter Holik, SF#3429674
 	* Fixed minor older/younger typo in killall.1 thanks to Maikel Linke
+	* Remove doubled content in src/lists.h
+	* Add another 2 for thread brackets in pstree.c
+	* Correct defines for timeout in configure.ac
 
 Changes in 22.14
 ================
-  * Fix file descriptor as weel as memory leaks in fuser
+	* Fix file descriptor as well as memory leaks in fuser
 	* Strip @ symbol from file names read from /proc/net/unix
 	* Above 2 changes close openSuSE bugs #536209, #529520, and #417841
 	  and provided by Werner Fink
