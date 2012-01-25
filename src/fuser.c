@@ -1785,6 +1785,7 @@ scan_swaps(struct names *names_head, struct inode_list *ino_head,
  */
 static sigjmp_buf jenv;
 
+#ifdef HAVE_TIMEOUT_STAT
 static void
 sigalarm(int sig)
 {
@@ -1792,7 +1793,6 @@ sigalarm(int sig)
 		siglongjmp(jenv, 1);
 }
 
-#ifdef HAVE_TIMEOUT_STAT
 static int
 timeout(stat_t func, const char *path, struct stat *buf, unsigned int seconds)
 {
