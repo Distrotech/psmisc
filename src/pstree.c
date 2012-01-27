@@ -264,7 +264,7 @@ static PROC *new_proc(const char *comm, pid_t pid, uid_t uid)
         perror("malloc");
         exit(1);
     }
-    strcpy(new->comm, comm);
+    strncpy(new->comm, comm, COMM_LEN);
     new->pid = pid;
     new->uid = uid;
     new->flags = 0;
@@ -352,7 +352,7 @@ add_proc(const char *comm, pid_t pid, pid_t ppid, uid_t uid,
         this = new_proc(comm, pid, uid);
 #endif                                /*WITH_SELINUX */
     else {
-        strcpy(this->comm, comm);
+        strncpy(this->comm, comm, COMM_LEN);
         this->uid = uid;
     }
     if (args)
