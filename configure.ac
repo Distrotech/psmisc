@@ -1,10 +1,11 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.61)
-AC_INIT([psmisc],[22.15])
+AC_INIT([psmisc],[22.16])
 AC_CONFIG_SRCDIR([src/comm.h])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_AUX_DIR([config])
 AM_INIT_AUTOMAKE([1.10])
+AC_LANG([C])
 
 dnl Checks for programs.
 AC_PROG_CC
@@ -12,6 +13,7 @@ AC_PROG_MAKE_SET
 AC_PROG_LN_S
 
 dnl checks for options
+# SELinux support - off by default
 AC_SUBST([WITH_SELINUX])
 AC_ARG_ENABLE([selinux],
   [AS_HELP_STRING([--enable-selinux], [Enable Security-Enhanced Linux features])],
@@ -24,7 +26,7 @@ if test "$enable_selinux" = "yes"; then
 fi
 AC_SUBST([SELINUX_LIB])
 
-dnl Call fork before all stat calls to stop hanging on NFS mounts
+# Call fork before all stat calls to stop hanging on NFS mounts
 AC_SUBST([WITH_TIMEOUT_STAT])
 AC_ARG_ENABLE([timeout_stat],
   [AS_HELP_STRING([--enable-timeout-stat], [Use a timeout on stat calls])],
@@ -33,6 +35,12 @@ AC_ARG_ENABLE([timeout_stat],
 if test "$enable_timeout_stat" = "yes"; then
   AC_DEFINE([WITH_TIMEOUT_STAT], [1], [Use timeout on stat calls])
 fi
+
+# Enable hardened compile and link flags
+AC_ARG_ENABLE([harden_flags],
+  [AS_HELP_STRING([--disable-harden-flags], [disable hardened compilier and linker flags])],
+  [enable_harden_flags=$enableval],
+  [enable_harden_flags="yes"])
 
 dnl ipv4 only option
 AC_SUBST([WITH_IPV6])
@@ -66,6 +74,20 @@ AC_TYPE_PID_T
 AC_TYPE_SIZE_T
 AC_CHECK_MEMBERS([struct stat.st_rdev])
 AC_TYPE_UID_T
+
+# Check that harden CFLAGS will compile
+AS_IF([test "$enable_harden_flags" = "yes"],
+  HARDEN_CFLAGS="-fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -Werror=format-security"
+  [ AC_MSG_CHECKING([compiler supports harden flags])
+  save_harden_cflags="$CFLAGS"
+  CFLAGS="$CFLAGS $HARDEN_CFLAGS"
+  AC_COMPILE_IFELSE([AC_LANG_PROGRAM(,,)],
+      [AC_MSG_RESULT([yes])],
+     [AC_MSG_RESULT([no]); HARDEN_CFLAGS='']
+    )
+  CFLAGS="$save_harden_cflags"],
+  [HARDEN_CFLAGS=""])
+AC_SUBST([HARDEN_CFLAGS])
 
 dnl Check for language stuff
 AM_GNU_GETTEXT_VERSION([0.16.1])

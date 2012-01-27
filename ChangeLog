@@ -1,3 +1,10 @@
+Changes in 22.16
+================
+	* Use strncpy for COMM_LEN and make it 18 characters to cover brackets
+	  in name.
+	* Enable some harden AM_CFLAGS by default, use configure option
+	  --disable-harden-flags to not use it.
+
 Changes in 22.15
 ================
 	* Really apply patch for SF#31110178 RH#651794, SF#3317431

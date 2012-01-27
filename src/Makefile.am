@@ -1,5 +1,5 @@
 
-AM_CFLAGS = -Wall -DLOCALEDIR=\"/usr/share/locale\"
+AM_CFLAGS = -Wall -DLOCALEDIR=\"/usr/share/locale\" @HARDEN_CFLAGS@
 
 bin_PROGRAMS = fuser killall pstree prtstat
 if WANT_PEEKFD_I386
