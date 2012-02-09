@@ -30,8 +30,7 @@
 /*
  * COMM_LEN should be the same size as TASK_COMM_LEN in the Linux source
  * at include/linux/sched.h
- * However, that doesn't include the brackets that may be in the field.
  */
-#define COMM_LEN 18
+#define COMM_LEN 16
 
 #endif

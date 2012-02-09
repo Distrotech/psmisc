@@ -69,7 +69,7 @@ extern const char *__progname;
 #define        VT_HD        "w"
 
 typedef struct _proc {
-    char comm[COMM_LEN + 1];
+    char comm[COMM_LEN + 2 + 1]; /* add another 2 for thread brackets */
     char **argv;                /* only used : argv[0] is 1st arg; undef if argc < 1 */
     int argc;                        /* with -a   : number of arguments, -1 if swapped    */
     pid_t pid;
@@ -264,7 +264,8 @@ static PROC *new_proc(const char *comm, pid_t pid, uid_t uid)
         perror("malloc");
         exit(1);
     }
-    strncpy(new->comm, comm, COMM_LEN);
+    strncpy(new->comm, comm, COMM_LEN+2);
+	new->comm[COMM_LEN+2]='\0'; /* make sure nul terminated*/
     new->pid = pid;
     new->uid = uid;
     new->flags = 0;
@@ -352,7 +353,7 @@ add_proc(const char *comm, pid_t pid, pid_t ppid, uid_t uid,
         this = new_proc(comm, pid, uid);
 #endif                                /*WITH_SELINUX */
     else {
-        strncpy(this->comm, comm, COMM_LEN);
+        strncpy(this->comm, comm, COMM_LEN+2);
         this->uid = uid;
     }
     if (args)

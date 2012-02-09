@@ -1783,9 +1783,10 @@ scan_swaps(struct names *names_head, struct inode_list *ino_head,
  * Execute stat(2) system call with timeout to avoid deadlock
  * on network based file systems.
  */
+#ifdef HAVE_TIMEOUT_STAT
+
 static sigjmp_buf jenv;
 
-#ifdef HAVE_TIMEOUT_STAT
 static void
 sigalarm(int sig)
 {
