@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.8rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-01-25 22:02+1100\n"
+"POT-Creation-Date: 2012-02-26 09:03+1100\n"
 "PO-Revision-Date: 2009-07-19 03:53+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -103,7 +103,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:162 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:824
+#: src/pstree.c:826
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr "A /proc könyvtár nem nyitható meg: %s\n"
 
-#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1886
+#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1887
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Nem foglalható memória az illeszkedő folyamat részére: %s\n"
@@ -234,7 +234,7 @@ msgstr "Elküldi a(z) %s(%s%d) szignált? (i/N) "
 msgid "Cannot get UID from process status\n"
 msgstr "Nem kérhető le a felhasználói azonosító a folyamat állapotából\n"
 
-#: src/killall.c:235 src/killall.c:838
+#: src/killall.c:235 src/killall.c:840
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr "Hibás reguláris kifejezés: %s\n"
@@ -348,21 +348,21 @@ msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger és Craig Small\n"
 "\n"
 
-#: src/killall.c:772 src/killall.c:778
+#: src/killall.c:773 src/killall.c:780
 msgid "Invalid time format"
 msgstr ""
 
-#: src/killall.c:803
+#: src/killall.c:805
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "A(z) %s felhasználó nem található\n"
 
-#: src/killall.c:870
+#: src/killall.c:872
 #, c-format
 msgid "Maximum number of names is %d\n"
 msgstr "A nevek maximális száma %d\n"
 
-#: src/killall.c:874
+#: src/killall.c:876
 #, fuzzy, c-format
 msgid "%s lacks process entries (not mounted ?)\n"
 msgstr "a(z) %s üres (nincs csatlakoztatva?)\n"
@@ -541,12 +541,12 @@ msgstr ""
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 
-#: src/pstree.c:753
+#: src/pstree.c:755
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "a(z) %s üres (nincs csatlakoztatva?)\n"
 
-#: src/pstree.c:791
+#: src/pstree.c:793
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
@@ -589,12 +589,12 @@ msgstr ""
 "  -U, --unicode       UTF-8 (Unicode) sorrajzoló karakterek használata\n"
 "  -V, --version       verzióinformációk megjelenítése\n"
 
-#: src/pstree.c:810
+#: src/pstree.c:812
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     show         a SELinux biztonsági kontextusok megjelenítése\n"
 
-#: src/pstree.c:812
+#: src/pstree.c:814
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -606,12 +606,12 @@ msgstr ""
 "                        megjelenítése\n"
 "\n"
 
-#: src/pstree.c:819
+#: src/pstree.c:821
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:822
+#: src/pstree.c:824
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -620,27 +620,27 @@ msgstr ""
 "Copyright (C) 1993-2009 Werner Almesberger és Craig Small\n"
 "\n"
 
-#: src/pstree.c:934
+#: src/pstree.c:936
 #, c-format
 msgid "TERM is not set\n"
 msgstr "A TERM nincs beállítva\n"
 
-#: src/pstree.c:938
+#: src/pstree.c:940
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "A terminál képességei nem kérhetők le\n"
 
-#: src/pstree.c:983
+#: src/pstree.c:985
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Nincs ilyen felhasználónév: %s\n"
 
-#: src/pstree.c:1006
+#: src/pstree.c:1008
 #, c-format
 msgid "No processes found.\n"
 msgstr "Nem találhatók folyamatok.\n"
 
-#: src/pstree.c:1012
+#: src/pstree.c:1014
 #, c-format
 msgid "Press return to close\n"
 msgstr "A bezáráshoz nyomj entert\n"

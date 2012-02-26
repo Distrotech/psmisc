@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.6\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-01-25 22:02+1100\n"
+"POT-Creation-Date: 2012-02-26 09:03+1100\n"
 "PO-Revision-Date: 2009-03-23 23:10+0800\n"
 "Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -98,7 +98,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:162 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:824
+#: src/pstree.c:826
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr "無法開啟 /proc 目錄：%s\n"
 
-#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1886
+#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1887
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "無法為符合的進程配置記憶體：%s\n"
@@ -230,7 +230,7 @@ msgstr "信號 %s(%s%d)？(y/N) "
 msgid "Cannot get UID from process status\n"
 msgstr "無法從進程狀態取得 UID\n"
 
-#: src/killall.c:235 src/killall.c:838
+#: src/killall.c:235 src/killall.c:840
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr "不當的正規表示式：%s\n"
@@ -338,21 +338,21 @@ msgstr ""
 "著作權 © 1993-2005 Werner Almesberger 與 Craig Small\n"
 "\n"
 
-#: src/killall.c:772 src/killall.c:778
+#: src/killall.c:773 src/killall.c:780
 msgid "Invalid time format"
 msgstr ""
 
-#: src/killall.c:803
+#: src/killall.c:805
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "找不到使用者 %s\n"
 
-#: src/killall.c:870
+#: src/killall.c:872
 #, c-format
 msgid "Maximum number of names is %d\n"
 msgstr "名稱的最大數量為 %d\n"
 
-#: src/killall.c:874
+#: src/killall.c:876
 #, fuzzy, c-format
 msgid "%s lacks process entries (not mounted ?)\n"
 msgstr "%s 是空的 (尚未掛載？)\n"
@@ -531,12 +531,12 @@ msgstr ""
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 
-#: src/pstree.c:753
+#: src/pstree.c:755
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s 是空的 (尚未掛載？)\n"
 
-#: src/pstree.c:791
+#: src/pstree.c:793
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
@@ -577,12 +577,12 @@ msgstr ""
 "    -U     使用 UTF-8 (萬國碼) 線條繪製字元\n"
 "    -V     顯示版本資訊\n"
 
-#: src/pstree.c:810
+#: src/pstree.c:812
 #, fuzzy, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "    -Z     顯示 SELinux 安全背景\n"
 
-#: src/pstree.c:812
+#: src/pstree.c:814
 #, fuzzy, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -593,12 +593,12 @@ msgstr ""
 "    使用者 只顯示源於這個使用者的進程樹\n"
 "\n"
 
-#: src/pstree.c:819
+#: src/pstree.c:821
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:822
+#: src/pstree.c:824
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -607,27 +607,27 @@ msgstr ""
 "著作權 © 1993-2005 Werner Almesberger 與 Craig Small\n"
 "\n"
 
-#: src/pstree.c:934
+#: src/pstree.c:936
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM 尚未設定\n"
 
-#: src/pstree.c:938
+#: src/pstree.c:940
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "無法取得終端機功能\n"
 
-#: src/pstree.c:983
+#: src/pstree.c:985
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "無此類使用者名稱：%s\n"
 
-#: src/pstree.c:1006
+#: src/pstree.c:1008
 #, c-format
 msgid "No processes found.\n"
 msgstr "找不到任何進程。\n"
 
-#: src/pstree.c:1012
+#: src/pstree.c:1014
 #, c-format
 msgid "Press return to close\n"
 msgstr "按下輸入鍵以關閉\n"

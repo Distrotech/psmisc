@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc-22.6\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-01-25 22:02+1100\n"
+"POT-Creation-Date: 2012-02-26 09:03+1100\n"
 "PO-Revision-Date: 2008-06-15 18:31+0300\n"
 "Last-Translator: Lefteris Dimitroulakis <edimitro@tee.gr>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
@@ -99,7 +99,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:162 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:824
+#: src/pstree.c:826
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr "Αδυναμία ανοίγματος καταλόγου /proc: %s\n"
 
-#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1886
+#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1887
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Αδύνατη η εκχώρηση μνήμης στην αντίστοιχη διεργασία: %s\n"
@@ -235,7 +235,7 @@ msgstr "Signal %s(%s%d) ? (y/N) "
 msgid "Cannot get UID from process status\n"
 msgstr "Δεν μπορώ να πάρω UID από την κατάσταση της διεργασίας\n"
 
-#: src/killall.c:235 src/killall.c:838
+#: src/killall.c:235 src/killall.c:840
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr "Κακή κανονική έκφραση: %s\n"
@@ -343,21 +343,21 @@ msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger και Craig Small\n"
 "\n"
 
-#: src/killall.c:772 src/killall.c:778
+#: src/killall.c:773 src/killall.c:780
 msgid "Invalid time format"
 msgstr ""
 
-#: src/killall.c:803
+#: src/killall.c:805
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Δεν μπορώ να βρω το χρήστη %s\n"
 
-#: src/killall.c:870
+#: src/killall.c:872
 #, c-format
 msgid "Maximum number of names is %d\n"
 msgstr "Μέγιστος αριθμός ονομάτων είναι %d\n"
 
-#: src/killall.c:874
+#: src/killall.c:876
 #, fuzzy, c-format
 msgid "%s lacks process entries (not mounted ?)\n"
 msgstr "%s είναι άδειο (μή προσαρτημένο ;)\n"
@@ -536,12 +536,12 @@ msgstr ""
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 
-#: src/pstree.c:753
+#: src/pstree.c:755
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s είναι άδειο (μή προσαρτημένο ;)\n"
 
-#: src/pstree.c:791
+#: src/pstree.c:793
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
@@ -582,12 +582,12 @@ msgstr ""
 "    -U     χρήση UTF-8 (Unicode) line drawing characters\n"
 "    -V     εμφανίζει πληροφορίες έκδοσης\n"
 
-#: src/pstree.c:810
+#: src/pstree.c:812
 #, fuzzy, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "    -Z     εμφάνιση SELinux security contexts\n"
 
-#: src/pstree.c:812
+#: src/pstree.c:814
 #, fuzzy, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -598,12 +598,12 @@ msgstr ""
 "    USER   εμφάνιση μόνο δέντρων rooted at processes of this user\n"
 "\n"
 
-#: src/pstree.c:819
+#: src/pstree.c:821
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:822
+#: src/pstree.c:824
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -612,27 +612,27 @@ msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger και Craig Small\n"
 "\n"
 
-#: src/pstree.c:934
+#: src/pstree.c:936
 #, c-format
 msgid "TERM is not set\n"
 msgstr "Η μεταβλητή TERM δεν έχει καθοριστεί\n"
 
-#: src/pstree.c:938
+#: src/pstree.c:940
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Δεν μπορώ να πάρω τις ικανότητες τερματικού\n"
 
-#: src/pstree.c:983
+#: src/pstree.c:985
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Δεν υπάρχει τέτοιο όνομα χρήστη: %s\n"
 
-#: src/pstree.c:1006
+#: src/pstree.c:1008
 #, c-format
 msgid "No processes found.\n"
 msgstr "Δεν βρέθηκαν διεργασίες.\n"
 
-#: src/pstree.c:1012
+#: src/pstree.c:1014
 #, c-format
 msgid "Press return to close\n"
 msgstr "Πάτησε return για κλείσιμο\n"
