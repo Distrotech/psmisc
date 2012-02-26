@@ -2,6 +2,8 @@ Changes in 22.16
 ================
 	* Use strncpy for COMM_LEN and make it 18 characters to cover brackets
 	  in name.
+	* don't change COMM_LEN, it breaks matching long commands
+	  Debian #661145
 	* Enable some harden AM_CFLAGS by default, use configure option
 	  --disable-harden-flags to not use it.
 

@@ -768,12 +768,14 @@ main (int argc, char **argv)
     case 'y':
       NOT_PIDOF_OPTION;
       strncpy(yt, optarg, 16);
+	  yt[15] = '\0';
       if ( 0 >= (younger_than = parse_time_units(yt) ) )
 	    usage(_("Invalid time format"));
       break;
     case 'o':
       NOT_PIDOF_OPTION;
       strncpy(ot, optarg, 16);
+	  ot[15] = '\0';
       if ( 0 >= (older_than = parse_time_units(ot) ) )
 	    usage(_("Invalid time format"));
       break;
