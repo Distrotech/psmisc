@@ -1,3 +1,7 @@
+Changes in 22.17 (unreleased)
+================
+	* fuser uses correct timeout_stat define Debian #661723
+
 Changes in 22.16
 ================
 	* Use strncpy for COMM_LEN and make it 18 characters to cover brackets
