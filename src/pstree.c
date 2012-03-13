@@ -265,7 +265,7 @@ static PROC *new_proc(const char *comm, pid_t pid, uid_t uid)
         exit(1);
     }
     strncpy(new->comm, comm, COMM_LEN+2);
-	new->comm[COMM_LEN+1]='\0'; /* make sure nul terminated*/
+    new->comm[COMM_LEN+1] = '\0';     /* make sure nul terminated*/
     new->pid = pid;
     new->uid = uid;
     new->flags = 0;
@@ -354,7 +354,7 @@ add_proc(const char *comm, pid_t pid, pid_t ppid, uid_t uid,
 #endif                                /*WITH_SELINUX */
     else {
         strncpy(this->comm, comm, COMM_LEN+2);
-		this->comm[COMM_LEN+1];
+        this->comm[COMM_LEN+1] = '\0';
         this->uid = uid;
     }
     if (args)

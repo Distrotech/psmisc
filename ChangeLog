@@ -1,3 +1,5 @@
+	* Really add ASCII null at command string in add_proc() of pstree.c
+
 Changes in 22.16
 ================
 	* Use strncpy for COMM_LEN and make it 18 characters to cover brackets
