@@ -1,3 +1,6 @@
+	* Add timeout.c/timeout.h for static background process which is able
+	  to read the file name from pipe, does the stat(2) system call, and
+	  writes the result back to a pipe.
 	* Really add ASCII null at command string in add_proc() of pstree.c
 
 Changes in 22.16
