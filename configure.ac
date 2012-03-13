@@ -30,12 +30,16 @@ AC_SUBST([SELINUX_LIB])
 # Call fork before all stat calls to stop hanging on NFS mounts
 AC_SUBST([WITH_TIMEOUT_STAT])
 AC_ARG_ENABLE([timeout_stat],
-  [AS_HELP_STRING([--enable-timeout-stat], [Use a timeout on stat calls])],
+  [AS_HELP_STRING([--enable-timeout-stat], [Use a timeout on stat calls (optional with argument "static" for a static background process)])],
   [enable_timeout_stat=$enableval],
   [enable_timeout_stat="no"])
 if test "$enable_timeout_stat" = "yes"; then
   AC_DEFINE([WITH_TIMEOUT_STAT], [1], [Use timeout on stat calls])
 fi
+if test "$enable_timeout_stat" = "static"; then
+  AC_DEFINE([WITH_TIMEOUT_STAT], [2], [Use timeout on stat calls])
+fi
+AM_CONDITIONAL([WANT_TIMEOUT_STAT], [test "$enable_timeout_stat" = "static"])
 
 # Enable hardened compile and link flags
 AC_ARG_ENABLE([harden_flags],
