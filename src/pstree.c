@@ -363,12 +363,27 @@ add_proc(const char *comm, pid_t pid, pid_t ppid, uid_t uid,
         ppid = 0;
     if (isthread)
       this->flags |= PFLAG_THREAD;
-    if (!(parent = find_proc(ppid)))
+    if (!(parent = find_proc(ppid))) {
 #ifdef WITH_SELINUX
         parent = new_proc("?", ppid, 0, scontext);
 #else                                /*WITH_SELINUX */
         parent = new_proc("?", ppid, 0);
 #endif                                /*WITH_SELINUX */
+	/* When using kernel 3.3 with hidepid feature enabled on /proc
+	 * then we need fake root pid */
+	if (!isthread && pid != 1) {
+		PROC *root;
+		if (!(root = find_proc(1))) {
+#ifdef WITH_SELINUX
+			root = new_proc("?", 1, 0, scontext);
+#else                                /*WITH_SELINUX */
+			root = new_proc("?", 1, 0);
+#endif
+		}
+		add_child(root, parent);
+		parent->parent = root;
+	}
+    }
     add_child(parent, this);
     this->parent = parent;
 }
