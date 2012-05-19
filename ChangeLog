@@ -13,6 +13,7 @@ Changes in 22.17 (unreleased)
 	* No TEXTRELS in src/lists built as PIE on x86
 	* Fake pstree root for kernels with hidepid turned on
 	* More fixes for Cygwin SF Patch #3511920
+	* pstree can show PGIDs SF Patch #3471056
 
 Changes in 22.16
 ================
