@@ -113,6 +113,16 @@ AC_CHECK_MEMBERS([struct pt_regs.uregs],[],[], [#include <asm/ptrace.h>])
 AC_CHECK_MEMBERS([struct pt_regs.regs,
                   struct pt_regs.cp0_status],[],[], [#include <asm/ptrace.h>])
 
+case ${target_os} in
+  gnu*)
+    want_fuser=no
+    ;;
+  *)
+    want_fuser=yes
+	;;
+esac
+AM_CONDITIONAL(WANT_FUSER, test $want_fuser = yes)
+
 AM_CONDITIONAL(WANT_PEEKFD_I386,
  test $ac_cv_member_struct_user_regs_struct_orig_eax = yes &&
    test $ac_cv_member_struct_user_regs_struct_eax = yes &&
