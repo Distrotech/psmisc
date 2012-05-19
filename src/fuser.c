@@ -265,7 +265,7 @@ scan_procs(struct names *names_head, struct inode_list *ino_head,
 		if (root_stat) free(root_stat);
 		if (cwd_stat)  free(cwd_stat);
 		if (exe_stat)  free(exe_stat);
-#ifndef __linux__
+#if !defined (__linux__) && !defined (__CYGWIN__)
 		check_dir(pid, "lib", dev_head, ino_head, uid, ACCESS_MMAP,
 			  sockets, netdev);
 		check_dir(pid, "mmap", dev_head, ino_head, uid, ACCESS_MMAP,
@@ -932,7 +932,9 @@ int main(int argc, char *argv[])
 #endif
 
 	netdev = find_net_dev();
+#ifndef __CYGWIN__	/* Cygwin doesn't support /proc/net/unix */
 	fill_unix_cache(&unixsockets);
+#endif
 
     for (argc_cnt = 1; argc_cnt < argc; argc_cnt++) {
       current_argv = argv[argc_cnt];
@@ -1375,7 +1377,7 @@ check_dir(const pid_t pid, const char *dirname, struct device_list *dev_head,
 		st.st_ino = 0;
 		if ((thedev = device(filepath)) < 0)
 #else
-		if (!st.st_ino && timeout(stat, filepath, &st, 5) != 0)
+		if (timeout(stat, filepath, &st, 5) != 0)
 #endif
 		{
             if (errno != ENOENT) {
@@ -1383,6 +1385,9 @@ check_dir(const pid_t pid, const char *dirname, struct device_list *dev_head,
 				    filepath, strerror(errno));
             }
 		} else {
+#ifndef _LISTS_H
+			thedev = st.st_dev;
+#endif
 			if (thedev == netdev) {
 				for (sock_tmp = sockets; sock_tmp != NULL;
 				     sock_tmp = sock_tmp->next) {
