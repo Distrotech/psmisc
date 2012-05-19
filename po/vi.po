@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.11-pre1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-02-26 09:03+1100\n"
+"POT-Creation-Date: 2012-05-19 18:23+1000\n"
 "PO-Revision-Date: 2010-03-29 21:25+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: LocFactoryEditor 1.8\n"
 
-#: src/fuser.c:128
+#: src/fuser.c:132
 #, fuzzy, c-format
 msgid ""
 "Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
@@ -65,7 +65,7 @@ msgstr ""
 "  -v,--verbose          xuất chi tiết\n"
 "  -V,--version          hiển thị thông tin về phiên bản\n"
 
-#: src/fuser.c:146
+#: src/fuser.c:150
 #, c-format
 msgid ""
 "  -4,--ipv4             search IPv4 sockets only\n"
@@ -74,7 +74,7 @@ msgstr ""
 "  -4,--ipv4             chỉ tìm kiếm ổ cắm kiểu IPv4\n"
 "  -6,--ipv6             chỉ tìm kiếm ổ cắm kiểu IPv6\n"
 
-#: src/fuser.c:150
+#: src/fuser.c:154
 #, c-format
 msgid ""
 "  -                     reset options\n"
@@ -87,12 +87,12 @@ msgstr ""
 "  Các tên udp/tcp: [cổng_cục_bộ][,[máy_từ_xa][,[cổng_từ_xa]]]\n"
 "\n"
 
-#: src/fuser.c:157
+#: src/fuser.c:161
 #, c-format
 msgid "fuser (PSmisc) %s\n"
 msgstr "fuser (PSmisc) %s\n"
 
-#: src/fuser.c:160
+#: src/fuser.c:164
 #, c-format
 msgid ""
 "Copyright (C) 1993-2010 Werner Almesberger and Craig Small\n"
@@ -101,7 +101,7 @@ msgstr ""
 "Tác quyền © năm 1993-2010 của Werner Almesberger và Craig Small\n"
 "\n"
 
-#: src/fuser.c:162 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:826
 #, c-format
 msgid ""
@@ -115,105 +115,105 @@ msgstr ""
 "Quyền Công Chung Gnu (GPL).\n"
 "Để tìm thấy thông tin thêm thì hãy xem tập tin có tên COPYING (cách chép)\n"
 
-#: src/fuser.c:181
+#: src/fuser.c:185
 #, c-format
 msgid "Cannot open /proc directory: %s\n"
 msgstr "Không thể mở thư mục </proc>: %s\n"
 
-#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1887
+#: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1891
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Không thể cấp phát bộ nhớ cho tiến trình được khớp: %s\n"
 
-#: src/fuser.c:459
+#: src/fuser.c:463
 #, c-format
 msgid "Specified filename %s does not exist.\n"
 msgstr "Đưa ra tên tập tin %s không tồn tại.\n"
 
-#: src/fuser.c:461
+#: src/fuser.c:465
 #, c-format
 msgid "Cannot stat %s: %s\n"
 msgstr "Không thể lấy các thông tin về %s: %s\n"
 
-#: src/fuser.c:594
+#: src/fuser.c:598
 #, c-format
 msgid "Cannot resolve local port %s: %s\n"
 msgstr "Không tìm thấy tên cổng cục bộ %s: %s\n"
 
-#: src/fuser.c:612
+#: src/fuser.c:616
 #, c-format
 msgid "Unknown local port AF %d\n"
 msgstr "Không biết cổng cục bộ AF %d\n"
 
-#: src/fuser.c:702
+#: src/fuser.c:706
 #, c-format
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Không thể mở tập tin giao thức « %s »: %s\n"
 
-#: src/fuser.c:948
+#: src/fuser.c:952
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr "%s: Sai đặt tuỳ chọn %s\n"
 
-#: src/fuser.c:998
+#: src/fuser.c:1002
 msgid "Namespace option requires an argument."
 msgstr "Tùy chọn miền tên cần đến một đối số."
 
-#: src/fuser.c:1010
+#: src/fuser.c:1014
 msgid "Invalid namespace name"
 msgstr "Tên miền tên không hợp lệ"
 
-#: src/fuser.c:1066
+#: src/fuser.c:1070
 msgid "You can only use files with mountpoint options"
 msgstr "Bạn có thể sử dụng tập tin chỉ với tùy chọn điểm lắp"
 
-#: src/fuser.c:1111
+#: src/fuser.c:1115
 msgid "No process specification given"
 msgstr "Chưa nhập đặc tả tiến trình"
 
-#: src/fuser.c:1118
+#: src/fuser.c:1122
 msgid "all option cannot be used with silent option."
 msgstr "không cho phép bạn sử dụng chọn « tất cả » với tùy chọn « im »."
 
-#: src/fuser.c:1123
+#: src/fuser.c:1127
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr "Không cho phép bạn tìm kiếm ổ cắm kiểu cả IPv4 lẫn IPv6 đều đồng thời"
 
-#: src/fuser.c:1201
+#: src/fuser.c:1205
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr "%*s NGƯỜI_DÙNG        PID TRUY CẬP LỆNH\n"
 
-#: src/fuser.c:1234 src/fuser.c:1289
+#: src/fuser.c:1238 src/fuser.c:1293
 msgid "(unknown)"
 msgstr "(không biết)"
 
-#: src/fuser.c:1378 src/fuser.c:1416
+#: src/fuser.c:1382 src/fuser.c:1420
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr "Không thể lấy các thông tin về tập tin %s: %s\n"
 
-#: src/fuser.c:1507
+#: src/fuser.c:1511
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr "Không thể mở thư mục </proc/net/unix>: %s\n"
 
-#: src/fuser.c:1583
+#: src/fuser.c:1587
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "Có buốc kết thúc tiến trình %d không? (y/N) (có/không) "
 
-#: src/fuser.c:1619
+#: src/fuser.c:1623
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr "Không thể buộc kết thúc tiến trình %d: %s\n"
 
-#: src/fuser.c:1634
+#: src/fuser.c:1638
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr "Không thể mở một ổ cắm mạng.\n"
 
-#: src/fuser.c:1638
+#: src/fuser.c:1642
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr "Không tìm thấy số hiệu thiết bị ổ cắm.\n"

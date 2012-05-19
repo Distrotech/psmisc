@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.11-pre1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-02-26 09:03+1100\n"
+"POT-Creation-Date: 2012-05-19 18:23+1000\n"
 "PO-Revision-Date: 2010-03-29 10:09+0100\n"
 "Last-Translator: Mikel Olasagasti <hey_neken@mundurat.net>\n"
 "Language-Team: Basque <translation-team-eu@lists.sourceforge.net>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/fuser.c:128
+#: src/fuser.c:132
 #, fuzzy, c-format
 msgid ""
 "Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
@@ -64,7 +64,7 @@ msgstr ""
 "    -v,--verbose        irteera xehetua\n"
 "    -V,--version        erakutsi bertsio informazioa\n"
 
-#: src/fuser.c:146
+#: src/fuser.c:150
 #, c-format
 msgid ""
 "  -4,--ipv4             search IPv4 sockets only\n"
@@ -73,7 +73,7 @@ msgstr ""
 "    -4,--ipv4        bilatu IPv4 socket-ak bakarrik\n"
 "    -6,--ipv6        bilatu IPv6 socket-ak bakarrik\n"
 
-#: src/fuser.c:150
+#: src/fuser.c:154
 #, c-format
 msgid ""
 "  -                     reset options\n"
@@ -86,12 +86,12 @@ msgstr ""
 "  udp/tcp izenak: [ataka_lokala][,[urruneko_ostalaria][,[urruneko_ataka]]]\n"
 "\n"
 
-#: src/fuser.c:157
+#: src/fuser.c:161
 #, c-format
 msgid "fuser (PSmisc) %s\n"
 msgstr "fuser (PSmisc) %s\n"
 
-#: src/fuser.c:160
+#: src/fuser.c:164
 #, c-format
 msgid ""
 "Copyright (C) 1993-2010 Werner Almesberger and Craig Small\n"
@@ -100,7 +100,7 @@ msgstr ""
 "Copyright (C) 1993-2010 Werner Almesberger eta Craig Small\n"
 "\n"
 
-#: src/fuser.c:162 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:826
 #, c-format
 msgid ""
@@ -116,106 +116,106 @@ msgstr ""
 "Gai honi buruzko informazio gehiagorako, ikusi COPYING izena duten "
 "fitxategiak.\n"
 
-#: src/fuser.c:181
+#: src/fuser.c:185
 #, c-format
 msgid "Cannot open /proc directory: %s\n"
 msgstr "Ezin da /proc direktorioa ireki: %s\n"
 
-#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1887
+#: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1891
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Ezin da memoria esleitu aurkitutako prozesuarentzat: %s\n"
 
-#: src/fuser.c:459
+#: src/fuser.c:463
 #, c-format
 msgid "Specified filename %s does not exist.\n"
 msgstr "Adierazitako %s fitxategia ez da existitzen.\n"
 
-#: src/fuser.c:461
+#: src/fuser.c:465
 #, c-format
 msgid "Cannot stat %s: %s\n"
 msgstr "Ezin da %s identifikatu: %s\n"
 
-#: src/fuser.c:594
+#: src/fuser.c:598
 #, c-format
 msgid "Cannot resolve local port %s: %s\n"
 msgstr "Ezin da %s ataka lokala ebatzi: %s\n"
 
-#: src/fuser.c:612
+#: src/fuser.c:616
 #, c-format
 msgid "Unknown local port AF %d\n"
 msgstr "AF ataka lokal ezezaguna %d\n"
 
-#: src/fuser.c:702
+#: src/fuser.c:706
 #, c-format
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Ezin izan da \"%s\" protokolo fitxategia ireki: %s\n"
 
-#: src/fuser.c:948
+#: src/fuser.c:952
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr "%s: %s baliogabeko aukera\n"
 
-#: src/fuser.c:998
+#: src/fuser.c:1002
 msgid "Namespace option requires an argument."
 msgstr "Namespace aukerak argumentua behar du"
 
-#: src/fuser.c:1010
+#: src/fuser.c:1014
 msgid "Invalid namespace name"
 msgstr "Baliogabeko namespace izena"
 
-#: src/fuser.c:1066
+#: src/fuser.c:1070
 msgid "You can only use files with mountpoint options"
 msgstr "muntai-puntu aukerak dituzten fitxategiak erabil ditzazkezu soilik"
 
-#: src/fuser.c:1111
+#: src/fuser.c:1115
 msgid "No process specification given"
 msgstr "Ez da prozesuaren espezifikaziorik eman"
 
-#: src/fuser.c:1118
+#: src/fuser.c:1122
 msgid "all option cannot be used with silent option."
 msgstr "aukera guztiak ezin dira ixiltasun aukerarekin erabili."
 
-#: src/fuser.c:1123
+#: src/fuser.c:1127
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr ""
 "Ezin dituzu IPv4 socket-ak soilik eta IPv6 socket-ak soilik bilatu une berean"
 
-#: src/fuser.c:1201
+#: src/fuser.c:1205
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr "%*s ERAB.      PID SARRERA KOMANDOA\n"
 
-#: src/fuser.c:1234 src/fuser.c:1289
+#: src/fuser.c:1238 src/fuser.c:1293
 msgid "(unknown)"
 msgstr "(ezezaguna)"
 
-#: src/fuser.c:1378 src/fuser.c:1416
+#: src/fuser.c:1382 src/fuser.c:1420
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr "Ezin da %s fitxategia identifikatu: %s\n"
 
-#: src/fuser.c:1507
+#: src/fuser.c:1511
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr "Ezin da /proc/net/unix direktorioa ireki: %s\n"
 
-#: src/fuser.c:1583
+#: src/fuser.c:1587
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "%d prozesua hil? (y/N) "
 
-#: src/fuser.c:1619
+#: src/fuser.c:1623
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr "Ezin izan da %d prozesua hil: %s\n"
 
-#: src/fuser.c:1634
+#: src/fuser.c:1638
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr "Ezin da sare socket bat ireki.\n"
 
-#: src/fuser.c:1638
+#: src/fuser.c:1642
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr "Ezin izan da socket-aren gailu zenbakia aurkitu.\n"
