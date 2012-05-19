@@ -27,6 +27,9 @@ if WANT_PEEKFD_MIPS
 endif
 
 fuser_SOURCES = fuser.c comm.h signals.c signals.h i18n.h fuser.h lists.h
+if WANT_TIMEOUT_STAT
+  fuser_SOURCES += timeout.c timeout.h
+endif
 
 fuser_LDADD = @LIBINTL@
 

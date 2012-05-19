@@ -1,6 +1,15 @@
 Changes in 22.17 (unreleased)
 ================
+	* Make it possible to use --enable-timeout-stat as well as
+	  --enable-timeout-stat=static for a static background process which
+	  does the final stat system calls
+	* Do not mix HAVE_TIMEOUT_STAT with WITH_TIMEOUT_STAT
+	* Add timeout.c/timeout.h for static background process which is able
+	  to read the file name from pipe, does the stat(2) system call, and
+	  writes the result back to a pipe.
+	* Really add ASCII null at command string in add_proc() of pstree.c
 	* fuser uses correct timeout_stat define Debian #661723
+	* fuser is not compiled on hurd-i386 Debian #673485
 
 Changes in 22.16
 ================
