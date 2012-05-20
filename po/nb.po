@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.2pre1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-05-19 18:23+1000\n"
+"POT-Creation-Date: 2012-05-20 11:21+1000\n"
 "PO-Revision-Date: 2006-03-07 12:01+0100\n"
 "Last-Translator: Trond Endrestøl <Trond.Endrestol@fagskolen.gjovik.no>\n"
 "Language-Team: Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
@@ -116,7 +116,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:826
+#: src/pstree.c:848
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -134,7 +134,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr "Kan ikke åpne /proc-katalogen: %s\n"
 
-#: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1891
+#: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1896
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Kan ikke allokere minne for funnet prosess: %s\n"
@@ -164,75 +164,75 @@ msgstr "Ukjent lokalport AF %d\n"
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Kan ikke åpne protokollfil «%s»: %s\n"
 
-#: src/fuser.c:952
+#: src/fuser.c:954
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr ""
 
-#: src/fuser.c:1002
+#: src/fuser.c:1004
 msgid "Namespace option requires an argument."
 msgstr "Navneromvalget krever et argument."
 
-#: src/fuser.c:1014
+#: src/fuser.c:1016
 msgid "Invalid namespace name"
 msgstr "Ugyldig navn på navnerom"
 
-#: src/fuser.c:1070
+#: src/fuser.c:1072
 #, fuzzy
 msgid "You can only use files with mountpoint options"
 msgstr "Du kan bare bruke filer med monteringspunktvalget"
 
-#: src/fuser.c:1115
+#: src/fuser.c:1117
 msgid "No process specification given"
 msgstr "Ingen prosesspesifikasjon ble gitt"
 
-#: src/fuser.c:1122
+#: src/fuser.c:1124
 msgid "all option cannot be used with silent option."
 msgstr "alle valg kan ikke bli brukt med stillevalget."
 
-#: src/fuser.c:1127
+#: src/fuser.c:1129
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr "Du kan ikke søke etter bare IPv4- og bare IPv6-socketer samtidig"
 
 # Oversettelsen av denne strengen er noe vanskelig da dette er en
 # tabelloverskrift som skal passe med selve tabellen. [TE, 2005-03-01]
-#: src/fuser.c:1205
+#: src/fuser.c:1207
 #, fuzzy, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr ""
 "\n"
 "%*s BRUKER      PID ACCESS KOMMANDO\n"
 
-#: src/fuser.c:1238 src/fuser.c:1293
+#: src/fuser.c:1240 src/fuser.c:1295
 msgid "(unknown)"
 msgstr "(ukjent)"
 
-#: src/fuser.c:1382 src/fuser.c:1420
+#: src/fuser.c:1384 src/fuser.c:1425
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr "Kan ikke kjøre stat på fila %s: %s\n"
 
-#: src/fuser.c:1511
+#: src/fuser.c:1516
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr "Kan ikke åpne /proc/net/unix: %s\n"
 
-#: src/fuser.c:1587
+#: src/fuser.c:1592
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "Drepe prosess %d ? (j/N) "
 
-#: src/fuser.c:1623
+#: src/fuser.c:1628
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr "Kunne ikke drepe prosessen %d: %s\n"
 
-#: src/fuser.c:1638
+#: src/fuser.c:1643
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr "Kan ikke åpne en nettverkssocket.\n"
 
-#: src/fuser.c:1642
+#: src/fuser.c:1647
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr "Kan ikke finne socketens enhetsnummer.\n"
@@ -542,15 +542,16 @@ msgstr ""
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 
-#: src/pstree.c:755
+#: src/pstree.c:776
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s er tom (ikke montert?)\n"
 
-#: src/pstree.c:793
+#: src/pstree.c:814
 #, fuzzy, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -561,6 +562,7 @@ msgid ""
 "  -h, --highlight-all highlight current process and its ancestors\n"
 "  -H PID,\n"
 "  --highlight-pid=PID highlight this process and its ancestors\n"
+"  -g, --show-pgids    show process group ids; implies -c\n"
 "  -G, --vt100         use VT100 line drawing characters\n"
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
@@ -589,12 +591,12 @@ msgstr ""
 "    -U     tegn linjer med UTF-8-tegn (Unicode)\n"
 "    -V     vis programversjon\n"
 
-#: src/pstree.c:812
+#: src/pstree.c:834
 #, fuzzy, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "    -Z     vis SELinux sikkerhetskontekster\n"
 
-#: src/pstree.c:814
+#: src/pstree.c:836
 #, fuzzy, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -604,12 +606,12 @@ msgstr ""
 "    PID    begynn med angitt pid, standard er 1 (init)\n"
 "    BRUKER bare vis trær med opphav fra prosesser tilhørende denne brukeren\n"
 
-#: src/pstree.c:821
+#: src/pstree.c:843
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (psmisc) %s\n"
 
-#: src/pstree.c:824
+#: src/pstree.c:846
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -618,27 +620,27 @@ msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger og Craig Small\n"
 "\n"
 
-#: src/pstree.c:936
+#: src/pstree.c:959
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM er ikke angitt\n"
 
-#: src/pstree.c:940
+#: src/pstree.c:963
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Kan ikke finne ut egenskapene til terminalen\n"
 
-#: src/pstree.c:985
+#: src/pstree.c:1012
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Fant ikke brukeren «%s».\n"
 
-#: src/pstree.c:1008
+#: src/pstree.c:1035
 #, c-format
 msgid "No processes found.\n"
 msgstr "Fant ingen prosesser.\n"
 
-#: src/pstree.c:1014
+#: src/pstree.c:1041
 #, c-format
 msgid "Press return to close\n"
 msgstr "Trykk på enter for å lukke.\n"

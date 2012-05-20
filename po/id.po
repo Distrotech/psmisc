@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.11-pre1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-05-19 18:23+1000\n"
+"POT-Creation-Date: 2012-05-20 11:21+1000\n"
 "PO-Revision-Date: 2010-03-28 19:30+0700\n"
 "Last-Translator: Arif E. Nugroho <arif_endro@yahoo.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -100,7 +100,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:826
+#: src/pstree.c:848
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr "Tidak dapat membuka direktori /proc: %s\n"
 
-#: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1891
+#: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1896
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Tidak dapat mengalokasikan memori untuk proc yang sesuai: %s\n"
@@ -149,72 +149,72 @@ msgstr "Port lokal AF %d tidak diketahui\n"
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Tidak dapat membuka berkas protokol \"%s\": %s\n"
 
-#: src/fuser.c:952
+#: src/fuser.c:954
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr "%s: Pilihan %s tidak valid\n"
 
-#: src/fuser.c:1002
+#: src/fuser.c:1004
 msgid "Namespace option requires an argument."
 msgstr "Pilihan nama ruang membutuhkan sebuah argumen."
 
-#: src/fuser.c:1014
+#: src/fuser.c:1016
 msgid "Invalid namespace name"
 msgstr "Nama nama-ruang tidak valid"
 
-#: src/fuser.c:1070
+#: src/fuser.c:1072
 msgid "You can only use files with mountpoint options"
 msgstr "Anda hanya dapat menggunakan berkas dengan pilihan titik-pemasangan"
 
-#: src/fuser.c:1115
+#: src/fuser.c:1117
 msgid "No process specification given"
 msgstr "Tidak ada spesifikasi proses yang diberikan"
 
-#: src/fuser.c:1122
+#: src/fuser.c:1124
 msgid "all option cannot be used with silent option."
 msgstr "semua pilihan tidak dapat digunakan dengan pilihan silent."
 
-#: src/fuser.c:1127
+#: src/fuser.c:1129
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr ""
 "Anda tidak dapat mencari hanya untuk IPv4 dan hanya untuk IPv6 socket di "
 "waktu yang sama"
 
-#: src/fuser.c:1205
+#: src/fuser.c:1207
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr "%*s PENGGUNA    PID AKSES  PERINTAH\n"
 
-#: src/fuser.c:1238 src/fuser.c:1293
+#: src/fuser.c:1240 src/fuser.c:1295
 msgid "(unknown)"
 msgstr "(tidak diketahui)"
 
-#: src/fuser.c:1382 src/fuser.c:1420
+#: src/fuser.c:1384 src/fuser.c:1425
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr "Tidak dapat memperoleh statistik berkas %s: %s\n"
 
-#: src/fuser.c:1511
+#: src/fuser.c:1516
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr "Tidak dapat membuka /proc/net/unix: %s\n"
 
-#: src/fuser.c:1587
+#: src/fuser.c:1592
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "Bunuh proses %d ? (y/N) "
 
-#: src/fuser.c:1623
+#: src/fuser.c:1628
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr "Tidak dapat menghentikan proses %d: %s\n"
 
-#: src/fuser.c:1638
+#: src/fuser.c:1643
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr "Tidak dapat membuka sebuah socket network.\n"
 
-#: src/fuser.c:1642
+#: src/fuser.c:1647
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr "Tidak dapat menemukan nomor perangkat socket.\n"
@@ -568,15 +568,16 @@ msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 "/proc belum dipasang, tidak dapat memperoleh statistik /proc/self/stat.\n"
 
-#: src/pstree.c:755
+#: src/pstree.c:776
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s adalah kosong (belum dimount ?)\n"
 
-#: src/pstree.c:793
+#: src/pstree.c:814
 #, fuzzy, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -587,6 +588,7 @@ msgid ""
 "  -h, --highlight-all highlight current process and its ancestors\n"
 "  -H PID,\n"
 "  --highlight-pid=PID highlight this process and its ancestors\n"
+"  -g, --show-pgids    show process group ids; implies -c\n"
 "  -G, --vt100         use VT100 line drawing characters\n"
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
@@ -616,12 +618,12 @@ msgstr ""
 "  -U, --unicode       gunakan UTF-8 (Unicode) baris karakter gambar\n"
 "  -V, --version       tampilkan informasi versi\n"
 
-#: src/pstree.c:812
+#: src/pstree.c:834
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     tampilkan    tampilkan konteks keamanan SELinux\n"
 
-#: src/pstree.c:814
+#: src/pstree.c:836
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -632,12 +634,12 @@ msgstr ""
 "  PENGGUNA tampilkan hanya proses yang berakar dari pengguna ini\n"
 "\n"
 
-#: src/pstree.c:821
+#: src/pstree.c:843
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:824
+#: src/pstree.c:846
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -646,27 +648,27 @@ msgstr ""
 "Hak Cipta (C) 1993-2009 Werner Almesberger dan Craid Small\n"
 "\n"
 
-#: src/pstree.c:936
+#: src/pstree.c:959
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM tidak diset\n"
 
-#: src/pstree.c:940
+#: src/pstree.c:963
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Tidka dapat memperoleh kapabilitas terminal\n"
 
-#: src/pstree.c:985
+#: src/pstree.c:1012
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Tidak ada nama pengguna seperti itu: %s\n"
 
-#: src/pstree.c:1008
+#: src/pstree.c:1035
 #, c-format
 msgid "No processes found.\n"
 msgstr "Tidak ada proses yang ditemukan.\n"
 
-#: src/pstree.c:1014
+#: src/pstree.c:1041
 #, c-format
 msgid "Press return to close\n"
 msgstr "Tekan Enter untuk menutup\n"
