@@ -1,14 +1,14 @@
 # Esperanto translation.
-# Copyright (C) 2011 Free Software Foundation, Inc.
+# Copyright (C) 2011, 2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the psmisc package.
-# Felipe Castro <fefcas@gmail.com>, 2011.
+# Felipe Castro <fefcas@gmail.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.12\n"
+"Project-Id-Version: psmisc 22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2012-05-20 11:21+1000\n"
-"PO-Revision-Date: 2011-03-19 21:55-0300\n"
+"PO-Revision-Date: 2012-05-22 08:27-0300\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
 "Language: eo\n"
@@ -17,10 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/fuser.c:132
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -29,8 +28,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -40,25 +38,23 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Uzado: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACO] [-k [-i] [-SIGNALO]] "
-"NOMO...\n"
+"Uzado: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACO] [-k [-i] [-SIGNALO]] NOMO...\n"
 "       fuser -l\n"
 "       fuser -V\n"
-"Montras kiujn procezojn, kiuj uzas la nomitajn dosierojn, ingojn, aŭ "
-"dosiersistemojn.\n"
+"Montras kiujn procezojn uzas la nomitajn dosierojn, ingojn, aŭ dosiersistemojn.\n"
 "\n"
 "  -a,--all              montrigi ankaŭ neuzatajn dosierojn\n"
 "  -i,--interactive      demandi antaŭ ol mortigi (ne efika sen -k)\n"
 "  -k,--kill             mortigi procezon, kiu aliras la nomitan dosieron\n"
 "  -l,--list-signals     listigi disponeblajn signalo-nomojn\n"
-"  -m,--mount            montri ĉiujn procezojn, kiuj uzas la nomitajn "
-"dosiersistemojn aŭ blok-aparaton\n"
+"  -m,--mount            montri ĉiujn procezojn, kiuj uzas la nomitajn dosiersistemojn aŭ blok-aparaton\n"
 "  -M,--ismountpoint     plenumigi peton nur se NOMO estas munt-punkto\n"
 "  -n,--namespace SPACO  serĉi en tiu ĉi nom-spaco(file, udp, aŭ tcp)\n"
 "  -s,--silent           silenta funkciado\n"
 "  -SIGNALO              sendi tiun ĉi signalon anstataŭ SIGKILL\n"
 "  -u,--user             montrigi ID de uzantoj\n"
 "  -v,--verbose          detalema eligo\n"
+"  -w,--writeonly        mortigi nur la procezojn kun skrib-permeso\n"
 "  -V,--version          montrigi informon pri versio\n"
 
 #: src/fuser.c:150
@@ -109,18 +105,17 @@ msgstr ""
 "PSmisc venas kun ABSOLUTE NENIUN GARANTION.\n"
 "Tio ĉi estas libera programaro, kaj vi estas invitata redisdoni ĝin sub\n"
 "la kondiĉoj de la Ĝenerala Publika Permesilo GNU.\n"
-"Por pli da informoj pri tiuj ĉi aferoj, vidu la dosierojn nomitajn COPYING "
-"(angle).\n"
+"Por pli da informoj pri tiuj ĉi aferoj, vidu la dosierojn nomitajn COPYING (angle).\n"
 
 #: src/fuser.c:185
 #, c-format
 msgid "Cannot open /proc directory: %s\n"
-msgstr "Ni ne povas malfermi dosierujon /proc: %s\n"
+msgstr "Ne eblas malfermi dosierujon /proc: %s\n"
 
 #: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1896
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
-msgstr "Ni ne povas rezervi memoron por kongruinta proc: %s\n"
+msgstr "Ne eblas rezervi memoron por kongruinta proc: %s\n"
 
 #: src/fuser.c:463
 #, c-format
@@ -130,12 +125,12 @@ msgstr "La indikita dosiernomo %s ne ekzistas.\n"
 #: src/fuser.c:465
 #, c-format
 msgid "Cannot stat %s: %s\n"
-msgstr "Ni ne povas apliki stat %s: %s\n"
+msgstr "Ne eblas apliki stat %s: %s\n"
 
 #: src/fuser.c:598
 #, c-format
 msgid "Cannot resolve local port %s: %s\n"
-msgstr "Ni ne povas solvi lokan pordon %s: %s\n"
+msgstr "Ne eblas solvi lokan pordon %s: %s\n"
 
 #: src/fuser.c:616
 #, c-format
@@ -145,7 +140,7 @@ msgstr "Nekonata loka pordo AF %d\n"
 #: src/fuser.c:706
 #, c-format
 msgid "Cannot open protocol file \"%s\": %s\n"
-msgstr "Ni ne povas malfermi protokolan dosieron \"%s\": %s\n"
+msgstr "Ne eblas malfermi protokolan dosieron \"%s\": %s\n"
 
 #: src/fuser.c:954
 #, c-format
@@ -170,7 +165,7 @@ msgstr "Neniu specifo pri procezo estis donata"
 
 #: src/fuser.c:1124
 msgid "all option cannot be used with silent option."
-msgstr "elektilo all ne povas esti uzata kun silenta elektilo."
+msgstr "elektilo 'all' ne povas esti uzata kun silenta elektilo."
 
 #: src/fuser.c:1129
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
@@ -183,17 +178,17 @@ msgstr "%*s UZANTO        PID ALIRO KOMANDO\n"
 
 #: src/fuser.c:1240 src/fuser.c:1295
 msgid "(unknown)"
-msgstr "(nekonate)"
+msgstr "(nekonata)"
 
 #: src/fuser.c:1384 src/fuser.c:1425
 #, c-format
 msgid "Cannot stat file %s: %s\n"
-msgstr "Ni ne povas apliki stat en dosiero %s: %s\n"
+msgstr "Ne eblas apliki stat en dosiero %s: %s\n"
 
 #: src/fuser.c:1516
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
-msgstr "Ni ne povas malfermi /proc/net/unix: %s\n"
+msgstr "Ne eblas malfermi /proc/net/unix: %s\n"
 
 #: src/fuser.c:1592
 #, c-format
@@ -203,17 +198,17 @@ msgstr "Ĉu mortigi la procezon %d ? (y/N) "
 #: src/fuser.c:1628
 #, c-format
 msgid "Could not kill process %d: %s\n"
-msgstr "Ni ne povis mortigi la procezon %d: %s\n"
+msgstr "Ne eblis mortigi la procezon %d: %s\n"
 
 #: src/fuser.c:1643
 #, c-format
 msgid "Cannot open a network socket.\n"
-msgstr "Ni ne povas malfermi retan ingon.\n"
+msgstr "Ne eblas malfermi retan ingon.\n"
 
 #: src/fuser.c:1647
 #, c-format
 msgid "Cannot find socket's device number.\n"
-msgstr "Ni ne povas trovi aparat-numeron de ingo.\n"
+msgstr "Ne eblas trovi aparat-numeron de ingo.\n"
 
 #: src/killall.c:102
 #, c-format
@@ -228,7 +223,7 @@ msgstr "Ĉu signali %s(%s%d) ? (y/N) "
 #: src/killall.c:209
 #, c-format
 msgid "Cannot get UID from process status\n"
-msgstr "Ni ne povas preni UID el procez-stato\n"
+msgstr "Ne eblas preni UID el procez-stato\n"
 
 #: src/killall.c:235 src/killall.c:840
 #, c-format
@@ -238,7 +233,7 @@ msgstr "Malĝusta regul-esprimo: %s\n"
 #: src/killall.c:446
 #, c-format
 msgid "skipping partial match %s(%d)\n"
-msgstr "ni preterpasas ne kompletan kongruon %s(%d)\n"
+msgstr "ni preterpasas ne-kompletan kongruon %s(%d)\n"
 
 #: src/killall.c:568
 #, c-format
@@ -273,11 +268,8 @@ msgstr ""
 
 #: src/killall.c:636
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Uzado: killall [-Z KUNTEKSTO] [-u UZANTO] [ -eIgiqrvw ] [ -SIGNALO ] "
-"NOMO...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Uzado: killall [-Z KUNTEKSTO] [-u UZANTO] [ -eIgiqrvw ] [ -SIGNALO ] NOMO...\n"
 
 #: src/killall.c:639
 #, c-format
@@ -348,7 +340,7 @@ msgstr "Malvalida tempo-formo"
 #: src/killall.c:805
 #, c-format
 msgid "Cannot find user %s\n"
-msgstr "Ni ne povas trovi la uzanton %s\n"
+msgstr "Ne eblas trovi la uzanton %s\n"
 
 #: src/killall.c:872
 #, c-format
@@ -356,9 +348,9 @@ msgid "Maximum number of names is %d\n"
 msgstr "Maksimuma nombro da nomoj estas %d\n"
 
 #: src/killall.c:876
-#, fuzzy, c-format
+#, c-format
 msgid "%s lacks process entries (not mounted ?)\n"
-msgstr "%s estas malplena (ĉu ne muntita ?)\n"
+msgstr "%s malhavas procezajn informojn (ĉu ne muntita ?)\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -531,7 +523,7 @@ msgid ""
 msgstr ""
 "Planado\n"
 "  Strategio: %s\n"
-"  Nice:   %ld \t\t RT Prioritato: %ld %s\n"
+"  'Nice':   %ld \t\t RT Prioritato: %ld %s\n"
 
 #: src/prtstat.c:221
 msgid "asprintf in print_stat failed.\n"
@@ -566,10 +558,9 @@ msgid "%s is empty (not mounted ?)\n"
 msgstr "%s estas malplena (ĉu ne muntita ?)\n"
 
 #: src/pstree.c:814
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -590,7 +581,7 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Uzado: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
+"Uzado: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | UZANTO ]\n"
 "       pstree -V\n"
 "Montrigi arbon de procezoj.\n"
@@ -605,6 +596,7 @@ msgstr ""
 "  -l, --long          ne tranĉi longajn liniojn\n"
 "  -n, --numeric-sort  ordigi eligon laŭ PID\n"
 "  -p, --show-pids     montri PID-ojn; implikas -c\n"
+"  -s, --show-parents  montri praulojn de la elektita procezo\n"
 "  -u, --uid-changes   montri transigoj de uid\n"
 "  -U, --unicode       uzi UTF-8 (Unikodan) lini-desegnajn signojn\n"
 "  -V, --version       montrigi informon pri versio\n"
@@ -647,7 +639,7 @@ msgstr "TERM ne estas difinita\n"
 #: src/pstree.c:963
 #, c-format
 msgid "Can't get terminal capabilities\n"
-msgstr "Ni ne povas koni la kapablojn de la terminalo\n"
+msgstr "Ne eblas koni la kapablojn de la terminalo\n"
 
 #: src/pstree.c:1012
 #, c-format

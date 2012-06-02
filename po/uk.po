@@ -1,0 +1,665 @@
+# Ukrainian translation for psmisc.
+# Copyright (C) 2012 Free Software Foundation, Inc.
+# This file is distributed under the same license as the psmisc package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: psmisc-22.17rc1\n"
+"Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
+"POT-Creation-Date: 2012-05-20 11:21+1000\n"
+"PO-Revision-Date: 2012-05-20 17:17+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: src/fuser.c:132
+#, c-format
+msgid ""
+"Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
+"       fuser -l\n"
+"       fuser -V\n"
+"Show which processes use the named files, sockets, or filesystems.\n"
+"\n"
+"  -a,--all              display unused files too\n"
+"  -i,--interactive      ask before killing (ignored without -k)\n"
+"  -k,--kill             kill processes accessing the named file\n"
+"  -l,--list-signals     list available signal names\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
+"  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
+"  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
+"  -s,--silent           silent operation\n"
+"  -SIGNAL               send this signal instead of SIGKILL\n"
+"  -u,--user             display user IDs\n"
+"  -v,--verbose          verbose output\n"
+"  -w,--writeonly        kill only processes with write access\n"
+"  -V,--version          display version information\n"
+msgstr ""
+"Використання: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n ПРОСТІР] [-k [-i] [-СИГНАЛ]] НАЗВА...\n"
+"       fuser -l\n"
+"       fuser -V\n"
+"Показує, які процеси користуються вказаними файлами, сокетами або файловими системами.\n"
+"\n"
+"  -a,--all               показувати також невикористані файли\n"
+"  -i,--interactive       запитувати перед завершенням роботи процесу (ігнорується без -k)\n"
+"  -k,--kill              завершити роботу процесів, які користуються вказаним файлом\n"
+"  -l,--list-signals      показати список доступних назв сигналів\n"
+"  -m,--mount             показати всі процеси, що використовують вказані файлові системи або блоковий пристрій\n"
+"  -M,--ismountpoint      виконати запит, лише якщо НАЗВА є точкою монтування\n"
+"  -n,--namespace ПРОСТІР шукати лише у вказаному просторі назв (file, udp або tcp)\n"
+"  -s,--silent            не виводити повідомлень\n"
+"  -SIGNAL                надіслати вказаний сигнал замість SIGKILL\n"
+"  -u,--user              показувати ідентифікатори користувачів\n"
+"  -v,--verbose           виводити дані докладно\n"
+"  -w,--writeonly         завершити роботу лише процесів з доступом на запис\n"
+"  -V,--version           показати дані щодо версії\n"
+
+#: src/fuser.c:150
+#, c-format
+msgid ""
+"  -4,--ipv4             search IPv4 sockets only\n"
+"  -6,--ipv6             search IPv6 sockets only\n"
+msgstr ""
+"  -4,--ipv4             шукати лише серед сокетів IPv4\n"
+"  -6,--ipv6             шукати лише серед сокетів IPv6\n"
+
+#: src/fuser.c:154
+#, c-format
+msgid ""
+"  -                     reset options\n"
+"\n"
+"  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]\n"
+"\n"
+msgstr ""
+"  -                     скинути параметри\n"
+"\n"
+"  назви udp/tcp: [локлаьний_порт][,[вузол_rmt][,[порт_rmt]]]\n"
+"\n"
+
+#: src/fuser.c:161
+#, c-format
+msgid "fuser (PSmisc) %s\n"
+msgstr "fuser (PSmisc) %s\n"
+
+#: src/fuser.c:164
+#, c-format
+msgid ""
+"Copyright (C) 1993-2010 Werner Almesberger and Craig Small\n"
+"\n"
+msgstr ""
+"© Werner Almesberger та Craig Small, 1993–2010\n"
+"\n"
+
+#: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
+#: src/pstree.c:848
+#, c-format
+msgid ""
+"PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
+"This is free software, and you are welcome to redistribute it under\n"
+"the terms of the GNU General Public License.\n"
+"For more information about these matters, see the files named COPYING.\n"
+msgstr ""
+"Щодо PSmisc вам НЕ НАДАЄТЬСЯ ЖОДНИХ ГАРАНТІЙ.\n"
+"Це вільне програмне забезпечення, ми будемо раді, якщо ви поширюватимете\n"
+"його відповідно до умов Загальної громадської ліцензії GNU (GPL).\n"
+"Щоб дізнатися більше про це, ознайомтеся з файлом з назвою COPYING.\n"
+
+#: src/fuser.c:185
+#, c-format
+msgid "Cannot open /proc directory: %s\n"
+msgstr "Не вдалося відкрити каталог /proc: %s\n"
+
+#: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1896
+#, c-format
+msgid "Cannot allocate memory for matched proc: %s\n"
+msgstr "Не вдалося отримати область пам’яті для відповідного процесу: %s\n"
+
+#: src/fuser.c:463
+#, c-format
+msgid "Specified filename %s does not exist.\n"
+msgstr "Файл з вказаною назвою, %s, не існує.\n"
+
+#: src/fuser.c:465
+#, c-format
+msgid "Cannot stat %s: %s\n"
+msgstr "Не вдалося отримати дані за допомогою stat %s: %s\n"
+
+#: src/fuser.c:598
+#, c-format
+msgid "Cannot resolve local port %s: %s\n"
+msgstr "Не вдалося визначити локальний порт %s: %s\n"
+
+#: src/fuser.c:616
+#, c-format
+msgid "Unknown local port AF %d\n"
+msgstr "Невідомий локальний порт AF %d\n"
+
+#: src/fuser.c:706
+#, c-format
+msgid "Cannot open protocol file \"%s\": %s\n"
+msgstr "Не вдалося відкрити файл протоколу «%s»: %s\n"
+
+#: src/fuser.c:954
+#, c-format
+msgid "%s: Invalid option %s\n"
+msgstr "%s: некоректний параметр, %s\n"
+
+#: src/fuser.c:1004
+msgid "Namespace option requires an argument."
+msgstr "Параметр простору назв слід вказувати з аргументом."
+
+#: src/fuser.c:1016
+msgid "Invalid namespace name"
+msgstr "Некоректна назва простору назв"
+
+#: src/fuser.c:1072
+msgid "You can only use files with mountpoint options"
+msgstr "Файли можна використовувати лише разом з параметрами точки монтування"
+
+#: src/fuser.c:1117
+msgid "No process specification given"
+msgstr "Не вказано специфікації процесу"
+
+#: src/fuser.c:1124
+msgid "all option cannot be used with silent option."
+msgstr "параметр «all» не можна використовувати разом з параметром «silent»."
+
+#: src/fuser.c:1129
+msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
+msgstr "Одночасно можна виконувати пошук лише для сокетів IPv4 або сокетів IPv6"
+
+#: src/fuser.c:1207
+#, c-format
+msgid "%*s USER        PID ACCESS COMMAND\n"
+msgstr "%*s КОРИСТУВАЧ  PID ДОСТУП КОМАНДА\n"
+
+#: src/fuser.c:1240 src/fuser.c:1295
+msgid "(unknown)"
+msgstr "(невідомий)"
+
+#: src/fuser.c:1384 src/fuser.c:1425
+#, c-format
+msgid "Cannot stat file %s: %s\n"
+msgstr "Не вдалося обробити файл за допомогою stat %s: %s\n"
+
+#: src/fuser.c:1516
+#, c-format
+msgid "Cannot open /proc/net/unix: %s\n"
+msgstr "Не вдалося відкрити /proc/net/unix: %s\n"
+
+#: src/fuser.c:1592
+#, c-format
+msgid "Kill process %d ? (y/N) "
+msgstr "Завершити процес %d? (y (так) або N (ні)) "
+
+#: src/fuser.c:1628
+#, c-format
+msgid "Could not kill process %d: %s\n"
+msgstr "Не вдалося завершити роботу процесу %d: %s\n"
+
+#: src/fuser.c:1643
+#, c-format
+msgid "Cannot open a network socket.\n"
+msgstr "Не вдалося відкрити сокет мережі.\n"
+
+#: src/fuser.c:1647
+#, c-format
+msgid "Cannot find socket's device number.\n"
+msgstr "Не вдалося визначити номер пристрою сокета.\n"
+
+#: src/killall.c:102
+#, c-format
+msgid "Kill %s(%s%d) ? (y/N) "
+msgstr "Завершити роботу %s(%s%d)? (y (так) або N (ні)) "
+
+#: src/killall.c:105
+#, c-format
+msgid "Signal %s(%s%d) ? (y/N) "
+msgstr "Надіслати сигнал %s(%s%d)? (y (так) або N (ні)) "
+
+#: src/killall.c:209
+#, c-format
+msgid "Cannot get UID from process status\n"
+msgstr "Не вдалося отримати UID з даних щодо стану процесу\n"
+
+#: src/killall.c:235 src/killall.c:840
+#, c-format
+msgid "Bad regular expression: %s\n"
+msgstr "Помилковий формальний вираз: %s\n"
+
+#: src/killall.c:446
+#, c-format
+msgid "skipping partial match %s(%d)\n"
+msgstr "пропускаємо частковий відповідник %s(%d)\n"
+
+#: src/killall.c:568
+#, c-format
+msgid "Killed %s(%s%d) with signal %d\n"
+msgstr "Завершено роботу %s(%s%d) за допомогою сигналу %d\n"
+
+#: src/killall.c:582
+#, c-format
+msgid "%s: no process found\n"
+msgstr "%s: процес не знайдено\n"
+
+#: src/killall.c:620
+#, c-format
+msgid ""
+"Usage: pidof [ -eg ] NAME...\n"
+"       pidof -V\n"
+"\n"
+"    -e      require exact match for very long names;\n"
+"            skip if the command line is unavailable\n"
+"    -g      show process group ID instead of process ID\n"
+"    -V      display version information\n"
+"\n"
+msgstr ""
+"Використання: pidof [ -eg ] НАЗВА...\n"
+"       pidof -V\n"
+"\n"
+"    -e      вимагати повної відповідності для дуже довгих назв;\n"
+"            пропустити, якщо не вдається визначити рядок команди\n"
+"    -g      показувати ідентифікатор групи процесу замість ідентифікатора процесу\n"
+"    -V      показати дані щодо версії\n"
+"\n"
+
+#: src/killall.c:636
+#, c-format
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Використання: killall [-Z КОНТЕКСТ] [-u КОРИСТУВАЧ] [ -eIgiqrvw ] [ -СИГНАЛ ] НАЗВА...\n"
+
+#: src/killall.c:639
+#, c-format
+msgid "Usage: killall [OPTION]... [--] NAME...\n"
+msgstr "Використання: killall [ПАРАМЕТР]... [--] НАЗВА...\n"
+
+#: src/killall.c:642
+#, c-format
+msgid ""
+"       killall -l, --list\n"
+"       killall -V, --version\n"
+"\n"
+"  -e,--exact          require exact match for very long names\n"
+"  -I,--ignore-case    case insensitive process name match\n"
+"  -g,--process-group  kill process group instead of process\n"
+"  -y,--younger-than   kill processes younger than TIME\n"
+"  -o,--older-than     kill processes older than TIME\n"
+"  -i,--interactive    ask for confirmation before killing\n"
+"  -l,--list           list all known signal names\n"
+"  -q,--quiet          don't print complaints\n"
+"  -r,--regexp         interpret NAME as an extended regular expression\n"
+"  -s,--signal SIGNAL  send this signal instead of SIGTERM\n"
+"  -u,--user USER      kill only process(es) running as USER\n"
+"  -v,--verbose        report if the signal was successfully sent\n"
+"  -V,--version        display version information\n"
+"  -w,--wait           wait for processes to die\n"
+msgstr ""
+"       killall -l, --list\n"
+"       killall -V, --version\n"
+"\n"
+"  -e,--exact           вимагати повної відповідності для дуже довгих назв\n"
+"  -I,--ignore-case     встановлювати відповідність без врахування регістру символів\n"
+"  -g,--process-group   завершити роботу групи процесів, а не окремого процесу\n"
+"  -y,--younger-than    завершити роботу процесів, чий вік не перевищує вказаного часу\n"
+"  -o,--older-than      завершити роботу процесів, чий вік перевищує вказаний час\n"
+"  -i,--interactive     просити підтвердження щодо завершення роботи\n"
+"  -l,--list            показати список всіх відомих назв сигналів\n"
+"  -q,--quiet           не виводити повідомлень\n"
+"  -r,--regexp          вважати параметр НАЗВА формальним виразом\n"
+"  -s,--signal СИГНАЛ   надіслати вказаний сигнал замість SIGTERM\n"
+"  -u,--user КОРИСТУВАЧ завершити роботу лише процесів КОРИСТУВАЧа\n"
+"  -v,--verbose         повідомляти про успішне надсилання сигналу\n"
+"  -V,--version         показати дані щодо версії\n"
+"  -w,--wait            чекати на завершення процесів\n"
+
+#: src/killall.c:660
+#, c-format
+msgid ""
+"  -Z,--context REGEXP kill only process(es) having context\n"
+"                      (must precede other arguments)\n"
+msgstr ""
+"  -Z,--context REGEXP завершити роботу лише процесів з відповідним контекстом\n"
+"                      (слід вказувати перед іншими аргументами)\n"
+
+#: src/killall.c:681
+#, c-format
+msgid ""
+"Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+"\n"
+msgstr ""
+"© 1993-2005 Werner Almesberger та Craig Small, 1993–2005\n"
+"\n"
+
+#: src/killall.c:773 src/killall.c:780
+msgid "Invalid time format"
+msgstr "Некоректний формат визначення часу"
+
+#: src/killall.c:805
+#, c-format
+msgid "Cannot find user %s\n"
+msgstr "Не вдалося знайти користувача %s\n"
+
+#: src/killall.c:872
+#, c-format
+msgid "Maximum number of names is %d\n"
+msgstr "Максимальною кількістю назв є %d\n"
+
+#: src/killall.c:876
+#, c-format
+msgid "%s lacks process entries (not mounted ?)\n"
+msgstr "%s не містить записів процесів (не змонтовано?)\n"
+
+#: src/peekfd.c:96
+#, c-format
+msgid "Error attaching to pid %i\n"
+msgstr "Помилка під час спроби приєднатися до pid %i\n"
+
+#: src/peekfd.c:104
+#, c-format
+msgid "peekfd (PSmisc) %s\n"
+msgstr "peekfd (PSmisc) %s\n"
+
+#: src/peekfd.c:106
+#, c-format
+msgid ""
+"Copyright (C) 2007 Trent Waddington\n"
+"\n"
+msgstr ""
+"© Trent Waddington, 2007\n"
+"\n"
+
+#: src/peekfd.c:116
+#, c-format
+msgid ""
+"Usage: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
+"    -8 output 8 bit clean streams.\n"
+"    -n don't display read/write from fd headers.\n"
+"    -c peek at any new child processes too.\n"
+"    -d remove duplicate read/writes from the output.\n"
+"    -V prints version info.\n"
+"    -h prints this help.\n"
+"\n"
+"  Press CTRL-C to end output.\n"
+msgstr ""
+"Використання: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
+"    -8 виводити 8-бітові очищені потоки даних.\n"
+"    -n не показувати читання/запис з заголовків дескрипторів файлів.\n"
+"    -c зондувати будь-які нові дочірні процеси.\n"
+"    -d вилучити дублікати записів читання/запису з виведених даних.\n"
+"    -V вивести дані щодо версії.\n"
+"    -h вивести ці довідкові дані.\n"
+"\n"
+"  Натисніть Ctrl-C, щоб перервати виведення даних.\n"
+
+#: src/prtstat.c:54
+#, c-format
+msgid ""
+"Usage: prtstat [options] PID ...\n"
+"       prtstat -V\n"
+"Print information about a process\n"
+"    -r,--raw       Raw display of information\n"
+"    -V,--version   Display version information and exit\n"
+msgstr ""
+"Використання: prtstat [параметри] PID ...\n"
+"       prtstat -V\n"
+"Вивести дані що вказаного процесу\n"
+"    -r,--raw       показати дані без обробки\n"
+"    -V,--version   показати дані щодо версії і завершити роботу\n"
+
+#: src/prtstat.c:65
+#, c-format
+msgid "prtstat (PSmisc) %s\n"
+msgstr "prtstat (PSmisc) %s\n"
+
+#: src/prtstat.c:66
+#, c-format
+msgid ""
+"Copyright (C) 2009 Craig Small\n"
+"\n"
+msgstr ""
+"© Craig Small, 2009\n"
+"\n"
+
+#: src/prtstat.c:78
+msgid "running"
+msgstr "працює"
+
+#: src/prtstat.c:80
+msgid "sleeping"
+msgstr "спить"
+
+#: src/prtstat.c:82
+msgid "disk sleep"
+msgstr "спить на диску"
+
+#: src/prtstat.c:84
+msgid "zombie"
+msgstr "зомбі"
+
+#: src/prtstat.c:86
+msgid "traced"
+msgstr "трасування"
+
+#: src/prtstat.c:88
+msgid "paging"
+msgstr "гортання"
+
+#: src/prtstat.c:90
+msgid "unknown"
+msgstr "невідомий"
+
+#: src/prtstat.c:164
+#, c-format
+msgid ""
+"Process: %-14s\t\tState: %c (%s)\n"
+"  CPU#:  %-3d\t\tTTY: %s\tThreads: %ld\n"
+msgstr ""
+"Процес: %-14s\t\tСтан: %c (%s)\n"
+" Проц.:  %-3d\t\tTTY: %s\tПотоки: %ld\n"
+
+#: src/prtstat.c:169
+#, c-format
+msgid ""
+"Process, Group and Session IDs\n"
+"  Process ID: %d\t\t  Parent ID: %d\n"
+"    Group ID: %d\t\t Session ID: %d\n"
+"  T Group ID: %d\n"
+"\n"
+msgstr ""
+"Ідентифікатори процесу, групи і сеансу\n"
+" Ід. процесу: %d\t\t Ід. батьків.: %d\n"
+"   Ід. групи: %d\t\t   Ід. сеансу: %d\n"
+" T Ід. групи: %d\n"
+"\n"
+
+#: src/prtstat.c:175
+#, c-format
+msgid ""
+"Page Faults\n"
+"  This Process    (minor major): %8lu  %8lu\n"
+"  Child Processes (minor major): %8lu  %8lu\n"
+msgstr ""
+"Промахи за сторінками\n"
+"  Цей процес      (мін.  макс.): %8lu  %8lu\n"
+"  Доч. процеси    (мін.  макс.): %8lu  %8lu\n"
+
+#: src/prtstat.c:180
+#, c-format
+msgid ""
+"CPU Times\n"
+"  This Process    (user system guest blkio): %6.2f %6.2f %6.2f %6.2f\n"
+"  Child processes (user system guest):       %6.2f %6.2f %6.2f\n"
+msgstr ""
+"Цикли процесора\n"
+"  Цей процес      (користувач система гість blkio): %6.2f %6.2f %6.2f %6.2f\n"
+"  Дочірній процес (користувач система гість):       %6.2f %6.2f %6.2f\n"
+
+#: src/prtstat.c:189
+#, c-format
+msgid ""
+"Memory\n"
+"  Vsize:       %-10s\n"
+"  RSS:         %-10s \t\t RSS Limit: %s\n"
+"  Code Start:  %#-10lx\t\t Code Stop:  %#-10lx\n"
+"  Stack Start: %#-10lx\n"
+"  Stack Pointer (ESP): %#10lx\t Inst Pointer (EIP): %#10lx\n"
+msgstr ""
+"Пам’ять\n"
+"  Вірт. розмір: %-10s\n"
+"  RSS:          %-10s \t\t Обмеження RSS: %s\n"
+"  Поч. коду:    %#-10lx\t\t Кінець коду:  %#-10lx\n"
+"  Поч. стека:   %#-10lx\n"
+"  Вказівник стека (ESP): %#10lx\t Вказівник команди (EIP): %#10lx\n"
+
+#: src/prtstat.c:199
+#, c-format
+msgid ""
+"Scheduling\n"
+"  Policy: %s\n"
+"  Nice:   %ld \t\t RT Priority: %ld %s\n"
+msgstr ""
+"Планування\n"
+"  Правила:       %s\n"
+"  Поступливість: %ld \t\t Пріоритет РЧ: %ld %s\n"
+
+#: src/prtstat.c:221
+msgid "asprintf in print_stat failed.\n"
+msgstr "Помилка asprintf у print_stat.\n"
+
+#: src/prtstat.c:226
+#, c-format
+msgid "Process with pid %d does not exist.\n"
+msgstr "Процесу з pid %d не існує.\n"
+
+#: src/prtstat.c:228
+#, c-format
+msgid "Unable to open stat file for pid %d (%s)\n"
+msgstr "Не вдалося відкрити файл stat для процесу з pid %d (%s)\n"
+
+#: src/prtstat.c:308
+msgid "Invalid option"
+msgstr "Некоректний параметр"
+
+#: src/prtstat.c:313
+msgid "You must provide at least one PID."
+msgstr "Вам слід вказати принаймні одне значення PID."
+
+#: src/prtstat.c:317
+#, c-format
+msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
+msgstr "/proc не змонтовано, виконання обробки /proc/self/stat неможливе.\n"
+
+#: src/pstree.c:776
+#, c-format
+msgid "%s is empty (not mounted ?)\n"
+msgstr "%s є порожнім (не змонтовано?)\n"
+
+#: src/pstree.c:814
+#, c-format
+msgid ""
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
+"              [ -A | -G | -U ] [ PID | USER ]\n"
+"       pstree -V\n"
+"Display a tree of processes.\n"
+"\n"
+"  -a, --arguments     show command line arguments\n"
+"  -A, --ascii         use ASCII line drawing characters\n"
+"  -c, --compact       don't compact identical subtrees\n"
+"  -h, --highlight-all highlight current process and its ancestors\n"
+"  -H PID,\n"
+"  --highlight-pid=PID highlight this process and its ancestors\n"
+"  -g, --show-pgids    show process group ids; implies -c\n"
+"  -G, --vt100         use VT100 line drawing characters\n"
+"  -l, --long          don't truncate long lines\n"
+"  -n, --numeric-sort  sort output by PID\n"
+"  -p, --show-pids     show PIDs; implies -c\n"
+"  -s, --show-parents  show parents of the selected process\n"
+"  -u, --uid-changes   show uid transitions\n"
+"  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
+"  -V, --version       display version information\n"
+msgstr ""
+"Використання: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
+"              [ -A | -G | -U ] [ PID | КОРИСТУВАЧ\t ]\n"
+"       pstree -V\n"
+"Показати ієрархію процесів.\n"
+"\n"
+"  -a, --arguments     показати аргументи командного рядка\n"
+"  -A, --ascii         використовувати для малювання ліній символи ASCII\n"
+"  -c, --compact       не ущільнювати ідентичні гілки ієрархії\n"
+"  -h, --highlight-all позначити поточний процес та його дочірні процеси\n"
+"  -H PID,\n"
+"  --highlight-pid=PID позначити вказаний процес та його дочірні процеси\n"
+"  -g, --show-pgids    показати ідентифікатори груп процесів; додається -c\n"
+"  -G, --vt100         використовувати символи малювання ліній VT100\n"
+"  -l, --long          не обрізати довгі рядки\n"
+"  -n, --numeric-sort  впорядкувати дані за PID\n"
+"  -p, --show-pids     показати PID; додається -c\n"
+"  -s, --show-parents  показати основні процеси вибраного процесу\n"
+"  -u, --uid-changes   показати переходи uid\n"
+"  -U, --unicode       використовувати символи малювання ліній UTF-8 (Unicode)\n"
+"  -V, --version       показати дані щодо версії програми\n"
+
+#: src/pstree.c:834
+#, c-format
+msgid "  -Z     show         SELinux security contexts\n"
+msgstr "  -Z     показати       контексти захисту SELinux\n"
+
+#: src/pstree.c:836
+#, c-format
+msgid ""
+"  PID    start at this PID; default is 1 (init)\n"
+"  USER   show only trees rooted at processes of this user\n"
+"\n"
+msgstr ""
+"  PID        розпочати з вказаного PID; типовим початковим значенням є 1 (init)\n"
+"  КОРИСТУВАЧ показати лише ієрархії з кореневими процесами цього користувача\n"
+"\n"
+
+#: src/pstree.c:843
+#, c-format
+msgid "pstree (PSmisc) %s\n"
+msgstr "pstree (PSmisc) %s\n"
+
+#: src/pstree.c:846
+#, c-format
+msgid ""
+"Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
+"\n"
+msgstr ""
+"© Werner Almesberger та Craig Small, 1993–2009\n"
+"\n"
+
+#: src/pstree.c:959
+#, c-format
+msgid "TERM is not set\n"
+msgstr "Не встановлено змінної TERM\n"
+
+#: src/pstree.c:963
+#, c-format
+msgid "Can't get terminal capabilities\n"
+msgstr "Не вдалося отримати дані щодо можливостей термінала\n"
+
+#: src/pstree.c:1012
+#, c-format
+msgid "No such user name: %s\n"
+msgstr "Користувача з таким іменем не існує: %s\n"
+
+#: src/pstree.c:1035
+#, c-format
+msgid "No processes found.\n"
+msgstr "Не знайдено жодного процесу.\n"
+
+#: src/pstree.c:1041
+#, c-format
+msgid "Press return to close\n"
+msgstr "Натисніть Enter, щоб закрити.\n"
+
+#: src/signals.c:84
+#, c-format
+msgid "%s: unknown signal; %s -l lists signals.\n"
+msgstr "%s: невідомий сигнал; щоб отримати список сигналів віддайте команду %s -l .\n"

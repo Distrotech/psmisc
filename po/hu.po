@@ -3,27 +3,26 @@
 # This file is distributed under the same license as the psmisc package.
 #
 # Emese Kovacs <emese@instantweb.hu>, 2006.
-# Gabor Kelemen <kelemeng@gnome.hu>, 2006, 2007, 2009.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2006, 2007, 2009, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.8rc1\n"
+"Project-Id-Version: psmisc 22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2012-05-20 11:21+1000\n"
-"PO-Revision-Date: 2009-07-19 03:53+0200\n"
+"PO-Revision-Date: 2012-05-21 01:45+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: src/fuser.c:132
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -32,8 +31,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -43,47 +41,45 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Használat: fuser [ -fuv ] [ -a | -s ] [ -4 | -6 ] [ -c | -m | -n NÉVTÉR ] [ -"
-"k [ -i ] [ -SZIGNÁL ] NÉV...\n"
+"Használat: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n NÉVTÉR] [-k [-i] [-SZIGNÁL]] NÉV...\n"
 "       fuser -l\n"
 "       fuser -V\n"
-"Megjeleníti a megnevezett fájlokat, foglalatokat vagy fájlrendszereket "
-"használó\n"
+"Megjeleníti a megnevezett fájlokat, foglalatokat vagy fájlrendszereket használó\n"
 "folyamatokat.\n"
 "\n"
-"    -a        a nem használt fájlokat is megjeleníti\n"
-"    -c        ugyanaz, mint a -m (a POSIX kompatibilitás miatt)\n"
-"    -f        csendben figyelmen kívül marad (a POSIX kompatibilitás miatt)\n"
-"    -i        kérdés kilövés előtt (a -k nélkül figyelmen kívül marad)\n"
-"    -k        a megnevezett fájlokhoz hozzáférő folyamatok kilövése\n"
-"    -l        a rendelkezésre álló szignálnevek felsorolása\n"
-"    -m        a megnevezett fájlrendszereket használó összes folyamat\n"
-"                megjelenítése\n"
-"    -n NÉVTÉR keresés ebben a névtérben (file, udp, vagy tcp)\n"
-"    -s        néma működés\n"
-"    -SZIGNÁL  ezen szignál elküldése a SIGKILL helyett\n"
-"    -u        felhasználói azonosítók megjelenítése\n"
-"    -v        részletes kimenet\n"
-"    -V        verzióinformációk megjelenítése\n"
+"  -a,--all              a nem használt fájlok is jelenjenek meg\n"
+"  -i,--interactive      kérdés kilövés előtt (a -k nélkül figyelmen kívül marad)\n"
+"  -k,--kill             a megnevezett fájlokhoz hozzáférő folyamatok kilövése\n"
+"  -l,--list-signals     elérhető szignálnevek felsorolása\n"
+"  -m,--mount            a megnevezett fájlrendszereket vagy blokkeszközöket\n"
+"                          használó összes folyamat megjelenítése\n"
+"  -M,--ismountpoint     kérés teljesítése csak ha a NÉV egy csatolási pont\n"
+"  -n,--namespace NÉVTÉR keresés ebben a névtérben (file, udp, vagy tcp)\n"
+"  -s,--silent           néma működés\n"
+"  -SZIGNÁL              ezen szignál elküldése a SIGKILL helyett\n"
+"  -u,--user             felhasználói azonosítók megjelenítése\n"
+"  -v,--verbose          részletes kimenet\n"
+"  -w,--writeonly        csak írási hozzáféréssel rendelkező folyamatok kilövése\n"
+"  -V,--version          verzióinformációk megjelenítése\n"
 
 #: src/fuser.c:150
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -4,--ipv4             search IPv4 sockets only\n"
 "  -6,--ipv6             search IPv6 sockets only\n"
 msgstr ""
-"    -4        csak IPv4 foglalatok keresése\n"
-"    -6        csak IPv6 foglalatok keresése\n"
+"  -4,--ipv4             csak IPv4 foglalatok keresése\n"
+"  -6,--ipv6             csak IPv6 foglalatok keresése\n"
 
 #: src/fuser.c:154
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -                     reset options\n"
 "\n"
 "  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]\n"
 "\n"
 msgstr ""
-"    -         kapcsolók visszaállítása\n"
+"  -                     kapcsolók visszaállítása\n"
 "\n"
 "  udp/tcp nevek: [helyi_port][,[távoli_gép][,[távoli_port]]]\n"
 "\n"
@@ -94,12 +90,12 @@ msgid "fuser (PSmisc) %s\n"
 msgstr "fuser (PSmisc) %s\n"
 
 #: src/fuser.c:164
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 1993-2010 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Copyright (C) 1993-2005 Werner Almesberger és Craig Small\n"
+"Copyright (C) 1993-2010 Werner Almesberger és Craig Small\n"
 "\n"
 
 #: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
@@ -128,7 +124,7 @@ msgstr "Nem foglalható memória az illeszkedő folyamat részére: %s\n"
 #: src/fuser.c:463
 #, c-format
 msgid "Specified filename %s does not exist.\n"
-msgstr ""
+msgstr "A megadott %s fájlnév nem létezik.\n"
 
 #: src/fuser.c:465
 #, c-format
@@ -153,7 +149,7 @@ msgstr "Nem nyitható meg a(z) \"%s\" protokollfájl: %s\n"
 #: src/fuser.c:954
 #, c-format
 msgid "%s: Invalid option %s\n"
-msgstr ""
+msgstr "%s: érvénytelen kapcsoló: %s\n"
 
 #: src/fuser.c:1004
 msgid "Namespace option requires an argument."
@@ -164,9 +160,8 @@ msgid "Invalid namespace name"
 msgstr "Érvénytelen névtérnév"
 
 #: src/fuser.c:1072
-#, fuzzy
 msgid "You can only use files with mountpoint options"
-msgstr "A fájlok csak a csatlakoztatási pont kapcsolóval használhatók"
+msgstr "Fájlok csak csatolási pont kapcsolókkal használhatók"
 
 #: src/fuser.c:1117
 msgid "No process specification given"
@@ -278,11 +273,8 @@ msgstr ""
 
 #: src/killall.c:636
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Használat: killall [-Z KONTEXTUS] [-u FELHASZNÁLÓ] [ -eIgiqrvw ] [ -"
-"SZIGNÁL ] NÉV...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Használat: killall [-Z KONTEXTUS] [-u FELHASZNÁLÓ] [ -eIgiqrvw ] [ -SZIGNÁL ] NÉV...\n"
 
 #: src/killall.c:639
 #, c-format
@@ -290,7 +282,7 @@ msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "Használat: killall [KAPCSOLÓ]... [--] NÉV...\n"
 
 #: src/killall.c:642
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "       killall -l, --list\n"
 "       killall -V, --version\n"
@@ -313,19 +305,18 @@ msgstr ""
 "       killall -l, --list\n"
 "       killall -V, --version\n"
 "\n"
-"  -e,--exact          megköveteli a pontos egyezést nagyon hosszú nevek "
-"esetén;\n"
+"  -e,--exact          megköveteli a pontos egyezést nagyon hosszú nevek esetén;\n"
 "  -I,--ignore-case    a folyamatnév-illesztés ne legyen kis- és\n"
 "                        nagybetűérzékeny\n"
 "  -g,--process-group  folyamatcsoport kilövése folyamat helyett\n"
+"  -y,--younger-than   az IDŐNÉL fiatalabb folyamatok kilövése\n"
+"  -o,--older-than     az IDŐNÉL öregebb folyamatok kilövése\n"
 "  -i,--interactive    megerősítés kérése kilövés előtt\n"
 "  -l,--list           az összes ismert szignálnév felsorolása\n"
 "  -q,--quiet          ne kérdezzen\n"
-"  -r,--regexp         a NÉV értelmezése kiterjesztett reguláris "
-"kifejezésként\n"
+"  -r,--regexp         a NÉV értelmezése kiterjesztett reguláris kifejezésként\n"
 "  -s,--signal SZIGNÁL ezen szignál elküldése a SIGTERM helyett\n"
-"  -u,--user FELHASZNÁLÓ  csak a FELHASZNÁLÓ nevében futó folyamatok "
-"kilövése\n"
+"  -u,--user FELHASZNÁLÓ  csak a FELHASZNÁLÓ nevében futó folyamatok kilövése\n"
 "  -v,--verbose        értesítés, ha a szignál küldése sikeres\n"
 "  -V,--version        verzióinformációk megjelenítése\n"
 "  -w,--wait           várja meg, amíg a folyamatok meghalnak\n"
@@ -350,7 +341,7 @@ msgstr ""
 
 #: src/killall.c:773 src/killall.c:780
 msgid "Invalid time format"
-msgstr ""
+msgstr "Érvénytelen időformátum"
 
 #: src/killall.c:805
 #, c-format
@@ -363,9 +354,9 @@ msgid "Maximum number of names is %d\n"
 msgstr "A nevek maximális száma %d\n"
 
 #: src/killall.c:876
-#, fuzzy, c-format
+#, c-format
 msgid "%s lacks process entries (not mounted ?)\n"
-msgstr "a(z) %s üres (nincs csatlakoztatva?)\n"
+msgstr "%s nem tartalmaz folyamatbejegyzéseket (nincs csatolva?)\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -418,49 +409,53 @@ msgid ""
 "    -r,--raw       Raw display of information\n"
 "    -V,--version   Display version information and exit\n"
 msgstr ""
+"Használat: prtstat [kapcsolók] PID ...\n"
+"           prtstat -V\n"
+"Információk kiírása egy folyamatról\n"
+"    -r,--raw       Az információk nyers megjelenítése\n"
+"    -V,--version   Verzióinformációk kiírása és kilépés\n"
 
 #: src/prtstat.c:65
-#, fuzzy, c-format
+#, c-format
 msgid "prtstat (PSmisc) %s\n"
-msgstr "pstree (PSmisc) %s\n"
+msgstr "prtstat (PSmisc) %s\n"
 
 #: src/prtstat.c:66
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 2009 Craig Small\n"
 "\n"
 msgstr ""
-"Copyright (C) 1993-2009 Werner Almesberger és Craig Small\n"
+"Copyright (C) 2009 Craig Small\n"
 "\n"
 
 #: src/prtstat.c:78
 msgid "running"
-msgstr ""
+msgstr "fut"
 
 #: src/prtstat.c:80
 msgid "sleeping"
-msgstr ""
+msgstr "alszik"
 
 #: src/prtstat.c:82
 msgid "disk sleep"
-msgstr ""
+msgstr "lemez alszik"
 
 #: src/prtstat.c:84
 msgid "zombie"
-msgstr ""
+msgstr "zombi"
 
 #: src/prtstat.c:86
 msgid "traced"
-msgstr ""
+msgstr "követett"
 
 #: src/prtstat.c:88
 msgid "paging"
-msgstr ""
+msgstr "lapoz"
 
 #: src/prtstat.c:90
-#, fuzzy
 msgid "unknown"
-msgstr "(ismeretlen)"
+msgstr "ismeretlen"
 
 #: src/prtstat.c:164
 #, c-format
@@ -468,6 +463,8 @@ msgid ""
 "Process: %-14s\t\tState: %c (%s)\n"
 "  CPU#:  %-3d\t\tTTY: %s\tThreads: %ld\n"
 msgstr ""
+"Folyamat: %-14s\t\tÁllapot: %c (%s)\n"
+"  CPU#:  %-3d\t\tTTY: %s\tSzálak: %ld\n"
 
 #: src/prtstat.c:169
 #, c-format
@@ -478,6 +475,11 @@ msgid ""
 "  T Group ID: %d\n"
 "\n"
 msgstr ""
+"Folyamat, csoport és munkamenet-azonosítók\n"
+"  Folyamat az.: %d\t\t   Szülő az.: %d\n"
+"   Csoport az.: %d\t\t M.menet az.: %d\n"
+" T Csoport az.: %d\n"
+"\n"
 
 #: src/prtstat.c:175
 #, c-format
@@ -486,6 +488,9 @@ msgid ""
 "  This Process    (minor major): %8lu  %8lu\n"
 "  Child Processes (minor major): %8lu  %8lu\n"
 msgstr ""
+"Laphibák\n"
+"  Ez a folyamat     (minor major): %8lu  %8lu\n"
+"  Gyermekfolyamatok (minor major): %8lu  %8lu\n"
 
 #: src/prtstat.c:180
 #, c-format
@@ -494,6 +499,9 @@ msgid ""
 "  This Process    (user system guest blkio): %6.2f %6.2f %6.2f %6.2f\n"
 "  Child processes (user system guest):       %6.2f %6.2f %6.2f\n"
 msgstr ""
+"CPU idők\n"
+"  Ez a folyamat     (felh. rendszer vendég blkio):  %6.2f %6.2f %6.2f %6.2f\n"
+"  Gyermekfolyamatok (felh. rendszer vendég ):       %6.2f %6.2f %6.2f\n"
 
 #: src/prtstat.c:189
 #, c-format
@@ -505,6 +513,12 @@ msgid ""
 "  Stack Start: %#-10lx\n"
 "  Stack Pointer (ESP): %#10lx\t Inst Pointer (EIP): %#10lx\n"
 msgstr ""
+"Memória\n"
+"  Vméret:        %-10s\n"
+"  RSS:           %-10s \t\t RSS korlát: %s\n"
+"  Kód kezdete:   %#-10lx\t\t Kód vége:  %#-10lx\n"
+"  Verem kezdete: %#-10lx\n"
+"  Veremmutató (ESP): %#10lx\t Utasításmutató (EIP): %#10lx\n"
 
 #: src/prtstat.c:199
 #, c-format
@@ -513,33 +527,36 @@ msgid ""
 "  Policy: %s\n"
 "  Nice:   %ld \t\t RT Priority: %ld %s\n"
 msgstr ""
+"Ütemezés\n"
+"  Irányelv: %s\n"
+"  Nice:     %ld \t\t RT prioritás: %ld %s\n"
 
 #: src/prtstat.c:221
 msgid "asprintf in print_stat failed.\n"
-msgstr ""
+msgstr "az asprintf a print_stat hívásban sikertelen.\n"
 
 #: src/prtstat.c:226
 #, c-format
 msgid "Process with pid %d does not exist.\n"
-msgstr ""
+msgstr "Nem létezik %d PID-ű folyamat.\n"
 
 #: src/prtstat.c:228
 #, c-format
 msgid "Unable to open stat file for pid %d (%s)\n"
-msgstr ""
+msgstr "Nem érhető el a fájl a(z) %d (%s) PID-hez\n"
 
 #: src/prtstat.c:308
 msgid "Invalid option"
-msgstr ""
+msgstr "Érvénytelen kapcsoló"
 
 #: src/prtstat.c:313
 msgid "You must provide at least one PID."
-msgstr ""
+msgstr "Legalább egy PID-et meg kell adnia."
 
 #: src/prtstat.c:317
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
-msgstr ""
+msgstr "a /proc nincs csatolva, nem érhető el a /proc/self/stat.\n"
 
 #: src/pstree.c:776
 #, c-format
@@ -547,10 +564,9 @@ msgid "%s is empty (not mounted ?)\n"
 msgstr "a(z) %s üres (nincs csatlakoztatva?)\n"
 
 #: src/pstree.c:814
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -571,9 +587,9 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Használat: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
-"              [ -A | -G | -U ] [ PID | FELHASZNÁLÓ ]\n"
-"       pstree -V\n"
+"Használat: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ]\n"
+"                  [ -u ] [ -A | -G | -U ] [ PID | FELHASZNÁLÓ ]\n"
+"           pstree -V\n"
 "Megjeleníti a folyamatok fáját.\n"
 "\n"
 "  -a, --arguments     parancssori argumentumok megjelenítése\n"
@@ -582,11 +598,12 @@ msgstr ""
 "  -h, --highlight-all az aktuális folyamat és őseinek kiemelése\n"
 "    -H PID \n"
 "  --highlight-pid=PID az adott folyamat és őseinek kiemelése\n"
+"  -g, --show-pgids    folyamatcsoport-azonosító megjelenítése,\n"
+"                        magába foglalja a -c kapcsolót\n"
 "  -G, --vt100         VT100 sorrajzoló karakterek használata\n"
 "  -l, --long          ne csonkítsa a hoszú sorokat\n"
 "  -n, --numeric-sort  kimenet rendezése PID szerint\n"
-"  -p, --show-pids     a PID-ek megjelenítése; magába foglalja a -c "
-"kapcsolót\n"
+"  -p, --show-pids     a PID-ek megjelenítése; magába foglalja a -c kapcsolót\n"
 "  -u, --uid-changes   az uid átmenetek megjelenítése\n"
 "  -U, --unicode       UTF-8 (Unicode) sorrajzoló karakterek használata\n"
 "  -V, --version       verzióinformációk megjelenítése\n"
