@@ -1,4 +1,4 @@
-Changes in 22.17 (unreleased)
+Changes in 22.17
 ================
 	* Make it possible to use --enable-timeout-stat as well as
 	  --enable-timeout-stat=static for a static background process which
