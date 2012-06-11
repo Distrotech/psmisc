@@ -1,10 +1,11 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.68])
 AC_CONFIG_MACRO_DIR([m4])
-AC_INIT([psmisc],[22.17])
+AC_INIT([psmisc],[22.18])
 AC_CONFIG_SRCDIR([src/comm.h])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_AUX_DIR([config])
+AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE([1.10])
 AC_LANG([C])
 

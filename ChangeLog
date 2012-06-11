@@ -1,3 +1,7 @@
+Changes in 22.18
+================
+	* Added AC_CANONICAL_TARGET for target_os Debian #673485
+
 Changes in 22.17
 ================
 	* Make it possible to use --enable-timeout-stat as well as
