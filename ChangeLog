@@ -1,6 +1,7 @@
 Changes in 22.18
 ================
 	* Added AC_CANONICAL_TARGET for target_os Debian #673485
+	* sed doesn't have [0-9]+ replace with [0-9][0-9]*
 
 Changes in 22.17
 ================
