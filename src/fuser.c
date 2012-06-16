@@ -129,7 +129,7 @@ static void usage(const char *errormsg)
 
 	fprintf(stderr,
 		_
-		("Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
+		("Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 		 "       fuser -l\n" "       fuser -V\n"
 		 "Show which processes use the named files, sockets, or filesystems.\n\n"
 		 "  -a,--all              display unused files too\n"
