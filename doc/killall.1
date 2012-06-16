@@ -1,4 +1,4 @@
-.TH KILLALL 1 2011-02-22 "Linux" "User Commands"
+.TH KILLALL 1 2012-06-16 "Linux" "User Commands"
 .SH NAME
 killall \- kill processes by name
 .SH SYNOPSIS
@@ -115,6 +115,11 @@ a new process with the same PID between scans.
 .PP
 If processes change their name, \fBkillall\fP may not be able to match 
 them correctly.
+.PP
+\fBkillall\fP has a limit of names that can be specified on the command line. 
+This figure is the size of an unsigned long multiplied by 8. For most 32
+bit systems the limit is 32 and similarly for a 64 bit system the limit is 
+usually 64.
 .SH AUTHORS
 Werner Almesberger <werner@almesberger.net> wrote the original version
 of psmisc. Since version 20 Craig Small <csmall@enc.com.au>

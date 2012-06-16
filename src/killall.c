@@ -81,6 +81,7 @@
 #define ER_OOFRA   -4
 
 #define NOT_PIDOF_OPTION if (pidof) usage(NULL)
+#define MYNAME ((pidof)?"pidof":"killall")
 
 static int verbose = 0, exact = 0, interactive = 0, reg = 0,
            quiet = 0, wait_until_dead = 0, process_group = 0,
@@ -130,7 +131,7 @@ uptime()
    char buf[2048];
    FILE* file;
    if (!(file=fopen( PROC_BASE "/uptime", "r"))) {
-      fprintf(stderr, "error opening uptime file\n");	
+      fprintf(stderr, "%s: error opening uptime file\n",MYNAME);	
       exit(1);
    }
    savelocale = setlocale(LC_NUMERIC, NULL);
@@ -206,7 +207,7 @@ match_process_uid(pid_t pid, uid_t uid)
 	fclose(f);
 	if (re==-1)
 	{
-		fprintf(stderr, _("Cannot get UID from process status\n"));
+		fprintf(stderr, _("%s: Cannot get UID from process status\n"), MYNAME);
 		exit(1);
 	}
 	return re;
@@ -232,7 +233,7 @@ build_regexp_list(int names, char **namelist)
 	{
 		if (regcomp(&reglist[i], namelist[i], flag) != 0) 
 		{
-			fprintf(stderr, _("Bad regular expression: %s\n"), namelist[i]);
+			fprintf(stderr, _("%s: Bad regular expression: %s\n"), MYNAME, namelist[i]);
 			exit (1);
 		}
 	}
@@ -443,8 +444,8 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	  if (exact && !okay)
 	    {
 	      if (verbose)
-		fprintf (stderr, _("skipping partial match %s(%d)\n"), comm,
-			 pid_table[i]);
+		fprintf (stderr, _("%s: skipping partial match %s(%d)\n"),
+			MYNAME, comm, pid_table[i]);
 	      continue;
 	    }
 	  got_long = okay;
@@ -544,8 +545,8 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	    pgids[i] = id;
 	    if (id < 0)
 	      {
-	        fprintf (stderr, "getpgid(%d): %s\n", pid_table[i],
-		   strerror (errno));
+	        fprintf (stderr, "%s: getpgid(%d): %s\n",
+			   MYNAME, pid_table[i], strerror (errno));
 	      }
 	    for (j = 0; j < i; j++)
 	      if (pgids[j] == id)
@@ -868,12 +869,14 @@ main (int argc, char **argv)
 #endif
     usage(NULL);
 
-  if (argc - myoptind > MAX_NAMES + 1) {
-    fprintf (stderr, _("Maximum number of names is %d\n"), MAX_NAMES);
+  if (argc - myoptind > MAX_NAMES) {
+    fprintf (stderr, _("%s: Maximum number of names is %d\n"),
+	   MYNAME, MAX_NAMES);
     exit (1);
   }
   if (!have_proc_self_stat()) {
-    fprintf (stderr, _("%s lacks process entries (not mounted ?)\n"), PROC_BASE);
+    fprintf (stderr, _("%s: %s lacks process entries (not mounted ?)\n"),
+		MYNAME, PROC_BASE);
     exit (1);
   }
   argv = argv + myoptind;
