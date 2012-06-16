@@ -383,7 +383,7 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	    continue;
 	 }
 	 process_age_sec = process_age(proc_stt_jf);
-	 assert(process_age_sec > 0);
+	 assert(process_age_sec >= 0L);
       }
       (void) fclose (file);
        
