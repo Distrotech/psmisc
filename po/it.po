@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.12\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-05-20 11:21+1000\n"
+"POT-Creation-Date: 2012-06-16 18:51+1000\n"
 "PO-Revision-Date: 2010-08-17 10:24+0100\n"
 "Last-Translator: Marco Colombo <m.colombo@ed.ac.uk>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -97,7 +97,7 @@ msgstr ""
 "Copyright (C) 1993-2010 Werner Almesberger e Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -218,75 +218,54 @@ msgstr "Impossibile aprire un socket di rete.\n"
 msgid "Cannot find socket's device number.\n"
 msgstr "Impossibile trovare il numero di dispositivo del socket.\n"
 
-#: src/killall.c:102
+#: src/killall.c:100
 #, c-format
 msgid "Kill %s(%s%d) ? (y/N) "
 msgstr "Terminare %s(%s%d)? (s/N) "
 
-#: src/killall.c:105
+#: src/killall.c:103
 #, c-format
 msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Segnale %s(%s%d)? (s/N) "
 
-#: src/killall.c:209
-#, c-format
-msgid "Cannot get UID from process status\n"
+#: src/killall.c:207
+#, fuzzy, c-format
+msgid "killall: Cannot get UID from process status\n"
 msgstr "Impossibile ottenere l'UID dallo stato del processo\n"
 
-#: src/killall.c:235 src/killall.c:840
-#, c-format
-msgid "Bad regular expression: %s\n"
+#: src/killall.c:233
+#, fuzzy, c-format
+msgid "killall: Bad regular expression: %s\n"
 msgstr "Espressione regolare non valida: %s\n"
 
-#: src/killall.c:446
-#, c-format
-msgid "skipping partial match %s(%d)\n"
+#: src/killall.c:444
+#, fuzzy, c-format
+msgid "killall: skipping partial match %s(%d)\n"
 msgstr "ignorata corrispondenza parziale %s(%d)\n"
 
-#: src/killall.c:568
+#: src/killall.c:559
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "Terminato %s(%s%d) con segnale %d\n"
 
-#: src/killall.c:582
+#: src/killall.c:573
 #, c-format
 msgid "%s: no process found\n"
 msgstr "%s: nessun processo trovato\n"
 
-#: src/killall.c:620
-#, c-format
-msgid ""
-"Usage: pidof [ -eg ] NAME...\n"
-"       pidof -V\n"
-"\n"
-"    -e      require exact match for very long names;\n"
-"            skip if the command line is unavailable\n"
-"    -g      show process group ID instead of process ID\n"
-"    -V      display version information\n"
-"\n"
-msgstr ""
-"Uso: pidof [ -eg ] NOME...\n"
-"     pidof -V\n"
-"\n"
-"    -e      richiede una corrispondenza esatta per i nomi molto lunghi;\n"
-"            ignora se la riga di comando non è disponibile\n"
-"    -g      mostra l'ID del gruppo invece che l'ID del processo\n"
-"    -V      mostra le informazioni sulla versione\n"
-"\n"
-
-#: src/killall.c:636
+#: src/killall.c:612
 #, c-format
 msgid ""
 "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
 msgstr ""
 "Uso: killall [-Z CONTESTO] [-u UTENTE] [ -eIgiqrvw ] [ -SEGNALE ] NOME...\n"
 
-#: src/killall.c:639
+#: src/killall.c:615
 #, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "Uso: killall [OPZIONE]... [--] NOME...\n"
 
-#: src/killall.c:642
+#: src/killall.c:618
 #, c-format
 msgid ""
 "       killall -l, --list\n"
@@ -327,7 +306,7 @@ msgstr ""
 "  -w,--wait           aspetta la terminazione del processo\n"
 "\n"
 
-#: src/killall.c:660
+#: src/killall.c:636
 #, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
@@ -336,32 +315,37 @@ msgstr ""
 "  -Z,--context REGEXP termina solo i processi aventi context\n"
 "                      (deve precedere altri argomenti)\n"
 
-#: src/killall.c:681
-#, c-format
+#: src/killall.c:647
+#, fuzzy, c-format
 msgid ""
-"Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Copyright (C) 1993-2005 Werner Almesberger e Craig Small\n"
+"Copyright (C) 1993-2010 Werner Almesberger e Craig Small\n"
 "\n"
 
-#: src/killall.c:773 src/killall.c:780
+#: src/killall.c:737 src/killall.c:743
 msgid "Invalid time format"
 msgstr "Formato orario non valido"
 
-#: src/killall.c:805
+#: src/killall.c:763
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Impossibile trovare l'utente %s\n"
 
-#: src/killall.c:872
+#: src/killall.c:794
 #, c-format
-msgid "Maximum number of names is %d\n"
+msgid "Bad regular expression: %s\n"
+msgstr "Espressione regolare non valida: %s\n"
+
+#: src/killall.c:826
+#, fuzzy, c-format
+msgid "killall: Maximum number of names is %d\n"
 msgstr "Il massimo numero di nomi è %d\n"
 
-#: src/killall.c:876
+#: src/killall.c:831
 #, fuzzy, c-format
-msgid "%s lacks process entries (not mounted ?)\n"
+msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s è vuoto (non montato?)\n"
 
 #: src/peekfd.c:96
@@ -674,3 +658,29 @@ msgstr "Premere Invio per chiudere\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: segnale sconosciuto; usare %s -l per elencare i segnali.\n"
+
+#~ msgid ""
+#~ "Usage: pidof [ -eg ] NAME...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      require exact match for very long names;\n"
+#~ "            skip if the command line is unavailable\n"
+#~ "    -g      show process group ID instead of process ID\n"
+#~ "    -V      display version information\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Uso: pidof [ -eg ] NOME...\n"
+#~ "     pidof -V\n"
+#~ "\n"
+#~ "    -e      richiede una corrispondenza esatta per i nomi molto lunghi;\n"
+#~ "            ignora se la riga di comando non è disponibile\n"
+#~ "    -g      mostra l'ID del gruppo invece che l'ID del processo\n"
+#~ "    -V      mostra le informazioni sulla versione\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger e Craig Small\n"
+#~ "\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-05-20 11:21+1000\n"
+"POT-Creation-Date: 2012-06-16 18:51+1000\n"
 "PO-Revision-Date: 2012-05-22 08:27-0300\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -98,7 +98,7 @@ msgstr ""
 "Kopirajto (C) 1993-2010 Werner Almesberger kaj Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -216,63 +216,42 @@ msgstr "Ne eblas malfermi retan ingon.\n"
 msgid "Cannot find socket's device number.\n"
 msgstr "Ne eblas trovi aparat-numeron de ingo.\n"
 
-#: src/killall.c:102
+#: src/killall.c:100
 #, c-format
 msgid "Kill %s(%s%d) ? (y/N) "
 msgstr "Ĉu mortigi %s(%s%d) ? (y/N) "
 
-#: src/killall.c:105
+#: src/killall.c:103
 #, c-format
 msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Ĉu signali %s(%s%d) ? (y/N) "
 
-#: src/killall.c:209
-#, c-format
-msgid "Cannot get UID from process status\n"
+#: src/killall.c:207
+#, fuzzy, c-format
+msgid "killall: Cannot get UID from process status\n"
 msgstr "Ne eblas preni UID el procez-stato\n"
 
-#: src/killall.c:235 src/killall.c:840
-#, c-format
-msgid "Bad regular expression: %s\n"
+#: src/killall.c:233
+#, fuzzy, c-format
+msgid "killall: Bad regular expression: %s\n"
 msgstr "Malĝusta regul-esprimo: %s\n"
 
-#: src/killall.c:446
-#, c-format
-msgid "skipping partial match %s(%d)\n"
+#: src/killall.c:444
+#, fuzzy, c-format
+msgid "killall: skipping partial match %s(%d)\n"
 msgstr "ni preterpasas ne-kompletan kongruon %s(%d)\n"
 
-#: src/killall.c:568
+#: src/killall.c:559
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "Ni mortigis %s(%s%d) per signalo %d\n"
 
-#: src/killall.c:582
+#: src/killall.c:573
 #, c-format
 msgid "%s: no process found\n"
 msgstr "%s: neniu procezo trovite\n"
 
-#: src/killall.c:620
-#, c-format
-msgid ""
-"Usage: pidof [ -eg ] NAME...\n"
-"       pidof -V\n"
-"\n"
-"    -e      require exact match for very long names;\n"
-"            skip if the command line is unavailable\n"
-"    -g      show process group ID instead of process ID\n"
-"    -V      display version information\n"
-"\n"
-msgstr ""
-"Uzado: pidof [ -eg ] NOMO...\n"
-"       pidof -V\n"
-"\n"
-"    -e      postuli ĝustan kongruon por tre longaj nomoj;\n"
-"            preterpasas se la komand-linio ne disponeblas\n"
-"    -g      montri procezan grup-ID anstataŭ procezan ID\n"
-"    -V      montrigi informon pri versio\n"
-"\n"
-
-#: src/killall.c:636
+#: src/killall.c:612
 #, c-format
 msgid ""
 "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
@@ -280,12 +259,12 @@ msgstr ""
 "Uzado: killall [-Z KUNTEKSTO] [-u UZANTO] [ -eIgiqrvw ] [ -SIGNALO ] "
 "NOMO...\n"
 
-#: src/killall.c:639
+#: src/killall.c:615
 #, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "Uzado: killall [ELEKTILO]... [--] NOMO...\n"
 
-#: src/killall.c:642
+#: src/killall.c:618
 #, c-format
 msgid ""
 "       killall -l, --list\n"
@@ -324,7 +303,7 @@ msgstr ""
 "  -V,--version        montrigi informon pri versio\n"
 "  -w,--wait           atendi ke procezoj mortu\n"
 
-#: src/killall.c:660
+#: src/killall.c:636
 #, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
@@ -333,32 +312,37 @@ msgstr ""
 "  -Z,--context REGEXP mortigi nur procezo(j)n kiuj havu kuntekston\n"
 "                      (devas veni antaŭ aliaj argumentoj)\n"
 
-#: src/killall.c:681
-#, c-format
+#: src/killall.c:647
+#, fuzzy, c-format
 msgid ""
-"Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Kopirajto (C) 1993-2005 Werner Almesberger kaj Craig Small\n"
+"Kopirajto (C) 1993-2010 Werner Almesberger kaj Craig Small\n"
 "\n"
 
-#: src/killall.c:773 src/killall.c:780
+#: src/killall.c:737 src/killall.c:743
 msgid "Invalid time format"
 msgstr "Malvalida tempo-formo"
 
-#: src/killall.c:805
+#: src/killall.c:763
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Ne eblas trovi la uzanton %s\n"
 
-#: src/killall.c:872
+#: src/killall.c:794
 #, c-format
-msgid "Maximum number of names is %d\n"
+msgid "Bad regular expression: %s\n"
+msgstr "Malĝusta regul-esprimo: %s\n"
+
+#: src/killall.c:826
+#, fuzzy, c-format
+msgid "killall: Maximum number of names is %d\n"
 msgstr "Maksimuma nombro da nomoj estas %d\n"
 
-#: src/killall.c:876
-#, c-format
-msgid "%s lacks process entries (not mounted ?)\n"
+#: src/killall.c:831
+#, fuzzy, c-format
+msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s malhavas procezajn informojn (ĉu ne muntita ?)\n"
 
 #: src/peekfd.c:96
@@ -671,3 +655,29 @@ msgstr "Premu la enigklavon por fermi\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: nekonata signalo; %s -l listigas la signalojn.\n"
+
+#~ msgid ""
+#~ "Usage: pidof [ -eg ] NAME...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      require exact match for very long names;\n"
+#~ "            skip if the command line is unavailable\n"
+#~ "    -g      show process group ID instead of process ID\n"
+#~ "    -V      display version information\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Uzado: pidof [ -eg ] NOMO...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      postuli ĝustan kongruon por tre longaj nomoj;\n"
+#~ "            preterpasas se la komand-linio ne disponeblas\n"
+#~ "    -g      montri procezan grup-ID anstataŭ procezan ID\n"
+#~ "    -V      montrigi informon pri versio\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Kopirajto (C) 1993-2005 Werner Almesberger kaj Craig Small\n"
+#~ "\n"

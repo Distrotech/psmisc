@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc-22.6\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-05-20 11:21+1000\n"
+"POT-Creation-Date: 2012-06-16 18:51+1000\n"
 "PO-Revision-Date: 2008-06-15 18:31+0300\n"
 "Last-Translator: Lefteris Dimitroulakis <edimitro@tee.gr>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
@@ -98,7 +98,7 @@ msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger και Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -220,75 +220,54 @@ msgstr "Δεν μπορώ να ανοίξω ένα δικτυακό socket.\n"
 msgid "Cannot find socket's device number.\n"
 msgstr "Αδύνατον να βρω τον αριθμό της συσκευής του socket.\n"
 
-#: src/killall.c:102
+#: src/killall.c:100
 #, c-format
 msgid "Kill %s(%s%d) ? (y/N) "
 msgstr "Kill %s(%s%d) ? (y/N) "
 
-#: src/killall.c:105
+#: src/killall.c:103
 #, c-format
 msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Signal %s(%s%d) ? (y/N) "
 
-#: src/killall.c:209
-#, c-format
-msgid "Cannot get UID from process status\n"
+#: src/killall.c:207
+#, fuzzy, c-format
+msgid "killall: Cannot get UID from process status\n"
 msgstr "Δεν μπορώ να πάρω UID από την κατάσταση της διεργασίας\n"
 
-#: src/killall.c:235 src/killall.c:840
-#, c-format
-msgid "Bad regular expression: %s\n"
+#: src/killall.c:233
+#, fuzzy, c-format
+msgid "killall: Bad regular expression: %s\n"
 msgstr "Κακή κανονική έκφραση: %s\n"
 
-#: src/killall.c:446
-#, c-format
-msgid "skipping partial match %s(%d)\n"
+#: src/killall.c:444
+#, fuzzy, c-format
+msgid "killall: skipping partial match %s(%d)\n"
 msgstr "παράβλεψη μερικού ταιριάσματος %s(%d)\n"
 
-#: src/killall.c:568
+#: src/killall.c:559
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "Τερματίστηκε %s(%s%d) με το σήμα %d\n"
 
-#: src/killall.c:582
+#: src/killall.c:573
 #, fuzzy, c-format
 msgid "%s: no process found\n"
 msgstr "%s: ουδεμία διεργασία τερματίστηκε\n"
 
-#: src/killall.c:620
-#, c-format
-msgid ""
-"Usage: pidof [ -eg ] NAME...\n"
-"       pidof -V\n"
-"\n"
-"    -e      require exact match for very long names;\n"
-"            skip if the command line is unavailable\n"
-"    -g      show process group ID instead of process ID\n"
-"    -V      display version information\n"
-"\n"
-msgstr ""
-"Χρήση: pidof [ -eg ] ΟΝΟΜΑ...\n"
-"       pidof -V\n"
-"\n"
-"    -e      απαιτεί ακριβές ταίριασμα για πολύ μεγάλα ονόματα;\n"
-"            παράβλεψη αν η γραμμή διαταγών δεν είναι διαθέσημη\n"
-"    -g      εμφάνιση process group ID αντί της ID διεργασίας\n"
-"    -V      εμφάνιση πληροφοριών εκδόσεως\n"
-"\n"
-
-#: src/killall.c:636
+#: src/killall.c:612
 #, c-format
 msgid ""
 "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
 msgstr ""
 "Χρήση: killall [-Z CONTEXT] [-u ΧΡΗΣΤΗΣ] [ -eIgiqrvw ] [ -ΣΗΜΑ ] ΟΝΟΜΑ...\n"
 
-#: src/killall.c:639
+#: src/killall.c:615
 #, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "Χρήση: killall [ΕΠΙΛΟΓΗ]... [--] ΟΝΟΜΑ...\n"
 
-#: src/killall.c:642
+#: src/killall.c:618
 #, fuzzy, c-format
 msgid ""
 "       killall -l, --list\n"
@@ -325,7 +304,7 @@ msgstr ""
 "  -V,--version        εμφάνιση πληροφορίας έκδοσης\n"
 "  -w,--wait           wait for processes to die\n"
 
-#: src/killall.c:660
+#: src/killall.c:636
 #, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
@@ -334,32 +313,37 @@ msgstr ""
 "  -Z,--context REGEXP τερματίζει μόνο την/τις διεργασία(ες) με context\n"
 "                      (πρέπει να προηγείται των άλλων ορισμάτων)\n"
 
-#: src/killall.c:681
-#, c-format
+#: src/killall.c:647
+#, fuzzy, c-format
 msgid ""
-"Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger και Craig Small\n"
 "\n"
 
-#: src/killall.c:773 src/killall.c:780
+#: src/killall.c:737 src/killall.c:743
 msgid "Invalid time format"
 msgstr ""
 
-#: src/killall.c:805
+#: src/killall.c:763
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Δεν μπορώ να βρω το χρήστη %s\n"
 
-#: src/killall.c:872
+#: src/killall.c:794
 #, c-format
-msgid "Maximum number of names is %d\n"
+msgid "Bad regular expression: %s\n"
+msgstr "Κακή κανονική έκφραση: %s\n"
+
+#: src/killall.c:826
+#, fuzzy, c-format
+msgid "killall: Maximum number of names is %d\n"
 msgstr "Μέγιστος αριθμός ονομάτων είναι %d\n"
 
-#: src/killall.c:876
+#: src/killall.c:831
 #, fuzzy, c-format
-msgid "%s lacks process entries (not mounted ?)\n"
+msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s είναι άδειο (μή προσαρτημένο ;)\n"
 
 #: src/peekfd.c:96
@@ -643,6 +627,32 @@ msgstr "Πάτησε return για κλείσιμο\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: άγνωστο σήμα; %s -l εμφανίζει όλα τα σήματα.\n"
+
+#~ msgid ""
+#~ "Usage: pidof [ -eg ] NAME...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      require exact match for very long names;\n"
+#~ "            skip if the command line is unavailable\n"
+#~ "    -g      show process group ID instead of process ID\n"
+#~ "    -V      display version information\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Χρήση: pidof [ -eg ] ΟΝΟΜΑ...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      απαιτεί ακριβές ταίριασμα για πολύ μεγάλα ονόματα;\n"
+#~ "            παράβλεψη αν η γραμμή διαταγών δεν είναι διαθέσημη\n"
+#~ "    -g      εμφάνιση process group ID αντί της ID διεργασίας\n"
+#~ "    -V      εμφάνιση πληροφοριών εκδόσεως\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger και Craig Small\n"
+#~ "\n"
 
 #~ msgid "Cannot stat mount point %s: %s\n"
 #~ msgstr "Σημείο προσάρτησης %s απροσδιόριστο: %s\n"

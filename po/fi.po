@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-05-20 11:21+1000\n"
+"POT-Creation-Date: 2012-06-16 18:51+1000\n"
 "PO-Revision-Date: 2012-05-26 19:57+0300\n"
 "Last-Translator: Jorma Karvonen <karvonen.jorma@gmail.com>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -106,7 +106,7 @@ msgstr ""
 "Copyright © 1993-2010 Werner Almesberger ja Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -226,66 +226,45 @@ msgid "Cannot find socket's device number.\n"
 msgstr "Pistokkeen laitenumeroa ei löydy.\n"
 
 #  Kill-käskyn käyttämä signaali on tässä SIGTERM (tunnetaan myös nimellä TERM).
-#: src/killall.c:102
+#: src/killall.c:100
 #, c-format
 msgid "Kill %s(%s%d) ? (y/N) "
 msgstr "Lopeta prosessi %s(%s%d)? (y=kyllä, N=ei) "
 
 #  Signaali on joku muu kuin SIGTERM
-#: src/killall.c:105
+#: src/killall.c:103
 #, c-format
 msgid "Signal %s(%s%d) ? (y/N) "
 msgstr ""
 "Signaali prosessille %s(%s%d)? (y=kyllä, N=ei, ”kyllä” yleensä lopettaa "
 "prosessin) "
 
-#: src/killall.c:209
-#, c-format
-msgid "Cannot get UID from process status\n"
+#: src/killall.c:207
+#, fuzzy, c-format
+msgid "killall: Cannot get UID from process status\n"
 msgstr "Ei saada UID-käyttäjätunnistetta prosessitilasta\n"
 
-#: src/killall.c:235 src/killall.c:840
-#, c-format
-msgid "Bad regular expression: %s\n"
+#: src/killall.c:233
+#, fuzzy, c-format
+msgid "killall: Bad regular expression: %s\n"
 msgstr "Virheellinen säännöllinen lauseke: %s\n"
 
-#: src/killall.c:446
-#, c-format
-msgid "skipping partial match %s(%d)\n"
+#: src/killall.c:444
+#, fuzzy, c-format
+msgid "killall: skipping partial match %s(%d)\n"
 msgstr "ohitetaan osittain vastaava %s(%d)\n"
 
-#: src/killall.c:568
+#: src/killall.c:559
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "Prosessille %s(%s%d) lähetetty signaali %d\n"
 
-#: src/killall.c:582
+#: src/killall.c:573
 #, c-format
 msgid "%s: no process found\n"
 msgstr "%s: ei prosesseja\n"
 
-#: src/killall.c:620
-#, c-format
-msgid ""
-"Usage: pidof [ -eg ] NAME...\n"
-"       pidof -V\n"
-"\n"
-"    -e      require exact match for very long names;\n"
-"            skip if the command line is unavailable\n"
-"    -g      show process group ID instead of process ID\n"
-"    -V      display version information\n"
-"\n"
-msgstr ""
-"Käyttö: pidof [ -eg ] NIMI...\n"
-"       pidof -V\n"
-"\n"
-"    -e      vaatii hyvin pitkien nimien täsmällistä vastaavuutta;\n"
-"            ohita, jos komentorivi ei ole käytettävissä.\n"
-"    -g      näyttää prosessin ryhmätunnisteen prosessitunnisteen sijasta\n"
-"    -V      näyttää versiotiedot\n"
-"\n"
-
-#: src/killall.c:636
+#: src/killall.c:612
 #, c-format
 msgid ""
 "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
@@ -293,12 +272,12 @@ msgstr ""
 "Käyttö: killall [-Z KONTEKSTI] [-u KÄYTTÄJÄ] [ -eIgiqrvw ] [ -SIGNAL ] "
 "NIMI...\n"
 
-#: src/killall.c:639
+#: src/killall.c:615
 #, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "Käyttö: killall [VALITSIN]... [--] NIMI...\n"
 
-#: src/killall.c:642
+#: src/killall.c:618
 #, c-format
 msgid ""
 "       killall -l, --list\n"
@@ -341,7 +320,7 @@ msgstr ""
 "  -V,--version         näytä versiotiedot\n"
 "  -w,--wait            odota prosessien loppumista\n"
 
-#: src/killall.c:660
+#: src/killall.c:636
 #, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
@@ -351,32 +330,37 @@ msgstr ""
 "joilla on konteksti\n"
 "                      (tämän on oltava muiden argumenttien edellä)\n"
 
-#: src/killall.c:681
-#, c-format
+#: src/killall.c:647
+#, fuzzy, c-format
 msgid ""
-"Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Copyright © 1993-2005 Werner Almesberger ja Craig Small\n"
+"Copyright © 1993-2010 Werner Almesberger ja Craig Small\n"
 "\n"
 
-#: src/killall.c:773 src/killall.c:780
+#: src/killall.c:737 src/killall.c:743
 msgid "Invalid time format"
 msgstr "Virheellinen aikamuoto"
 
-#: src/killall.c:805
+#: src/killall.c:763
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Ei löydy käyttäjää %s\n"
 
-#: src/killall.c:872
+#: src/killall.c:794
 #, c-format
-msgid "Maximum number of names is %d\n"
+msgid "Bad regular expression: %s\n"
+msgstr "Virheellinen säännöllinen lauseke: %s\n"
+
+#: src/killall.c:826
+#, fuzzy, c-format
+msgid "killall: Maximum number of names is %d\n"
 msgstr "Suurin sallittu määrä nimiä on %d\n"
 
-#: src/killall.c:876
-#, c-format
-msgid "%s lacks process entries (not mounted ?)\n"
+#: src/killall.c:831
+#, fuzzy, c-format
+msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s-kohteesta puuttuu prosessirivit (ei ole liitetty?)\n"
 
 #: src/peekfd.c:96
@@ -695,6 +679,32 @@ msgstr "Enter-näppäin sulkee\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: tuntematon signaali; %s -l luettelee signaalit.\n"
+
+#~ msgid ""
+#~ "Usage: pidof [ -eg ] NAME...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      require exact match for very long names;\n"
+#~ "            skip if the command line is unavailable\n"
+#~ "    -g      show process group ID instead of process ID\n"
+#~ "    -V      display version information\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Käyttö: pidof [ -eg ] NIMI...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      vaatii hyvin pitkien nimien täsmällistä vastaavuutta;\n"
+#~ "            ohita, jos komentorivi ei ole käytettävissä.\n"
+#~ "    -g      näyttää prosessin ryhmätunnisteen prosessitunnisteen sijasta\n"
+#~ "    -V      näyttää versiotiedot\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright © 1993-2005 Werner Almesberger ja Craig Small\n"
+#~ "\n"
 
 #~ msgid "You cannot use the mounted and mountpoint flags together"
 #~ msgstr "Et voi käyttää ”mounted-” ja ”mountpoint”-lippuja yhdessä"

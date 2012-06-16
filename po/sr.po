@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc-22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-05-20 11:21+1000\n"
+"POT-Creation-Date: 2012-06-16 18:51+1000\n"
 "PO-Revision-Date: 2012-05-24 22:46+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -100,7 +100,7 @@ msgstr ""
 "Ауторска права (C) 1993-2010 Вернер Алмесбергер и Крег Смол\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -217,63 +217,42 @@ msgstr "Не могу да отворим мрежни прикључак.\n"
 msgid "Cannot find socket's device number.\n"
 msgstr "Не могу да пронађем број уређаја прикључка.\n"
 
-#: src/killall.c:102
+#: src/killall.c:100
 #, c-format
 msgid "Kill %s(%s%d) ? (y/N) "
 msgstr "Да убијем %s(%s%d) (y/N) "
 
-#: src/killall.c:105
+#: src/killall.c:103
 #, c-format
 msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Да обавестим %s(%s%d) (y/N) "
 
-#: src/killall.c:209
-#, c-format
-msgid "Cannot get UID from process status\n"
+#: src/killall.c:207
+#, fuzzy, c-format
+msgid "killall: Cannot get UID from process status\n"
 msgstr "Не могу да добавим УИБ из стања процеса\n"
 
-#: src/killall.c:235 src/killall.c:840
-#, c-format
-msgid "Bad regular expression: %s\n"
+#: src/killall.c:233
+#, fuzzy, c-format
+msgid "killall: Bad regular expression: %s\n"
 msgstr "Лош регуларни израз: %s\n"
 
-#: src/killall.c:446
-#, c-format
-msgid "skipping partial match %s(%d)\n"
+#: src/killall.c:444
+#, fuzzy, c-format
+msgid "killall: skipping partial match %s(%d)\n"
 msgstr "прескачем делимично поклапање %s(%d)\n"
 
-#: src/killall.c:568
+#: src/killall.c:559
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "Убио сам %s(%s%d) са сигналом %d\n"
 
-#: src/killall.c:582
+#: src/killall.c:573
 #, c-format
 msgid "%s: no process found\n"
 msgstr "%s: нисам пронашао процес\n"
 
-#: src/killall.c:620
-#, c-format
-msgid ""
-"Usage: pidof [ -eg ] NAME...\n"
-"       pidof -V\n"
-"\n"
-"    -e      require exact match for very long names;\n"
-"            skip if the command line is unavailable\n"
-"    -g      show process group ID instead of process ID\n"
-"    -V      display version information\n"
-"\n"
-msgstr ""
-"Употреба: pidof [ -eg ] НАЗИВ...\n"
-"       pidof -V\n"
-"\n"
-"    -e      захтева тачно поклапање за врло дуге називе;\n"
-"            прескаче ако није доступна линија наредби\n"
-"    -g      приказује ИБ групе процеса уместо ИБ процеса\n"
-"    -V      приказује обавештење о издању\n"
-"\n"
-
-#: src/killall.c:636
+#: src/killall.c:612
 #, c-format
 msgid ""
 "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
@@ -281,12 +260,12 @@ msgstr ""
 "Употреба: killall [-Z КОНТЕКСТ] [-u КОРИСНИК] [ -eIgiqrvw ] [ -СИГНАЛ ] "
 "НАЗИВ...\n"
 
-#: src/killall.c:639
+#: src/killall.c:615
 #, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "Употреба: killall [ОПЦИЈА]... [--] НАЗИВ...\n"
 
-#: src/killall.c:642
+#: src/killall.c:618
 #, c-format
 msgid ""
 "       killall -l, --list\n"
@@ -325,7 +304,7 @@ msgstr ""
 "  -V,--version         приказује обавештење о издању\n"
 "  -w,--wait            чека док процес не умре\n"
 
-#: src/killall.c:660
+#: src/killall.c:636
 #, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
@@ -334,32 +313,37 @@ msgstr ""
 "  -Z,--context РЕГИЗР убија само процес(е) који има(ју) контекст\n"
 "                      (мора да претходи другим аргументима)\n"
 
-#: src/killall.c:681
-#, c-format
+#: src/killall.c:647
+#, fuzzy, c-format
 msgid ""
-"Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Ауторска права (C) 1993-2005 Вернер Алмесбергер и Крег Смол\n"
+"Ауторска права (C) 1993-2010 Вернер Алмесбергер и Крег Смол\n"
 "\n"
 
-#: src/killall.c:773 src/killall.c:780
+#: src/killall.c:737 src/killall.c:743
 msgid "Invalid time format"
 msgstr "Неисправни облик времена"
 
-#: src/killall.c:805
+#: src/killall.c:763
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Не могу да пронађем корисника %s\n"
 
-#: src/killall.c:872
+#: src/killall.c:794
 #, c-format
-msgid "Maximum number of names is %d\n"
+msgid "Bad regular expression: %s\n"
+msgstr "Лош регуларни израз: %s\n"
+
+#: src/killall.c:826
+#, fuzzy, c-format
+msgid "killall: Maximum number of names is %d\n"
 msgstr "Највећи број назива је %d\n"
 
-#: src/killall.c:876
-#, c-format
-msgid "%s lacks process entries (not mounted ?)\n"
+#: src/killall.c:831
+#, fuzzy, c-format
+msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s нема уносе процеса (није прикачено ?)\n"
 
 #: src/peekfd.c:96
@@ -675,3 +659,29 @@ msgstr "Притисните „унеси“ да затворите\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: непознат сигнал; %s -l исписује сигнале.\n"
+
+#~ msgid ""
+#~ "Usage: pidof [ -eg ] NAME...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      require exact match for very long names;\n"
+#~ "            skip if the command line is unavailable\n"
+#~ "    -g      show process group ID instead of process ID\n"
+#~ "    -V      display version information\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Употреба: pidof [ -eg ] НАЗИВ...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      захтева тачно поклапање за врло дуге називе;\n"
+#~ "            прескаче ако није доступна линија наредби\n"
+#~ "    -g      приказује ИБ групе процеса уместо ИБ процеса\n"
+#~ "    -V      приказује обавештење о издању\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Ауторска права (C) 1993-2005 Вернер Алмесбергер и Крег Смол\n"
+#~ "\n"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-05-20 11:21+1000\n"
+"POT-Creation-Date: 2012-06-16 18:51+1000\n"
 "PO-Revision-Date: 2012-05-21 07:39+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <translation-team-vi@lists.sourceforge.net>\n"
@@ -106,7 +106,7 @@ msgstr ""
 "Tác quyền © năm 1993-2010 của Werner Almesberger và Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -223,63 +223,42 @@ msgstr "Không thể mở một ổ cắm mạng.\n"
 msgid "Cannot find socket's device number.\n"
 msgstr "Không tìm thấy số hiệu thiết bị ổ cắm.\n"
 
-#: src/killall.c:102
+#: src/killall.c:100
 #, c-format
 msgid "Kill %s(%s%d) ? (y/N) "
 msgstr "Có buộc kết thúc %s(%s%d) không? (c/K)"
 
-#: src/killall.c:105
+#: src/killall.c:103
 #, c-format
 msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Tín hiệu %s(%s%d) không? (y/N)(c/K) "
 
-#: src/killall.c:209
-#, c-format
-msgid "Cannot get UID from process status\n"
+#: src/killall.c:207
+#, fuzzy, c-format
+msgid "killall: Cannot get UID from process status\n"
 msgstr "Không thể lấy UID từ trạng thái của tiến trình\n"
 
-#: src/killall.c:235 src/killall.c:840
-#, c-format
-msgid "Bad regular expression: %s\n"
+#: src/killall.c:233
+#, fuzzy, c-format
+msgid "killall: Bad regular expression: %s\n"
 msgstr "Biểu thức chính quy sai: %s\n"
 
-#: src/killall.c:446
-#, c-format
-msgid "skipping partial match %s(%d)\n"
+#: src/killall.c:444
+#, fuzzy, c-format
+msgid "killall: skipping partial match %s(%d)\n"
 msgstr "đang bỏ qua điều khớp bộ phần %s(%d)\n"
 
-#: src/killall.c:568
+#: src/killall.c:559
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "Mới buộc kết thúc %s(%s%d) với tín hiệu %d\n"
 
-#: src/killall.c:582
+#: src/killall.c:573
 #, c-format
 msgid "%s: no process found\n"
 msgstr "%s: không tìm thấy tiến trình\n"
 
-#: src/killall.c:620
-#, c-format
-msgid ""
-"Usage: pidof [ -eg ] NAME...\n"
-"       pidof -V\n"
-"\n"
-"    -e      require exact match for very long names;\n"
-"            skip if the command line is unavailable\n"
-"    -g      show process group ID instead of process ID\n"
-"    -V      display version information\n"
-"\n"
-msgstr ""
-"Cách sử dụng: pidof [ -eg ] TÊN ...\n"
-"       pidof -V\n"
-"\n"
-"    -e      cần đến điều khớp _chính xác_ với mọi tên rất dài\n"
-"\tbỏ qua nếu không có dòng lệnh sẵn sàng\n"
-"    -g      hiện ID của _nhóm_ tiến trình thay thế ID tiến trình\n"
-"    -V      hiện thông tin _phiên bản_\n"
-"\n"
-
-#: src/killall.c:636
+#: src/killall.c:612
 #, c-format
 msgid ""
 "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
@@ -287,12 +266,12 @@ msgstr ""
 "Cách sử dụng: killall [-Z NGỮ_CẢNH] [-u NGƯỜI_DÙNG] [ -eIgiqrvw ] [ -"
 "TÍN_HIỆU ] TÊN...\n"
 
-#: src/killall.c:639
+#: src/killall.c:615
 #, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "Cách sử dụng: killall [ TÙY_CHỌN ]... [--] TÊN...\n"
 
-#: src/killall.c:642
+#: src/killall.c:618
 #, c-format
 msgid ""
 "       killall -l, --list\n"
@@ -332,7 +311,7 @@ msgstr ""
 "  -V,--version        \thiện thông tin phiên bản\n"
 "  -w,--wait           \t\tđợi tiến trình kết thúc\n"
 
-#: src/killall.c:660
+#: src/killall.c:636
 #, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
@@ -342,32 +321,37 @@ msgstr ""
 "\t\tbuộc kết thúc chỉ những tiến trình có ngữ cảnh\n"
 "\t\t\t(phải đi trước các đối số khác)\n"
 
-#: src/killall.c:681
-#, c-format
+#: src/killall.c:647
+#, fuzzy, c-format
 msgid ""
-"Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Bản quyền © 1993-2005 Werner Almesberger và Craig Small\n"
+"Tác quyền © năm 1993-2010 của Werner Almesberger và Craig Small\n"
 "\n"
 
-#: src/killall.c:773 src/killall.c:780
+#: src/killall.c:737 src/killall.c:743
 msgid "Invalid time format"
 msgstr "Sai đặt định dạng thời gian"
 
-#: src/killall.c:805
+#: src/killall.c:763
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Không tìm thấy người dùng %s\n"
 
-#: src/killall.c:872
+#: src/killall.c:794
 #, c-format
-msgid "Maximum number of names is %d\n"
+msgid "Bad regular expression: %s\n"
+msgstr "Biểu thức chính quy sai: %s\n"
+
+#: src/killall.c:826
+#, fuzzy, c-format
+msgid "killall: Maximum number of names is %d\n"
 msgstr "Số tên tối đa là %d\n"
 
-#: src/killall.c:876
-#, c-format
-msgid "%s lacks process entries (not mounted ?)\n"
+#: src/killall.c:831
+#, fuzzy, c-format
+msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s thiếu các mục tuyến trình (đã gắn (mount) chưa?)\n"
 
 #: src/peekfd.c:96
@@ -686,3 +670,29 @@ msgstr "Bấm phím Return để đóng\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: không rõ tín hiệu; câu lệnh « %s -l » liệt kê các tín hiệu\n"
+
+#~ msgid ""
+#~ "Usage: pidof [ -eg ] NAME...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      require exact match for very long names;\n"
+#~ "            skip if the command line is unavailable\n"
+#~ "    -g      show process group ID instead of process ID\n"
+#~ "    -V      display version information\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Cách sử dụng: pidof [ -eg ] TÊN ...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      cần đến điều khớp _chính xác_ với mọi tên rất dài\n"
+#~ "\tbỏ qua nếu không có dòng lệnh sẵn sàng\n"
+#~ "    -g      hiện ID của _nhóm_ tiến trình thay thế ID tiến trình\n"
+#~ "    -V      hiện thông tin _phiên bản_\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Bản quyền © 1993-2005 Werner Almesberger và Craig Small\n"
+#~ "\n"
