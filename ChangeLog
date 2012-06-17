@@ -4,7 +4,7 @@ Changes in 22.18
 	* sed doesn't have [0-9]+ replace with [0-9][0-9]*
 	* assert in killall triggered for small lifetimes Debian #628617
 	* killall MAX_NAMES off by one Debian #677428
-
+	* Removed remaining parts of pidof
 
 Changes in 22.17
 ================

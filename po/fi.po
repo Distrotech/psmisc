@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-06-16 18:51+1000\n"
+"POT-Creation-Date: 2012-06-16 19:07+1000\n"
 "PO-Revision-Date: 2012-05-26 19:57+0300\n"
 "Last-Translator: Jorma Karvonen <karvonen.jorma@gmail.com>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -21,9 +21,9 @@ msgstr ""
 "X-Poedit-Country: FINLAND\n"
 
 #: src/fuser.c:132
-#, c-format
+#, fuzzy, c-format
 msgid ""
-"Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
 "NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
