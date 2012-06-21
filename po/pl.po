@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-06-16 19:07+1000\n"
+"POT-Creation-Date: 2012-06-21 21:57+1000\n"
 "PO-Revision-Date: 2012-05-21 20:02+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -100,7 +100,7 @@ msgstr ""
 "Copyright (C) 1993-2010 Werner Almesberger i Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:650 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -317,7 +317,7 @@ msgstr ""
 "bezp.\n"
 "                        (musi poprzedzaæ inne argumenty)\n"
 
-#: src/killall.c:647
+#: src/killall.c:648
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
@@ -326,26 +326,26 @@ msgstr ""
 "Copyright (C) 1993-2010 Werner Almesberger i Craig Small\n"
 "\n"
 
-#: src/killall.c:737 src/killall.c:743
+#: src/killall.c:738 src/killall.c:744
 msgid "Invalid time format"
 msgstr "B³êdny format czasu"
 
-#: src/killall.c:763
+#: src/killall.c:764
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Nie mo¿na odnale¼æ u¿ytkownika %s\n"
 
-#: src/killall.c:794
+#: src/killall.c:795
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr "B³êdne wyra¿enie regularne: %s\n"
 
-#: src/killall.c:826
+#: src/killall.c:827
 #, fuzzy, c-format
 msgid "killall: Maximum number of names is %d\n"
 msgstr "Maksymalna liczba nazw to %d\n"
 
-#: src/killall.c:831
+#: src/killall.c:832
 #, fuzzy, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s nie ma wpisów procesów (nie jest zamontowany?)\n"

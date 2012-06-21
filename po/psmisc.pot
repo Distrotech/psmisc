@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-06-16 19:07+1000\n"
+"POT-Creation-Date: 2012-06-21 21:57+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:650 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -258,33 +258,33 @@ msgid ""
 "                      (must precede other arguments)\n"
 msgstr ""
 
-#: src/killall.c:647
+#: src/killall.c:648
 #, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
 
-#: src/killall.c:737 src/killall.c:743
+#: src/killall.c:738 src/killall.c:744
 msgid "Invalid time format"
 msgstr ""
 
-#: src/killall.c:763
+#: src/killall.c:764
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr ""
 
-#: src/killall.c:794
+#: src/killall.c:795
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr ""
 
-#: src/killall.c:826
+#: src/killall.c:827
 #, c-format
 msgid "killall: Maximum number of names is %d\n"
 msgstr ""
 
-#: src/killall.c:831
+#: src/killall.c:832
 #, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr ""

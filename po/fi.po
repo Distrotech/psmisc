@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-06-16 19:07+1000\n"
+"POT-Creation-Date: 2012-06-21 21:57+1000\n"
 "PO-Revision-Date: 2012-05-26 19:57+0300\n"
 "Last-Translator: Jorma Karvonen <karvonen.jorma@gmail.com>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
@@ -106,7 +106,7 @@ msgstr ""
 "Copyright © 1993-2010 Werner Almesberger ja Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:650 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -330,7 +330,7 @@ msgstr ""
 "joilla on konteksti\n"
 "                      (tämän on oltava muiden argumenttien edellä)\n"
 
-#: src/killall.c:647
+#: src/killall.c:648
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
@@ -339,26 +339,26 @@ msgstr ""
 "Copyright © 1993-2010 Werner Almesberger ja Craig Small\n"
 "\n"
 
-#: src/killall.c:737 src/killall.c:743
+#: src/killall.c:738 src/killall.c:744
 msgid "Invalid time format"
 msgstr "Virheellinen aikamuoto"
 
-#: src/killall.c:763
+#: src/killall.c:764
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Ei löydy käyttäjää %s\n"
 
-#: src/killall.c:794
+#: src/killall.c:795
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr "Virheellinen säännöllinen lauseke: %s\n"
 
-#: src/killall.c:826
+#: src/killall.c:827
 #, fuzzy, c-format
 msgid "killall: Maximum number of names is %d\n"
 msgstr "Suurin sallittu määrä nimiä on %d\n"
 
-#: src/killall.c:831
+#: src/killall.c:832
 #, fuzzy, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s-kohteesta puuttuu prosessirivit (ei ole liitetty?)\n"

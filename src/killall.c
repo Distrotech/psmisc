@@ -637,6 +637,7 @@ usage (const char *msg)
     "                      (must precede other arguments)\n"));
 #endif /*WITH_SELINUX*/
   fputc('\n', stderr);
+  exit(1);
 }
 
 

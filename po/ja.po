@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.2pre1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-06-16 19:07+1000\n"
+"POT-Creation-Date: 2012-06-21 21:57+1000\n"
 "PO-Revision-Date: 2006-03-20 10:31+0900\n"
 "Last-Translator: GOTO Masanori <gotom@debian.or.jp>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
@@ -100,7 +100,7 @@ msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:650 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -315,7 +315,7 @@ msgstr ""
 "  -Z,--context 正規表現 コンテキストを持つプロセスのみkillする\n"
 "                        (他の引数よりも前に指定されていなければならない)\n"
 
-#: src/killall.c:647
+#: src/killall.c:648
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
@@ -324,26 +324,26 @@ msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
 "\n"
 
-#: src/killall.c:737 src/killall.c:743
+#: src/killall.c:738 src/killall.c:744
 msgid "Invalid time format"
 msgstr ""
 
-#: src/killall.c:763
+#: src/killall.c:764
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "ユーザ %s を発見できません\n"
 
-#: src/killall.c:794
+#: src/killall.c:795
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr "不正な正規表現: %s\n"
 
-#: src/killall.c:826
+#: src/killall.c:827
 #, fuzzy, c-format
 msgid "killall: Maximum number of names is %d\n"
 msgstr "名前の最大指定可能数は %d\n"
 
-#: src/killall.c:831
+#: src/killall.c:832
 #, fuzzy, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s は空ディレクトリ (マウントされていない?)\n"

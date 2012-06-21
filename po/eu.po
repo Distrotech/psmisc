@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.11-pre1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-06-16 19:07+1000\n"
+"POT-Creation-Date: 2012-06-21 21:57+1000\n"
 "PO-Revision-Date: 2010-03-29 10:09+0100\n"
 "Last-Translator: Mikel Olasagasti <hey_neken@mundurat.net>\n"
 "Language-Team: Basque <translation-team-eu@lists.sourceforge.net>\n"
@@ -100,7 +100,7 @@ msgstr ""
 "Copyright (C) 1993-2010 Werner Almesberger eta Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:650 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -320,7 +320,7 @@ msgstr ""
 "(es)\n"
 "                      (beste argumentu batzuk aurretik izan behar ditu)\n"
 
-#: src/killall.c:647
+#: src/killall.c:648
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
@@ -329,26 +329,26 @@ msgstr ""
 "Copyright (C) 1993-2010 Werner Almesberger eta Craig Small\n"
 "\n"
 
-#: src/killall.c:737 src/killall.c:743
+#: src/killall.c:738 src/killall.c:744
 msgid "Invalid time format"
 msgstr "Baliogabeko ordu formatua"
 
-#: src/killall.c:763
+#: src/killall.c:764
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Ezin da %s erabiltzailea aurkitu\n"
 
-#: src/killall.c:794
+#: src/killall.c:795
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr "Expresio erregular okerra: %s\n"
 
-#: src/killall.c:826
+#: src/killall.c:827
 #, fuzzy, c-format
 msgid "killall: Maximum number of names is %d\n"
 msgstr "Izen kopuru gehiengoa %d da\n"
 
-#: src/killall.c:831
+#: src/killall.c:832
 #, fuzzy, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s hutsik dago (muntatu gabea?)\n"

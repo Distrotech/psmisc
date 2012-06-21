@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.12\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-06-16 19:07+1000\n"
+"POT-Creation-Date: 2012-06-21 21:57+1000\n"
 "PO-Revision-Date: 2010-08-15 04:48-0300\n"
 "Last-Translator: Fabrício Godoy <skarllot@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar.conectiva.com.br>\n"
@@ -97,7 +97,7 @@ msgstr ""
 "Copyright © 1993-2010 Werner Almesberger and Craig Small\n"
 "\n"
 
-#: src/fuser.c:166 src/killall.c:649 src/peekfd.c:108 src/prtstat.c:68
+#: src/fuser.c:166 src/killall.c:650 src/peekfd.c:108 src/prtstat.c:68
 #: src/pstree.c:848
 #, c-format
 msgid ""
@@ -309,7 +309,7 @@ msgstr ""
 "  -Z,--context EXPREG matar apenas processo(s) tendo contexto\n"
 "                      (precisa preceder outros argumentos)\n"
 
-#: src/killall.c:647
+#: src/killall.c:648
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
@@ -318,26 +318,26 @@ msgstr ""
 "Copyright © 1993-2010 Werner Almesberger and Craig Small\n"
 "\n"
 
-#: src/killall.c:737 src/killall.c:743
+#: src/killall.c:738 src/killall.c:744
 msgid "Invalid time format"
 msgstr "Formato de tempo inválido"
 
-#: src/killall.c:763
+#: src/killall.c:764
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Não foi possível localizar o usuário %s\n"
 
-#: src/killall.c:794
+#: src/killall.c:795
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr "Expressão regular inválida: %s\n"
 
-#: src/killall.c:826
+#: src/killall.c:827
 #, fuzzy, c-format
 msgid "killall: Maximum number of names is %d\n"
 msgstr "O número máximo de nomes é %d\n"
 
-#: src/killall.c:831
+#: src/killall.c:832
 #, fuzzy, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s está vazio (não montado?)\n"

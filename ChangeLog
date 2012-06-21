@@ -1,3 +1,7 @@
+Changes in 22.19
+================
+	* killall with no args exits again SF #3536526
+
 Changes in 22.18
 ================
 	* Added AC_CANONICAL_TARGET for target_os Debian #673485
