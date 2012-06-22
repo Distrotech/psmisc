@@ -1,0 +1,19 @@
+
+
+regexp "(.*\/)testsuite" $objdir objdir topdir
+
+
+proc expect_pass { testname reg } {
+    expect {
+        -re "$reg" { pass "$testname" }
+        default { fail "$testname" }
+                timeout { fail "$testname" }
+    }
+}
+
+proc expect_nothing { test } {
+	expect {
+		-re "\\S" { fail "$test" }
+    	eof { pass "$test" }
+	}
+}

@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.68])
 AC_CONFIG_MACRO_DIR([m4])
-AC_INIT([psmisc],[22.19])
+AC_INIT([psmisc],[22.20])
 AC_CONFIG_SRCDIR([src/comm.h])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_AUX_DIR([config])
@@ -165,9 +165,16 @@ AC_CHECK_FUNCS([atexit getmntent memset nl_langinfo rawmemchr regcomp rpmatch se
 dnl Checks for Large File System
 AC_SYS_LARGEFILE
 
+if test x"$DEJAGNU" = x
+then
+  DEJAGNU="\$(top_srcdir)/testsuite/global-conf.exp"
+fi
+AC_SUBST(DEJAGNU)
+	
 AC_CONFIG_FILES([Makefile
 		 doc/Makefile
 		 src/Makefile
 		 icons/Makefile
-		 po/Makefile.in])
+		 po/Makefile.in
+		 testsuite/Makefile])
 AC_OUTPUT

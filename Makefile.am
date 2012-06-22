@@ -1,5 +1,5 @@
 
-SUBDIRS = doc src po icons 
+SUBDIRS = doc src po icons testsuite
 
 #EXTRA_DIST = config.rpath ABOUT-NLS mkinstalldirs
 
