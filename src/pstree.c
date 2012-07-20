@@ -296,8 +296,8 @@ static void add_child(PROC * parent, PROC * child)
         if (by_pid) {
             if ((*walk)->child->pid > child->pid)
                 break;
-        } else if ((cmp = strcmp((*walk)->child->comm, child->comm)) > 0)
-            break;
+        } else if ((cmp = strcmp((*walk)->child->comm, child->comm)) > 0) {
+            break; }
         else if (!cmp && (*walk)->child->uid > child->uid)
             break;
     new->next = *walk;
@@ -335,6 +335,28 @@ static void set_args(PROC * this, const char *args, int size)
         this->argv[i] = start = strchr(start, 0) + 1;
 }
 
+static void
+rename_proc(PROC *this, const char *comm, uid_t uid)
+{
+    PROC *tmp_child, *parent;
+	CHILD **walk;
+
+    strncpy(this->comm, comm, COMM_LEN+2);
+    this->comm[COMM_LEN+1] = '\0';
+    this->uid = uid;
+
+	/* Re-sort children in parent, now we have a name */
+	if (!by_pid && this->parent) {
+	    parent = this->parent;
+        for (walk = &parent->children; *walk; walk = &(*walk)->next) {
+		  if ( ((*walk)->next != NULL) && strcmp((*walk)->child->comm, (*walk)->next->child->comm) > 0 ) {
+			tmp_child = (*walk)->child;
+			(*walk)->child = (*walk)->next->child;
+			(*walk)->next->child = tmp_child;
+		  }
+		}
+	}
+}
 #ifdef WITH_SELINUX
 static void
 add_proc(const char *comm, pid_t pid, pid_t ppid, pid_t pgid, uid_t uid,
@@ -354,9 +376,7 @@ add_proc(const char *comm, pid_t pid, pid_t ppid, pid_t pgid, uid_t uid,
         this = new_proc(comm, pid, uid);
 #endif                                /*WITH_SELINUX */
     else {
-        strncpy(this->comm, comm, COMM_LEN+2);
-        this->comm[COMM_LEN+1] = '\0';
-        this->uid = uid;
+	    rename_proc(this, comm, uid);
     }
     if (args)
         set_args(this, args, size);
@@ -777,35 +797,6 @@ static void read_proc(void)
     exit(1);
   }
 }
-
-
-#if 0
-
-/* Could use output of  ps achlx | awk '{ print $3,$4,$2,$13 }'  */
-
-static void read_stdin(void)
-{
-    char comm[PATH_MAX + 1];
-    char *cmd;
-    int pid, ppid, uid;
-
-    while (scanf("%d %d %d %s\n", &pid, &ppid, &uid, comm) == 4) {
-        if (cmd = strrchr(comm, '/'))
-            cmd++;
-        else
-            cmd = comm;
-        if (*cmd == '-')
-            cmd++;
-#ifdef WITH_SELINUX
-        add_proc(cmd, pid, ppid, uid, NULL, 0, NULL);
-#else                                /*WITH_SELINUX */
-        add_proc(cmd, pid, ppid, uid, NULL, 0);
-#endif                                /*WITH_SELINUX */
-    }
-}
-
-#endif
-
 
 static void usage(void)
 {
