@@ -150,7 +150,7 @@ static double process_age(const unsigned long long jf)
 }
 
 /* returns requested time interval in seconds, 
- negative indicates error has occured  
+ negative indicates error has occurred
  */
 static long
 parse_time_units(const char* age)

@@ -58,7 +58,7 @@ typedef unsigned int uint;
  *	gcc -I/usr/src/linux/include -D__KERNEL__ -x c -E -P - | \
  *	sed -rn '/void[[:blank:]]+prefetch[[:blank:]]*\(/,/^}/p'
  *
- * on the appropiate architecture (here on i686 for i586).
+ * on the appropriate architecture (here on i686 for i586).
  */
 extern inline void attribute((used,__gnu_inline__,always_inline,__artificial__)) prefetch(const void *restrict x)
 {

@@ -1544,7 +1544,7 @@ void fill_unix_cache(struct unixsocket_list **unixsocket_head)
 }
 
 #ifdef DEBUG
-/* often not used, doesnt need translation */
+/* often not used, doesn't need translation */
 static void
 debug_match_lists(struct names *names_head, struct inode_list *ino_head,
 		  struct device_list *dev_head)
