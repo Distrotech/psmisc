@@ -1,14 +1,14 @@
 # Esperanto translation.
-# Copyright (C) 2011 Free Software Foundation, Inc.
+# Copyright (C) 2011, 2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the psmisc package.
-# Felipe Castro <fefcas@gmail.com>, 2011.
+# Felipe Castro <fefcas@gmail.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.12\n"
+"Project-Id-Version: psmisc 22.17rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-02-26 09:03+1100\n"
-"PO-Revision-Date: 2011-03-19 21:55-0300\n"
+"POT-Creation-Date: 2012-06-21 21:57+1000\n"
+"PO-Revision-Date: 2012-05-22 08:27-0300\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
 "Language: eo\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/fuser.c:128
+#: src/fuser.c:132
 #, fuzzy, c-format
 msgid ""
-"Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
 "NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
@@ -44,7 +44,7 @@ msgstr ""
 "NOMO...\n"
 "       fuser -l\n"
 "       fuser -V\n"
-"Montras kiujn procezojn, kiuj uzas la nomitajn dosierojn, ingojn, aŭ "
+"Montras kiujn procezojn uzas la nomitajn dosierojn, ingojn, aŭ "
 "dosiersistemojn.\n"
 "\n"
 "  -a,--all              montrigi ankaŭ neuzatajn dosierojn\n"
@@ -59,9 +59,10 @@ msgstr ""
 "  -SIGNALO              sendi tiun ĉi signalon anstataŭ SIGKILL\n"
 "  -u,--user             montrigi ID de uzantoj\n"
 "  -v,--verbose          detalema eligo\n"
+"  -w,--writeonly        mortigi nur la procezojn kun skrib-permeso\n"
 "  -V,--version          montrigi informon pri versio\n"
 
-#: src/fuser.c:146
+#: src/fuser.c:150
 #, c-format
 msgid ""
 "  -4,--ipv4             search IPv4 sockets only\n"
@@ -70,7 +71,7 @@ msgstr ""
 "  -4,--ipv4             serĉi nur ingojn IPv4\n"
 "  -6,--ipv6             serĉi nur ingojn IPv6\n"
 
-#: src/fuser.c:150
+#: src/fuser.c:154
 #, c-format
 msgid ""
 "  -                     reset options\n"
@@ -83,12 +84,12 @@ msgstr ""
 "  udp/tcp nomoj: [local_port][,[rmt_host][,[rmt_port]]]\n"
 "\n"
 
-#: src/fuser.c:157
+#: src/fuser.c:161
 #, c-format
 msgid "fuser (PSmisc) %s\n"
 msgstr "fuser (PSmisc) %s\n"
 
-#: src/fuser.c:160
+#: src/fuser.c:164
 #, c-format
 msgid ""
 "Copyright (C) 1993-2010 Werner Almesberger and Craig Small\n"
@@ -97,8 +98,8 @@ msgstr ""
 "Kopirajto (C) 1993-2010 Werner Almesberger kaj Craig Small\n"
 "\n"
 
-#: src/fuser.c:162 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:826
+#: src/fuser.c:166 src/killall.c:650 src/peekfd.c:108 src/prtstat.c:68
+#: src/pstree.c:848
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -112,166 +113,145 @@ msgstr ""
 "Por pli da informoj pri tiuj ĉi aferoj, vidu la dosierojn nomitajn COPYING "
 "(angle).\n"
 
-#: src/fuser.c:181
+#: src/fuser.c:185
 #, c-format
 msgid "Cannot open /proc directory: %s\n"
-msgstr "Ni ne povas malfermi dosierujon /proc: %s\n"
+msgstr "Ne eblas malfermi dosierujon /proc: %s\n"
 
-#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1887
+#: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1896
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
-msgstr "Ni ne povas rezervi memoron por kongruinta proc: %s\n"
+msgstr "Ne eblas rezervi memoron por kongruinta proc: %s\n"
 
-#: src/fuser.c:459
+#: src/fuser.c:463
 #, c-format
 msgid "Specified filename %s does not exist.\n"
 msgstr "La indikita dosiernomo %s ne ekzistas.\n"
 
-#: src/fuser.c:461
+#: src/fuser.c:465
 #, c-format
 msgid "Cannot stat %s: %s\n"
-msgstr "Ni ne povas apliki stat %s: %s\n"
+msgstr "Ne eblas apliki stat %s: %s\n"
 
-#: src/fuser.c:594
+#: src/fuser.c:598
 #, c-format
 msgid "Cannot resolve local port %s: %s\n"
-msgstr "Ni ne povas solvi lokan pordon %s: %s\n"
+msgstr "Ne eblas solvi lokan pordon %s: %s\n"
 
-#: src/fuser.c:612
+#: src/fuser.c:616
 #, c-format
 msgid "Unknown local port AF %d\n"
 msgstr "Nekonata loka pordo AF %d\n"
 
-#: src/fuser.c:702
+#: src/fuser.c:706
 #, c-format
 msgid "Cannot open protocol file \"%s\": %s\n"
-msgstr "Ni ne povas malfermi protokolan dosieron \"%s\": %s\n"
+msgstr "Ne eblas malfermi protokolan dosieron \"%s\": %s\n"
 
-#: src/fuser.c:948
+#: src/fuser.c:954
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr "%s: Malvalida elektilo %s\n"
 
-#: src/fuser.c:998
+#: src/fuser.c:1004
 msgid "Namespace option requires an argument."
 msgstr "Nomspaca elektilo postulas unu argumenton."
 
-#: src/fuser.c:1010
+#: src/fuser.c:1016
 msgid "Invalid namespace name"
 msgstr "Malvalida nomo por nomspaco"
 
-#: src/fuser.c:1066
+#: src/fuser.c:1072
 msgid "You can only use files with mountpoint options"
 msgstr "Vi nur povas uzi dosierojn kun munt-punktaj elektiloj"
 
-#: src/fuser.c:1111
+#: src/fuser.c:1117
 msgid "No process specification given"
 msgstr "Neniu specifo pri procezo estis donata"
 
-#: src/fuser.c:1118
+#: src/fuser.c:1124
 msgid "all option cannot be used with silent option."
-msgstr "elektilo all ne povas esti uzata kun silenta elektilo."
+msgstr "elektilo 'all' ne povas esti uzata kun silenta elektilo."
 
-#: src/fuser.c:1123
+#: src/fuser.c:1129
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr "Vi ne povas serĉi ingojn nur IPv4 kaj nur IPv6 samtempe"
 
-#: src/fuser.c:1201
+#: src/fuser.c:1207
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr "%*s UZANTO        PID ALIRO KOMANDO\n"
 
-#: src/fuser.c:1234 src/fuser.c:1289
+#: src/fuser.c:1240 src/fuser.c:1295
 msgid "(unknown)"
-msgstr "(nekonate)"
+msgstr "(nekonata)"
 
-#: src/fuser.c:1378 src/fuser.c:1416
+#: src/fuser.c:1384 src/fuser.c:1425
 #, c-format
 msgid "Cannot stat file %s: %s\n"
-msgstr "Ni ne povas apliki stat en dosiero %s: %s\n"
+msgstr "Ne eblas apliki stat en dosiero %s: %s\n"
 
-#: src/fuser.c:1507
+#: src/fuser.c:1516
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
-msgstr "Ni ne povas malfermi /proc/net/unix: %s\n"
+msgstr "Ne eblas malfermi /proc/net/unix: %s\n"
 
-#: src/fuser.c:1583
+#: src/fuser.c:1592
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "Ĉu mortigi la procezon %d ? (y/N) "
 
-#: src/fuser.c:1619
+#: src/fuser.c:1628
 #, c-format
 msgid "Could not kill process %d: %s\n"
-msgstr "Ni ne povis mortigi la procezon %d: %s\n"
+msgstr "Ne eblis mortigi la procezon %d: %s\n"
 
-#: src/fuser.c:1634
+#: src/fuser.c:1643
 #, c-format
 msgid "Cannot open a network socket.\n"
-msgstr "Ni ne povas malfermi retan ingon.\n"
+msgstr "Ne eblas malfermi retan ingon.\n"
 
-#: src/fuser.c:1638
+#: src/fuser.c:1647
 #, c-format
 msgid "Cannot find socket's device number.\n"
-msgstr "Ni ne povas trovi aparat-numeron de ingo.\n"
+msgstr "Ne eblas trovi aparat-numeron de ingo.\n"
 
-#: src/killall.c:102
+#: src/killall.c:100
 #, c-format
 msgid "Kill %s(%s%d) ? (y/N) "
 msgstr "Ĉu mortigi %s(%s%d) ? (y/N) "
 
-#: src/killall.c:105
+#: src/killall.c:103
 #, c-format
 msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Ĉu signali %s(%s%d) ? (y/N) "
 
-#: src/killall.c:209
-#, c-format
-msgid "Cannot get UID from process status\n"
-msgstr "Ni ne povas preni UID el procez-stato\n"
+#: src/killall.c:207
+#, fuzzy, c-format
+msgid "killall: Cannot get UID from process status\n"
+msgstr "Ne eblas preni UID el procez-stato\n"
 
-#: src/killall.c:235 src/killall.c:840
-#, c-format
-msgid "Bad regular expression: %s\n"
+#: src/killall.c:233
+#, fuzzy, c-format
+msgid "killall: Bad regular expression: %s\n"
 msgstr "Malĝusta regul-esprimo: %s\n"
 
-#: src/killall.c:446
-#, c-format
-msgid "skipping partial match %s(%d)\n"
-msgstr "ni preterpasas ne kompletan kongruon %s(%d)\n"
+#: src/killall.c:444
+#, fuzzy, c-format
+msgid "killall: skipping partial match %s(%d)\n"
+msgstr "ni preterpasas ne-kompletan kongruon %s(%d)\n"
 
-#: src/killall.c:568
+#: src/killall.c:559
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "Ni mortigis %s(%s%d) per signalo %d\n"
 
-#: src/killall.c:582
+#: src/killall.c:573
 #, c-format
 msgid "%s: no process found\n"
 msgstr "%s: neniu procezo trovite\n"
 
-#: src/killall.c:620
-#, c-format
-msgid ""
-"Usage: pidof [ -eg ] NAME...\n"
-"       pidof -V\n"
-"\n"
-"    -e      require exact match for very long names;\n"
-"            skip if the command line is unavailable\n"
-"    -g      show process group ID instead of process ID\n"
-"    -V      display version information\n"
-"\n"
-msgstr ""
-"Uzado: pidof [ -eg ] NOMO...\n"
-"       pidof -V\n"
-"\n"
-"    -e      postuli ĝustan kongruon por tre longaj nomoj;\n"
-"            preterpasas se la komand-linio ne disponeblas\n"
-"    -g      montri procezan grup-ID anstataŭ procezan ID\n"
-"    -V      montrigi informon pri versio\n"
-"\n"
-
-#: src/killall.c:636
+#: src/killall.c:612
 #, c-format
 msgid ""
 "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
@@ -279,12 +259,12 @@ msgstr ""
 "Uzado: killall [-Z KUNTEKSTO] [-u UZANTO] [ -eIgiqrvw ] [ -SIGNALO ] "
 "NOMO...\n"
 
-#: src/killall.c:639
+#: src/killall.c:615
 #, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "Uzado: killall [ELEKTILO]... [--] NOMO...\n"
 
-#: src/killall.c:642
+#: src/killall.c:618
 #, c-format
 msgid ""
 "       killall -l, --list\n"
@@ -323,7 +303,7 @@ msgstr ""
 "  -V,--version        montrigi informon pri versio\n"
 "  -w,--wait           atendi ke procezoj mortu\n"
 
-#: src/killall.c:660
+#: src/killall.c:636
 #, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
@@ -332,33 +312,38 @@ msgstr ""
 "  -Z,--context REGEXP mortigi nur procezo(j)n kiuj havu kuntekston\n"
 "                      (devas veni antaŭ aliaj argumentoj)\n"
 
-#: src/killall.c:681
-#, c-format
+#: src/killall.c:648
+#, fuzzy, c-format
 msgid ""
-"Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Kopirajto (C) 1993-2005 Werner Almesberger kaj Craig Small\n"
+"Kopirajto (C) 1993-2010 Werner Almesberger kaj Craig Small\n"
 "\n"
 
-#: src/killall.c:773 src/killall.c:780
+#: src/killall.c:738 src/killall.c:744
 msgid "Invalid time format"
 msgstr "Malvalida tempo-formo"
 
-#: src/killall.c:805
+#: src/killall.c:764
 #, c-format
 msgid "Cannot find user %s\n"
-msgstr "Ni ne povas trovi la uzanton %s\n"
+msgstr "Ne eblas trovi la uzanton %s\n"
 
-#: src/killall.c:872
+#: src/killall.c:795
 #, c-format
-msgid "Maximum number of names is %d\n"
+msgid "Bad regular expression: %s\n"
+msgstr "Malĝusta regul-esprimo: %s\n"
+
+#: src/killall.c:827
+#, fuzzy, c-format
+msgid "killall: Maximum number of names is %d\n"
 msgstr "Maksimuma nombro da nomoj estas %d\n"
 
-#: src/killall.c:876
+#: src/killall.c:832
 #, fuzzy, c-format
-msgid "%s lacks process entries (not mounted ?)\n"
-msgstr "%s estas malplena (ĉu ne muntita ?)\n"
+msgid "killall: %s lacks process entries (not mounted ?)\n"
+msgstr "%s malhavas procezajn informojn (ĉu ne muntita ?)\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -531,7 +516,7 @@ msgid ""
 msgstr ""
 "Planado\n"
 "  Strategio: %s\n"
-"  Nice:   %ld \t\t RT Prioritato: %ld %s\n"
+"  'Nice':   %ld \t\t RT Prioritato: %ld %s\n"
 
 #: src/prtstat.c:221
 msgid "asprintf in print_stat failed.\n"
@@ -560,15 +545,16 @@ msgstr "Vi devas provizi minimume unu PID."
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "/proc ne estas muntita, ni ne povas apliki stat en /proc/self/stat.\n"
 
-#: src/pstree.c:755
+#: src/pstree.c:776
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s estas malplena (ĉu ne muntita ?)\n"
 
-#: src/pstree.c:793
-#, fuzzy, c-format
+#: src/pstree.c:814
+#, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -579,6 +565,7 @@ msgid ""
 "  -h, --highlight-all highlight current process and its ancestors\n"
 "  -H PID,\n"
 "  --highlight-pid=PID highlight this process and its ancestors\n"
+"  -g, --show-pgids    show process group ids; implies -c\n"
 "  -G, --vt100         use VT100 line drawing characters\n"
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
@@ -588,7 +575,8 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Uzado: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
+"Uzado: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | UZANTO ]\n"
 "       pstree -V\n"
 "Montrigi arbon de procezoj.\n"
@@ -603,16 +591,17 @@ msgstr ""
 "  -l, --long          ne tranĉi longajn liniojn\n"
 "  -n, --numeric-sort  ordigi eligon laŭ PID\n"
 "  -p, --show-pids     montri PID-ojn; implikas -c\n"
+"  -s, --show-parents  montri praulojn de la elektita procezo\n"
 "  -u, --uid-changes   montri transigoj de uid\n"
 "  -U, --unicode       uzi UTF-8 (Unikodan) lini-desegnajn signojn\n"
 "  -V, --version       montrigi informon pri versio\n"
 
-#: src/pstree.c:812
+#: src/pstree.c:834
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     montri         sekurecajn kuntekstojn SELinux\n"
 
-#: src/pstree.c:814
+#: src/pstree.c:836
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -623,12 +612,12 @@ msgstr ""
 "  UZANTO montri nur arbojn kiuj havas radikojn ĉe procezoj de tiu ĉi uzanto\n"
 "\n"
 
-#: src/pstree.c:821
+#: src/pstree.c:843
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:824
+#: src/pstree.c:846
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -637,27 +626,27 @@ msgstr ""
 "Kopirajto (C) 1993-2009 Werner Almesberger kaj Craig Small\n"
 "\n"
 
-#: src/pstree.c:936
+#: src/pstree.c:959
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM ne estas difinita\n"
 
-#: src/pstree.c:940
+#: src/pstree.c:963
 #, c-format
 msgid "Can't get terminal capabilities\n"
-msgstr "Ni ne povas koni la kapablojn de la terminalo\n"
+msgstr "Ne eblas koni la kapablojn de la terminalo\n"
 
-#: src/pstree.c:985
+#: src/pstree.c:1012
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Neniu uzant-nomo tia: %s\n"
 
-#: src/pstree.c:1008
+#: src/pstree.c:1035
 #, c-format
 msgid "No processes found.\n"
 msgstr "Neniu procezo trovite.\n"
 
-#: src/pstree.c:1014
+#: src/pstree.c:1041
 #, c-format
 msgid "Press return to close\n"
 msgstr "Premu la enigklavon por fermi\n"
@@ -666,3 +655,29 @@ msgstr "Premu la enigklavon por fermi\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: nekonata signalo; %s -l listigas la signalojn.\n"
+
+#~ msgid ""
+#~ "Usage: pidof [ -eg ] NAME...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      require exact match for very long names;\n"
+#~ "            skip if the command line is unavailable\n"
+#~ "    -g      show process group ID instead of process ID\n"
+#~ "    -V      display version information\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Uzado: pidof [ -eg ] NOMO...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      postuli ĝustan kongruon por tre longaj nomoj;\n"
+#~ "            preterpasas se la komand-linio ne disponeblas\n"
+#~ "    -g      montri procezan grup-ID anstataŭ procezan ID\n"
+#~ "    -V      montrigi informon pri versio\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Kopirajto (C) 1993-2005 Werner Almesberger kaj Craig Small\n"
+#~ "\n"

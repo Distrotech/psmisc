@@ -1,0 +1,19 @@
+#
+# Testsuite for killall
+#
+
+set killall "${topdir}src/killall"
+set fake_proc_name "afakeprocname"
+
+set test "killall with no arguments"
+spawn $killall
+expect_pass "$test" "^Usage: killall \\\[OPTION\\\]\\.\\.\\. \\\[--\\\] NAME\\.\\.\\."
+
+set test "killall list signals"
+spawn $killall -l
+expect_pass "$test" "^(\[A-Z12\]+\\s*)+$"
+
+set test "killall process not found"
+spawn $killall ${fake_proc_name}
+expect_pass "$test" "${fake_proc_name}: no process found"
+

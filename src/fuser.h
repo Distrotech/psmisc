@@ -86,7 +86,7 @@ struct mount_list {
 	struct mount_list *next;
 };
 
-#if defined (__GNUC__) && defined(__OPTIMIZE__)
+#if defined (__GNUC__) && defined(__OPTIMIZE__) && !defined (__CYGWIN__)
 # include "lists.h"
 typedef struct mntinfo_s {
     list_t   this;

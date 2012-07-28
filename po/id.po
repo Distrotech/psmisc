@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.11-pre1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-02-26 09:03+1100\n"
+"POT-Creation-Date: 2012-06-21 21:57+1000\n"
 "PO-Revision-Date: 2010-03-28 19:30+0700\n"
 "Last-Translator: Arif E. Nugroho <arif_endro@yahoo.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/fuser.c:128
+#: src/fuser.c:132
 #, fuzzy, c-format
 msgid ""
-"Usage: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
 "NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
@@ -63,7 +63,7 @@ msgstr ""
 "  -v                    keluaran ramai\n"
 "  -V                    tampilkan informasi versi\n"
 
-#: src/fuser.c:146
+#: src/fuser.c:150
 #, c-format
 msgid ""
 "  -4,--ipv4             search IPv4 sockets only\n"
@@ -72,7 +72,7 @@ msgstr ""
 "  -4,--ipv4             cari di socket IPv4 saja\n"
 "  -6,--ipv6             cari di socket IPpv6 saja\n"
 
-#: src/fuser.c:150
+#: src/fuser.c:154
 #, c-format
 msgid ""
 "  -                     reset options\n"
@@ -85,12 +85,12 @@ msgstr ""
 "  nama udp/tcp: [local_port][,[rmt_host][,[rmt_port]]]\n"
 "\n"
 
-#: src/fuser.c:157
+#: src/fuser.c:161
 #, c-format
 msgid "fuser (PSmisc) %s\n"
 msgstr "fuser (PSmisc) %s\n"
 
-#: src/fuser.c:160
+#: src/fuser.c:164
 #, c-format
 msgid ""
 "Copyright (C) 1993-2010 Werner Almesberger and Craig Small\n"
@@ -99,8 +99,8 @@ msgstr ""
 "Hak Cipta (C) 1993-2010 Werner Almesberger dan Craid Small\n"
 "\n"
 
-#: src/fuser.c:162 src/killall.c:683 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:826
+#: src/fuser.c:166 src/killall.c:650 src/peekfd.c:108 src/prtstat.c:68
+#: src/pstree.c:848
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -114,168 +114,147 @@ msgstr ""
 "ketentuan dari GNU General Public License.\n"
 "Untuk informasi mengenai masalah ini, lihat berkas bernama COPYING.\n"
 
-#: src/fuser.c:181
+#: src/fuser.c:185
 #, c-format
 msgid "Cannot open /proc directory: %s\n"
 msgstr "Tidak dapat membuka direktori /proc: %s\n"
 
-#: src/fuser.c:372 src/fuser.c:425 src/fuser.c:1887
+#: src/fuser.c:376 src/fuser.c:429 src/fuser.c:1896
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Tidak dapat mengalokasikan memori untuk proc yang sesuai: %s\n"
 
-#: src/fuser.c:459
+#: src/fuser.c:463
 #, c-format
 msgid "Specified filename %s does not exist.\n"
 msgstr "Nama berkas yang dispesifikasikan %s tidak ada.\n"
 
-#: src/fuser.c:461
+#: src/fuser.c:465
 #, c-format
 msgid "Cannot stat %s: %s\n"
 msgstr "Tidak dapat memperoleh statistik %s: %s\n"
 
-#: src/fuser.c:594
+#: src/fuser.c:598
 #, c-format
 msgid "Cannot resolve local port %s: %s\n"
 msgstr "Tidak dapat meresolf port lokal %s: %s\n"
 
-#: src/fuser.c:612
+#: src/fuser.c:616
 #, c-format
 msgid "Unknown local port AF %d\n"
 msgstr "Port lokal AF %d tidak diketahui\n"
 
-#: src/fuser.c:702
+#: src/fuser.c:706
 #, c-format
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Tidak dapat membuka berkas protokol \"%s\": %s\n"
 
-#: src/fuser.c:948
+#: src/fuser.c:954
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr "%s: Pilihan %s tidak valid\n"
 
-#: src/fuser.c:998
+#: src/fuser.c:1004
 msgid "Namespace option requires an argument."
 msgstr "Pilihan nama ruang membutuhkan sebuah argumen."
 
-#: src/fuser.c:1010
+#: src/fuser.c:1016
 msgid "Invalid namespace name"
 msgstr "Nama nama-ruang tidak valid"
 
-#: src/fuser.c:1066
+#: src/fuser.c:1072
 msgid "You can only use files with mountpoint options"
 msgstr "Anda hanya dapat menggunakan berkas dengan pilihan titik-pemasangan"
 
-#: src/fuser.c:1111
+#: src/fuser.c:1117
 msgid "No process specification given"
 msgstr "Tidak ada spesifikasi proses yang diberikan"
 
-#: src/fuser.c:1118
+#: src/fuser.c:1124
 msgid "all option cannot be used with silent option."
 msgstr "semua pilihan tidak dapat digunakan dengan pilihan silent."
 
-#: src/fuser.c:1123
+#: src/fuser.c:1129
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr ""
 "Anda tidak dapat mencari hanya untuk IPv4 dan hanya untuk IPv6 socket di "
 "waktu yang sama"
 
-#: src/fuser.c:1201
+#: src/fuser.c:1207
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr "%*s PENGGUNA    PID AKSES  PERINTAH\n"
 
-#: src/fuser.c:1234 src/fuser.c:1289
+#: src/fuser.c:1240 src/fuser.c:1295
 msgid "(unknown)"
 msgstr "(tidak diketahui)"
 
-#: src/fuser.c:1378 src/fuser.c:1416
+#: src/fuser.c:1384 src/fuser.c:1425
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr "Tidak dapat memperoleh statistik berkas %s: %s\n"
 
-#: src/fuser.c:1507
+#: src/fuser.c:1516
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr "Tidak dapat membuka /proc/net/unix: %s\n"
 
-#: src/fuser.c:1583
+#: src/fuser.c:1592
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "Bunuh proses %d ? (y/N) "
 
-#: src/fuser.c:1619
+#: src/fuser.c:1628
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr "Tidak dapat menghentikan proses %d: %s\n"
 
-#: src/fuser.c:1634
+#: src/fuser.c:1643
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr "Tidak dapat membuka sebuah socket network.\n"
 
-#: src/fuser.c:1638
+#: src/fuser.c:1647
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr "Tidak dapat menemukan nomor perangkat socket.\n"
 
-#: src/killall.c:102
+#: src/killall.c:100
 #, c-format
 msgid "Kill %s(%s%d) ? (y/N) "
 msgstr "Bunuh %s(%s%d) ? (y/N) "
 
-#: src/killall.c:105
+#: src/killall.c:103
 #, c-format
 msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Sinyal %s(%s%d) ? (y/N)"
 
-#: src/killall.c:209
-#, c-format
-msgid "Cannot get UID from process status\n"
+#: src/killall.c:207
+#, fuzzy, c-format
+msgid "killall: Cannot get UID from process status\n"
 msgstr "Tidak dapat memperoleh UID dari status proses\n"
 
-#: src/killall.c:235 src/killall.c:840
-#, c-format
-msgid "Bad regular expression: %s\n"
+#: src/killall.c:233
+#, fuzzy, c-format
+msgid "killall: Bad regular expression: %s\n"
 msgstr "Ekspresi regular buruk: %s\n"
 
-#: src/killall.c:446
-#, c-format
-msgid "skipping partial match %s(%d)\n"
+#: src/killall.c:444
+#, fuzzy, c-format
+msgid "killall: skipping partial match %s(%d)\n"
 msgstr "melewatkan pencocokan bagian %s(%d)\n"
 
-#: src/killall.c:568
+#: src/killall.c:559
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "Terhenti %s(%s%d) dengan sinyal %d\n"
 
-#: src/killall.c:582
+#: src/killall.c:573
 #, c-format
 msgid "%s: no process found\n"
 msgstr "%s: tidak ada proses yang ditemukan\n"
 
-#: src/killall.c:620
-#, c-format
-msgid ""
-"Usage: pidof [ -eg ] NAME...\n"
-"       pidof -V\n"
-"\n"
-"    -e      require exact match for very long names;\n"
-"            skip if the command line is unavailable\n"
-"    -g      show process group ID instead of process ID\n"
-"    -V      display version information\n"
-"\n"
-msgstr ""
-"Penggunaan: pidof [ -eg ] NAMA...\n"
-"            pidof -V\n"
-"\n"
-"   -e       membutuhkan pencocokan yang tepat untuk setiap nama panjang;\n"
-"            dilewatkan jika baris perintah tidak tersedia\n"
-"   -g       menampilkan proses grup ID dari pada proses ID\n"
-"   -V       tampilkan informasi versi\n"
-"\n"
-
-#: src/killall.c:636
+#: src/killall.c:612
 #, c-format
 msgid ""
 "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
@@ -283,12 +262,12 @@ msgstr ""
 "Penggunaan: killall [-Z KONTEKS] [-u PENGGUNA] [-eIgiqrvw ] [ -SIGNAL ] "
 "NAMA...\n"
 
-#: src/killall.c:639
+#: src/killall.c:615
 #, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "Penggunaan: killall [OPSI]... [--] NAMA...\n"
 
-#: src/killall.c:642
+#: src/killall.c:618
 #, c-format
 msgid ""
 "       killall -l, --list\n"
@@ -330,7 +309,7 @@ msgstr ""
 "  -V,--version        tampilkan informasi versi\n"
 "  -w,--wait           tunggu untuk proses untuk mati\n"
 
-#: src/killall.c:660
+#: src/killall.c:636
 #, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
@@ -339,32 +318,37 @@ msgstr ""
 "  -Z,--context REGEXP hanya hentikan proses yang memiliki konteks\n"
 "                      (harus diawali dengan argumen lain)\n"
 
-#: src/killall.c:681
-#, c-format
+#: src/killall.c:648
+#, fuzzy, c-format
 msgid ""
-"Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Hak Cipta (C) 1993-2005 Werner Almesberger dan Craid Small\n"
+"Hak Cipta (C) 1993-2010 Werner Almesberger dan Craid Small\n"
 "\n"
 
-#: src/killall.c:773 src/killall.c:780
+#: src/killall.c:738 src/killall.c:744
 msgid "Invalid time format"
 msgstr "Format waktu tidak valid"
 
-#: src/killall.c:805
+#: src/killall.c:764
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "Tidak dapat menemukan pengguna %s\n"
 
-#: src/killall.c:872
+#: src/killall.c:795
 #, c-format
-msgid "Maximum number of names is %d\n"
+msgid "Bad regular expression: %s\n"
+msgstr "Ekspresi regular buruk: %s\n"
+
+#: src/killall.c:827
+#, fuzzy, c-format
+msgid "killall: Maximum number of names is %d\n"
 msgstr "Jumlah maksimal dari nama adalah %d\n"
 
-#: src/killall.c:876
+#: src/killall.c:832
 #, fuzzy, c-format
-msgid "%s lacks process entries (not mounted ?)\n"
+msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "%s adalah kosong (belum dimount ?)\n"
 
 #: src/peekfd.c:96
@@ -568,15 +552,16 @@ msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 "/proc belum dipasang, tidak dapat memperoleh statistik /proc/self/stat.\n"
 
-#: src/pstree.c:755
+#: src/pstree.c:776
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s adalah kosong (belum dimount ?)\n"
 
-#: src/pstree.c:793
+#: src/pstree.c:814
 #, fuzzy, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -587,6 +572,7 @@ msgid ""
 "  -h, --highlight-all highlight current process and its ancestors\n"
 "  -H PID,\n"
 "  --highlight-pid=PID highlight this process and its ancestors\n"
+"  -g, --show-pgids    show process group ids; implies -c\n"
 "  -G, --vt100         use VT100 line drawing characters\n"
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
@@ -616,12 +602,12 @@ msgstr ""
 "  -U, --unicode       gunakan UTF-8 (Unicode) baris karakter gambar\n"
 "  -V, --version       tampilkan informasi versi\n"
 
-#: src/pstree.c:812
+#: src/pstree.c:834
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     tampilkan    tampilkan konteks keamanan SELinux\n"
 
-#: src/pstree.c:814
+#: src/pstree.c:836
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -632,12 +618,12 @@ msgstr ""
 "  PENGGUNA tampilkan hanya proses yang berakar dari pengguna ini\n"
 "\n"
 
-#: src/pstree.c:821
+#: src/pstree.c:843
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:824
+#: src/pstree.c:846
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -646,27 +632,27 @@ msgstr ""
 "Hak Cipta (C) 1993-2009 Werner Almesberger dan Craid Small\n"
 "\n"
 
-#: src/pstree.c:936
+#: src/pstree.c:959
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM tidak diset\n"
 
-#: src/pstree.c:940
+#: src/pstree.c:963
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Tidka dapat memperoleh kapabilitas terminal\n"
 
-#: src/pstree.c:985
+#: src/pstree.c:1012
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Tidak ada nama pengguna seperti itu: %s\n"
 
-#: src/pstree.c:1008
+#: src/pstree.c:1035
 #, c-format
 msgid "No processes found.\n"
 msgstr "Tidak ada proses yang ditemukan.\n"
 
-#: src/pstree.c:1014
+#: src/pstree.c:1041
 #, c-format
 msgid "Press return to close\n"
 msgstr "Tekan Enter untuk menutup\n"
@@ -675,6 +661,32 @@ msgstr "Tekan Enter untuk menutup\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: sinyal tidak diketahui; %s -l daftar sinyal.\n"
+
+#~ msgid ""
+#~ "Usage: pidof [ -eg ] NAME...\n"
+#~ "       pidof -V\n"
+#~ "\n"
+#~ "    -e      require exact match for very long names;\n"
+#~ "            skip if the command line is unavailable\n"
+#~ "    -g      show process group ID instead of process ID\n"
+#~ "    -V      display version information\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Penggunaan: pidof [ -eg ] NAMA...\n"
+#~ "            pidof -V\n"
+#~ "\n"
+#~ "   -e       membutuhkan pencocokan yang tepat untuk setiap nama panjang;\n"
+#~ "            dilewatkan jika baris perintah tidak tersedia\n"
+#~ "   -g       menampilkan proses grup ID dari pada proses ID\n"
+#~ "   -V       tampilkan informasi versi\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Hak Cipta (C) 1993-2005 Werner Almesberger dan Craid Small\n"
+#~ "\n"
 
 #~ msgid "You cannot use the mounted and mountpoint flags together"
 #~ msgstr ""

@@ -1,0 +1,42 @@
+#
+# Testsuite for fuser
+#
+proc cleanup { } {
+	global test_file
+	exec rm $test_file
+}
+
+set fuser "${topdir}src/fuser"
+set test_file [ exec mktemp ]
+
+set verbose_header "\\s+USER\\s+PID ACCESS COMMAND\\s*"
+
+set test "fuser with no arguments"
+spawn $fuser
+expect_pass "$test" "^No process specification given\\s*Usage: fuser"
+
+set test "fuser no args, no proc"
+spawn $fuser $test_file
+expect_nothing "$test"
+
+set test "fuser -a no proc"
+spawn $fuser -a $test_file
+expect_pass "$test" "^${test_file}:\\s*$"
+
+set test "fuser -v, no proc"
+spawn $fuser $test_file
+expect_nothing "$test"
+
+set test "fuser -av, no proc"
+spawn $fuser -av $test_file
+expect_pass "$test" "^${verbose_header}${test_file}:\\s*$"
+
+set test "fuser -va, no proc"
+spawn $fuser -av $test_file
+expect_pass "$test" "^${verbose_header}${test_file}:\\s*$"
+
+set test "fuser -l"
+spawn $fuser -l
+expect_pass "$test" "^(\[A-Z12\]+\\s*)+$"
+
+

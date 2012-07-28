@@ -27,6 +27,9 @@ if WANT_PEEKFD_MIPS
 endif
 
 fuser_SOURCES = fuser.c comm.h signals.c signals.h i18n.h fuser.h lists.h
+if WANT_TIMEOUT_STAT
+  fuser_SOURCES += timeout.c timeout.h
+endif
 
 fuser_LDADD = @LIBINTL@
 
@@ -54,7 +57,7 @@ signames.h: signames.c Makefile
 		export LC_ALL=C ; \
 		@CPP@ -dM $< |\
 		tr -s '\t ' ' ' | sort -n -k 3 | sed \
-	's:#define SIG\([A-Z]\+[0-9]*\) \([0-9]\+\) *\(\|/\*.*\)$$:{\ \2,"\1" },:p;d' | \
+	's:#define SIG\([A-Z][A-Z]*[0-9]*\) \([0-9][0-9]*\).*$\:{\ \2,"\1" },:p;d' | \
 		  grep -v '[0-9][0-9][0-9]' >signames.h || \
 		  { rm -f signames.h; exit 1; }
 		grep '^{ 1,"HUP" },$$' signames.h >/dev/null || \

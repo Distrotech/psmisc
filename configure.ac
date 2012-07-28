@@ -1,10 +1,11 @@
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.68])
 AC_CONFIG_MACRO_DIR([m4])
-AC_INIT([psmisc],[22.16])
+AC_INIT([psmisc],[22.20])
 AC_CONFIG_SRCDIR([src/comm.h])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_AUX_DIR([config])
+AC_CANONICAL_TARGET
 AM_INIT_AUTOMAKE([1.10])
 AC_LANG([C])
 
@@ -30,12 +31,16 @@ AC_SUBST([SELINUX_LIB])
 # Call fork before all stat calls to stop hanging on NFS mounts
 AC_SUBST([WITH_TIMEOUT_STAT])
 AC_ARG_ENABLE([timeout_stat],
-  [AS_HELP_STRING([--enable-timeout-stat], [Use a timeout on stat calls])],
+  [AS_HELP_STRING([--enable-timeout-stat], [Use a timeout on stat calls (optional with argument "static" for a static background process)])],
   [enable_timeout_stat=$enableval],
   [enable_timeout_stat="no"])
 if test "$enable_timeout_stat" = "yes"; then
   AC_DEFINE([WITH_TIMEOUT_STAT], [1], [Use timeout on stat calls])
 fi
+if test "$enable_timeout_stat" = "static"; then
+  AC_DEFINE([WITH_TIMEOUT_STAT], [2], [Use timeout on stat calls])
+fi
+AM_CONDITIONAL([WANT_TIMEOUT_STAT], [test "$enable_timeout_stat" = "static"])
 
 # Enable hardened compile and link flags
 AC_ARG_ENABLE([harden_flags],
@@ -160,9 +165,16 @@ AC_CHECK_FUNCS([atexit getmntent memset nl_langinfo rawmemchr regcomp rpmatch se
 dnl Checks for Large File System
 AC_SYS_LARGEFILE
 
+if test x"$DEJAGNU" = x
+then
+  DEJAGNU="\$(top_srcdir)/testsuite/global-conf.exp"
+fi
+AC_SUBST(DEJAGNU)
+	
 AC_CONFIG_FILES([Makefile
 		 doc/Makefile
 		 src/Makefile
 		 icons/Makefile
-		 po/Makefile.in])
+		 po/Makefile.in
+		 testsuite/Makefile])
 AC_OUTPUT

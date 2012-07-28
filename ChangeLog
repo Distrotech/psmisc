@@ -1,6 +1,34 @@
-Changes in 22.17 (unreleased)
+Changes in 22.20
 ================
+	* pstree sorts properly on names Debian #682014
+Changes in 22.19
+================
+	* killall with no args exits again SF #3536526
+
+Changes in 22.18
+================
+	* Added AC_CANONICAL_TARGET for target_os Debian #673485
+	* sed doesn't have [0-9]+ replace with [0-9][0-9]*
+	* assert in killall triggered for small lifetimes Debian #628617
+	* killall MAX_NAMES off by one Debian #677428
+	* Removed remaining parts of pidof
+
+Changes in 22.17
+================
+	* Make it possible to use --enable-timeout-stat as well as
+	  --enable-timeout-stat=static for a static background process which
+	  does the final stat system calls
+	* Do not mix HAVE_TIMEOUT_STAT with WITH_TIMEOUT_STAT
+	* Add timeout.c/timeout.h for static background process which is able
+	  to read the file name from pipe, does the stat(2) system call, and
+	  writes the result back to a pipe.
+	* Really add ASCII null at command string in add_proc() of pstree.c
 	* fuser uses correct timeout_stat define Debian #661723
+	* fuser is not compiled on hurd-i386 Debian #673485
+	* No TEXTRELS in src/lists built as PIE on x86
+	* Fake pstree root for kernels with hidepid turned on
+	* More fixes for Cygwin SF Patch #3511920
+	* pstree can show PGIDs SF Patch #3471056
 
 Changes in 22.16
 ================

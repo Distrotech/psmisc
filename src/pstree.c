@@ -2,7 +2,7 @@
  * pstree.c - display process tree
  *
  * Copyright (C) 1993-2002 Werner Almesberger
- * Copyright (C) 2002-2009 Craig Small
+ * Copyright (C) 2002-2012 Craig Small
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -73,6 +73,7 @@ typedef struct _proc {
     char **argv;                /* only used : argv[0] is 1st arg; undef if argc < 1 */
     int argc;                        /* with -a   : number of arguments, -1 if swapped    */
     pid_t pid;
+    pid_t pgid;
     uid_t uid;
 #ifdef WITH_SELINUX
     security_context_t scontext;
@@ -122,7 +123,7 @@ static int capacity = 0;
 static int *width = NULL;
 static int *more = NULL;
 
-static int print_args = 0, compact = 1, user_change = 0, pids = 0,
+static int print_args = 0, compact = 1, user_change = 0, pids = 0, pgids = 0,
     show_parents = 0, by_pid = 0, trunc = 1, wait_end = 0;
 #ifdef WITH_SELINUX
 static int show_scontext = 0;
@@ -265,7 +266,7 @@ static PROC *new_proc(const char *comm, pid_t pid, uid_t uid)
         exit(1);
     }
     strncpy(new->comm, comm, COMM_LEN+2);
-	new->comm[COMM_LEN+1]='\0'; /* make sure nul terminated*/
+    new->comm[COMM_LEN+1] = '\0';     /* make sure nul terminated*/
     new->pid = pid;
     new->uid = uid;
     new->flags = 0;
@@ -295,8 +296,8 @@ static void add_child(PROC * parent, PROC * child)
         if (by_pid) {
             if ((*walk)->child->pid > child->pid)
                 break;
-        } else if ((cmp = strcmp((*walk)->child->comm, child->comm)) > 0)
-            break;
+        } else if ((cmp = strcmp((*walk)->child->comm, child->comm)) > 0) {
+            break; }
         else if (!cmp && (*walk)->child->uid > child->uid)
             break;
     new->next = *walk;
@@ -334,13 +335,35 @@ static void set_args(PROC * this, const char *args, int size)
         this->argv[i] = start = strchr(start, 0) + 1;
 }
 
+static void
+rename_proc(PROC *this, const char *comm, uid_t uid)
+{
+    PROC *tmp_child, *parent;
+	CHILD **walk;
+
+    strncpy(this->comm, comm, COMM_LEN+2);
+    this->comm[COMM_LEN+1] = '\0';
+    this->uid = uid;
+
+	/* Re-sort children in parent, now we have a name */
+	if (!by_pid && this->parent) {
+	    parent = this->parent;
+        for (walk = &parent->children; *walk; walk = &(*walk)->next) {
+		  if ( ((*walk)->next != NULL) && strcmp((*walk)->child->comm, (*walk)->next->child->comm) > 0 ) {
+			tmp_child = (*walk)->child;
+			(*walk)->child = (*walk)->next->child;
+			(*walk)->next->child = tmp_child;
+		  }
+		}
+	}
+}
 #ifdef WITH_SELINUX
 static void
-add_proc(const char *comm, pid_t pid, pid_t ppid, uid_t uid,
+add_proc(const char *comm, pid_t pid, pid_t ppid, pid_t pgid, uid_t uid,
          const char *args, int size, char isthread, security_context_t scontext)
 #else                                /*WITH_SELINUX */
 static void
-add_proc(const char *comm, pid_t pid, pid_t ppid, uid_t uid,
+add_proc(const char *comm, pid_t pid, pid_t ppid, pid_t pgid, uid_t uid,
          const char *args, int size, char isthread)
 #endif                                /*WITH_SELINUX */
 {
@@ -353,22 +376,36 @@ add_proc(const char *comm, pid_t pid, pid_t ppid, uid_t uid,
         this = new_proc(comm, pid, uid);
 #endif                                /*WITH_SELINUX */
     else {
-        strncpy(this->comm, comm, COMM_LEN+2);
-		this->comm[COMM_LEN+1];
-        this->uid = uid;
+	    rename_proc(this, comm, uid);
     }
     if (args)
         set_args(this, args, size);
     if (pid == ppid)
         ppid = 0;
+    this->pgid = pgid;
     if (isthread)
       this->flags |= PFLAG_THREAD;
-    if (!(parent = find_proc(ppid)))
+    if (!(parent = find_proc(ppid))) {
 #ifdef WITH_SELINUX
         parent = new_proc("?", ppid, 0, scontext);
 #else                                /*WITH_SELINUX */
         parent = new_proc("?", ppid, 0);
 #endif                                /*WITH_SELINUX */
+	/* When using kernel 3.3 with hidepid feature enabled on /proc
+	 * then we need fake root pid */
+	if (!isthread && pid != 1) {
+		PROC *root;
+		if (!(root = find_proc(1))) {
+#ifdef WITH_SELINUX
+			root = new_proc("?", 1, 0, scontext);
+#else                                /*WITH_SELINUX */
+			root = new_proc("?", 1, 0);
+#endif
+		}
+		add_child(root, parent);
+		parent->parent = root;
+	}
+    }
     add_child(parent, this);
     this->parent = parent;
 }
@@ -450,6 +487,10 @@ dump_tree(PROC * current, int level, int rep, int leaf, int last,
     if (pids) {
         out_char(info++ ? ',' : '(');
         (void) out_int(current->pid);
+    }
+    if (pgids) {
+        out_char(info++ ? ',' : '(');
+        (void) out_int(current->pgid);
     }
     if (user_change && prev_uid != current->uid) {
         out_char(info++ ? ',' : '(');
@@ -614,7 +655,7 @@ static void read_proc(void)
   size_t buffer_size;
   char readbuf[BUFSIZ + 1];
   char *tmpptr;
-  pid_t pid, ppid;
+  pid_t pid, ppid, pgid;
   int fd, size;
   int empty;
 #ifdef WITH_SELINUX
@@ -669,7 +710,7 @@ static void read_proc(void)
             /* We now have readbuf with pid and cmd, and tmpptr+2
              * with the rest */
             /*printf("tmpptr: %s\n", tmpptr+2); */
-            if (sscanf(tmpptr + 2, "%*c %d", &ppid) == 1) {
+            if (sscanf(tmpptr + 2, "%*c %d %d", &ppid, &pgid) == 2) {
               DIR *taskdir;
               struct dirent *dt;
               char *taskpath;
@@ -691,17 +732,17 @@ static void read_proc(void)
                     if (thread != pid) {
 #ifdef WITH_SELINUX
                       if (print_args)
-                        add_proc(threadname, thread, pid, st.st_uid, 
+                        add_proc(threadname, thread, pid, pgid, st.st_uid, 
                             threadname, strlen (threadname) + 1, 1,scontext);
                       else
-                        add_proc(threadname, thread, pid, st.st_uid, 
+                        add_proc(threadname, thread, pid, pgid, st.st_uid, 
                             NULL, 0, 1, scontext);
 #else                /*WITH_SELINUX */
                       if (print_args)
-                        add_proc(threadname, thread, pid, st.st_uid,
+                        add_proc(threadname, thread, pid, pgid, st.st_uid,
                             threadname, strlen (threadname) + 1, 1);
                       else
-                        add_proc(threadname, thread, pid, st.st_uid,
+                        add_proc(threadname, thread, pid, pgid, st.st_uid,
                             NULL, 0, 1);
 #endif                /*WITH_SELINUX */
                       }
@@ -713,9 +754,9 @@ static void read_proc(void)
               free(taskpath);
               if (!print_args)
 #ifdef WITH_SELINUX
-                add_proc(comm, pid, ppid, st.st_uid, NULL, 0, 0, scontext);
+                add_proc(comm, pid, ppid, pgid, st.st_uid, NULL, 0, 0, scontext);
 #else                /*WITH_SELINUX */
-                add_proc(comm, pid, ppid, st.st_uid, NULL, 0, 0);
+                add_proc(comm, pid, ppid, pgid, st.st_uid, NULL, 0, 0);
 #endif                /*WITH_SELINUX */
               else {
                 sprintf(path, "%s/%d/cmdline", PROC_BASE, pid);
@@ -734,10 +775,10 @@ static void read_proc(void)
                 if (size)
                   buffer[size++] = 0;
 #ifdef WITH_SELINUX
-                add_proc(comm, pid, ppid, st.st_uid,
+                add_proc(comm, pid, ppid, pgid, st.st_uid,
                      buffer, size, 0, scontext);
 #else                /*WITH_SELINUX */
-                add_proc(comm, pid, ppid, st.st_uid,
+                add_proc(comm, pid, ppid, pgid, st.st_uid,
                      buffer, size, 0);
 #endif                /*WITH_SELINUX */
               }
@@ -757,40 +798,11 @@ static void read_proc(void)
   }
 }
 
-
-#if 0
-
-/* Could use output of  ps achlx | awk '{ print $3,$4,$2,$13 }'  */
-
-static void read_stdin(void)
-{
-    char comm[PATH_MAX + 1];
-    char *cmd;
-    int pid, ppid, uid;
-
-    while (scanf("%d %d %d %s\n", &pid, &ppid, &uid, comm) == 4) {
-        if (cmd = strrchr(comm, '/'))
-            cmd++;
-        else
-            cmd = comm;
-        if (*cmd == '-')
-            cmd++;
-#ifdef WITH_SELINUX
-        add_proc(cmd, pid, ppid, uid, NULL, 0, NULL);
-#else                                /*WITH_SELINUX */
-        add_proc(cmd, pid, ppid, uid, NULL, 0);
-#endif                                /*WITH_SELINUX */
-    }
-}
-
-#endif
-
-
 static void usage(void)
 {
     fprintf(stderr,
             _
-            ("Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
+            ("Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
              "              [ -A | -G | -U ] [ PID | USER ]\n"
              "       pstree -V\n" "Display a tree of processes.\n\n"
              "  -a, --arguments     show command line arguments\n"
@@ -799,6 +811,7 @@ static void usage(void)
              "  -h, --highlight-all highlight current process and its ancestors\n"
              "  -H PID,\n"
              "  --highlight-pid=PID highlight this process and its ancestors\n"
+             "  -g, --show-pgids    show process group ids; implies -c\n"
              "  -G, --vt100         use VT100 line drawing characters\n"
              "  -l, --long          don't truncate long lines\n"
              "  -n, --numeric-sort  sort output by PID\n"
@@ -850,6 +863,7 @@ int main(int argc, char **argv)
         {"long", 0, NULL, 'l'},
         {"numeric-sort", 0, NULL, 'n'},
         {"show-pids", 0, NULL, 'p'},
+        {"show-pgids", 0, NULL, 'g'},
         {"show-parents", 0, NULL, 's'},
         {"uid-changes", 0, NULL, 'u'},
         {"unicode", 0, NULL, 'U'},
@@ -903,11 +917,11 @@ int main(int argc, char **argv)
 
 #ifdef WITH_SELINUX
     while ((c =
-            getopt_long(argc, argv, "aAcGhH:nplsuUVZ", options,
+            getopt_long(argc, argv, "aAcGhH:npglsuUVZ", options,
                         NULL)) != -1)
 #else                                /*WITH_SELINUX */
     while ((c =
-            getopt_long(argc, argv, "aAcGhH:nplsuUV", options, NULL)) != -1)
+            getopt_long(argc, argv, "aAcGhH:npglsuUV", options, NULL)) != -1)
 #endif                                /*WITH_SELINUX */
         switch (c) {
         case 'a':
@@ -951,6 +965,10 @@ int main(int argc, char **argv)
             break;
         case 'p':
             pids = 1;
+            compact = 0;
+            break;
+        case 'g':
+            pgids = 1;
             compact = 0;
             break;
         case 's':
