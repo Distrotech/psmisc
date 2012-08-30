@@ -1,6 +1,7 @@
 Changes in 22.20
 ================
 	* pstree sorts properly on names Debian #682014
+	* fuser -m regresion fixed SF #3559232, thanks to hanpt
 Changes in 22.19
 ================
 	* killall with no args exits again SF #3536526

@@ -4,7 +4,7 @@
  * Based on fuser.c Copyright (C) 1993-2005 Werner Almesberger and Craig Small
  *
  * Completely re-written
- * Copyright (C) 2005-2011 Craig Small
+ * Copyright (C) 2005-2012 Craig Small
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -449,14 +449,6 @@ int parse_file(struct names *this_name, struct inode_list **ino_list, const char
 			free(this_name->filename);
 		this_name->filename = strdup(new);
 	}
-#ifdef _LISTS_H
-	if (opts & OPT_MOUNTS) {
-		this_name->st.st_dev = device(this_name->filename);
-		this_name->st.st_ino = 0;
-		add_inode(ino_list, this_name, this_name->st.st_dev, this_name->st.st_ino);
-		return 0;
-	}
-#endif
 
 	if (timeout(stat, this_name->filename, &(this_name->st), 5) != 0) {
       if (errno == ENOENT)
