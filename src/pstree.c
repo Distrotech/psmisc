@@ -134,6 +134,7 @@ static char last_char = 0;
 static int dumped = 0;                /* used by dump_by_user */
 static int charlen = 0;                /* length of character */
 
+static void fix_orphans(void);
 /*
  * Allocates additional buffer space for width and more as needed.
  * The first call will allocate the first buffer.
@@ -248,8 +249,8 @@ static PROC *find_proc(pid_t pid)
 
     for (walk = list; walk; walk = walk->next)
         if (walk->pid == pid)
-            break;
-    return walk;
+		  return walk;
+	return NULL;
 }
 
 #ifdef WITH_SELINUX
@@ -390,21 +391,7 @@ add_proc(const char *comm, pid_t pid, pid_t ppid, pid_t pgid, uid_t uid,
         parent = new_proc("?", ppid, 0, scontext);
 #else                                /*WITH_SELINUX */
         parent = new_proc("?", ppid, 0);
-#endif                                /*WITH_SELINUX */
-	/* When using kernel 3.3 with hidepid feature enabled on /proc
-	 * then we need fake root pid */
-	if (!isthread && pid != 1) {
-		PROC *root;
-		if (!(root = find_proc(1))) {
-#ifdef WITH_SELINUX
-			root = new_proc("?", 1, 0, scontext);
-#else                                /*WITH_SELINUX */
-			root = new_proc("?", 1, 0);
 #endif
-		}
-		add_child(root, parent);
-		parent->parent = root;
-	}
     }
     add_child(parent, this);
     this->parent = parent;
@@ -790,11 +777,39 @@ static void read_proc(void)
       free(path);
     }
   (void) closedir(dir);
+  fix_orphans();
   if (print_args)
     free(buffer);
   if (empty) {
     fprintf(stderr, _("%s is empty (not mounted ?)\n"), PROC_BASE);
     exit(1);
+  }
+}
+
+static void fix_orphans(void)
+{
+  /* When using kernel 3.3 with hidepid feature enabled on /proc
+   * then we need fake root pid and gather all the orphan processes
+   * that is, processes with no known parent
+   * As we cannot be sure if it is just the root pid or others missing
+   * we gather the lot
+   */
+  PROC *root, *walk;
+
+  if (!(root = find_proc(1))) {
+#ifdef WITH_SELINUX
+    root = new_proc("?", 1, 0, scontext);
+#else                                /*WITH_SELINUX */
+    root = new_proc("?", 1, 0);
+#endif
+  }
+  for (walk = list; walk; walk = walk->next) {
+	if (walk->pid == 1 || walk->pid == 0)
+	  continue;
+	if (walk->parent == NULL) { 
+	  add_child(root, walk);
+      walk->parent = root;
+	}
   }
 }
 

@@ -74,6 +74,13 @@ then it will prompt the user at the end of the line to press return and
 will not return until that has happened.  This is useful for when
 .B pstree
 is run in a xterminal.
+.PP
+Certain kernel or mount parameters, such as the hidepid option for procfs,
+will hide information for some processes. In these situations
+.B pstree
+will attempt to build the tree without this information, showing process
+names as question marks.
+
 .SH OPTIONS
 .IP \fB\-a\fP
 Show command line arguments.  If the command line of a process is
