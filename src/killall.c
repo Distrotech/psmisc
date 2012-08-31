@@ -142,9 +142,13 @@ uptime()
 /* process age from jiffies to seconds via uptime */
 static double process_age(const unsigned long long jf)
 {
-   double sc_clk_tck = sysconf(_SC_CLK_TCK);
-   assert(sc_clk_tck > 0);
-   return uptime() - jf / sc_clk_tck;
+	double age;
+	double sc_clk_tck = sysconf(_SC_CLK_TCK);
+	assert(sc_clk_tck > 0);
+	age = uptime() - jf / sc_clk_tck;
+	if (age < 0L)
+		return 0L;
+	return age;
 }
 
 /* returns requested time interval in seconds, 
@@ -381,7 +385,6 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	    continue;
 	 }
 	 process_age_sec = process_age(proc_stt_jf);
-	 assert(process_age_sec >= 0L);
       }
       (void) fclose (file);
        
