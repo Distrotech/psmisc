@@ -3,6 +3,7 @@ Changes in 22.20
 	* pstree sorts properly on names Debian #682014
 	* fuser -m regresion fixed SF #3559232, thanks to hanpt
 	* pstree finds orphaned processes SF#3537508
+	* fuser finds unix sockets again SF #3502649
 
 Changes in 22.19
 ================
