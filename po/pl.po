@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.17rc1\n"
+"Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2012-08-31 14:46+1000\n"
-"PO-Revision-Date: 2012-05-21 20:02+0200\n"
+"PO-Revision-Date: 2012-08-31 18:45+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "Language: pl\n"
@@ -17,10 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/fuser.c:133
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -29,8 +28,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -40,8 +38,7 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Sk³adnia: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n PRZESTRZEÑ] [-k [-i] [-"
-"SYGNA£]] NAZWA...\n"
+"Sk³adnia: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n PRZESTRZEÑ] [-k [-i] [-SYGNA£]] NAZWA...\n"
 "          fuser -l\n"
 "          fuser -V\n"
 "Pokazywanie, które procesy u¿ywaj± plików, gniazd lub systemów plików\n"
@@ -51,12 +48,9 @@ msgstr ""
 "  -i,--interactive      pytanie przed zabiciem (ignorowane bez -k)\n"
 "  -k,--kill             zabicie procesów u¿ywaj±cych podanego pliku\n"
 "  -l,--list-signals     lista nazw sygna³ów\n"
-"  -m,--mount            pokazanie procesów u¿ywaj±cych podanych systemów "
-"plików lub urz±dzeñ\n"
-"  -M,--ismountpoint     wykonywanie poleceñ tylko je¶li NAZWA jest punktem "
-"montowania\n"
-"  -n,--namespace PRZ    szukanie w podanej przestrzeni nazw (file, udp lub "
-"tcp)\n"
+"  -m,--mount            pokazanie procesów u¿ywaj±cych podanych systemów plików lub urz±dzeñ\n"
+"  -M,--ismountpoint     wykonywanie poleceñ tylko je¶li NAZWA jest punktem montowania\n"
+"  -n,--namespace PRZ    szukanie w podanej przestrzeni nazw (file, udp lub tcp)\n"
 "  -s,--silent           dzia³anie po cichu\n"
 "  -SYGNA£               wys³anie podanego sygna³u zamiast SIGKILL\n"
 "  -u,--user             wy¶wietlenie identyfikatorów u¿ytkowników\n"
@@ -228,19 +222,19 @@ msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Wys³aæ sygna³ do %s(%s%d)? (t/N) "
 
 #: src/killall.c:211
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Cannot get UID from process status\n"
-msgstr "Nie mo¿na pobraæ UID-a ze stanu procesu\n"
+msgstr "killall: nie mo¿na pobraæ UID-a ze stanu procesu\n"
 
 #: src/killall.c:237
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Bad regular expression: %s\n"
-msgstr "B³êdne wyra¿enie regularne: %s\n"
+msgstr "killall: b³êdne wyra¿enie regularne: %s\n"
 
 #: src/killall.c:447
-#, fuzzy, c-format
+#, c-format
 msgid "killall: skipping partial match %s(%d)\n"
-msgstr "pominiêto czê¶ciowe dopasowanie %s(%d)\n"
+msgstr "killall: pominiêto czê¶ciowe dopasowanie %s(%d)\n"
 
 #: src/killall.c:562
 #, c-format
@@ -254,11 +248,8 @@ msgstr "%s: nie znaleziono ¿adnego procesu\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Sk³adnia: killall [-Z KONTEKST] [-u U¯YTKOWNIK] [ -eIgiqrvw ] [ -SYGNA£ ] "
-"NAZWA...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Sk³adnia: killall [-Z KONTEKST] [-u U¯YTKOWNIK] [ -eIgiqrvw ] [ -SYGNA£ ] NAZWA...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -289,10 +280,8 @@ msgstr ""
 "          killall -l, --list\n"
 "          killall -V --version\n"
 "\n"
-"  -e,--exact          wymaganie dok³adnego dopasowania dla bardzo d³ugich "
-"nazw\n"
-"  -I,--ignore-case    dopasowywanie nazw procesów niewra¿liwe na wielko¶æ "
-"liter\n"
+"  -e,--exact          wymaganie dok³adnego dopasowania dla bardzo d³ugich nazw\n"
+"  -I,--ignore-case    dopasowywanie nazw procesów niewra¿liwe na wielko¶æ liter\n"
 "  -g,--process-group  zabicie grupy procesów zamiast procesu\n"
 "  -y,--younger-than   zabicie procesów m³odszych ni¿ CZAS\n"
 "  -o,--other-than     zabicie procesów starszych ni¿ CZAS\n"
@@ -301,8 +290,7 @@ msgstr ""
 "  -q,--quiet          nie wy¶wietlanie narzekañ\n"
 "  -r,--regexp         u¿ycie NAZWY jako rozszerzonego wyra¿enia regularnego\n"
 "  -s,--signal SYGNA£  wys³anie podanego sygna³u zamiast SIGTERM\n"
-"  -u, --user U¯YTK    zabicie tylko procesów dzia³aj±cych jako podany "
-"u¿ytkownik\n"
+"  -u, --user U¯YTK    zabicie tylko procesów dzia³aj±cych jako podany u¿ytkownik\n"
 "  -v,--verbose        informowanie czy wys³anie sygna³u siê powiod³o\n"
 "  -V,--version        wy¶wietlenie informacji o wersji\n"
 "  -w,--wait           zaczekanie na ¶mieræ procesów\n"
@@ -313,17 +301,16 @@ msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
 "                      (must precede other arguments)\n"
 msgstr ""
-"  -Z,--context REGEXP zabicie tylko procesu(ów) maj±cych dany kontekst "
-"bezp.\n"
+"  -Z,--context REGEXP zabicie tylko procesu(ów) maj±cych dany kontekst bezp.\n"
 "                        (musi poprzedzaæ inne argumenty)\n"
 
 #: src/killall.c:651
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Copyright (C) 1993-2010 Werner Almesberger i Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger i Craig Small\n"
 "\n"
 
 #: src/killall.c:741 src/killall.c:747
@@ -341,14 +328,14 @@ msgid "Bad regular expression: %s\n"
 msgstr "B³êdne wyra¿enie regularne: %s\n"
 
 #: src/killall.c:830
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Maximum number of names is %d\n"
-msgstr "Maksymalna liczba nazw to %d\n"
+msgstr "killall: maksymalna liczba nazw to %d\n"
 
 #: src/killall.c:835
-#, fuzzy, c-format
+#, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
-msgstr "%s nie ma wpisów procesów (nie jest zamontowany?)\n"
+msgstr "killall: %s nie ma wpisów procesów (nie jest zamontowany?)\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -492,8 +479,7 @@ msgid ""
 "  Child processes (user system guest):       %6.2f %6.2f %6.2f\n"
 msgstr ""
 "Czasy procesora\n"
-"  Ten proces      (u¿ytkownika systemowy go¶cinny blkio): %6.2f %6.2f %6.2f "
-"%6.2f\n"
+"  Ten proces      (u¿ytkownika systemowy go¶cinny blkio): %6.2f %6.2f %6.2f %6.2f\n"
 "  Procesy potomne (u¿ytkownika systemowy go¶cinny:        %6.2f %6.2f %6.2f\n"
 
 #: src/prtstat.c:189
@@ -549,8 +535,7 @@ msgstr "Trzeba podaæ przynajmniej jeden PID."
 #: src/prtstat.c:317
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
-msgstr ""
-"/proc nie jest zamontowany, nie mo¿na wykonaæ stat na /proc/self/stat.\n"
+msgstr "/proc nie jest zamontowany, nie mo¿na wykonaæ stat na /proc/self/stat.\n"
 
 #: src/pstree.c:784
 #, c-format
@@ -560,8 +545,7 @@ msgstr "%s jest pusty (nie podmontowany?)\n"
 #: src/pstree.c:820
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -582,8 +566,7 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Sk³adnia: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] "
-"[ -u ]\n"
+"Sk³adnia: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "                 [ -A | -G | -U ] [ PID | U¯YTKOWNIK ]\n"
 "          pstree -V\n"
 "Wy¶wietlanie drzewa procesów.\n"
@@ -606,8 +589,7 @@ msgstr ""
 #: src/pstree.c:840
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
-msgstr ""
-"  -Z                  wy¶wietlanie kontekstów bezpieczeñstwa SELinuksa\n"
+msgstr "  -Z                  wy¶wietlanie kontekstów bezpieczeñstwa SELinuksa\n"
 
 #: src/pstree.c:842
 #, c-format
@@ -663,29 +645,3 @@ msgstr "Naci¶niêcie return zamknie program\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: nieznany sygna³; %s -l wypisuje sygna³y.\n"
-
-#~ msgid ""
-#~ "Usage: pidof [ -eg ] NAME...\n"
-#~ "       pidof -V\n"
-#~ "\n"
-#~ "    -e      require exact match for very long names;\n"
-#~ "            skip if the command line is unavailable\n"
-#~ "    -g      show process group ID instead of process ID\n"
-#~ "    -V      display version information\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Sk³adnia: pidof [ -eg ] NAZWA...\n"
-#~ "          pidof -V\n"
-#~ "\n"
-#~ "    -e    wymaganie dok³adnego dopasowania dla bardzo d³ugich nazw;\n"
-#~ "            pomijane je¶li linia poleceñ nie jest dostêpna\n"
-#~ "    -g    wy¶wietlanie ID grup procesów zamiast ID procesów\n"
-#~ "    -V    wy¶wietlenie informacji o wersji\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright (C) 1993-2005 Werner Almesberger i Craig Small\n"
-#~ "\n"

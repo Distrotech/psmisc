@@ -2,16 +2,19 @@
 # Copyright (C) 2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the PSmisc package.
 #
-# Bárbara!
+# «Gehen wir mal kurz rein», sagte die Mama.
+# «Aber da steht 'Baden verboten'», sagte das Töchterchen.
+# Das wäre nicht so wichtig, meinte die Mama.
+# «Und was wenn da eine Geheimkamera ist?», fragte das Söhnchen.
 #
 # Benno Schulenberg <benno@vertaalt.nl>, 2004, 2005, 2006, 2007, 2010, 2012.
 # Erwin Poeze <erwin.poeze@gmail.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc-22.17rc1\n"
+"Project-Id-Version: psmisc-22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2012-08-31 14:46+1000\n"
-"PO-Revision-Date: 2012-05-22 12:45+0200\n"
+"PO-Revision-Date: 2012-09-01 19:27+0200\n"
 "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
@@ -22,10 +25,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/fuser.c:133
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -34,8 +36,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -45,26 +46,21 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Gebruik:  fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n RUIMTE]\n"
-"                  [-k [-i] [-w] [-SIGNAAL]] NAAM...\n"
-"          fuser -l\n"
-"          fuser -V\n"
+"Gebruik:  fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n NAAMSRUIMTE]\n"
+"                    [-k [-i] [-SIGNAAL]] NAAM...\n"
+"     of:  fuser [-l|-V]\n"
+"\n"
 "De processen tonen die gebruik maken van de genoemde bestanden,\n"
 "sockets of bestandssystemen\n"
 "\n"
 "  -a, --all               de ongebruikte bestanden ook noemen\n"
-"  -i, --interactive       bevestiging vragen voor afbreken (genegeerd zonder "
-"-k)\n"
-"  -k, --kill              processen afbreken die het gegeven bestand "
-"gebruiken\n"
+"  -i, --interactive       bevestiging vragen voor afbreken (genegeerd zonder -k)\n"
+"  -k, --kill              processen afbreken die het gegeven bestand gebruiken\n"
 "  -l, --list-signals      lijst van beschikbare signalen tonen\n"
-"  -m, --mount             alle processen tonen die het gegeven "
-"bestandssysteem\n"
+"  -m, --mount             alle processen tonen die het gegeven bestandssysteem\n"
 "                            of blokapparaat gebruiken\n"
-"  -M, --ismountpoint      alleen aan verzoek voldoen als NAAM aankoppelpunt "
-"is\n"
-"  -n, --namespace RUIMTE  in gegeven naamsruimte ('file', 'udp', 'tcp') "
-"zoeken\n"
+"  -M, --ismountpoint      alleen aan verzoek voldoen als NAAM aankoppelpunt is\n"
+"  -n, --namespace RUIMTE  in gegeven naamsruimte ('file', 'udp', 'tcp') zoeken\n"
 "  -s, --silent            geen uitvoer produceren\n"
 "  -SIGNAAL                dit signaal sturen in plaats van SIGKILL\n"
 "  -u, --user              de gebruiker-IDs tonen\n"
@@ -236,19 +232,19 @@ msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Proces %s(%s%d) een signaal sturen? (j/N) "
 
 #: src/killall.c:211
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Cannot get UID from process status\n"
-msgstr "Kan uit processtatus geen UID bepalen\n"
+msgstr "killall: Kan uit processtatus geen UID bepalen\n"
 
 #: src/killall.c:237
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Bad regular expression: %s\n"
-msgstr "Ongeldige reguliere expressie: %s\n"
+msgstr "killall: Ongeldige reguliere expressie: %s\n"
 
 #: src/killall.c:447
-#, fuzzy, c-format
+#, c-format
 msgid "killall: skipping partial match %s(%d)\n"
-msgstr "overgeslagen: gedeeltelijke overeenkomst %s(%d)\n"
+msgstr "killall: Overgeslagen: gedeeltelijke overeenkomst %s(%d)\n"
 
 #: src/killall.c:562
 #, c-format
@@ -262,11 +258,8 @@ msgstr "%s: geen proces gevonden\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Gebruik:  killall [-Z CONTEXT] [-egIiqrvw] [-SIGNAAL] [-u GEBRUIKER] "
-"NAAM...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Gebruik:  killall [-Z CONTEXT] [-egIiqrvw] [-SIGNAAL] [-u GEBRUIKER] NAAM...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -294,8 +287,8 @@ msgid ""
 "  -V,--version        display version information\n"
 "  -w,--wait           wait for processes to die\n"
 msgstr ""
-"          killall [ -l | --list ]\n"
-"          killall [ -V | --version ]\n"
+"     of:  killall [ -l | --list ]\n"
+"     of:  killall [ -V | --version ]\n"
 "\n"
 "  -e,--exact           zeer lange namen moeten exact overeenkomen\n"
 "  -I,--ignore-case     verschil tussen hoofd- en kleine letters negeren\n"
@@ -322,12 +315,12 @@ msgstr ""
 "                         (dient aan andere argumenten vooraf te gaan)\n"
 
 #: src/killall.c:651
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Copyright (C) 1993-2010 Werner Almesberger en Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger en Craig Small\n"
 "\n"
 
 #: src/killall.c:741 src/killall.c:747
@@ -345,14 +338,14 @@ msgid "Bad regular expression: %s\n"
 msgstr "Ongeldige reguliere expressie: %s\n"
 
 #: src/killall.c:830
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Maximum number of names is %d\n"
-msgstr "Het maximum aantal namen is %d\n"
+msgstr "killall: Het maximum aantal namen is %d\n"
 
 #: src/killall.c:835
-#, fuzzy, c-format
+#, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
-msgstr "%s bevat geen procesitems -- misschien niet aangekoppeld?\n"
+msgstr "killall: %s bevat geen procesitems -- misschien niet aangekoppeld?\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -407,7 +400,7 @@ msgid ""
 "    -V,--version   Display version information and exit\n"
 msgstr ""
 "Gebruik:  prtstat [-r] PID ...\n"
-"          prtstat -V\n"
+"     of:  prtstat -V\n"
 "\n"
 "Informatie over een proces weergeven.\n"
 "\n"
@@ -555,8 +548,7 @@ msgstr "Er moet minstens één PID gegeven worden."
 #: src/prtstat.c:317
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
-msgstr ""
-"/proc is niet aangekoppeld, kan status van /proc/self/stat niet bepalen.\n"
+msgstr "/proc is niet aangekoppeld, kan status van /proc/self/stat niet bepalen.\n"
 
 #: src/pstree.c:784
 #, c-format
@@ -566,8 +558,7 @@ msgstr "%s is leeg -- misschien niet aangekoppeld?\n"
 #: src/pstree.c:820
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -589,8 +580,8 @@ msgid ""
 "  -V, --version       display version information\n"
 msgstr ""
 "Gebruik:  pstree [-a] [-c] [-g] [-h|-H PID] [-l] [-n] [-p] [-u]\n"
-"                   [-A|-G|-U] [ PID | GEBRUIKER ]\n"
-"          pstree -V\n"
+"                     [-A|-G|-U] [ PID | GEBRUIKER ]\n"
+"     of:  pstree -V\n"
 "\n"
 "Huidige processen tonen in een boomstructuur.\n"
 "\n"
@@ -622,8 +613,7 @@ msgid ""
 "\n"
 msgstr ""
 "  PID     bij dit proces-ID beginnen; standaard is 1 (init)\n"
-"  NAAM    alleen de bomen tonen die beginnen bij processen van deze "
-"gebruiker\n"
+"  NAAM    alleen de bomen tonen die beginnen bij processen van deze gebruiker\n"
 "\n"
 
 #: src/pstree.c:849
@@ -668,8 +658,7 @@ msgstr "Druk op Enter om af te sluiten\n"
 #: src/signals.c:84
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
-msgstr ""
-"Onbekend signaal: %s -- '%s -l' toont een lijst van mogelijke signalen.\n"
+msgstr "Onbekend signaal: %s -- '%s -l' toont een lijst van mogelijke signalen.\n"
 
 #~ msgid ""
 #~ "Usage: pidof [ -eg ] NAME...\n"
@@ -682,17 +671,10 @@ msgstr ""
 #~ "\n"
 #~ msgstr ""
 #~ "Gebruik:  pidof [-eg] NAAM...\n"
-#~ "          pidof -V\n"
+#~ "     of:  pidof -V\n"
 #~ "\n"
 #~ "    -e    zeer lange namen moeten exact overeenkomen\n"
 #~ "            (genegeerd als de opdrachtregel niet beschikbaar is)\n"
 #~ "    -g    procesgroeps-ID tonen in plaats van proces-ID\n"
 #~ "    -V    de programmaversie tonen\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
 #~ "\n"

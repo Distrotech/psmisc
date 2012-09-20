@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.17rc1\n"
+"Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2012-08-31 14:46+1000\n"
-"PO-Revision-Date: 2012-05-20 21:18+0200\n"
+"PO-Revision-Date: 2012-09-03 08:33+0200\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "Language: cs\n"
@@ -17,10 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 
 #: src/fuser.c:133
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -29,8 +28,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -40,8 +38,7 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Použití: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n PROSTOR] [-k [-i] [-"
-"SIGNÁL]]\n"
+"Použití: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n PROSTOR] [-k [-i] [-SIGNÁL]]\n"
 "               NÁZEV…\n"
 "         fuser -l\n"
 "         fuser -V\n"
@@ -52,15 +49,13 @@ msgstr ""
 "  -i,--interactive      před zabitím se dotáže (ignorováno bez -k)\n"
 "  -k,--kill             zabije procesy přistupující k zadanému souboru\n"
 "  -l,--list-signals     vypíše seznam názvů dostupných signálů\n"
-"  -m,--mount            zobrazí všechny procesy používající zadané "
-"souborové\n"
+"  -m,--mount            zobrazí všechny procesy používající zadané souborové\n"
 "                        systémy nebo bloková zařízení\n"
-"  -M,--ismountpoint     vyhoví požadavku, pouze když NÁZEV je bod připojení "
-"FS\n"
+"  -M,--ismountpoint     vyhoví požadavku, pouze když NÁZEV je bod připojení FS\n"
 "  -n,--namespace PROSTOR    hledá v tomto jmenném prostoru\n"
 "                        (file [soubor], udp, nebo tcp)\n"
 "  -s,--silent           tichý běh\n"
-"  -SIGNÁL               namísto SIGKILL pošle tento signál\n"
+"  -SIGNÁL               namísto SIGKILL pošle tento signál\n"
 "  -u,--user             zobrazí ID uživatelů\n"
 "  -v,--verbose          podrobný výstup\n"
 "  -w,--writeonly        zabije jen procesy přistupující kvůli zápisu\n"
@@ -230,19 +225,19 @@ msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Zaslat signál %s(%s%d) ? (a/N) "
 
 #: src/killall.c:211
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Cannot get UID from process status\n"
-msgstr "Z procesového souboru „status“ nelze získat UID\n"
+msgstr "killall: Z procesového souboru „status“ nelze získat UID\n"
 
 #: src/killall.c:237
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Bad regular expression: %s\n"
-msgstr "Chybný regulární výraz: %s\n"
+msgstr "killall: Chybný regulární výraz: %s\n"
 
 #: src/killall.c:447
-#, fuzzy, c-format
+#, c-format
 msgid "killall: skipping partial match %s(%d)\n"
-msgstr "částečná shoda %s(%d) se vynechá\n"
+msgstr "killall: částečná shoda %s(%d) se vynechá\n"
 
 #: src/killall.c:562
 #, c-format
@@ -256,10 +251,8 @@ msgstr "%s: žádný proces nenalezen\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Usage: killall [-Z KONTEXT] [-u UŽIVATEL] [-eIgiqrvw] [-SIGNÁL] NÁZEV…\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Usage: killall [-Z KONTEXT] [-u UŽIVATEL] [-eIgiqrvw] [-SIGNÁL] NÁZEV…\n"
 
 #: src/killall.c:618
 #, c-format
@@ -291,8 +284,7 @@ msgstr ""
 "         killall -V, --version\n"
 "\n"
 "  -e,--exact          u velmi dlouhých názvu vyžaduje přesnou shodu\n"
-"  -I,--ignore-case    porovnávání názvů procesů nebere ohled na velikost "
-"písmen\n"
+"  -I,--ignore-case    porovnávání názvů procesů nebere ohled na velikost písmen\n"
 "  -g,--process-group  zabije skupinu procesů namísto procesu\n"
 "  -y,--younger-than   zabije procesy mladší než ČAS\n"
 "  -o,--older-than     zabije procesy starší než ČAS\n"
@@ -316,12 +308,12 @@ msgstr ""
 "                      (musí předcházet ostatním argumentům)\n"
 
 #: src/killall.c:651
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Copyright © 1993–2010 Werner Almesberger a Craig Small\n"
+"Copyright © 1993–2012 Werner Almesberger a Craig Small\n"
 "\n"
 
 #: src/killall.c:741 src/killall.c:747
@@ -339,14 +331,14 @@ msgid "Bad regular expression: %s\n"
 msgstr "Chybný regulární výraz: %s\n"
 
 #: src/killall.c:830
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Maximum number of names is %d\n"
-msgstr "Maximální počet názvů je %d\n"
+msgstr "killall: Maximální počet názvů je %d\n"
 
 #: src/killall.c:835
-#, fuzzy, c-format
+#, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
-msgstr "%s postrádá záznamy procesů (není připojen?)\n"
+msgstr "killall: %s postrádá záznamy procesů (není připojen?)\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -557,8 +549,7 @@ msgstr "%s je prázdný (není připojen?)\n"
 #: src/pstree.c:820
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"

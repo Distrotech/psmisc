@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.17rc1\n"
+"Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2012-08-31 14:46+1000\n"
-"PO-Revision-Date: 2012-05-22 08:27-0300\n"
+"PO-Revision-Date: 2012-09-03 08:00-0300\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
 "Language: eo\n"
@@ -17,10 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/fuser.c:133
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -29,8 +28,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -40,19 +38,16 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Uzado: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n SPACO] [-k [-i] [-SIGNALO]] "
-"NOMO...\n"
+"Uzado: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACO] [-k [-i] [-SIGNALO]] NOMO...\n"
 "       fuser -l\n"
 "       fuser -V\n"
-"Montras kiujn procezojn uzas la nomitajn dosierojn, ingojn, aŭ "
-"dosiersistemojn.\n"
+"Montras kiujn procezojn uzas la nomitajn dosierojn, ingojn, aŭ dosiersistemojn.\n"
 "\n"
 "  -a,--all              montrigi ankaŭ neuzatajn dosierojn\n"
 "  -i,--interactive      demandi antaŭ ol mortigi (ne efika sen -k)\n"
 "  -k,--kill             mortigi procezon, kiu aliras la nomitan dosieron\n"
 "  -l,--list-signals     listigi disponeblajn signalo-nomojn\n"
-"  -m,--mount            montri ĉiujn procezojn, kiuj uzas la nomitajn "
-"dosiersistemojn aŭ blok-aparaton\n"
+"  -m,--mount            montri ĉiujn procezojn, kiuj uzas la nomitajn dosiersistemojn aŭ blok-aparaton\n"
 "  -M,--ismountpoint     plenumigi peton nur se NOMO estas munt-punkto\n"
 "  -n,--namespace SPACO  serĉi en tiu ĉi nom-spaco(file, udp, aŭ tcp)\n"
 "  -s,--silent           silenta funkciado\n"
@@ -110,8 +105,7 @@ msgstr ""
 "PSmisc venas kun ABSOLUTE NENIUN GARANTION.\n"
 "Tio ĉi estas libera programaro, kaj vi estas invitata redisdoni ĝin sub\n"
 "la kondiĉoj de la Ĝenerala Publika Permesilo GNU.\n"
-"Por pli da informoj pri tiuj ĉi aferoj, vidu la dosierojn nomitajn COPYING "
-"(angle).\n"
+"Por pli da informoj pri tiuj ĉi aferoj, vidu la dosierojn nomitajn COPYING (angle).\n"
 
 #: src/fuser.c:184
 #, c-format
@@ -227,19 +221,19 @@ msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Ĉu signali %s(%s%d) ? (y/N) "
 
 #: src/killall.c:211
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Cannot get UID from process status\n"
-msgstr "Ne eblas preni UID el procez-stato\n"
+msgstr "killall: Ne eblas preni UID el procez-stato\n"
 
 #: src/killall.c:237
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Bad regular expression: %s\n"
-msgstr "Malĝusta regul-esprimo: %s\n"
+msgstr "killall: Malĝusta regulesprimo: %s\n"
 
 #: src/killall.c:447
-#, fuzzy, c-format
+#, c-format
 msgid "killall: skipping partial match %s(%d)\n"
-msgstr "ni preterpasas ne-kompletan kongruon %s(%d)\n"
+msgstr "killall: preterpasas ne-kompletan kongruon %s(%d)\n"
 
 #: src/killall.c:562
 #, c-format
@@ -253,11 +247,8 @@ msgstr "%s: neniu procezo trovite\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Uzado: killall [-Z KUNTEKSTO] [-u UZANTO] [ -eIgiqrvw ] [ -SIGNALO ] "
-"NOMO...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Uzado: killall [-Z KUNTEKSTO] [-u UZANTO] [ -eIgiqrvw ] [ -SIGNALO ] NOMO...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -313,12 +304,12 @@ msgstr ""
 "                      (devas veni antaŭ aliaj argumentoj)\n"
 
 #: src/killall.c:651
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Kopirajto (C) 1993-2010 Werner Almesberger kaj Craig Small\n"
+"Kopirajto (C) 1993-2012 Werner Almesberger kaj Craig Small\n"
 "\n"
 
 #: src/killall.c:741 src/killall.c:747
@@ -336,14 +327,14 @@ msgid "Bad regular expression: %s\n"
 msgstr "Malĝusta regul-esprimo: %s\n"
 
 #: src/killall.c:830
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Maximum number of names is %d\n"
-msgstr "Maksimuma nombro da nomoj estas %d\n"
+msgstr "killall: Maksimuma nombro da nomoj estas %d\n"
 
 #: src/killall.c:835
-#, fuzzy, c-format
+#, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
-msgstr "%s malhavas procezajn informojn (ĉu ne muntita ?)\n"
+msgstr "killall: %s malhavas procezajn informojn (ĉu ne muntita ?)\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -553,8 +544,7 @@ msgstr "%s estas malplena (ĉu ne muntita ?)\n"
 #: src/pstree.c:820
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -575,8 +565,7 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Uzado: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Uzado: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | UZANTO ]\n"
 "       pstree -V\n"
 "Montrigi arbon de procezoj.\n"
