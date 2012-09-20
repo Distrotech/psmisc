@@ -4,6 +4,7 @@ Changes in 22.20
 	* fuser -m regresion fixed SF #3559232, thanks to hanpt
 	* pstree finds orphaned processes SF#3537508
 	* fuser finds unix sockets again SF #3502649
+	* pstree finds pid 0 stops looping Debian #687829
 
 Changes in 22.19
 ================

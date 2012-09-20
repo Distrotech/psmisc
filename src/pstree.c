@@ -53,6 +53,12 @@ extern const char *__progname;
 
 #define PROC_BASE    "/proc"
 
+#if defined(__FreeBSD_kernel__) || defined(__FreeBSD__)
+#define ROOT_PID 0
+#else
+#define ROOT_PID 1
+#endif /* __FreeBSD__ */
+
 /* UTF-8 defines by Johan Myreen, updated by Ben Winslow */
 #define UTF_V        "\342\224\202"        /* U+2502, Vertical line drawing char */
 #define UTF_VR        "\342\224\234"        /* U+251C, Vertical and right */
@@ -393,8 +399,10 @@ add_proc(const char *comm, pid_t pid, pid_t ppid, pid_t pgid, uid_t uid,
         parent = new_proc("?", ppid, 0);
 #endif
     }
-    add_child(parent, this);
-    this->parent = parent;
+    if (pid != 0) {
+      add_child(parent, this);
+      this->parent = parent;
+    }
 }
 
 
@@ -641,7 +649,7 @@ static void read_proc(void)
   char *buffer;
   size_t buffer_size;
   char readbuf[BUFSIZ + 1];
-  char *tmpptr;
+  char *tmpptr, *endptr;
   pid_t pid, ppid, pgid;
   int fd, size;
   int empty;
@@ -666,8 +674,9 @@ static void read_proc(void)
     exit(1);
   }
   empty = 1;
-  while ((de = readdir(dir)) != NULL)
-    if ((pid = (pid_t) atoi(de->d_name)) != 0) {
+  while ((de = readdir(dir)) != NULL) {
+    pid = (pid_t) strtol(de->d_name, &endptr, 10);
+    if (endptr != de->d_name && endptr[0] == '\0') {
       if (! (path = malloc(strlen(PROC_BASE) + strlen(de->d_name) + 10)))
         exit(2);
       sprintf(path, "%s/%d/stat", PROC_BASE, pid);
@@ -776,6 +785,7 @@ static void read_proc(void)
       }
       free(path);
     }
+  }
   (void) closedir(dir);
   fix_orphans();
   if (print_args)
@@ -796,11 +806,11 @@ static void fix_orphans(void)
    */
   PROC *root, *walk;
 
-  if (!(root = find_proc(1))) {
+  if (!(root = find_proc(ROOT_PID))) {
 #ifdef WITH_SELINUX
-    root = new_proc("?", 1, 0, scontext);
+    root = new_proc("?", ROOT_PID, 0, scontext);
 #else                                /*WITH_SELINUX */
-    root = new_proc("?", 1, 0);
+    root = new_proc("?", ROOT_PID, 0);
 #endif
   }
   for (walk = list; walk; walk = walk->next) {
@@ -865,8 +875,8 @@ int main(int argc, char **argv)
     const struct passwd *pw;
     pid_t pid, highlight;
     char termcap_area[1024];
-    char *termname;
-    int c;
+    char *termname, *endptr;
+    int c, pid_set;
 
     struct option options[] = {
         {"arguments", 0, NULL, 'a'},
@@ -892,7 +902,7 @@ int main(int argc, char **argv)
     if (ioctl(1, TIOCGWINSZ, &winsz) >= 0)
         if (winsz.ws_col)
             output_width = winsz.ws_col;
-    pid = 1;
+    pid = ROOT_PID;
     highlight = 0;
     pw = NULL;
 
@@ -1012,7 +1022,9 @@ int main(int argc, char **argv)
         }
     if (optind == argc - 1) {
         if (isdigit(*argv[optind])) {
-            if (!(pid = (pid_t) atoi(argv[optind++])))
+            pid = (pid_t) strtol(argv[optind++], &endptr, 10);
+            pid_set = 1;
+            if (endptr[0] != '\0')
                 usage();
         } else if (!(pw = getpwnam(argv[optind++]))) {
             fprintf(stderr, _("No such user name: %s\n"),
@@ -1027,16 +1039,16 @@ int main(int argc, char **argv)
          current = current->parent)
         current->flags |= PFLAG_HILIGHT;
 
-    if(show_parents && pid != 0) {
+    if(show_parents && pid_set == 1) {
       trim_tree_by_parent(find_proc(pid));
 
-      pid = 1;
+      pid = ROOT_PID;
     }
 
     if (!pw)
         dump_tree(find_proc(pid), 0, 1, 1, 1, 0, 0);
     else {
-        dump_by_user(find_proc(1), pw->pw_uid);
+        dump_by_user(find_proc(ROOT_PID), pw->pw_uid);
         if (!dumped) {
             fprintf(stderr, _("No processes found.\n"));
             return 1;
