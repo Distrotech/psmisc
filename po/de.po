@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-08-31 14:46+1000\n"
+"POT-Creation-Date: 2012-09-20 22:13+1000\n"
 "PO-Revision-Date: 2012-09-01 11:08+0100\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -23,7 +23,8 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
+"NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -32,7 +33,8 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or block device\n"
+"  -m,--mount            show all processes using the named filesystems or "
+"block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -42,17 +44,22 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Aufruf: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n RAUM] [-k [-i] [-SIGNAL]] NAME...\n"
+"Aufruf: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n RAUM] [-k [-i] [-SIGNAL]] "
+"NAME...\n"
 "        fuser -l\n"
 "        fuser -V\n"
-"Zeigt an, welche Prozesse die angegebenen Dateien, Sockets oder Dateisysteme benutzen.\n"
+"Zeigt an, welche Prozesse die angegebenen Dateien, Sockets oder Dateisysteme "
+"benutzen.\n"
 "\n"
 "  -a,--all             zeige auch die ungenutzten Dateien an\n"
 "  -i,--interactive     vor dem Abschießen nachfragen (ohne -k wirkungslos)\n"
-"  -k,--kill            schieße Prozesse ab, die auf die angegebene Datei zugreifen\n"
+"  -k,--kill            schieße Prozesse ab, die auf die angegebene Datei "
+"zugreifen\n"
 "  -l,--list-signals    liste die Signalnamen auf\n"
-"  -m,--mount           zeige alle Prozesse an, die auf die angegebenen Dateisysteme oder Blockgeräte zugreifen\n"
-"  -M,--ismountpoint    Operation nur durchführen, wenn NAME ein Einhängepunkt ist\n"
+"  -m,--mount           zeige alle Prozesse an, die auf die angegebenen "
+"Dateisysteme oder Blockgeräte zugreifen\n"
+"  -M,--ismountpoint    Operation nur durchführen, wenn NAME ein "
+"Einhängepunkt ist\n"
 "  -n,--namespace RAUM  suche in angegebenem Namensraum (file, udp oder tcp)\n"
 "  -s,--silent          stille Operation\n"
 "  -SIGNAL              sende 'SIGNAL' anstatt SIGKILL\n"
@@ -98,7 +105,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:854
+#: src/pstree.c:864
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -173,7 +180,9 @@ msgstr "Option -a kann nicht mit der Option -s kombiniert werden."
 
 #: src/fuser.c:1168
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
-msgstr "Sie können nicht gleichzeitig ausschließlich nach IPv4 und ausschließlich nach IPv6-Sockets suchen."
+msgstr ""
+"Sie können nicht gleichzeitig ausschließlich nach IPv4 und ausschließlich "
+"nach IPv6-Sockets suchen."
 
 #: src/fuser.c:1246
 #, c-format
@@ -251,8 +260,10 @@ msgstr "%s: Kein Prozess gefunden\n"
 
 #: src/killall.c:615
 #, c-format
-msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr "Aufruf: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [-SIGNAL] NAME...\n"
+msgid ""
+"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr ""
+"Aufruf: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [-SIGNAL] NAME...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -338,7 +349,9 @@ msgstr "killall: Die maximale Anzahl von Namen ist %d\n"
 #: src/killall.c:835
 #, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
-msgstr "killall: Bei %s fehlen die Prozesseinträge (Dateisystem möglicherweise nicht eingehängt?)\n"
+msgstr ""
+"killall: Bei %s fehlen die Prozesseinträge (Dateisystem möglicherweise nicht "
+"eingehängt?)\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -540,15 +553,16 @@ msgstr "Sie müssen mindestens eine PID angeben."
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "/proc ist nicht eingehängt, kann /proc/self/stat nicht lesen.\n"
 
-#: src/pstree.c:784
+#: src/pstree.c:794
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s ist leer (Dateisystem möglicherweise nicht eingebunden?)\n"
 
-#: src/pstree.c:820
+#: src/pstree.c:830
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -569,16 +583,19 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Aufruf: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
+"Aufruf: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "        pstree -V\n"
 "Zeigt einen Prozessbaum an.\n"
 "\n"
 "    -a, --arguments       zeige Kommandozeilenargumente an\n"
 "    -A, --ascii           benutze ASCII-Zeichen für die Ausgabe\n"
-"    -c, --compact         identische Unterbäume werden nicht zusammengefasst\n"
+"    -c, --compact         identische Unterbäume werden nicht "
+"zusammengefasst\n"
 "    -h, --highlight all   hebe den aktuellen Prozess und seine Ahnen hervor\n"
-"    -H PID,    --highlight-pid=PID   hebe diesen Prozess und seine Ahnen hervor\n"
+"    -H PID,    --highlight-pid=PID   hebe diesen Prozess und seine Ahnen "
+"hervor\n"
 "    -g, --show-pids       zeige Prozessgruppen-IDs an; impliziert -c\n"
 "    -G, --vt100           benutze VT100-Zeichen für die Ausgabe\n"
 "    -l, --long            kein Abschneiden langer Zeilen\n"
@@ -588,12 +605,12 @@ msgstr ""
 "    -U, --unicode         benutze UTF-8 (Unicode) für die Ausgabe\n"
 "    -V, --version         Ausgabe der verwendeten Version\n"
 
-#: src/pstree.c:840
+#: src/pstree.c:850
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "    -Z     zeige SELinux-Sicherheitskontext\n"
 
-#: src/pstree.c:842
+#: src/pstree.c:852
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -601,15 +618,16 @@ msgid ""
 "\n"
 msgstr ""
 "    PID       mit dieser PID starten; Vorgabewert ist 1 (init)\n"
-"    BENUTZER  zeige nur Prozessbäume, deren Wurzeln Prozesse dieses Benutzers sind\n"
+"    BENUTZER  zeige nur Prozessbäume, deren Wurzeln Prozesse dieses "
+"Benutzers sind\n"
 "\n"
 
-#: src/pstree.c:849
+#: src/pstree.c:859
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:852
+#: src/pstree.c:862
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -618,27 +636,27 @@ msgstr ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
 "\n"
 
-#: src/pstree.c:965
+#: src/pstree.c:975
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM ist nicht gesetzt\n"
 
-#: src/pstree.c:969
+#: src/pstree.c:979
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Kann die Fähigkeiten des Terminals nicht erkennen\n"
 
-#: src/pstree.c:1018
+#: src/pstree.c:1030
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Kein Benutzer mit dem Namen »%s«\n"
 
-#: src/pstree.c:1041
+#: src/pstree.c:1053
 #, c-format
 msgid "No processes found.\n"
 msgstr "Keine Prozesse gefunden.\n"
 
-#: src/pstree.c:1047
+#: src/pstree.c:1059
 #, c-format
 msgid "Press return to close\n"
 msgstr "Drücken Sie Enter zum Schließen\n"
@@ -675,7 +693,9 @@ msgstr "%s: unbekanntes Signal; %s -l listet die Signale auf.\n"
 #~ "\n"
 
 #~ msgid "You cannot use the mounted and mountpoint flags together"
-#~ msgstr "Die Flags gemounted und mount-Punkt können nicht gleichzeitig verwendet werden."
+#~ msgstr ""
+#~ "Die Flags gemounted und mount-Punkt können nicht gleichzeitig verwendet "
+#~ "werden."
 
 #~ msgid "Cannot stat mount point %s: %s\n"
 #~ msgstr "Kann Status von Einhängepunkt \"%s\" nicht ermitteln: %s\n"

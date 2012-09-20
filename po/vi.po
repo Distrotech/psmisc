@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-08-31 14:46+1000\n"
+"POT-Creation-Date: 2012-09-20 22:13+1000\n"
 "PO-Revision-Date: 2012-09-01 07:54+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <translation-team-vi@lists.sourceforge.net>\n"
@@ -23,7 +23,8 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
+"NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -32,7 +33,8 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or block device\n"
+"  -m,--mount            show all processes using the named filesystems or "
+"block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -42,14 +44,18 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Sử dụng: fuser [ -fMuvw ] [-a|-s] [-4|-6] [-c|-m|-n KHOẢNG] [-k [-i] [-TÍN_HIỆU]] TÊN...\n"
+"Sử dụng: fuser [ -fMuvw ] [-a|-s] [-4|-6] [-c|-m|-n KHOẢNG] [-k [-i] [-"
+"TÍN_HIỆU]] TÊN...\n"
 "       fuser -l\n"
 "       fuser -V\n"
-"Hiển thị những tiến trình nào đang dùng những tập tin, ổ cắm hay hệ thống tập tin có tên đưa ra.\n"
+"Hiển thị những tiến trình nào đang dùng những tập tin, ổ cắm hay hệ thống "
+"tập tin có tên đưa ra.\n"
 "\n"
 "  -a,--all              cũng hiển thị các tập tin không dùng\n"
-"  -i,--interactive      hỏi trước khi ép buộc (bị bỏ qua mà không có \"-k\")\n"
-"  -k,--kill             buộc kết thúc mỗi tiến trình đang truy cập đến tập tin có tên đưa ra\n"
+"  -i,--interactive      hỏi trước khi ép buộc (bị bỏ qua mà không có \"-k"
+"\")\n"
+"  -k,--kill             buộc kết thúc mỗi tiến trình đang truy cập đến tập "
+"tin có tên đưa ra\n"
 "  -l,--list-signals     liệt kê những tên tín hiệu vẫn sẵn sàng\n"
 "  -m,--mount            hiển thị tất cả các tiến trình đang sử dụng\n"
 "\t\tnhững hệ thống tập tin hay thiết bị khối có tên đưa ra\n"
@@ -99,7 +105,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:854
+#: src/pstree.c:864
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -252,8 +258,11 @@ msgstr "%s: không tìm thấy tiến trình\n"
 
 #: src/killall.c:615
 #, c-format
-msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr "Cách sử dụng: killall [-Z NGỮ_CẢNH] [-u NGƯỜI_DÙNG] [ -eIgiqrvw ] [ -TÍN_HIỆU ] TÊN...\n"
+msgid ""
+"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr ""
+"Cách sử dụng: killall [-Z NGỮ_CẢNH] [-u NGƯỜI_DÙNG] [ -eIgiqrvw ] [ -"
+"TÍN_HIỆU ] TÊN...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -541,17 +550,19 @@ msgstr "Phải cung cấp ít nhất một PID (mã số tiến trình)."
 #: src/prtstat.c:317
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
-msgstr "Chưa gắn kết \"/proc\" thì không lấy được trạng thái về \"/proc/self/stat».\n"
+msgstr ""
+"Chưa gắn kết \"/proc\" thì không lấy được trạng thái về \"/proc/self/stat».\n"
 
-#: src/pstree.c:784
+#: src/pstree.c:794
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s trống (lắp chưa?)\n"
 
-#: src/pstree.c:820
+#: src/pstree.c:830
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -572,7 +583,8 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Sử dụng: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ]  [ -u ]\n"
+"Sử dụng: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ]  "
+"[ -u ]\n"
 "              [ -A | -G | -U ] [ PID | NGƯỜI_DÙNG]\n"
 "       pstree -V\n"
 "\n"
@@ -581,7 +593,8 @@ msgstr ""
 "  -a, --arguments       hiển thị các đối số dòng lệnh\n"
 "  -A, --ascii                  dùng các ký tự vẽ đường kiểu ASCII\n"
 "  -c, --compact            đừng kết lại các cây phụ trùng nhau\n"
-"  -h, --highlight-alt      tô sáng tiến trình đang chạy và các tiến trình cấp trên\n"
+"  -h, --highlight-alt      tô sáng tiến trình đang chạy và các tiến trình "
+"cấp trên\n"
 "  -H PID,\n"
 "  --highlight-pid=PID    tô sáng tiến trình này và các tiến trình cấp trên\n"
 "  -g, --show-pgids    hiển thị id nhóm tiến trình; ngụ ý sử dụng -c\n"
@@ -590,15 +603,16 @@ msgstr ""
 "  -n, --numeric-sort    sắp xếp kết xuất theo PID (mã số tiến trình)\n"
 "  -p, --show-pids        hiển thị các PID (ngụ ý sử dụng \"-c\")\n"
 "  -u, --uid-changes    hiển thị các sự chuyển tiếp UID (mã số người dùng)\n"
-"  -U, --unicode           dùng các ký tự vẽ đường sử dụng bảng mã UTF-8 (Unicode)\n"
+"  -U, --unicode           dùng các ký tự vẽ đường sử dụng bảng mã UTF-8 "
+"(Unicode)\n"
 "  -V, --version             hiển thị thông tin về phiên bản\n"
 
-#: src/pstree.c:840
+#: src/pstree.c:850
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     show         Các ngữ cảnh bảo mật SELinux\n"
 
-#: src/pstree.c:842
+#: src/pstree.c:852
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -606,15 +620,16 @@ msgid ""
 "\n"
 msgstr ""
 "  PID    \t\t\tbắt đầu ở PID này; mặc định là 1 (init)\n"
-"  NGƯỜI_DÙNG \thiển thị chỉ những cây có gốc là tiến trình của người dùng này\n"
+"  NGƯỜI_DÙNG \thiển thị chỉ những cây có gốc là tiến trình của người dùng "
+"này\n"
 "\n"
 
-#: src/pstree.c:849
+#: src/pstree.c:859
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:852
+#: src/pstree.c:862
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -623,27 +638,27 @@ msgstr ""
 "Tác quyền © 1993-2009 Werner Almesberger và Craig Small\n"
 "\n"
 
-#: src/pstree.c:965
+#: src/pstree.c:975
 #, c-format
 msgid "TERM is not set\n"
 msgstr "Chưa đặt TERM\n"
 
-#: src/pstree.c:969
+#: src/pstree.c:979
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Không thể gọi khả năng thiết bị cuối\n"
 
-#: src/pstree.c:1018
+#: src/pstree.c:1030
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Không có tên người dùng như vậy: %s\n"
 
-#: src/pstree.c:1041
+#: src/pstree.c:1053
 #, c-format
 msgid "No processes found.\n"
 msgstr "Không tìm thấy tiến trình.\n"
 
-#: src/pstree.c:1047
+#: src/pstree.c:1059
 #, c-format
 msgid "Press return to close\n"
 msgstr "Bấm phím Return để đóng\n"

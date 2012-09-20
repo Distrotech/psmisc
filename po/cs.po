@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-08-31 14:46+1000\n"
+"POT-Creation-Date: 2012-09-20 22:13+1000\n"
 "PO-Revision-Date: 2012-09-03 08:33+0200\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -19,7 +19,8 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
+"NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -28,7 +29,8 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or block device\n"
+"  -m,--mount            show all processes using the named filesystems or "
+"block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -38,7 +40,8 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Použití: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n PROSTOR] [-k [-i] [-SIGNÁL]]\n"
+"Použití: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n PROSTOR] [-k [-i] [-"
+"SIGNÁL]]\n"
 "               NÁZEV…\n"
 "         fuser -l\n"
 "         fuser -V\n"
@@ -49,9 +52,11 @@ msgstr ""
 "  -i,--interactive      před zabitím se dotáže (ignorováno bez -k)\n"
 "  -k,--kill             zabije procesy přistupující k zadanému souboru\n"
 "  -l,--list-signals     vypíše seznam názvů dostupných signálů\n"
-"  -m,--mount            zobrazí všechny procesy používající zadané souborové\n"
+"  -m,--mount            zobrazí všechny procesy používající zadané "
+"souborové\n"
 "                        systémy nebo bloková zařízení\n"
-"  -M,--ismountpoint     vyhoví požadavku, pouze když NÁZEV je bod připojení FS\n"
+"  -M,--ismountpoint     vyhoví požadavku, pouze když NÁZEV je bod připojení "
+"FS\n"
 "  -n,--namespace PROSTOR    hledá v tomto jmenném prostoru\n"
 "                        (file [soubor], udp, nebo tcp)\n"
 "  -s,--silent           tichý běh\n"
@@ -98,7 +103,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:854
+#: src/pstree.c:864
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -251,8 +256,10 @@ msgstr "%s: žádný proces nenalezen\n"
 
 #: src/killall.c:615
 #, c-format
-msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr "Usage: killall [-Z KONTEXT] [-u UŽIVATEL] [-eIgiqrvw] [-SIGNÁL] NÁZEV…\n"
+msgid ""
+"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr ""
+"Usage: killall [-Z KONTEXT] [-u UŽIVATEL] [-eIgiqrvw] [-SIGNÁL] NÁZEV…\n"
 
 #: src/killall.c:618
 #, c-format
@@ -284,7 +291,8 @@ msgstr ""
 "         killall -V, --version\n"
 "\n"
 "  -e,--exact          u velmi dlouhých názvu vyžaduje přesnou shodu\n"
-"  -I,--ignore-case    porovnávání názvů procesů nebere ohled na velikost písmen\n"
+"  -I,--ignore-case    porovnávání názvů procesů nebere ohled na velikost "
+"písmen\n"
 "  -g,--process-group  zabije skupinu procesů namísto procesu\n"
 "  -y,--younger-than   zabije procesy mladší než ČAS\n"
 "  -o,--older-than     zabije procesy starší než ČAS\n"
@@ -541,15 +549,16 @@ msgstr "Je třeba zadat alespoň jedno PID."
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "/proc není připojen, nelze získat informace o /proc/self/stat.\n"
 
-#: src/pstree.c:784
+#: src/pstree.c:794
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s je prázdný (není připojen?)\n"
 
-#: src/pstree.c:820
+#: src/pstree.c:830
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -591,12 +600,12 @@ msgstr ""
 "  -U, --unicode        použije znaky UTF-8 (Unicode) pro kreslení čar\n"
 "  -V, --version        zobrazí informace o verzi\n"
 
-#: src/pstree.c:840
+#: src/pstree.c:850
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z                   zobrazí bezpečnostní kontext SELinuxu\n"
 
-#: src/pstree.c:842
+#: src/pstree.c:852
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -607,12 +616,12 @@ msgstr ""
 "  UŽIVATEL  zobrazí jen stromy, jejichž kořeny náleží tomuto uživateli\n"
 "\n"
 
-#: src/pstree.c:849
+#: src/pstree.c:859
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:852
+#: src/pstree.c:862
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -621,27 +630,27 @@ msgstr ""
 "Copyright © 1993–2009 Werner Almesberger a Craig Small\n"
 "\n"
 
-#: src/pstree.c:965
+#: src/pstree.c:975
 #, c-format
 msgid "TERM is not set\n"
 msgstr "Proměnná TERM není nastavena\n"
 
-#: src/pstree.c:969
+#: src/pstree.c:979
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Nelze zjistit schopnosti terminálu\n"
 
-#: src/pstree.c:1018
+#: src/pstree.c:1030
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Žádný uživatel se jménem: %s\n"
 
-#: src/pstree.c:1041
+#: src/pstree.c:1053
 #, c-format
 msgid "No processes found.\n"
 msgstr "Žádný proces nenalezen.\n"
 
-#: src/pstree.c:1047
+#: src/pstree.c:1059
 #, c-format
 msgid "Press return to close\n"
 msgstr "Uzavřete klávesou Enter\n"
