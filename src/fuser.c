@@ -1411,7 +1411,7 @@ check_dir(const pid_t pid, const char *dirname, struct device_list *dev_head,
 			 pid, dirname, direntry->d_name);
 
 		if (timeout(stat, filepath, &st, 5) != 0) {
-			if (errno != ENOENT) {
+			if (errno != ENOENT && errno != ENOTDIR) {
 				fprintf(stderr, _("Cannot stat file %s: %s\n"),
 					filepath, strerror(errno));
 			}
