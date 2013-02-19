@@ -5,7 +5,7 @@ AC_INIT([psmisc],[22.20])
 AC_CONFIG_SRCDIR([src/comm.h])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_AUX_DIR([config])
-AC_CANONICAL_TARGET
+AC_CANONICAL_HOST
 AM_INIT_AUTOMAKE([1.10])
 AC_LANG([C])
 
@@ -118,7 +118,7 @@ AC_CHECK_MEMBERS([struct pt_regs.uregs],[],[], [#include <asm/ptrace.h>])
 AC_CHECK_MEMBERS([struct pt_regs.regs,
                   struct pt_regs.cp0_status],[],[], [#include <asm/ptrace.h>])
 
-case ${target_os} in
+case ${host_os} in
   gnu*)
     want_fuser=no
     ;;
