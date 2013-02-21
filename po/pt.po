@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 1.0\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-09-20 22:13+1000\n"
+"POT-Creation-Date: 2013-02-21 22:46+1100\n"
 "PO-Revision-Date: 2001-10-28 22:14-0200\n"
 "Last-Translator: Edesio Costa e Silva <edesio+psmisc@ieee.org>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
@@ -69,7 +69,7 @@ msgid ""
 msgstr ""
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:864
+#: src/pstree.c:807
 #, fuzzy, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -454,12 +454,12 @@ msgstr ""
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 
-#: src/pstree.c:794
+#: src/pstree.c:741
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s está vazio (não está montado?)\n"
 
-#: src/pstree.c:830
+#: src/pstree.c:773
 #, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -485,12 +485,12 @@ msgid ""
 "  -V, --version       display version information\n"
 msgstr ""
 
-#: src/pstree.c:850
+#: src/pstree.c:793
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr ""
 
-#: src/pstree.c:852
+#: src/pstree.c:795
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -498,39 +498,39 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/pstree.c:859
+#: src/pstree.c:802
 #, fuzzy, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "fuser (psmisc) %s\n"
 
-#: src/pstree.c:862
+#: src/pstree.c:805
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
 
-#: src/pstree.c:975
+#: src/pstree.c:918
 #, c-format
 msgid "TERM is not set\n"
 msgstr ""
 
-#: src/pstree.c:979
+#: src/pstree.c:922
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr ""
 
-#: src/pstree.c:1030
+#: src/pstree.c:973
 #, c-format
 msgid "No such user name: %s\n"
 msgstr ""
 
-#: src/pstree.c:1053
+#: src/pstree.c:996
 #, c-format
 msgid "No processes found.\n"
 msgstr ""
 
-#: src/pstree.c:1059
+#: src/pstree.c:1002
 #, c-format
 msgid "Press return to close\n"
 msgstr ""

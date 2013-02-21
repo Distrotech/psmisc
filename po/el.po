@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc-22.6\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-09-20 22:13+1000\n"
+"POT-Creation-Date: 2013-02-21 22:46+1100\n"
 "PO-Revision-Date: 2008-06-15 18:31+0300\n"
 "Last-Translator: Lefteris Dimitroulakis <edimitro@tee.gr>\n"
 "Language-Team: Greek <team@lists.gnome.gr>\n"
@@ -99,7 +99,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:864
+#: src/pstree.c:807
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -520,12 +520,12 @@ msgstr ""
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 
-#: src/pstree.c:794
+#: src/pstree.c:741
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s είναι άδειο (μή προσαρτημένο ;)\n"
 
-#: src/pstree.c:830
+#: src/pstree.c:773
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -568,12 +568,12 @@ msgstr ""
 "    -U     χρήση UTF-8 (Unicode) line drawing characters\n"
 "    -V     εμφανίζει πληροφορίες έκδοσης\n"
 
-#: src/pstree.c:850
+#: src/pstree.c:793
 #, fuzzy, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "    -Z     εμφάνιση SELinux security contexts\n"
 
-#: src/pstree.c:852
+#: src/pstree.c:795
 #, fuzzy, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -584,12 +584,12 @@ msgstr ""
 "    USER   εμφάνιση μόνο δέντρων rooted at processes of this user\n"
 "\n"
 
-#: src/pstree.c:859
+#: src/pstree.c:802
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:862
+#: src/pstree.c:805
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -598,27 +598,27 @@ msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger και Craig Small\n"
 "\n"
 
-#: src/pstree.c:975
+#: src/pstree.c:918
 #, c-format
 msgid "TERM is not set\n"
 msgstr "Η μεταβλητή TERM δεν έχει καθοριστεί\n"
 
-#: src/pstree.c:979
+#: src/pstree.c:922
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Δεν μπορώ να πάρω τις ικανότητες τερματικού\n"
 
-#: src/pstree.c:1030
+#: src/pstree.c:973
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Δεν υπάρχει τέτοιο όνομα χρήστη: %s\n"
 
-#: src/pstree.c:1053
+#: src/pstree.c:996
 #, c-format
 msgid "No processes found.\n"
 msgstr "Δεν βρέθηκαν διεργασίες.\n"
 
-#: src/pstree.c:1059
+#: src/pstree.c:1002
 #, c-format
 msgid "Press return to close\n"
 msgstr "Πάτησε return για κλείσιμο\n"

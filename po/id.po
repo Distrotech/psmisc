@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.11-pre1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-09-20 22:13+1000\n"
+"POT-Creation-Date: 2013-02-21 22:46+1100\n"
 "PO-Revision-Date: 2010-03-28 19:30+0700\n"
 "Last-Translator: Arif E. Nugroho <arif_endro@yahoo.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -100,7 +100,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:864
+#: src/pstree.c:807
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -552,12 +552,12 @@ msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 "/proc belum dipasang, tidak dapat memperoleh statistik /proc/self/stat.\n"
 
-#: src/pstree.c:794
+#: src/pstree.c:741
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s adalah kosong (belum dimount ?)\n"
 
-#: src/pstree.c:830
+#: src/pstree.c:773
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -602,12 +602,12 @@ msgstr ""
 "  -U, --unicode       gunakan UTF-8 (Unicode) baris karakter gambar\n"
 "  -V, --version       tampilkan informasi versi\n"
 
-#: src/pstree.c:850
+#: src/pstree.c:793
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     tampilkan    tampilkan konteks keamanan SELinux\n"
 
-#: src/pstree.c:852
+#: src/pstree.c:795
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -618,12 +618,12 @@ msgstr ""
 "  PENGGUNA tampilkan hanya proses yang berakar dari pengguna ini\n"
 "\n"
 
-#: src/pstree.c:859
+#: src/pstree.c:802
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:862
+#: src/pstree.c:805
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -632,27 +632,27 @@ msgstr ""
 "Hak Cipta (C) 1993-2009 Werner Almesberger dan Craid Small\n"
 "\n"
 
-#: src/pstree.c:975
+#: src/pstree.c:918
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM tidak diset\n"
 
-#: src/pstree.c:979
+#: src/pstree.c:922
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Tidka dapat memperoleh kapabilitas terminal\n"
 
-#: src/pstree.c:1030
+#: src/pstree.c:973
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Tidak ada nama pengguna seperti itu: %s\n"
 
-#: src/pstree.c:1053
+#: src/pstree.c:996
 #, c-format
 msgid "No processes found.\n"
 msgstr "Tidak ada proses yang ditemukan.\n"
 
-#: src/pstree.c:1059
+#: src/pstree.c:1002
 #, c-format
 msgid "Press return to close\n"
 msgstr "Tekan Enter untuk menutup\n"

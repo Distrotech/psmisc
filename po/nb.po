@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.2pre1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-09-20 22:13+1000\n"
+"POT-Creation-Date: 2013-02-21 22:46+1100\n"
 "PO-Revision-Date: 2006-03-07 12:01+0100\n"
 "Last-Translator: Trond Endrestøl <Trond.Endrestol@fagskolen.gjovik.no>\n"
 "Language-Team: Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
@@ -116,7 +116,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:864
+#: src/pstree.c:807
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -526,12 +526,12 @@ msgstr ""
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 
-#: src/pstree.c:794
+#: src/pstree.c:741
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s er tom (ikke montert?)\n"
 
-#: src/pstree.c:830
+#: src/pstree.c:773
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -575,12 +575,12 @@ msgstr ""
 "    -U     tegn linjer med UTF-8-tegn (Unicode)\n"
 "    -V     vis programversjon\n"
 
-#: src/pstree.c:850
+#: src/pstree.c:793
 #, fuzzy, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "    -Z     vis SELinux sikkerhetskontekster\n"
 
-#: src/pstree.c:852
+#: src/pstree.c:795
 #, fuzzy, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -590,12 +590,12 @@ msgstr ""
 "    PID    begynn med angitt pid, standard er 1 (init)\n"
 "    BRUKER bare vis trær med opphav fra prosesser tilhørende denne brukeren\n"
 
-#: src/pstree.c:859
+#: src/pstree.c:802
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (psmisc) %s\n"
 
-#: src/pstree.c:862
+#: src/pstree.c:805
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -604,27 +604,27 @@ msgstr ""
 "Copyright (C) 1993-2005 Werner Almesberger og Craig Small\n"
 "\n"
 
-#: src/pstree.c:975
+#: src/pstree.c:918
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM er ikke angitt\n"
 
-#: src/pstree.c:979
+#: src/pstree.c:922
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Kan ikke finne ut egenskapene til terminalen\n"
 
-#: src/pstree.c:1030
+#: src/pstree.c:973
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Fant ikke brukeren «%s».\n"
 
-#: src/pstree.c:1053
+#: src/pstree.c:996
 #, c-format
 msgid "No processes found.\n"
 msgstr "Fant ingen prosesser.\n"
 
-#: src/pstree.c:1059
+#: src/pstree.c:1002
 #, c-format
 msgid "Press return to close\n"
 msgstr "Trykk på enter for å lukke.\n"

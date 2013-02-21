@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-09-20 22:13+1000\n"
+"POT-Creation-Date: 2013-02-21 22:46+1100\n"
 "PO-Revision-Date: 2012-09-16 13:22+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -106,7 +106,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:864
+#: src/pstree.c:807
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -555,12 +555,12 @@ msgstr "Legalább egy PID-et meg kell adnia."
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "a /proc nincs csatolva, nem érhető el a /proc/self/stat.\n"
 
-#: src/pstree.c:794
+#: src/pstree.c:741
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "a(z) %s üres (nincs csatlakoztatva?)\n"
 
-#: src/pstree.c:830
+#: src/pstree.c:773
 #, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -607,12 +607,12 @@ msgstr ""
 "  -U, --unicode       UTF-8 (Unicode) sorrajzoló karakterek használata\n"
 "  -V, --version       verzióinformációk megjelenítése\n"
 
-#: src/pstree.c:850
+#: src/pstree.c:793
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     show         a SELinux biztonsági kontextusok megjelenítése\n"
 
-#: src/pstree.c:852
+#: src/pstree.c:795
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -624,12 +624,12 @@ msgstr ""
 "                        megjelenítése\n"
 "\n"
 
-#: src/pstree.c:859
+#: src/pstree.c:802
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:862
+#: src/pstree.c:805
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -638,27 +638,27 @@ msgstr ""
 "Copyright (C) 1993-2009 Werner Almesberger és Craig Small\n"
 "\n"
 
-#: src/pstree.c:975
+#: src/pstree.c:918
 #, c-format
 msgid "TERM is not set\n"
 msgstr "A TERM nincs beállítva\n"
 
-#: src/pstree.c:979
+#: src/pstree.c:922
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "A terminál képességei nem kérhetők le\n"
 
-#: src/pstree.c:1030
+#: src/pstree.c:973
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Nincs ilyen felhasználónév: %s\n"
 
-#: src/pstree.c:1053
+#: src/pstree.c:996
 #, c-format
 msgid "No processes found.\n"
 msgstr "Nem találhatók folyamatok.\n"
 
-#: src/pstree.c:1059
+#: src/pstree.c:1002
 #, c-format
 msgid "Press return to close\n"
 msgstr "A bezáráshoz nyomj entert\n"
