@@ -1,3 +1,7 @@
+Changes in 22.21
+================
+	* Missing comma in fuser(1) added Debian #702391
+
 Changes in 22.20
 ================
 	* pstree sorts properly on names Debian #682014
