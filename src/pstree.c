@@ -76,6 +76,8 @@ extern const char *__progname;
 #define VT_UR        "m"
 #define        VT_HD        "w"
 
+#define NUM_NS 6
+
 typedef struct _proc {
     char comm[COMM_LEN + 2 + 1]; /* add another 2 for thread brackets */
     char **argv;                /* only used : argv[0] is 1st arg; undef if argc < 1 */
@@ -84,6 +86,7 @@ typedef struct _proc {
     pid_t pgid;
     uid_t uid;
     security_context_t scontext;
+    ino_t ns[NUM_NS];
     char flags;
     struct _child *children;
     struct _proc *parent;
@@ -137,6 +140,133 @@ static int cur_x = 1;
 static char last_char = 0;
 static int dumped = 0;                /* used by dump_by_user */
 static int charlen = 0;                /* length of character */
+
+enum ns_type {
+    IPCNS = 0,
+    MNTNS,
+    NETNS,
+    PIDNS,
+    USERNS,
+    UTSNS
+};
+struct ns_entry;
+struct ns_entry {
+    ino_t number;
+    CHILD *children;
+    struct ns_entry *next;
+};
+
+static const char *ns_names[] = {
+    [IPCNS] = "ipc",
+    [MNTNS] = "mnt",
+    [NETNS] = "net",
+    [PIDNS] = "pid",
+    [USERNS] = "user",
+    [UTSNS] = "uts",
+};
+
+const char *get_ns_name(int id) {
+    if (id >= NUM_NS)
+        return NULL;
+    return ns_names[id];
+}
+
+static int get_ns_id(const char *name) {
+    int i;
+
+    for (i = 0; i < NUM_NS; i++)
+        if (!strcmp(ns_names[i], name))
+            return i;
+    return -1;
+}
+
+static int verify_ns(int id)
+{
+    char filename[50];
+    struct stat s;
+
+    snprintf(filename, 50, "/proc/%i/ns/%s", getpid(), get_ns_name(id));
+
+    return stat(filename, &s);
+}
+
+static inline void new_proc_ns(PROC *ns_task)
+{
+    struct stat st;
+    char buff[50];
+    pid_t pid = ns_task->pid;
+    int i;
+
+    for (i = 0; i < NUM_NS; i++) {
+        snprintf(buff, sizeof(buff), "/proc/%i/ns/%s", pid,
+                 get_ns_name(i));
+        if (stat(buff, &st)) {
+            ns_task->ns[i] = 0;
+            continue;
+        }
+        ns_task->ns[i] = st.st_ino;
+    }
+}
+
+static void find_ns_and_add(struct ns_entry **root, PROC *r, enum ns_type id)
+{
+    struct ns_entry *ptr, *last = NULL;
+    CHILD **c;
+
+    for (ptr = *root; ptr; ptr = ptr->next) {
+        if (ptr->number == r->ns[id])
+            break;
+        last = ptr;
+    }
+
+    if (!ptr) {
+        ptr = malloc(sizeof(*ptr));
+        memset(ptr, 0, sizeof(*ptr));
+        ptr->number = r->ns[id];
+        if (*root == NULL)
+            *root = ptr;
+        else
+            last->next = ptr;
+    }
+
+    /* move the child to under the namespace's umbrella */
+    for (c = &ptr->children; *c; c = &(*c)->next)
+        ;
+    *c = malloc(sizeof(CHILD));
+    (*c)->child = r;
+    (*c)->next = NULL;
+
+    /* detaching from parent */
+    if (r->parent) {
+        for (c = &r->parent->children; *c; c = &(*c)->next) {
+            if ((*c)->child == r) {
+                *c = (*c)->next;
+                break;
+            }
+        }
+        r->parent = NULL;
+    }
+
+}
+
+static PROC *find_proc(pid_t pid);
+static void sort_by_namespace(PROC *r, enum ns_type id, struct ns_entry **root)
+{
+    CHILD *walk;
+
+    /* first run, find the first process */
+    if (!r) {
+        r = find_proc(1);
+        if (!r)
+            return;
+    }
+
+    if (r->parent == NULL || r->parent->ns[id] != r->ns[id])
+        find_ns_and_add(root, r, id);
+
+    for (walk = r->children; walk; walk = walk->next)
+        sort_by_namespace(walk->child, id, root);
+}
 
 static void fix_orphans(security_context_t scontext);
 
@@ -297,6 +427,7 @@ static PROC *new_proc(const char *comm, pid_t pid, uid_t uid,
     new->children = NULL;
     new->parent = NULL;
     new->next = list;
+    new_proc_ns(new);
     return list = new;
 }
 
@@ -607,6 +738,20 @@ static void dump_by_user(PROC * current, uid_t uid)
         dump_by_user(walk->child, uid);
 }
 
+static void dump_by_namespace(struct ns_entry *root)
+{
+    struct ns_entry *ptr = root;
+    CHILD *c;
+    char buff[14];
+
+    for ( ; ptr; ptr = ptr->next) {
+        snprintf(buff, sizeof(buff), "[%li]\n", ptr->number);
+        out_string(buff);
+        for (c = ptr->children; c; c = c->next)
+            dump_tree(c->child, 0, 1, 1, 1, 0, 0);
+    }
+}
+
 static void trim_tree_by_parent(PROC * current)
 {
   if (!current)
@@ -806,6 +951,8 @@ static void usage(void)
              "  -G, --vt100         use VT100 line drawing characters\n"
              "  -l, --long          don't truncate long lines\n"
              "  -n, --numeric-sort  sort output by PID\n"
+             "  -N type,\n"
+             "  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, uts)\n"
              "  -p, --show-pids     show PIDs; implies -c\n"
              "  -s, --show-parents  show parents of the selected process\n"
              "  -u, --uid-changes   show uid transitions\n"
@@ -838,10 +985,12 @@ int main(int argc, char **argv)
 {
     PROC *current;
     const struct passwd *pw;
+    struct ns_entry *nsroot = NULL;
     pid_t pid, highlight;
     char termcap_area[1024];
     char *termname, *endptr;
     int c, pid_set;
+    enum ns_type nsid = -1;
 
     struct option options[] = {
         {"arguments", 0, NULL, 'a'},
@@ -852,6 +1001,7 @@ int main(int argc, char **argv)
         {"highlight-pid", 1, NULL, 'H'},
         {"long", 0, NULL, 'l'},
         {"numeric-sort", 0, NULL, 'n'},
+        {"ns-sort", 1, NULL, 'N' },
         {"show-pids", 0, NULL, 'p'},
         {"show-pgids", 0, NULL, 'g'},
         {"show-parents", 0, NULL, 's'},
@@ -905,11 +1055,11 @@ int main(int argc, char **argv)
 
 #ifdef WITH_SELINUX
     while ((c =
-            getopt_long(argc, argv, "aAcGhH:npglsuUVZ", options,
+            getopt_long(argc, argv, "aAcGhH:nN:pglsuUVZ", options,
                         NULL)) != -1)
 #else                                /*WITH_SELINUX */
     while ((c =
-            getopt_long(argc, argv, "aAcGhH:npglsuUV", options, NULL)) != -1)
+            getopt_long(argc, argv, "aAcGhH:nN:pglsuUV", options, NULL)) != -1)
 #endif                                /*WITH_SELINUX */
         switch (c) {
         case 'a':
@@ -950,6 +1100,17 @@ int main(int argc, char **argv)
             break;
         case 'n':
             by_pid = 1;
+            break;
+        case 'N':
+            nsid = get_ns_id(optarg);
+            if (nsid == -1)
+                 usage();
+            if (verify_ns(nsid)) {
+                 fprintf(stderr,
+                         _("procfs file for %s namespace not available\n"),
+                         optarg);
+                 return 1;
+            }
             break;
         case 'p':
             pids = 1;
@@ -1008,7 +1169,10 @@ int main(int argc, char **argv)
       pid = ROOT_PID;
     }
 
-    if (!pw)
+    if (nsid != -1) {
+        sort_by_namespace(NULL, nsid, &nsroot);
+        dump_by_namespace(nsroot);
+    } else if (!pw)
         dump_tree(find_proc(pid), 0, 1, 1, 1, 0, 0);
     else {
         dump_by_user(find_proc(ROOT_PID), pw->pw_uid);

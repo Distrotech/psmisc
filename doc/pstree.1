@@ -18,6 +18,7 @@ pstree \- display a tree of processes
 .RB [ \-g  ] \ \-\-show\-pgids ]
 .RB [ \-l  , \ \-\-long ]
 .RB [ \-n  , \ \-\-numeric\-sort ]
+.RB [ \-N  , \ \-\-ns\-sort \fIns\fB
 .RB [ \-p  , \ \-\-show\-pids ]
 .RB [ \-s  , \ \-\-show\-parents ]
 .RB [ \-u  , \ \-\-uid\-changes ]
@@ -121,6 +122,11 @@ the default of 132 columns is used.
 .IP \fB\-n\fP
 Sort processes with the same ancestor by PID instead of by name. 
 (Numeric sort.)
+.IP \fB\-N\fP
+Show individual trees for each namespace of the type specified.  The
+available types are: ipc, mnt, net, pid, user, uts.  Regular users don't
+have access to other users' processes information, so the output will be
+limited.
 .IP \fB\-p\fP
 Show PIDs.  PIDs are shown as decimal numbers in parentheses after each
 process name.
