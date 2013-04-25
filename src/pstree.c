@@ -133,7 +133,7 @@ static int *width = NULL;
 static int *more = NULL;
 
 static int print_args = 0, compact = 1, user_change = 0, pids = 0, pgids = 0,
-    show_parents = 0, by_pid = 0, trunc = 1, wait_end = 0;
+    show_parents = 0, by_pid = 0, trunc = 1, wait_end = 0, ns_change = 0;
 static int show_scontext = 0;
 static int output_width = 132;
 static int cur_x = 1;
@@ -538,11 +538,17 @@ add_proc(const char *comm, pid_t pid, pid_t ppid, pid_t pgid, uid_t uid,
 static int tree_equal(const PROC * a, const PROC * b)
 {
     const CHILD *walk_a, *walk_b;
+    int i;
 
     if (strcmp(a->comm, b->comm))
         return 0;
     if (user_change && a->uid != b->uid)
         return 0;
+    if (ns_change) {
+        for (i = 0; i < NUM_NS; i++)
+            if (a->ns[i] != b->ns[i])
+                return 0;
+    }
     for (walk_a = a->children, walk_b = b->children; walk_a && walk_b;
          walk_a = walk_a->next, walk_b = walk_b->next)
         if (!tree_equal(walk_a->child, walk_b->child))
@@ -622,6 +628,16 @@ dump_tree(PROC * current, int level, int rep, int leaf, int last,
             out_string(pw->pw_name);
         else
             (void) out_int(current->uid);
+    }
+    if (ns_change && current->parent) {
+        for (i = 0; i < NUM_NS; i++) {
+            if (current->ns[i] == 0 || current->parent->ns[i] == 0)
+                continue;
+            if (current->ns[i] != current->parent->ns[i]) {
+                out_char(info++ ? ',' : '(');
+                out_string(get_ns_name(i));
+            }
+        }
     }
     if (show_scontext) {
         out_char(info++ ? ',' : '(');
@@ -955,6 +971,7 @@ static void usage(void)
              "  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, uts)\n"
              "  -p, --show-pids     show PIDs; implies -c\n"
              "  -s, --show-parents  show parents of the selected process\n"
+             "  -S, --ns-changes    show namespace transitions\n"
              "  -u, --uid-changes   show uid transitions\n"
              "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
              "  -V, --version       display version information\n"));
@@ -1005,6 +1022,7 @@ int main(int argc, char **argv)
         {"show-pids", 0, NULL, 'p'},
         {"show-pgids", 0, NULL, 'g'},
         {"show-parents", 0, NULL, 's'},
+        {"ns-changes", 0, NULL, 'S' },
         {"uid-changes", 0, NULL, 'u'},
         {"unicode", 0, NULL, 'U'},
         {"version", 0, NULL, 'V'},
@@ -1055,11 +1073,11 @@ int main(int argc, char **argv)
 
 #ifdef WITH_SELINUX
     while ((c =
-            getopt_long(argc, argv, "aAcGhH:nN:pglsuUVZ", options,
+            getopt_long(argc, argv, "aAcGhH:nN:pglsSuUVZ", options,
                         NULL)) != -1)
 #else                                /*WITH_SELINUX */
     while ((c =
-            getopt_long(argc, argv, "aAcGhH:nN:pglsuUV", options, NULL)) != -1)
+            getopt_long(argc, argv, "aAcGhH:nN:pglsSuUV", options, NULL)) != -1)
 #endif                                /*WITH_SELINUX */
         switch (c) {
         case 'a':
@@ -1122,6 +1140,9 @@ int main(int argc, char **argv)
             break;
         case 's':
             show_parents = 1;
+            break;
+        case 'S':
+            ns_change = 1;
             break;
         case 'u':
             user_change = 1;

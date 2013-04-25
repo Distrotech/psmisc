@@ -21,6 +21,7 @@ pstree \- display a tree of processes
 .RB [ \-N  , \ \-\-ns\-sort \fIns\fB
 .RB [ \-p  , \ \-\-show\-pids ]
 .RB [ \-s  , \ \-\-show\-parents ]
+.RB [ \-S  , \ \-\-ns-changes ]
 .RB [ \-u  , \ \-\-uid\-changes ]
 .RB [ \-Z  , \ \-\-security\-context ]
 .RB [ \-A  , \ \-\-ascii  , \ \-G  , \ \-\-vt100  , \ \-U  , \ \-\-unicode ]
@@ -134,6 +135,9 @@ process name.
 implicitly disables compaction.
 .IP \fB\-s\fP
 Show parent processes of the specified process.
+.IP \fB\-S\fP
+Show namespaces transitions.  Like \-N, the output is limited when running
+as a regular user.
 .IP \fB\-u\fP
 Show uid transitions.  Whenever the uid of a process differs from the
 uid of its parent, the new uid is shown in parentheses after the
