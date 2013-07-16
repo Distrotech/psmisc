@@ -1,12 +1,12 @@
 .\"
 .\" Copyright 1993-2002 Werner Almesberger
-.\"           2002-2012 Craig Small
+.\"           2002-2013 Craig Small
 .\" This program is free software; you can redistribute it and/or modify
 .\" it under the terms of the GNU General Public License as published by
 .\" the Free Software Foundation; either version 2 of the License, or
 .\" (at your option) any later version.
 .\"
-.TH PSTREE 1 "2012-07-28" "psmisc" "User Commands"
+.TH PSTREE 1 "2013-07-16" "psmisc" "User Commands"
 .SH NAME
 pstree \- display a tree of processes
 .SH SYNOPSIS
@@ -115,9 +115,9 @@ parentheses after each process name.
 implicitly disables compaction.  If both PIDs and PGIDs are displayed
 then PIDs are shown first.
 .IP \fB\-l\fP
-Display long lines.  By default, lines are truncated to the display
-width or 132 if output is sent to a non-tty or if the display width is
-unknown.
+Display long lines.  By default, lines are truncated to either the COLUMNS
+environment variable or the display width.  If neither of these methods work,
+the default of 132 columns is used.
 .IP \fB\-n\fP
 Sort processes with the same ancestor by PID instead of by name. 
 (Numeric sort.)

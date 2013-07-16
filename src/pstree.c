@@ -139,6 +139,29 @@ static int dumped = 0;                /* used by dump_by_user */
 static int charlen = 0;                /* length of character */
 
 static void fix_orphans(security_context_t scontext);
+
+/*
+ * Determine the correct output width, what we use is:
+ */
+static int get_output_width(void)
+{
+    char *ep, *env_columns;
+    struct winsize winsz;
+
+    env_columns = getenv("COLUMNS");
+    if (env_columns && *env_columns) {
+	long t;
+	t = strtol(env_columns, &ep, 0);
+	if (!*ep && (t > 0) && (t < 0x7fffffffL))
+	    return (int)t;
+    }
+    if (ioctl(1, TIOCGWINSZ, &winsz) >= 0)
+        if (winsz.ws_col)
+            return winsz.ws_col;
+    return 132;
+
+}
+
 /*
  * Allocates additional buffer space for width and more as needed.
  * The first call will allocate the first buffer.
@@ -814,7 +837,6 @@ void print_version()
 int main(int argc, char **argv)
 {
     PROC *current;
-    struct winsize winsz;
     const struct passwd *pw;
     pid_t pid, highlight;
     char termcap_area[1024];
@@ -842,9 +864,7 @@ int main(int argc, char **argv)
         { 0, 0, 0, 0 }
     };
 
-    if (ioctl(1, TIOCGWINSZ, &winsz) >= 0)
-        if (winsz.ws_col)
-            output_width = winsz.ws_col;
+    output_width = get_output_width();
     pid = ROOT_PID;
     highlight = 0;
     pw = NULL;
