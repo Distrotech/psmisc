@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 21.6cvs\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2013-02-21 22:46+1100\n"
+"POT-Creation-Date: 2013-08-11 22:37+1000\n"
 "PO-Revision-Date: 2004-12-08 12:46+0100\n"
 "Last-Translator: Guillem Jover <guillem@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -97,7 +97,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:807
+#: src/pstree.c:994
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -506,12 +506,12 @@ msgstr ""
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 
-#: src/pstree.c:741
+#: src/pstree.c:925
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s és buit (no s'ha muntat?)\n"
 
-#: src/pstree.c:773
+#: src/pstree.c:957
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -530,8 +530,12 @@ msgid ""
 "  -G, --vt100         use VT100 line drawing characters\n"
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
+"  -N type,\n"
+"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
+"uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
+"  -S, --ns-changes    show namespace transitions\n"
 "  -u, --uid-changes   show uid transitions\n"
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
@@ -552,14 +556,14 @@ msgstr ""
 "    -p     mostra els PID; implica -c\n"
 "    -u     mostra transicions de uid\n"
 
-#: src/pstree.c:793
+#: src/pstree.c:980
 #, fuzzy, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr ""
 "    -s     mostra els SID de Flask\n"
 "    -x     mostra els contextes de seguretat de Flask\n"
 
-#: src/pstree.c:795
+#: src/pstree.c:982
 #, fuzzy, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -572,12 +576,12 @@ msgstr ""
 "    user   només mostra arbres amb arrel en processos d'aquest usuari\n"
 "\n"
 
-#: src/pstree.c:802
+#: src/pstree.c:989
 #, fuzzy, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (psmisc) %s\n"
 
-#: src/pstree.c:805
+#: src/pstree.c:992
 #, fuzzy, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -586,27 +590,32 @@ msgstr ""
 "Copyright (C) 1993-2002 Werner Almesberger i Craig Small\n"
 "\n"
 
-#: src/pstree.c:918
+#: src/pstree.c:1106
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM no està especificada\n"
 
-#: src/pstree.c:922
+#: src/pstree.c:1110
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "No s'han pogut obtenir les capacitats\n"
 
-#: src/pstree.c:973
+#: src/pstree.c:1128
+#, c-format
+msgid "procfs file for %s namespace not available\n"
+msgstr ""
+
+#: src/pstree.c:1175
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "No existeix aquest nom d'usuari: %s\n"
 
-#: src/pstree.c:996
+#: src/pstree.c:1201
 #, c-format
 msgid "No processes found.\n"
 msgstr "No s'han trobat processos.\n"
 
-#: src/pstree.c:1002
+#: src/pstree.c:1207
 #, c-format
 msgid "Press return to close\n"
 msgstr "Premeu retorn per a tancar\n"
