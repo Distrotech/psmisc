@@ -783,6 +783,33 @@ static void trim_tree_by_parent(PROC * current)
   trim_tree_by_parent(parent);
 }
 
+static char* get_threadname(const pid_t pid, const int tid, const char *comm)
+{
+    FILE *file;
+    char *thread_comm, *endcomm, *threadname;
+    char path[PATH_MAX + 1];
+    char readbuf[BUFSIZ + 1]; 
+
+    if (! (threadname = malloc(COMM_LEN + 2 + 1))) {
+	exit(2);
+    }
+    if (snprintf(path, PATH_MAX, "%s/%d/task/%d/stat", PROC_BASE, pid, tid) < 0)
+	perror("get_threadname: asprintf");
+    if ( (file = fopen(path, "r")) != NULL) {
+	if (fread(readbuf, 1, BUFSIZ, file) > 0) {
+	    if ((thread_comm = strchr(readbuf, '('))
+		    && (endcomm = strrchr(thread_comm, ')'))) {
+		++thread_comm;
+		*endcomm = '\0';
+		sprintf(threadname, "{%.*s}", COMM_LEN, thread_comm);
+		return threadname;
+	    }
+	}
+    }
+    /* Fall back to old method */
+    sprintf(threadname, "{%.*s}", COMM_LEN, comm);
+    return threadname;
+}
 
 /*
  * read_proc now uses a similar method as procps for finding the process
@@ -859,7 +886,6 @@ static void read_proc(void)
               DIR *taskdir;
               struct dirent *dt;
               char *taskpath;
-              char *threadname;
               int thread;
 
               if (! (taskpath = malloc(strlen(path) + 10)))
@@ -868,23 +894,21 @@ static void read_proc(void)
 
               if ((taskdir = opendir(taskpath)) != 0) {
                 /* if we have this dir, we're on 2.6 */
-                if (! (threadname = malloc(COMM_LEN + 2 + 1))) {
-                    exit(2);
-                }
-                sprintf(threadname, "{%.*s}", COMM_LEN, comm);
                 while ((dt = readdir(taskdir)) != NULL) {
                   if ((thread = atoi(dt->d_name)) != 0) {
                     if (thread != pid) {
+		      char *threadname;
+		      threadname = get_threadname(pid, thread, comm);
                       if (print_args)
                         add_proc(threadname, thread, pid, pgid, st.st_uid, 
                             threadname, strlen (threadname) + 1, 1,scontext);
                       else
                         add_proc(threadname, thread, pid, pgid, st.st_uid, 
                             NULL, 0, 1, scontext);
+                      free(threadname);
                       }
                     }
                   }
-                  free(threadname);
                   (void) closedir(taskdir);
                 }
               free(taskpath);
