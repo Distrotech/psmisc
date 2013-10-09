@@ -1,15 +1,15 @@
 # Traditional Chinese Messages for psmisc.
 # Copyright (C) 2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the psmisc package.
-# Wei-Lun Chao <chaoweilun@gmail.com>, 2009.
+# Wei-Lun Chao <bluebat@member.fsf.org>, 2009, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.6\n"
+"Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2013-08-11 22:37+1000\n"
-"PO-Revision-Date: 2009-03-23 23:10+0800\n"
-"Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
+"POT-Creation-Date: 2013-10-09 17:30+1100\n"
+"PO-Revision-Date: 2013-05-31 23:39+0800\n"
+"Last-Translator: Wei-Lun Chao <bluebat@member.fsf.org>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/fuser.c:133
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
 "NAME...\n"
@@ -41,46 +41,46 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"用法：fuser [ -a | -s | -c ] [ -n 空格 ] [ -SIGNAL ] [ -kimuv ] 名稱…\n"
-"            [ - ] [ -n 空格 ] [ -SIGNAL ] [ -kimuv ] 名稱…\n"
-"      fuser -l\n"
-"      fuser -V\n"
-"顯示何項進程使用指名的檔案、通訊端或檔案系統。\n"
+"用法：fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n 空格] [-k [-i] [-信號]] 名"
+"稱…\n"
+"     fuser -l\n"
+"     fuser -V\n"
+"顯示何項行程使用指名的檔案、通訊端或檔案系統。\n"
 "\n"
-"   -a        也顯示未使用的檔案\n"
-"   -c        掛載的檔案系統\n"
-"   -f        安靜地忽略 (為了 POSIX 相容性)\n"
-"   -i        砍除之前先詢問 (若無 -k 則忽略)\n"
-"   -k        砍除存取指名檔案的進程\n"
-"   -l        列出可用的信號名稱\n"
-"   -m        顯示所有使用指名檔案系統的進程\n"
-"   -n 空間   在這個名稱空間中搜尋 (檔案、udp 或 tcp)\n"
-"   -s        安靜地作業\n"
-"   -SIGNAL   發送這個信號以代替 SIGKILL\n"
-"   -u        顯示使用者識別號\n"
-"   -v        詳細的輸出\n"
-"   -V        顯示版本資訊\n"
+"  -a,--all              也顯示未使用的檔案\n"
+"  -i,--interactive      砍除之前先詢問 (若無 -k 則忽略)\n"
+"  -k,--kill             砍除存取指名檔案的行程\n"
+"  -l,--list-signals     列出可用的信號名稱\n"
+"  -m,--mount            顯示所有使用指名檔案系統或區塊裝置的行程\n"
+"  -M,--ismountpoint     只有當名稱是掛載點時才完全達到要求\n"
+"  -n,--namespace 空間    在這個名稱空間中搜尋 (檔案、udp 或 tcp)\n"
+"  -s,--silent           安靜地作業\n"
+"  -SIGNAL               發送這個信號以代替 SIGKILL\n"
+"  -u,--user             顯示使用者識別號\n"
+"  -v,--verbose          詳細的輸出\n"
+"  -w,--writeonly        只砍除有寫入權限的行程\n"
+"  -V,--version          顯示版本資訊\n"
 
 #: src/fuser.c:150
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -4,--ipv4             search IPv4 sockets only\n"
 "  -6,--ipv6             search IPv6 sockets only\n"
 msgstr ""
-"    -4        只搜尋 IPv4 通訊端\n"
-"    -6        只搜尋 IPv6 通訊端\n"
+"  -4,--ipv4             只搜尋 IPv4 通訊端\n"
+"  -6,--ipv6             只搜尋 IPv6 通訊端\n"
 
 #: src/fuser.c:153
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "  -                     reset options\n"
 "\n"
 "  udp/tcp names: [local_port][,[rmt_host][,[rmt_port]]]\n"
 "\n"
 msgstr ""
-"    -         重置選項\n"
+"  -                     重置選項\n"
 "\n"
-"  udp/tcp 名稱：[本機通訊埠][,[遠端主機][,[遠端通訊埠]]]\n"
+"  udp/tcp 名稱：[本地埠號][,[遠端主機][,[遠端埠號]]]\n"
 "\n"
 
 #: src/fuser.c:160
@@ -89,16 +89,16 @@ msgid "fuser (PSmisc) %s\n"
 msgstr "fuser (PSmisc) %s\n"
 
 #: src/fuser.c:163
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 1993-2010 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"著作權 © 1993-2005 Werner Almesberger 與 Craig Small\n"
+"著作權©1993-2010 Werner Almesberger 和 Craig Small\n"
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:994
+#: src/pstree.c:1018
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -119,12 +119,12 @@ msgstr "無法開啟 /proc 目錄：%s\n"
 #: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1923
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
-msgstr "無法為符合的進程配置記憶體：%s\n"
+msgstr "無法為符合的行程配置記憶體：%s\n"
 
 #: src/fuser.c:478
 #, c-format
 msgid "Specified filename %s does not exist.\n"
-msgstr ""
+msgstr "指定的檔名 %s 不存在。\n"
 
 #: src/fuser.c:481
 #, c-format
@@ -149,7 +149,7 @@ msgstr "無法開啟協定檔案「%s」：%s\n"
 #: src/fuser.c:972
 #, c-format
 msgid "%s: Invalid option %s\n"
-msgstr ""
+msgstr "%s：無效的選項 %s\n"
 
 #: src/fuser.c:1023
 msgid "Namespace option requires an argument."
@@ -160,13 +160,12 @@ msgid "Invalid namespace name"
 msgstr "無效的名稱空間名稱"
 
 #: src/fuser.c:1102
-#, fuzzy
 msgid "You can only use files with mountpoint options"
-msgstr "您只能將檔案與掛載點選項一起使用"
+msgstr "您只能使用具備掛載點選項的檔案"
 
 #: src/fuser.c:1156
 msgid "No process specification given"
-msgstr "沒有給定任何進程規格"
+msgstr "沒有給定任何行程規格"
 
 #: src/fuser.c:1163
 msgid "all option cannot be used with silent option."
@@ -198,12 +197,12 @@ msgstr "無法開啟 /proc/net/unix：%s\n"
 #: src/fuser.c:1616
 #, c-format
 msgid "Kill process %d ? (y/N) "
-msgstr "砍除進程 %d？(y/N) "
+msgstr "砍除行程 %d？(y/N) "
 
 #: src/fuser.c:1652
 #, c-format
 msgid "Could not kill process %d: %s\n"
-msgstr "無法砍除進程 %d：%s\n"
+msgstr "無法砍除行程 %d：%s\n"
 
 #: src/fuser.c:1667
 #, c-format
@@ -226,19 +225,19 @@ msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "信號 %s(%s%d)？(y/N) "
 
 #: src/killall.c:211
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Cannot get UID from process status\n"
-msgstr "無法從進程狀態取得 UID\n"
+msgstr "killall：無法從程序狀態提取 UID\n"
 
 #: src/killall.c:237
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Bad regular expression: %s\n"
-msgstr "不當的正規表示式：%s\n"
+msgstr "killall：不當的正規表示式：%s\n"
 
 #: src/killall.c:447
-#, fuzzy, c-format
+#, c-format
 msgid "killall: skipping partial match %s(%d)\n"
-msgstr "跳過部份符合 %s(%d)\n"
+msgstr "killall：跳過部分匹配 %s(%d)\n"
 
 #: src/killall.c:562
 #, c-format
@@ -246,9 +245,9 @@ msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "藉由信號 %4$d 砍除 %1$s(%2$s%3$d)\n"
 
 #: src/killall.c:576
-#, fuzzy, c-format
+#, c-format
 msgid "%s: no process found\n"
-msgstr "%s: 沒有砍除任何進程\n"
+msgstr "%s：找不到任何行程\n"
 
 #: src/killall.c:615
 #, c-format
@@ -263,7 +262,7 @@ msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "用法：killall [選項]… [--] 名稱…\n"
 
 #: src/killall.c:621
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "       killall -l, --list\n"
 "       killall -V, --version\n"
@@ -284,20 +283,22 @@ msgid ""
 "  -w,--wait           wait for processes to die\n"
 msgstr ""
 "       killall -l, --list\n"
-"      killall -V, --version\n"
+"       killall -V, --version\n"
 "\n"
-" -e,--exact          對於很長的名稱需要精確的符合\n"
-" -I,--ignore-case    進程名稱符合時大小寫不須相符\n"
-" -g,--process-group  砍除進程群組以代替進程\n"
-" -i,--interactive    砍除之前徵詢確認\n"
-" -l,--list           列出所有已知信號名稱\n"
-" -q,--quiet          不印出抱怨訊息\n"
-" -r,--regexp         將名稱以進階正規表示式解譯\n"
-" -s,--signal 信號    發送這個信號以代替 SIGTERM\n"
-" -u,--user 使用者    只砍除指定使用者執行的進程\n"
-" -v,--verbose        如果信號已被成功發送則回報\n"
-" -V,--version        顯示版本資訊\n"
-" -w,--wait           等待進程的消滅\n"
+"  -e,--exact          對於很長的名稱需要精確的符合\n"
+"  -I,--ignore-case    行程名稱符合時大小寫不須相符\n"
+"  -g,--process-group  砍除行程群組以代替行程\n"
+"  -y,--younger-than   砍除時間較新的行程\n"
+"  -o,--older-than     砍除時間較舊的行程\n"
+"  -i,--interactive    砍除之前徵詢確認\n"
+"  -l,--list           列出所有已知信號名稱\n"
+"  -q,--quiet          不印出抱怨訊息\n"
+"  -r,--regexp         將名稱以進階正規表示式解譯\n"
+"  -s,--signal 信號    發送這個信號以代替 SIGTERM\n"
+"  -u,--user 使用者    只砍除指定使用者執行的行程\n"
+"  -v,--verbose        如果信號已被成功發送則回報\n"
+"  -V,--version        顯示版本資訊\n"
+"  -w,--wait           等待行程的消滅\n"
 
 #: src/killall.c:639
 #, c-format
@@ -305,21 +306,21 @@ msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
 "                      (must precede other arguments)\n"
 msgstr ""
-"  -Z,--context REGEXP 只砍除有此上下文的進程\n"
+"  -Z,--context REGEXP 只砍除有此上下文的行程\n"
 "                     (必須位於其他引數之前)\n"
 
 #: src/killall.c:651
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"著作權 © 1993-2005 Werner Almesberger 與 Craig Small\n"
+"著作權©1993-2012 Werner Almesberger 和 Craig Small\n"
 "\n"
 
 #: src/killall.c:741 src/killall.c:747
 msgid "Invalid time format"
-msgstr ""
+msgstr "無效的時間格式"
 
 #: src/killall.c:767
 #, c-format
@@ -332,14 +333,14 @@ msgid "Bad regular expression: %s\n"
 msgstr "不當的正規表示式：%s\n"
 
 #: src/killall.c:830
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Maximum number of names is %d\n"
-msgstr "名稱的最大數量為 %d\n"
+msgstr "killall：名稱數量最大值是 %d\n"
 
 #: src/killall.c:835
-#, fuzzy, c-format
+#, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
-msgstr "%s 是空的 (尚未掛載？)\n"
+msgstr "killall：%s 缺乏行程條目 (未掛載？)\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -376,7 +377,7 @@ msgstr ""
 "用法：peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
 "    -8 輸出不含第八位元的資料流。\n"
 "    -n 不從 fd 標頭顯示讀取/寫入。\n"
-"    -c 也取自任何新的子進程。\n"
+"    -c 也取自任何新的子行程。\n"
 "    -d 從輸出移除重複的讀取/寫入。\n"
 "    -V 印出版本資訊。\n"
 "    -h 印出這個說明。\n"
@@ -392,49 +393,53 @@ msgid ""
 "    -r,--raw       Raw display of information\n"
 "    -V,--version   Display version information and exit\n"
 msgstr ""
+"用法：prtstat [選項] PID…\n"
+"     prtstat -V\n"
+"印出行程的相關資訊\n"
+"    -r,--raw       資訊的原始顯示\n"
+"    -V,--version   顯示版本資訊然後離開\n"
 
 #: src/prtstat.c:65
-#, fuzzy, c-format
+#, c-format
 msgid "prtstat (PSmisc) %s\n"
-msgstr "pstree (PSmisc) %s\n"
+msgstr "prtstat (PSmisc) %s\n"
 
 #: src/prtstat.c:66
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 2009 Craig Small\n"
 "\n"
 msgstr ""
-"著作權 © 2007 Trent Waddington\n"
+"著作權©2009 Craig Small\n"
 "\n"
 
 #: src/prtstat.c:78
 msgid "running"
-msgstr ""
+msgstr "執行中"
 
 #: src/prtstat.c:80
 msgid "sleeping"
-msgstr ""
+msgstr "暫停中"
 
 #: src/prtstat.c:82
 msgid "disk sleep"
-msgstr ""
+msgstr "磁碟暫停"
 
 #: src/prtstat.c:84
 msgid "zombie"
-msgstr ""
+msgstr "殭屍"
 
 #: src/prtstat.c:86
 msgid "traced"
-msgstr ""
+msgstr "追蹤"
 
 #: src/prtstat.c:88
 msgid "paging"
-msgstr ""
+msgstr "分頁"
 
 #: src/prtstat.c:90
-#, fuzzy
 msgid "unknown"
-msgstr "(不明)"
+msgstr "不明"
 
 #: src/prtstat.c:164
 #, c-format
@@ -442,6 +447,8 @@ msgid ""
 "Process: %-14s\t\tState: %c (%s)\n"
 "  CPU#:  %-3d\t\tTTY: %s\tThreads: %ld\n"
 msgstr ""
+"行程：%-14s\t\t狀態：%c (%s)\n"
+"  CPU#: %-3d\t\tTTY：%s\t執行緒：%ld\n"
 
 #: src/prtstat.c:169
 #, c-format
@@ -452,6 +459,11 @@ msgid ""
 "  T Group ID: %d\n"
 "\n"
 msgstr ""
+"行程、群組和執行階段識別碼\n"
+"    行程識別號：%d\t\t     上層識別號：%d\n"
+"    群組識別號：%d\t\t 執行階段識別碼：%d\n"
+"  T 群組識別號：%d\n"
+"\n"
 
 #: src/prtstat.c:175
 #, c-format
@@ -460,6 +472,9 @@ msgid ""
 "  This Process    (minor major): %8lu  %8lu\n"
 "  Child Processes (minor major): %8lu  %8lu\n"
 msgstr ""
+"分頁錯誤\n"
+"  此行程 (次要 主要)：%8lu  %8lu\n"
+"  子行程 (次要 主要)：%8lu  %8lu\n"
 
 #: src/prtstat.c:180
 #, c-format
@@ -468,6 +483,9 @@ msgid ""
 "  This Process    (user system guest blkio): %6.2f %6.2f %6.2f %6.2f\n"
 "  Child processes (user system guest):       %6.2f %6.2f %6.2f\n"
 msgstr ""
+"CPU 時間\n"
+"  此行程 (使用者 系統 訪客 區塊輸出入)：%6.2f %6.2f %6.2f %6.2f\n"
+"  子行程 (使用者 系統 訪客)：           %6.2f %6.2f %6.2f\n"
 
 #: src/prtstat.c:189
 #, c-format
@@ -479,6 +497,12 @@ msgid ""
 "  Stack Start: %#-10lx\n"
 "  Stack Pointer (ESP): %#10lx\t Inst Pointer (EIP): %#10lx\n"
 msgstr ""
+"記憶體\n"
+"  Vsize：      %-10s\n"
+"  RSS：        %-10s\t\t RSS 限制：%s\n"
+"  程式開始：    %#-10lx\t\t 程式停止： %#-10lx\n"
+"  堆疊開始：    %#-10lx\n"
+"  堆疊指標 (ESP)：%#10lx\t 指令指標 (EIP)：%#10lx\n"
 
 #: src/prtstat.c:199
 #, c-format
@@ -487,40 +511,43 @@ msgid ""
 "  Policy: %s\n"
 "  Nice:   %ld \t\t RT Priority: %ld %s\n"
 msgstr ""
+"排程\n"
+"  策略：%s\n"
+"  善意：%ld \t\t RT 優先權：%ld %s\n"
 
 #: src/prtstat.c:221
 msgid "asprintf in print_stat failed.\n"
-msgstr ""
+msgstr "print_stat 中的 asprintf 失敗。\n"
 
 #: src/prtstat.c:226
 #, c-format
 msgid "Process with pid %d does not exist.\n"
-msgstr ""
+msgstr "具有 pid %d 的行程不存在。\n"
 
 #: src/prtstat.c:228
 #, c-format
 msgid "Unable to open stat file for pid %d (%s)\n"
-msgstr ""
+msgstr "無法開啟 pid %d (%s) 的 stat 檔案\n"
 
 #: src/prtstat.c:308
 msgid "Invalid option"
-msgstr ""
+msgstr "無效的選項"
 
 #: src/prtstat.c:313
 msgid "You must provide at least one PID."
-msgstr ""
+msgstr "您必須提供至少一個 PID。"
 
 #: src/prtstat.c:317
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
-msgstr ""
+msgstr "/proc 未被掛載，無法取得 /proc/self/stat 的狀態。\n"
 
-#: src/pstree.c:925
+#: src/pstree.c:949
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s 是空的 (尚未掛載？)\n"
 
-#: src/pstree.c:957
+#: src/pstree.c:981
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -549,80 +576,83 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"用法：pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
-"             [ -A | -G | -U ] [ PID | 使用者 ]\n"
-"       pstree -V\n"
-"顯示樹的進程。\n"
+"用法：pstree [-a] [-c] [-h|-H PID] [-l] [-n] [-p] [-g] [-u]\n"
+"             [-A|-G|-U] [PID|使用者]\n"
+"      pstree -V\n"
+"顯示樹的行程。\n"
 "\n"
-"    -a     顯示命令列引數\n"
-"    -A     使用 ASCII 線條繪製字元\n"
-"    -c     不壓縮相同的子樹\n"
-"    -h     標示目前進程和它的原始節點\n"
-"    -H PID 標示這個進程和它的原始節點\n"
-"    -G     使用 VT100 線條繪製字元\n"
-"    -l     不截斷長列\n"
-"    -n     依照 PID 排序輸出\n"
-"    -p     顯示多個 PID；內含 -c\n"
-"    -u     顯示 uid 轉換\n"
-"    -U     使用 UTF-8 (萬國碼) 線條繪製字元\n"
-"    -V     顯示版本資訊\n"
+"  -a, --arguments     顯示命令列引數\n"
+"  -A, --ascii         使用 ASCII 線條繪製字元\n"
+"  -c, --compact       不壓縮相同的子樹\n"
+"  -h, --highlight-all 標示目前行程和它的原始節點\n"
+"  -H PID，\n"
+"  --highlight-pid=PID 標示這個行程和它的原始節點\n"
+"  -g, --show-pgids    顯示行程群組識別號；意味著 -c\n"
+"  -G, --vt100         使用 VT100 線條繪製字元\n"
+"  -l, --long          不截斷長列\n"
+"  -n, --numeric-sort  依照 PID 排序輸出\n"
+"  -p, --show-pids     顯示 PIDs；隱含 -c\n"
+"  -s, --show-parents  顯示已選行程的上層\n"
+"  -u, --uid-changes   顯示 uid 轉換\n"
+"  -U, --unicode       使用 UTF-8 (萬國碼) 線條繪製字元\n"
+"  -V, --version       顯示版本資訊\n"
 
-#: src/pstree.c:980
-#, fuzzy, c-format
+#: src/pstree.c:1004
+#, c-format
 msgid "  -Z     show         SELinux security contexts\n"
-msgstr "    -Z     顯示 SELinux 安全背景\n"
+msgstr "  -Z     顯示         SELinux 安全語境\n"
 
-#: src/pstree.c:982
-#, fuzzy, c-format
+#: src/pstree.c:1006
+#, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
 "  USER   show only trees rooted at processes of this user\n"
 "\n"
 msgstr ""
-"    PID    啟始於這個 PID；預設為 1 (init)\n"
-"    使用者 只顯示源於這個使用者的進程樹\n"
+"  PID    從這個 PID 開始；預設是 1 (init)\n"
+"  使用者  只顯示源自此使用者行程的樹狀結構\n"
 "\n"
 
-#: src/pstree.c:989
+#: src/pstree.c:1013
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:992
-#, fuzzy, c-format
+#: src/pstree.c:1016
+#, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"著作權 © 1993-2005 Werner Almesberger 與 Craig Small\n"
+"著作權©1993-2009 Werner Almesberger 和 Craig Small\n"
 "\n"
 
-#: src/pstree.c:1106
+#: src/pstree.c:1130
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM 尚未設定\n"
 
-#: src/pstree.c:1110
+#: src/pstree.c:1134
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "無法取得終端機功能\n"
 
-#: src/pstree.c:1128
+#: src/pstree.c:1152
 #, c-format
 msgid "procfs file for %s namespace not available\n"
 msgstr ""
 
-#: src/pstree.c:1175
+#: src/pstree.c:1199
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "無此類使用者名稱：%s\n"
 
-#: src/pstree.c:1201
+#: src/pstree.c:1225
 #, c-format
 msgid "No processes found.\n"
-msgstr "找不到任何進程。\n"
+msgstr "找不到任何行程。\n"
 
-#: src/pstree.c:1207
+#: src/pstree.c:1231
 #, c-format
 msgid "Press return to close\n"
 msgstr "按下輸入鍵以關閉\n"
@@ -631,34 +661,3 @@ msgstr "按下輸入鍵以關閉\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: 不明的信號；%s -l 列出信號。\n"
-
-#~ msgid ""
-#~ "Usage: pidof [ -eg ] NAME...\n"
-#~ "       pidof -V\n"
-#~ "\n"
-#~ "    -e      require exact match for very long names;\n"
-#~ "            skip if the command line is unavailable\n"
-#~ "    -g      show process group ID instead of process ID\n"
-#~ "    -V      display version information\n"
-#~ "\n"
-#~ msgstr ""
-#~ "用法：pidof [ -eg ] 名稱…\n"
-#~ "      pidof -V\n"
-#~ "\n"
-#~ "   -e      對於很長的名稱需要精確的符合；\n"
-#~ "           如果命令列無法使用就跳過\n"
-#~ "   -g      顯示進程群組識別號以代替進程識別號\n"
-#~ "   -V      顯示版本資訊\n"
-#~ "\n"
-
-#~ msgid "Cannot stat mount point %s: %s\n"
-#~ msgstr "無法顯示掛載點 %s:%s\n"
-
-#~ msgid "You cannot use the mounted and mountpoint flags together"
-#~ msgstr "您無法將已掛載的和掛載點旗標一起使用"
-
-#~ msgid "Cannot open /etc/mtab: %s\n"
-#~ msgstr "無法開啟 /etc/mtab：%s\n"
-
-#~ msgid "Internal error: MAX_DEPTH not big enough.\n"
-#~ msgstr "內部錯誤：MAX_DEPTH 不夠大。\n"

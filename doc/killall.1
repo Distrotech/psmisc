@@ -22,7 +22,7 @@ killall \- kill processes by name
 .RB [ \-q , \ \-\-quiet ]
 .RB [ \-r , \ \-\-regexp ]
 .RB [ \-s , \ \-\-signal
-.IR signal ]
+.IR SIGNAL ,\  -SIGNAL ]
 .RB [ \-u , \ \-\-user
 .IR user ]
 .RB [ \-v , \ \-\-verbose ]
@@ -106,8 +106,9 @@ years respectively.
 .IP "\fB\-q\fP, \fB\-\-quiet\fP"
 Do not complain if no processes were killed.
 .IP "\fB\-r\fP, \fB\-\-regexp\fP"
-Interpret process name pattern as an extended regular expression.
-.IP "\fB\-s\fP, \fB\-\-signal\fP"
+Interpret process name pattern as a POSIX extended regular expression, per
+.BR regex (3).
+.IP "\fB\-s\fP, \fB\-\-signal\fP, \fB\-SIGNAL\fP"
 Send this signal instead of SIGTERM.
 .IP "\fB\-u\fP, \fB\-\-user\fP"
 Kill only processes the specified user owns.  Command names are
@@ -168,5 +169,6 @@ is usually 64.
 .BR pidof (1),
 .BR pkill (1),
 .BR ps (1),
-.BR kill (2).
+.BR kill (2),
+.BR regex (3).
 .\{{{}}}

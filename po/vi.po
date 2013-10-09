@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2013-08-11 22:37+1000\n"
+"POT-Creation-Date: 2013-10-09 17:30+1100\n"
 "PO-Revision-Date: 2012-09-01 07:54+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <translation-team-vi@lists.sourceforge.net>\n"
@@ -105,7 +105,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:994
+#: src/pstree.c:1018
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -553,12 +553,12 @@ msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 "Chưa gắn kết \"/proc\" thì không lấy được trạng thái về \"/proc/self/stat».\n"
 
-#: src/pstree.c:925
+#: src/pstree.c:949
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s trống (lắp chưa?)\n"
 
-#: src/pstree.c:957
+#: src/pstree.c:981
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -611,12 +611,12 @@ msgstr ""
 "(Unicode)\n"
 "  -V, --version             hiển thị thông tin về phiên bản\n"
 
-#: src/pstree.c:980
+#: src/pstree.c:1004
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     show         Các ngữ cảnh bảo mật SELinux\n"
 
-#: src/pstree.c:982
+#: src/pstree.c:1006
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -628,12 +628,12 @@ msgstr ""
 "này\n"
 "\n"
 
-#: src/pstree.c:989
+#: src/pstree.c:1013
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:992
+#: src/pstree.c:1016
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -642,32 +642,32 @@ msgstr ""
 "Tác quyền © 1993-2009 Werner Almesberger và Craig Small\n"
 "\n"
 
-#: src/pstree.c:1106
+#: src/pstree.c:1130
 #, c-format
 msgid "TERM is not set\n"
 msgstr "Chưa đặt TERM\n"
 
-#: src/pstree.c:1110
+#: src/pstree.c:1134
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Không thể gọi khả năng thiết bị cuối\n"
 
-#: src/pstree.c:1128
+#: src/pstree.c:1152
 #, c-format
 msgid "procfs file for %s namespace not available\n"
 msgstr ""
 
-#: src/pstree.c:1175
+#: src/pstree.c:1199
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Không có tên người dùng như vậy: %s\n"
 
-#: src/pstree.c:1201
+#: src/pstree.c:1225
 #, c-format
 msgid "No processes found.\n"
 msgstr "Không tìm thấy tiến trình.\n"
 
-#: src/pstree.c:1207
+#: src/pstree.c:1231
 #, c-format
 msgid "Press return to close\n"
 msgstr "Bấm phím Return để đóng\n"

@@ -1,15 +1,15 @@
 # Italian messages for psmisc.
 # Copyright (C) 2001, 2005, 2006, 2007, 2009, 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the psmisc package.
-# Marco Colombo <m.colombo@ed.ac.uk>, 2005, 2006, 2007, 2009, 2010.
+# Marco Colombo <m.colombo@ed.ac.uk>, 2005, 2006, 2007, 2009, 2010, 2013.
 # Daniele Pagano <esaurito@users.sourceforge.net>, 2001.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.12\n"
+"Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2013-08-11 22:37+1000\n"
-"PO-Revision-Date: 2010-08-17 10:24+0100\n"
+"POT-Creation-Date: 2013-10-09 17:30+1100\n"
+"PO-Revision-Date: 2013-01-17 18:30+0000\n"
 "Last-Translator: Marco Colombo <m.colombo@ed.ac.uk>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/fuser.c:133
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
 "NAME...\n"
@@ -41,7 +41,7 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Uso: fuser [-fMuv] [-a|-s] [-4|-6] [-c|-m|-n CONTESTO] [-k [-i] [-SEGNALE]] "
+"Uso: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n CONTESTO] [-k [-i] [-SEGNALE]] "
 "NOME...\n"
 "     fuser -l\n"
 "     fuser -V\n"
@@ -60,6 +60,7 @@ msgstr ""
 "  -SEGNALE           invia il segnale indicato invece di SIGKILL\n"
 "  -u,--user          mostra gli ID utente\n"
 "  -v,--verbose       output prolisso\n"
+"  -w, --writeonly    termina solo i processi con accesso alla scrittura\n"
 "  -V,--verion        mostra le informazioni sulla versione\n"
 
 #: src/fuser.c:150
@@ -98,7 +99,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:994
+#: src/pstree.c:1018
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -229,19 +230,19 @@ msgid "Signal %s(%s%d) ? (y/N) "
 msgstr "Segnale %s(%s%d)? (s/N) "
 
 #: src/killall.c:211
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Cannot get UID from process status\n"
-msgstr "Impossibile ottenere l'UID dallo stato del processo\n"
+msgstr "killall: Impossibile ottenere l'UID dallo stato del processo\n"
 
 #: src/killall.c:237
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Bad regular expression: %s\n"
-msgstr "Espressione regolare non valida: %s\n"
+msgstr "killall: Espressione regolare non valida: %s\n"
 
 #: src/killall.c:447
-#, fuzzy, c-format
+#, c-format
 msgid "killall: skipping partial match %s(%d)\n"
-msgstr "ignorata corrispondenza parziale %s(%d)\n"
+msgstr "killall: ignorata corrispondenza parziale %s(%d)\n"
 
 #: src/killall.c:562
 #, c-format
@@ -316,12 +317,12 @@ msgstr ""
 "                      (deve precedere altri argomenti)\n"
 
 #: src/killall.c:651
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
-"Copyright (C) 1993-2010 Werner Almesberger e Craig Small\n"
+"Copyright (C) 1993-2012 Werner Almesberger e Craig Small\n"
 "\n"
 
 #: src/killall.c:741 src/killall.c:747
@@ -338,15 +339,16 @@ msgstr "Impossibile trovare l'utente %s\n"
 msgid "Bad regular expression: %s\n"
 msgstr "Espressione regolare non valida: %s\n"
 
+# killall: %s è vuoto (non montato?)
 #: src/killall.c:830
-#, fuzzy, c-format
+#, c-format
 msgid "killall: Maximum number of names is %d\n"
-msgstr "Il massimo numero di nomi è %d\n"
+msgstr "killall: Il massimo numero di nomi è %d\n"
 
 #: src/killall.c:835
-#, fuzzy, c-format
+#, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
-msgstr "%s è vuoto (non montato?)\n"
+msgstr "killall: %s non ha una voce di processo (non montato?)\n"
 
 #: src/peekfd.c:96
 #, c-format
@@ -550,12 +552,12 @@ msgstr "Occorre indicare almeno un PID."
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "/proc non è montato, impossibile fare stat di /proc/self/stat.\n"
 
-#: src/pstree.c:925
+#: src/pstree.c:949
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s è vuoto (non montato?)\n"
 
-#: src/pstree.c:957
+#: src/pstree.c:981
 #, fuzzy, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -584,7 +586,8 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Uso: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -u ]\n"
+"Uso: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "            [ -A | -G | -U ] [ PID | UTENTE]\n"
 "     pstree -V\n"
 "Mostra l'albero dei processi.\n"
@@ -595,20 +598,22 @@ msgstr ""
 "  -h, --highlight-all  evidenzia il processo corrente e i suoi antenati\n"
 "  -H PID,\n"
 "      --higlight-pid=PID  evidenzia il processo PID e i suoi antenati\n"
+"  -g, --show-pgids     mostra l'ID del gruppo; implica -c\n"
 "  -G, --vt100          usa caratteri grafici VT100\n"
 "  -l, --long           non tronca le righe lunghe\n"
 "  -n, --numeric-sort   ordina l'output in base al PID\n"
 "  -p, --show-pids      mostra i PID; implica -c\n"
+"  -s, --show-parents   mostra i genitori del processo selezionato\n"
 "  -u, --uid-changes    mostra le transizioni di uid\n"
 "  -U, --unicode        usa caratteri grafici UTF-8 (Unicode)\n"
 "  -V, --version        mostra le informazioni sulla versione\n"
 
-#: src/pstree.c:980
+#: src/pstree.c:1004
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     show         mostra i contesti di sicurezza SELinux\n"
 
-#: src/pstree.c:982
+#: src/pstree.c:1006
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -619,12 +624,12 @@ msgstr ""
 "    UTENTE    mostra solo gli alberi con radice nei processi dell'utente\n"
 "\n"
 
-#: src/pstree.c:989
+#: src/pstree.c:1013
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:992
+#: src/pstree.c:1016
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -633,32 +638,32 @@ msgstr ""
 "Copyright (C) 1993-2009 Werner Almesberger e Craig Small\n"
 "\n"
 
-#: src/pstree.c:1106
+#: src/pstree.c:1130
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM non è impostato\n"
 
-#: src/pstree.c:1110
+#: src/pstree.c:1134
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Impossibile determinare le capacità del terminale\n"
 
-#: src/pstree.c:1128
+#: src/pstree.c:1152
 #, c-format
 msgid "procfs file for %s namespace not available\n"
 msgstr ""
 
-#: src/pstree.c:1175
+#: src/pstree.c:1199
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Questo nome utente non esiste: %s\n"
 
-#: src/pstree.c:1201
+#: src/pstree.c:1225
 #, c-format
 msgid "No processes found.\n"
 msgstr "Nessun processo trovato.\n"
 
-#: src/pstree.c:1207
+#: src/pstree.c:1231
 #, c-format
 msgid "Press return to close\n"
 msgstr "Premere Invio per chiudere\n"
@@ -667,29 +672,3 @@ msgstr "Premere Invio per chiudere\n"
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
 msgstr "%s: segnale sconosciuto; usare %s -l per elencare i segnali.\n"
-
-#~ msgid ""
-#~ "Usage: pidof [ -eg ] NAME...\n"
-#~ "       pidof -V\n"
-#~ "\n"
-#~ "    -e      require exact match for very long names;\n"
-#~ "            skip if the command line is unavailable\n"
-#~ "    -g      show process group ID instead of process ID\n"
-#~ "    -V      display version information\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Uso: pidof [ -eg ] NOME...\n"
-#~ "     pidof -V\n"
-#~ "\n"
-#~ "    -e      richiede una corrispondenza esatta per i nomi molto lunghi;\n"
-#~ "            ignora se la riga di comando non è disponibile\n"
-#~ "    -g      mostra l'ID del gruppo invece che l'ID del processo\n"
-#~ "    -V      mostra le informazioni sulla versione\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "Copyright (C) 1993-2005 Werner Almesberger and Craig Small\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright (C) 1993-2005 Werner Almesberger e Craig Small\n"
-#~ "\n"

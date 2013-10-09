@@ -3,6 +3,8 @@ Changes in 22.21
 	* Missing comma in fuser(1) added Debian #702391
 	* pstree uses COLUMN env variable Debian #717017
 	* pstree shows proper thread names SF Bug#57
+	* pstree shows namespace options SF Patch#30
+	* killall.1 minor fixes SF Bug#59
 
 Changes in 22.20
 ================
