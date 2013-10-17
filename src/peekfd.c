@@ -76,6 +76,12 @@
 	#define REG_PARAM1 regs[4]
 	#define REG_PARAM2 regs[5]
 	#define REG_PARAM3 regs[6]
+#elif defined(M68K)
+	#define REG_ORIG_ACCUM orig_d0
+	#define REG_ACCUM d0
+	#define REG_PARAM1 d1
+	#define REG_PARAM2 d2
+	#define REG_PARAM3 d3
 #endif
 
 #define MAX_ATTACHED_PIDS 1024
@@ -270,7 +276,7 @@ int main(int argc, char **argv)
 						}
 
 						for (i = 0; i < regs.REG_PARAM3; i++) {
-#ifdef _BIG_ENDIAN
+#if BYTE_ORDER == BIG_ENDIAN
 #if __WORDSIZE == 64
 							unsigned int a = bswap_64(ptrace(PTRACE_PEEKTEXT, pid, regs.REG_PARAM2 + i, 0));
 #else

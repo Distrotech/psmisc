@@ -117,6 +117,8 @@ AC_CHECK_MEMBERS([struct pt_regs.orig_gpr3,
 AC_CHECK_MEMBERS([struct pt_regs.uregs],[],[], [#include <asm/ptrace.h>])
 AC_CHECK_MEMBERS([struct pt_regs.regs,
                   struct pt_regs.cp0_status],[],[], [#include <asm/ptrace.h>])
+AC_CHECK_MEMBERS([struct pt_regs.orig_d0,
+                  struct pt_regs.d0],[],[], [#include <asm/ptrace.h>])
 
 case ${host_os} in
   gnu*)
@@ -149,6 +151,9 @@ AM_CONDITIONAL(WANT_PEEKFD_MIPS,
    test $build_cpu = mipsel &&
    test $ac_cv_member_struct_pt_regs_regs = yes &&
    test $ac_cv_member_struct_pt_regs_cp0_status = yes)
+AM_CONDITIONAL(WANT_PEEKFD_M68K,
+   test $ac_cv_member_struct_pt_regs_orig_d0 = yes &&
+   test $ac_cv_member_struct_pt_regs_d0 = yes)
 
 dnl Checks for library functions.
 AC_FUNC_CLOSEDIR_VOID

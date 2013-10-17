@@ -25,6 +25,10 @@ if WANT_PEEKFD_MIPS
   bin_PROGRAMS += peekfd
   AM_CFLAGS += -DMIPS
 endif
+if WANT_PEEKFD_M68K
+  bin_PROGRAMS += peekfd
+  AM_CFLAGS += -DM68K
+endif
 
 fuser_SOURCES = fuser.c comm.h signals.c signals.h i18n.h fuser.h lists.h
 if WANT_TIMEOUT_STAT
