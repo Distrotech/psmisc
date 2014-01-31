@@ -4,7 +4,7 @@
  * Based on fuser.c Copyright (C) 1993-2005 Werner Almesberger and Craig Small
  *
  * Completely re-written
- * Copyright (C) 2005-2012 Craig Small
+ * Copyright (C) 2005-2014 Craig Small
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -884,6 +884,29 @@ static int is_mountpoint(struct mount_list **mnt_list, char *arg)
 	return 0;
 }
 
+static void check_mountpoints(struct mount_list **mnt_list, struct names **head, struct names **tail)
+{
+    struct names *this, *last;
+
+    last = NULL;
+    for(this = *head; this != NULL; this = this->next) {
+	if (this->name_space == NAMESPACE_FILE &&
+		!is_mountpoint(mnt_list, this->filename)) {
+	    fprintf(stderr,
+		    _("Specified filename %s is not a mountpoint.\n"),
+		    this->filename);
+	    /* Remove from list */
+	    if (last)
+		last->next = this->next;
+	    if (*head == this)
+		*head = this->next;
+	    if (*tail == this)
+		*tail = last;
+	} else {
+	    last = this;
+	}
+    }
+}
 int main(int argc, char *argv[])
 {
 	opt_type opts;
@@ -1100,11 +1123,6 @@ int main(int argc, char *argv[])
 		    && this_name->name_space != NAMESPACE_FILE)
 			usage(_
 			      ("You can only use files with mountpoint options"));
-		if (opts & OPT_ISMOUNTPOINT &&
-		    !is_mountpoint(&mounts, current_argv)) {
-			free(this_name);
-			continue;
-		}
 		switch (this_name->name_space) {
 		case NAMESPACE_TCP:
 			if (asprintf
@@ -1154,6 +1172,11 @@ int main(int argc, char *argv[])
 	}			/* for across the argvs */
 	if (names_head == NULL)
 		usage(_("No process specification given"));
+
+	/* Check if -M flag was used and if so check mounts */
+	if (opts * OPT_ISMOUNTPOINT) {
+	    check_mountpoints(&mounts, &names_head, &names_tail);
+	}
 
 	if (opts & OPT_SILENT) {
 		opts &= ~OPT_VERBOSE;

@@ -5,6 +5,10 @@ Changes in 22.21
 	* pstree shows proper thread names SF Bug#57
 	* pstree shows namespace options SF Patch#30
 	* killall.1 minor fixes SF Bug#59
+	* peekfd for m68k SF Patch#31
+	* Fixing some derefefed pointers SF Patch#32
+	* Minor typos in man pages SF Bug#61 Bug#60
+	* fuser -m and -M flags work either way Debian #606178
 
 Changes in 22.20
 ================
