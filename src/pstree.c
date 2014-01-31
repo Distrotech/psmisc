@@ -220,7 +220,12 @@ static void find_ns_and_add(struct ns_entry **root, PROC *r, enum ns_type id)
     }
 
     if (!ptr) {
-        ptr = malloc(sizeof(*ptr));
+
+        if (!(ptr = malloc(sizeof(*ptr)))) {
+            perror("malloc");
+            exit(1);
+        }
+
         memset(ptr, 0, sizeof(*ptr));
         ptr->number = r->ns[id];
         if (*root == NULL)
@@ -232,7 +237,12 @@ static void find_ns_and_add(struct ns_entry **root, PROC *r, enum ns_type id)
     /* move the child to under the namespace's umbrella */
     for (c = &ptr->children; *c; c = &(*c)->next)
         ;
-    *c = malloc(sizeof(CHILD));
+
+    if (!(*c = malloc(sizeof(CHILD)))) {
+        perror("malloc");
+        exit(1);
+    }
+
     (*c)->child = r;
     (*c)->next = NULL;
 
