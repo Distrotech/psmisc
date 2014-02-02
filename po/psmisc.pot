@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2013-10-09 17:30+1100\n"
+"POT-Creation-Date: 2014-02-02 17:04+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,8 +70,8 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:1018
+#: src/fuser.c:165 src/killall.c:653 src/peekfd.c:114 src/prtstat.c:68
+#: src/pstree.c:1030
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr ""
 
-#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1923
+#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1946
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr ""
@@ -115,70 +115,75 @@ msgstr ""
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr ""
 
-#: src/fuser.c:972
+#: src/fuser.c:896
+#, c-format
+msgid "Specified filename %s is not a mountpoint.\n"
+msgstr ""
+
+#: src/fuser.c:995
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr ""
 
-#: src/fuser.c:1023
+#: src/fuser.c:1046
 msgid "Namespace option requires an argument."
 msgstr ""
 
-#: src/fuser.c:1041
+#: src/fuser.c:1064
 msgid "Invalid namespace name"
 msgstr ""
 
-#: src/fuser.c:1102
+#: src/fuser.c:1125
 msgid "You can only use files with mountpoint options"
 msgstr ""
 
-#: src/fuser.c:1156
+#: src/fuser.c:1174
 msgid "No process specification given"
 msgstr ""
 
-#: src/fuser.c:1163
+#: src/fuser.c:1186
 msgid "all option cannot be used with silent option."
 msgstr ""
 
-#: src/fuser.c:1168
+#: src/fuser.c:1191
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr ""
 
-#: src/fuser.c:1246
+#: src/fuser.c:1269
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr ""
 
-#: src/fuser.c:1279 src/fuser.c:1336
+#: src/fuser.c:1302 src/fuser.c:1359
 msgid "(unknown)"
 msgstr ""
 
-#: src/fuser.c:1415 src/fuser.c:1454
+#: src/fuser.c:1438 src/fuser.c:1477
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr ""
 
-#: src/fuser.c:1540
+#: src/fuser.c:1563
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr ""
 
-#: src/fuser.c:1616
+#: src/fuser.c:1639
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr ""
 
-#: src/fuser.c:1652
+#: src/fuser.c:1675
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr ""
 
-#: src/fuser.c:1667
+#: src/fuser.c:1690
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr ""
 
-#: src/fuser.c:1671
+#: src/fuser.c:1694
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr ""
@@ -289,24 +294,24 @@ msgstr ""
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr ""
 
-#: src/peekfd.c:96
+#: src/peekfd.c:102
 #, c-format
 msgid "Error attaching to pid %i\n"
 msgstr ""
 
-#: src/peekfd.c:104
+#: src/peekfd.c:110
 #, c-format
 msgid "peekfd (PSmisc) %s\n"
 msgstr ""
 
-#: src/peekfd.c:106
+#: src/peekfd.c:112
 #, c-format
 msgid ""
 "Copyright (C) 2007 Trent Waddington\n"
 "\n"
 msgstr ""
 
-#: src/peekfd.c:116
+#: src/peekfd.c:122
 #, c-format
 msgid ""
 "Usage: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
@@ -449,12 +454,12 @@ msgstr ""
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr ""
 
-#: src/pstree.c:949
+#: src/pstree.c:961
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr ""
 
-#: src/pstree.c:981
+#: src/pstree.c:993
 #, c-format
 msgid ""
 "Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
@@ -484,12 +489,12 @@ msgid ""
 "  -V, --version       display version information\n"
 msgstr ""
 
-#: src/pstree.c:1004
+#: src/pstree.c:1016
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr ""
 
-#: src/pstree.c:1006
+#: src/pstree.c:1018
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -497,44 +502,44 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/pstree.c:1013
+#: src/pstree.c:1025
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr ""
 
-#: src/pstree.c:1016
+#: src/pstree.c:1028
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
 "\n"
 msgstr ""
 
-#: src/pstree.c:1130
+#: src/pstree.c:1142
 #, c-format
 msgid "TERM is not set\n"
 msgstr ""
 
-#: src/pstree.c:1134
+#: src/pstree.c:1146
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr ""
 
-#: src/pstree.c:1152
+#: src/pstree.c:1164
 #, c-format
 msgid "procfs file for %s namespace not available\n"
 msgstr ""
 
-#: src/pstree.c:1199
+#: src/pstree.c:1211
 #, c-format
 msgid "No such user name: %s\n"
 msgstr ""
 
-#: src/pstree.c:1225
+#: src/pstree.c:1237
 #, c-format
 msgid "No processes found.\n"
 msgstr ""
 
-#: src/pstree.c:1231
+#: src/pstree.c:1243
 #, c-format
 msgid "Press return to close\n"
 msgstr ""

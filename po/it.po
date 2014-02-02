@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2013-10-09 17:30+1100\n"
+"POT-Creation-Date: 2012-08-31 14:46+1000\n"
 "PO-Revision-Date: 2013-01-17 18:30+0000\n"
 "Last-Translator: Marco Colombo <m.colombo@ed.ac.uk>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -20,8 +20,7 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -30,8 +29,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -41,8 +39,7 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Uso: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n CONTESTO] [-k [-i] [-SEGNALE]] "
-"NOME...\n"
+"Uso: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n CONTESTO] [-k [-i] [-SEGNALE]] NOME...\n"
 "     fuser -l\n"
 "     fuser -V\n"
 "Mostra quali processi stanno usando un certo file, socket o filesystem.\n"
@@ -54,8 +51,7 @@ msgstr ""
 "  -m,--mount         mostra tutti i processi che usano i filesystem o i\n"
 "                     dispositivi a blocchi specificati\n"
 "  -M,--ismountpoint  soddisfa la richiesta solo se NOME è un mount point\n"
-"  -n,--namespace CONTESTO  cerca nel contesto specificato (file, udp, o "
-"tcp)\n"
+"  -n,--namespace CONTESTO  cerca nel contesto specificato (file, udp, o tcp)\n"
 "  -s,--silent        opera silenziosamente\n"
 "  -SEGNALE           invia il segnale indicato invece di SIGKILL\n"
 "  -u,--user          mostra gli ID utente\n"
@@ -99,7 +95,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:1018
+#: src/pstree.c:854
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -175,8 +171,7 @@ msgstr "L'opzione -a non può essere usata con l'opzione -s."
 
 #: src/fuser.c:1168
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
-msgstr ""
-"Impossibile cercare solo socket IPv4 e solo socket IPv6 allo stesso tempo"
+msgstr "Impossibile cercare solo socket IPv4 e solo socket IPv6 allo stesso tempo"
 
 #: src/fuser.c:1246
 #, c-format
@@ -256,10 +251,8 @@ msgstr "%s: nessun processo trovato\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Uso: killall [-Z CONTESTO] [-u UTENTE] [ -eIgiqrvw ] [ -SEGNALE ] NOME...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Uso: killall [-Z CONTESTO] [-u UTENTE] [ -eIgiqrvw ] [ -SEGNALE ] NOME...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -290,8 +283,7 @@ msgstr ""
 "     killall -l, --list\n"
 "     killall -V, --version\n"
 "\n"
-"  -e,--exact          richiede una corrispondenza esatta per i nomi molto "
-"lunghi\n"
+"  -e,--exact          richiede una corrispondenza esatta per i nomi molto lunghi\n"
 "  -I,--ignore-case    ignora maiuscole/minuscole nei nomi\n"
 "  -g,--process-group  termina il gruppo di processi invece del processo\n"
 "  -y,--younger-than   termina i processi più recenti di ORARIO\n"
@@ -552,16 +544,15 @@ msgstr "Occorre indicare almeno un PID."
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "/proc non è montato, impossibile fare stat di /proc/self/stat.\n"
 
-#: src/pstree.c:949
+#: src/pstree.c:784
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s è vuoto (non montato?)\n"
 
-#: src/pstree.c:981
-#, fuzzy, c-format
+#: src/pstree.c:820
+#, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -576,18 +567,13 @@ msgid ""
 "  -G, --vt100         use VT100 line drawing characters\n"
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
-"  -N type,\n"
-"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
-"uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
-"  -S, --ns-changes    show namespace transitions\n"
 "  -u, --uid-changes   show uid transitions\n"
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Uso: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Uso: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "            [ -A | -G | -U ] [ PID | UTENTE]\n"
 "     pstree -V\n"
 "Mostra l'albero dei processi.\n"
@@ -608,12 +594,12 @@ msgstr ""
 "  -U, --unicode        usa caratteri grafici UTF-8 (Unicode)\n"
 "  -V, --version        mostra le informazioni sulla versione\n"
 
-#: src/pstree.c:1004
+#: src/pstree.c:840
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     show         mostra i contesti di sicurezza SELinux\n"
 
-#: src/pstree.c:1006
+#: src/pstree.c:842
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -624,12 +610,12 @@ msgstr ""
 "    UTENTE    mostra solo gli alberi con radice nei processi dell'utente\n"
 "\n"
 
-#: src/pstree.c:1013
+#: src/pstree.c:849
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:1016
+#: src/pstree.c:852
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -638,32 +624,27 @@ msgstr ""
 "Copyright (C) 1993-2009 Werner Almesberger e Craig Small\n"
 "\n"
 
-#: src/pstree.c:1130
+#: src/pstree.c:965
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM non è impostato\n"
 
-#: src/pstree.c:1134
+#: src/pstree.c:969
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Impossibile determinare le capacità del terminale\n"
 
-#: src/pstree.c:1152
-#, c-format
-msgid "procfs file for %s namespace not available\n"
-msgstr ""
-
-#: src/pstree.c:1199
+#: src/pstree.c:1018
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Questo nome utente non esiste: %s\n"
 
-#: src/pstree.c:1225
+#: src/pstree.c:1041
 #, c-format
 msgid "No processes found.\n"
 msgstr "Nessun processo trovato.\n"
 
-#: src/pstree.c:1231
+#: src/pstree.c:1047
 #, c-format
 msgid "Press return to close\n"
 msgstr "Premere Invio per chiudere\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2013-10-09 17:30+1100\n"
+"POT-Creation-Date: 2012-08-31 14:46+1000\n"
 "PO-Revision-Date: 2013-05-31 23:39+0800\n"
 "Last-Translator: Wei-Lun Chao <bluebat@member.fsf.org>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -20,8 +20,7 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -30,8 +29,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -41,8 +39,7 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"用法：fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n 空格] [-k [-i] [-信號]] 名"
-"稱…\n"
+"用法：fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n 空格] [-k [-i] [-信號]] 名稱…\n"
 "     fuser -l\n"
 "     fuser -V\n"
 "顯示何項行程使用指名的檔案、通訊端或檔案系統。\n"
@@ -98,7 +95,7 @@ msgstr ""
 "\n"
 
 #: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:1018
+#: src/pstree.c:854
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -251,10 +248,8 @@ msgstr "%s：找不到任何行程\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"用法：killall [-Z 上下文] [-u 使用者] [ -eIgiqrvw ] [ -SIGNAL ] 名稱…\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "用法：killall [-Z 上下文] [-u 使用者] [ -eIgiqrvw ] [ -SIGNAL ] 名稱…\n"
 
 #: src/killall.c:618
 #, c-format
@@ -542,16 +537,15 @@ msgstr "您必須提供至少一個 PID。"
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "/proc 未被掛載，無法取得 /proc/self/stat 的狀態。\n"
 
-#: src/pstree.c:949
+#: src/pstree.c:784
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s 是空的 (尚未掛載？)\n"
 
-#: src/pstree.c:981
-#, fuzzy, c-format
+#: src/pstree.c:820
+#, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -566,12 +560,8 @@ msgid ""
 "  -G, --vt100         use VT100 line drawing characters\n"
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
-"  -N type,\n"
-"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
-"uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
-"  -S, --ns-changes    show namespace transitions\n"
 "  -u, --uid-changes   show uid transitions\n"
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
@@ -597,12 +587,12 @@ msgstr ""
 "  -U, --unicode       使用 UTF-8 (萬國碼) 線條繪製字元\n"
 "  -V, --version       顯示版本資訊\n"
 
-#: src/pstree.c:1004
+#: src/pstree.c:840
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     顯示         SELinux 安全語境\n"
 
-#: src/pstree.c:1006
+#: src/pstree.c:842
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -613,12 +603,12 @@ msgstr ""
 "  使用者  只顯示源自此使用者行程的樹狀結構\n"
 "\n"
 
-#: src/pstree.c:1013
+#: src/pstree.c:849
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:1016
+#: src/pstree.c:852
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -627,32 +617,27 @@ msgstr ""
 "著作權©1993-2009 Werner Almesberger 和 Craig Small\n"
 "\n"
 
-#: src/pstree.c:1130
+#: src/pstree.c:965
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM 尚未設定\n"
 
-#: src/pstree.c:1134
+#: src/pstree.c:969
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "無法取得終端機功能\n"
 
-#: src/pstree.c:1152
-#, c-format
-msgid "procfs file for %s namespace not available\n"
-msgstr ""
-
-#: src/pstree.c:1199
+#: src/pstree.c:1018
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "無此類使用者名稱：%s\n"
 
-#: src/pstree.c:1225
+#: src/pstree.c:1041
 #, c-format
 msgid "No processes found.\n"
 msgstr "找不到任何行程。\n"
 
-#: src/pstree.c:1231
+#: src/pstree.c:1047
 #, c-format
 msgid "Press return to close\n"
 msgstr "按下輸入鍵以關閉\n"

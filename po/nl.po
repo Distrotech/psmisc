@@ -1,20 +1,18 @@
 # Dutch translations for psmisc.
-# Copyright (C) 2012 Free Software Foundation, Inc.
+# Copyright (C) 2013 Free Software Foundation, Inc.
 # This file is distributed under the same license as the PSmisc package.
 #
-# «Gehen wir mal kurz rein», sagte die Mama.
-# «Aber da steht 'Baden verboten'», sagte das Töchterchen.
-# Das wäre nicht so wichtig, meinte die Mama.
-# «Und was wenn da eine Geheimkamera ist?», fragte das Söhnchen.
+# « Que dites-vous là, monsieur? » dit elle en colère.
+# « Madame, dit il, il ne faut pas tromper l'enfance. »
 #
-# Benno Schulenberg <benno@vertaalt.nl>, 2004, 2005, 2006, 2007, 2010, 2012.
+# Benno Schulenberg <benno@vertaalt.nl>, 2004, 2005, 2006, 2007, 2010, 2012, 2013.
 # Erwin Poeze <erwin.poeze@gmail.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc-22.20rc1\n"
+"Project-Id-Version: psmisc-22.21\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2013-10-09 17:30+1100\n"
-"PO-Revision-Date: 2012-09-01 19:27+0200\n"
+"PO-Revision-Date: 2013-10-09 17:57+0200\n"
 "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
@@ -27,8 +25,7 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -37,8 +34,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -49,25 +45,20 @@ msgid ""
 "  -V,--version          display version information\n"
 msgstr ""
 "Gebruik:  fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n NAAMSRUIMTE]\n"
-"                    [-k [-i] [-SIGNAAL]] NAAM...\n"
+"                [-k [-i] [-SIGNAAL]] NAAM...\n"
 "     of:  fuser [-l|-V]\n"
 "\n"
 "De processen tonen die gebruik maken van de genoemde bestanden,\n"
 "sockets of bestandssystemen\n"
 "\n"
 "  -a, --all               de ongebruikte bestanden ook noemen\n"
-"  -i, --interactive       bevestiging vragen voor afbreken (genegeerd zonder "
-"-k)\n"
-"  -k, --kill              processen afbreken die het gegeven bestand "
-"gebruiken\n"
+"  -i, --interactive       bevestiging vragen voor afbreken (genegeerd zonder -k)\n"
+"  -k, --kill              processen afbreken die het gegeven bestand gebruiken\n"
 "  -l, --list-signals      lijst van beschikbare signalen tonen\n"
-"  -m, --mount             alle processen tonen die het gegeven "
-"bestandssysteem\n"
+"  -m, --mount             alle processen tonen die het gegeven bestandssysteem\n"
 "                            of blokapparaat gebruiken\n"
-"  -M, --ismountpoint      alleen aan verzoek voldoen als NAAM aankoppelpunt "
-"is\n"
-"  -n, --namespace RUIMTE  in gegeven naamsruimte ('file', 'udp', 'tcp') "
-"zoeken\n"
+"  -M, --ismountpoint      alleen aan verzoek voldoen als NAAM aankoppelpunt is\n"
+"  -n, --namespace RUIMTE  in gegeven naamsruimte ('file', 'udp', 'tcp') zoeken\n"
 "  -s, --silent            geen uitvoer produceren\n"
 "  -SIGNAAL                dit signaal sturen in plaats van SIGKILL\n"
 "  -u, --user              de gebruiker-IDs tonen\n"
@@ -265,11 +256,8 @@ msgstr "%s: geen proces gevonden\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Gebruik:  killall [-Z CONTEXT] [-egIiqrvw] [-SIGNAAL] [-u GEBRUIKER] "
-"NAAM...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Gebruik:  killall [-Z CONTEXT] [-egIiqrvw] [-SIGNAAL] [-u GEBRUIKER] NAAM...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -558,8 +546,7 @@ msgstr "Er moet minstens één PID gegeven worden."
 #: src/prtstat.c:317
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
-msgstr ""
-"/proc is niet aangekoppeld, kan status van /proc/self/stat niet bepalen.\n"
+msgstr "/proc is niet aangekoppeld, kan status van /proc/self/stat niet bepalen.\n"
 
 #: src/pstree.c:949
 #, c-format
@@ -567,10 +554,9 @@ msgid "%s is empty (not mounted ?)\n"
 msgstr "%s is leeg -- misschien niet aangekoppeld?\n"
 
 #: src/pstree.c:981
-#, fuzzy, c-format
+#, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -586,8 +572,7 @@ msgid ""
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
 "  -N type,\n"
-"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
-"uts)\n"
+"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
 "  -S, --ns-changes    show namespace transitions\n"
@@ -595,8 +580,8 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Gebruik:  pstree [-a] [-c] [-g] [-h|-H PID] [-l] [-n] [-p] [-u]\n"
-"                     [-A|-G|-U] [ PID | GEBRUIKER ]\n"
+"Gebruik:  pstree [-a] [-c] [-g] [-h|-H PID] [-l] [-N SOORT] [-n] [-p] [-u]\n"
+"                 [-A|-G|-U] [ PID | GEBRUIKER ]\n"
 "     of:  pstree -V\n"
 "\n"
 "Huidige processen tonen in een boomstructuur.\n"
@@ -607,14 +592,17 @@ msgstr ""
 "  -g, --show-pgids     procesgroeps-ID's tonen (impliceert '-c')\n"
 "  -G, --vt100          VT100-tekens voor de lijntjes gebruiken\n"
 "  -h, --highlight-all  huidig proces en zijn voorouders accentueren\n"
-"  -H PID,\n"
-"  --highlight-pid=PID  dit proces en zijn voorouders accentueren\n"
+"  -H PID, --highlight-pid=PID\n"
+"                       dit proces en zijn voorouders accentueren\n"
 "  -l, --long           lange regels niet afkappen\n"
-"  -n, --numeric-sort   uitvoer sorteren naar PID\n"
-"  -p, --show-pids      PIDs tonen (dit impliceert -c)\n"
+"  -n, --numeric-sort   uitvoer sorteren op PID\n"
+"  -N SOORT, --ns-sort=SOORT\n"
+"                       uitvoeren sorteren op deze SOORT naamsruimte\n"
+"                         (ipc, mnt, net, pid, user, uts)\n"
+"  -p, --show-pids      PIDs tonen (impliceert '-c')\n"
 "  -u, --uid-changes    UID-overgangen tonen\n"
 "  -U, --unicode        Unicode-tekens (UTF-8) voor de lijntjes gebruiken\n"
-"  -V, --version        de programmaversie tonen\n"
+"  -V, --version        de programmaversie tonen en stoppen\n"
 
 #: src/pstree.c:1004
 #, c-format
@@ -629,8 +617,7 @@ msgid ""
 "\n"
 msgstr ""
 "  PID     bij dit proces-ID beginnen; standaard is 1 (init)\n"
-"  NAAM    alleen de bomen tonen die beginnen bij processen van deze "
-"gebruiker\n"
+"  NAAM    alleen de bomen tonen die beginnen bij processen van deze gebruiker\n"
 "\n"
 
 #: src/pstree.c:1013
@@ -660,7 +647,7 @@ msgstr "Kan terminalcapaciteiten niet bepalen\n"
 #: src/pstree.c:1152
 #, c-format
 msgid "procfs file for %s namespace not available\n"
-msgstr ""
+msgstr "Het 'procfs'-bestand voor de '%s'-naamsruimte is niet beschikbaar\n"
 
 #: src/pstree.c:1199
 #, c-format
@@ -680,8 +667,7 @@ msgstr "Druk op Enter om af te sluiten\n"
 #: src/signals.c:84
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
-msgstr ""
-"Onbekend signaal: %s -- '%s -l' toont een lijst van mogelijke signalen.\n"
+msgstr "Onbekend signaal: %s -- '%s -l' toont een lijst van mogelijke signalen.\n"
 
 #~ msgid ""
 #~ "Usage: pidof [ -eg ] NAME...\n"
