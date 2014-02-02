@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.21\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2013-10-09 17:30+1100\n"
+"POT-Creation-Date: 2014-02-02 17:04+1100\n"
 "PO-Revision-Date: 2013-10-12 22:37+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -19,7 +19,8 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
+"NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -28,7 +29,8 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or block device\n"
+"  -m,--mount            show all processes using the named filesystems or "
+"block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -38,7 +40,8 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Sk³adnia: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n PRZESTRZEÑ] [-k [-i] [-SYGNA£]] NAZWA...\n"
+"Sk³adnia: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n PRZESTRZEÑ] [-k [-i] [-"
+"SYGNA£]] NAZWA...\n"
 "          fuser -l\n"
 "          fuser -V\n"
 "Pokazywanie, które procesy u¿ywaj± plików, gniazd lub systemów plików\n"
@@ -48,9 +51,12 @@ msgstr ""
 "  -i,--interactive      pytanie przed zabiciem (ignorowane bez -k)\n"
 "  -k,--kill             zabicie procesów u¿ywaj±cych podanego pliku\n"
 "  -l,--list-signals     lista nazw sygna³ów\n"
-"  -m,--mount            pokazanie procesów u¿ywaj±cych podanych systemów plików lub urz±dzeñ\n"
-"  -M,--ismountpoint     wykonywanie poleceñ tylko je¶li NAZWA jest punktem montowania\n"
-"  -n,--namespace PRZ    szukanie w podanej przestrzeni nazw (file, udp lub tcp)\n"
+"  -m,--mount            pokazanie procesów u¿ywaj±cych podanych systemów "
+"plików lub urz±dzeñ\n"
+"  -M,--ismountpoint     wykonywanie poleceñ tylko je¶li NAZWA jest punktem "
+"montowania\n"
+"  -n,--namespace PRZ    szukanie w podanej przestrzeni nazw (file, udp lub "
+"tcp)\n"
 "  -s,--silent           dzia³anie po cichu\n"
 "  -SYGNA£               wys³anie podanego sygna³u zamiast SIGKILL\n"
 "  -u,--user             wy¶wietlenie identyfikatorów u¿ytkowników\n"
@@ -94,8 +100,8 @@ msgstr ""
 "Copyright (C) 1993-2010 Werner Almesberger i Craig Small\n"
 "\n"
 
-#: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:1018
+#: src/fuser.c:165 src/killall.c:653 src/peekfd.c:114 src/prtstat.c:68
+#: src/pstree.c:1030
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -113,7 +119,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr "Nie mo¿na otworzyæ katalogu /proc: %s\n"
 
-#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1923
+#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1946
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Nie mo¿na przydzieliæ pamiêci dla dopasowanego procesu: %s\n"
@@ -143,70 +149,75 @@ msgstr "Nieznana rodzina adresów portu lokalnego %d\n"
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Nie mo¿na otworzyæ pliku protoko³u \"%s\": %s\n"
 
-#: src/fuser.c:972
+#: src/fuser.c:896
+#, fuzzy, c-format
+msgid "Specified filename %s is not a mountpoint.\n"
+msgstr "Podana nazwa pliku %s nie istnieje.\n"
+
+#: src/fuser.c:995
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr "%s: B³êdna opcja %s\n"
 
-#: src/fuser.c:1023
+#: src/fuser.c:1046
 msgid "Namespace option requires an argument."
 msgstr "Opcja przestrzeni nazw wymaga argumentu."
 
-#: src/fuser.c:1041
+#: src/fuser.c:1064
 msgid "Invalid namespace name"
 msgstr "Niepoprawna nazwa przestrzeni nazw"
 
-#: src/fuser.c:1102
+#: src/fuser.c:1125
 msgid "You can only use files with mountpoint options"
 msgstr "Z opcjami punktu montowania mo¿na u¿ywaæ tylko plików"
 
-#: src/fuser.c:1156
+#: src/fuser.c:1174
 msgid "No process specification given"
 msgstr "Nie podano okre¶lenia procesów"
 
-#: src/fuser.c:1163
+#: src/fuser.c:1186
 msgid "all option cannot be used with silent option."
 msgstr "opcja wszystkich plików nie mo¿e byæ u¿yta z opcj± ciszy."
 
-#: src/fuser.c:1168
+#: src/fuser.c:1191
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr "Nie mo¿na naraz szukaæ gniazd wy³±cznie IPv4 i wy³±cznie IPv6"
 
-#: src/fuser.c:1246
+#: src/fuser.c:1269
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr "%*s U¯YTKOWNIK  PID DOSTÊP POLECENIE\n"
 
-#: src/fuser.c:1279 src/fuser.c:1336
+#: src/fuser.c:1302 src/fuser.c:1359
 msgid "(unknown)"
 msgstr "(nieznany)"
 
-#: src/fuser.c:1415 src/fuser.c:1454
+#: src/fuser.c:1438 src/fuser.c:1477
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr "Nie mo¿na wykonaæ stat na pliku %s: %s\n"
 
-#: src/fuser.c:1540
+#: src/fuser.c:1563
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr "Nie mo¿na otworzyæ /proc/net/unix: %s\n"
 
-#: src/fuser.c:1616
+#: src/fuser.c:1639
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "Zabiæ proces %d? (y/N) "
 
-#: src/fuser.c:1652
+#: src/fuser.c:1675
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr "Nie uda³o siê zabiæ procesu %d: %s\n"
 
-#: src/fuser.c:1667
+#: src/fuser.c:1690
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr "Nie mo¿na otworzyæ gniazda sieciowego.\n"
 
-#: src/fuser.c:1671
+#: src/fuser.c:1694
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr "Nie mo¿na odnale¼æ numeru urz±dzenia gniazda.\n"
@@ -248,8 +259,11 @@ msgstr "%s: nie znaleziono ¿adnego procesu\n"
 
 #: src/killall.c:615
 #, c-format
-msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr "Sk³adnia: killall [-Z KONTEKST] [-u U¯YTKOWNIK] [ -eIgiqrvw ] [ -SYGNA£ ] NAZWA...\n"
+msgid ""
+"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr ""
+"Sk³adnia: killall [-Z KONTEKST] [-u U¯YTKOWNIK] [ -eIgiqrvw ] [ -SYGNA£ ] "
+"NAZWA...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -280,8 +294,10 @@ msgstr ""
 "          killall -l, --list\n"
 "          killall -V --version\n"
 "\n"
-"  -e,--exact          wymaganie dok³adnego dopasowania dla bardzo d³ugich nazw\n"
-"  -I,--ignore-case    dopasowywanie nazw procesów niewra¿liwe na wielko¶æ liter\n"
+"  -e,--exact          wymaganie dok³adnego dopasowania dla bardzo d³ugich "
+"nazw\n"
+"  -I,--ignore-case    dopasowywanie nazw procesów niewra¿liwe na wielko¶æ "
+"liter\n"
 "  -g,--process-group  zabicie grupy procesów zamiast procesu\n"
 "  -y,--younger-than   zabicie procesów m³odszych ni¿ CZAS\n"
 "  -o,--other-than     zabicie procesów starszych ni¿ CZAS\n"
@@ -290,7 +306,8 @@ msgstr ""
 "  -q,--quiet          nie wy¶wietlanie narzekañ\n"
 "  -r,--regexp         u¿ycie NAZWY jako rozszerzonego wyra¿enia regularnego\n"
 "  -s,--signal SYGNA£  wys³anie podanego sygna³u zamiast SIGTERM\n"
-"  -u, --user U¯YTK    zabicie tylko procesów dzia³aj±cych jako podany u¿ytkownik\n"
+"  -u, --user U¯YTK    zabicie tylko procesów dzia³aj±cych jako podany "
+"u¿ytkownik\n"
 "  -v,--verbose        informowanie czy wys³anie sygna³u siê powiod³o\n"
 "  -V,--version        wy¶wietlenie informacji o wersji\n"
 "  -w,--wait           zaczekanie na ¶mieræ procesów\n"
@@ -301,7 +318,8 @@ msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
 "                      (must precede other arguments)\n"
 msgstr ""
-"  -Z,--context REGEXP zabicie tylko procesu(ów) maj±cych dany kontekst bezp.\n"
+"  -Z,--context REGEXP zabicie tylko procesu(ów) maj±cych dany kontekst "
+"bezp.\n"
 "                        (musi poprzedzaæ inne argumenty)\n"
 
 #: src/killall.c:651
@@ -337,17 +355,17 @@ msgstr "killall: maksymalna liczba nazw to %d\n"
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "killall: %s nie ma wpisów procesów (nie jest zamontowany?)\n"
 
-#: src/peekfd.c:96
+#: src/peekfd.c:102
 #, c-format
 msgid "Error attaching to pid %i\n"
 msgstr "B³±d podczas pod³±czania do procesu %i\n"
 
-#: src/peekfd.c:104
+#: src/peekfd.c:110
 #, c-format
 msgid "peekfd (PSmisc) %s\n"
 msgstr "peekfd (PSmisc) %s\n"
 
-#: src/peekfd.c:106
+#: src/peekfd.c:112
 #, c-format
 msgid ""
 "Copyright (C) 2007 Trent Waddington\n"
@@ -356,7 +374,7 @@ msgstr ""
 "Copyright (C) 2007 Trent Waddington\n"
 "\n"
 
-#: src/peekfd.c:116
+#: src/peekfd.c:122
 #, c-format
 msgid ""
 "Usage: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
@@ -479,7 +497,8 @@ msgid ""
 "  Child processes (user system guest):       %6.2f %6.2f %6.2f\n"
 msgstr ""
 "Czasy procesora\n"
-"  Ten proces      (u¿ytkownika systemowy go¶cinny blkio): %6.2f %6.2f %6.2f %6.2f\n"
+"  Ten proces      (u¿ytkownika systemowy go¶cinny blkio): %6.2f %6.2f %6.2f "
+"%6.2f\n"
 "  Procesy potomne (u¿ytkownika systemowy go¶cinny:        %6.2f %6.2f %6.2f\n"
 
 #: src/prtstat.c:189
@@ -535,17 +554,19 @@ msgstr "Trzeba podaæ przynajmniej jeden PID."
 #: src/prtstat.c:317
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
-msgstr "/proc nie jest zamontowany, nie mo¿na wykonaæ stat na /proc/self/stat.\n"
+msgstr ""
+"/proc nie jest zamontowany, nie mo¿na wykonaæ stat na /proc/self/stat.\n"
 
-#: src/pstree.c:949
+#: src/pstree.c:961
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s jest pusty (nie podmontowany?)\n"
 
-#: src/pstree.c:981
+#: src/pstree.c:993
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -561,7 +582,8 @@ msgid ""
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
 "  -N type,\n"
-"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, uts)\n"
+"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
+"uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
 "  -S, --ns-changes    show namespace transitions\n"
@@ -569,7 +591,8 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Sk³adnia: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
+"Sk³adnia: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] "
+"[ -u ]\n"
 "                 [ -A | -G | -U ] [ PID | U¯YTKOWNIK ]\n"
 "          pstree -V\n"
 "Wy¶wietlanie drzewa procesów.\n"
@@ -585,18 +608,20 @@ msgstr ""
 "  -l, --long          nie obcinanie d³ugich linii\n"
 "  -n, --numeric-sort  sortowanie wyj¶cia wg PID-u\n"
 "  -N typ,\n"
-"  --ns-sort=typ       sortowanie wg przestrzeni (ipc, mnt, net, pid, user, uts)\n"
+"  --ns-sort=typ       sortowanie wg przestrzeni (ipc, mnt, net, pid, user, "
+"uts)\n"
 "  -p, --show-pids     wy¶wietlanie PID-ów; w³±cza tak¿e -c\n"
 "  -u, --uid-changes   wy¶wietlanie zmian uidów\n"
 "  -U, --unicode       u¿ycie znaków ramek UTF-8 (Unicode)\n"
 "  -V, --version       wy¶wietlenie informacji o wersji\n"
 
-#: src/pstree.c:1004
+#: src/pstree.c:1016
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
-msgstr "  -Z                  wy¶wietlanie kontekstów bezpieczeñstwa SELinuksa\n"
+msgstr ""
+"  -Z                  wy¶wietlanie kontekstów bezpieczeñstwa SELinuksa\n"
 
-#: src/pstree.c:1006
+#: src/pstree.c:1018
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -607,12 +632,12 @@ msgstr ""
 " U¯YTKOWNIK  tylko drzewa zaczynaj±ce siê od procesów tego u¿ytkownika\n"
 "\n"
 
-#: src/pstree.c:1013
+#: src/pstree.c:1025
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:1016
+#: src/pstree.c:1028
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -621,32 +646,32 @@ msgstr ""
 "Copyright (C) 1993-2009 Werner Almesberger i Craig Small\n"
 "\n"
 
-#: src/pstree.c:1130
+#: src/pstree.c:1142
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM nie ustawiony\n"
 
-#: src/pstree.c:1134
+#: src/pstree.c:1146
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Nie mo¿na odczytaæ mo¿liwo¶ci terminala\n"
 
-#: src/pstree.c:1152
+#: src/pstree.c:1164
 #, c-format
 msgid "procfs file for %s namespace not available\n"
 msgstr "Plik procfs dla przestrzeni nazw %s nie jest dostêpny\n"
 
-#: src/pstree.c:1199
+#: src/pstree.c:1211
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Nie ma u¿ytkownika o takiej nazwie: %s\n"
 
-#: src/pstree.c:1225
+#: src/pstree.c:1237
 #, c-format
 msgid "No processes found.\n"
 msgstr "Nie znaleziono procesów.\n"
 
-#: src/pstree.c:1231
+#: src/pstree.c:1243
 #, c-format
 msgid "Press return to close\n"
 msgstr "Naci¶niêcie return zamknie program\n"
