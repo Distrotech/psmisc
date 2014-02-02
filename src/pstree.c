@@ -2,7 +2,7 @@
  * pstree.c - display process tree
  *
  * Copyright (C) 1993-2002 Werner Almesberger
- * Copyright (C) 2002-2012 Craig Small
+ * Copyright (C) 2002-2014 Craig Small
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -812,12 +812,14 @@ static char* get_threadname(const pid_t pid, const int tid, const char *comm)
 		++thread_comm;
 		*endcomm = '\0';
 		sprintf(threadname, "{%.*s}", COMM_LEN, thread_comm);
+		(void) fclose(file);
 		return threadname;
 	    }
 	}
     }
     /* Fall back to old method */
     sprintf(threadname, "{%.*s}", COMM_LEN, comm);
+    fclose(file);
     return threadname;
 }
 
