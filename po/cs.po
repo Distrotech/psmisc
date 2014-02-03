@@ -1,14 +1,14 @@
 # Czech translation of psmisc.
 # Copyright (C) 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the psmisc package.
-# Petr Pisar <petr.pisar@atlas.cz>, 2009, 2010, 2012, 2013.
+# Petr Pisar <petr.pisar@atlas.cz>, 2009, 2010, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.21\n"
+"Project-Id-Version: psmisc 22.21-pre2\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2014-02-02 17:04+1100\n"
-"PO-Revision-Date: 2013-10-09 18:46+0200\n"
+"PO-Revision-Date: 2014-02-02 11:53+0100\n"
 "Last-Translator: Petr Pisar <petr.pisar@atlas.cz>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "Language: cs\n"
@@ -19,8 +19,7 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -29,8 +28,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -40,8 +38,7 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Použití: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n PROSTOR] [-k [-i] [-"
-"SIGNÁL]]\n"
+"Použití: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n PROSTOR] [-k [-i] [-SIGNÁL]]\n"
 "               NÁZEV…\n"
 "         fuser -l\n"
 "         fuser -V\n"
@@ -52,11 +49,9 @@ msgstr ""
 "  -i,--interactive      před zabitím se dotáže (ignorováno bez -k)\n"
 "  -k,--kill             zabije procesy přistupující k zadanému souboru\n"
 "  -l,--list-signals     vypíše seznam názvů dostupných signálů\n"
-"  -m,--mount            zobrazí všechny procesy používající zadané "
-"souborové\n"
+"  -m,--mount            zobrazí všechny procesy používající zadané souborové\n"
 "                        systémy nebo bloková zařízení\n"
-"  -M,--ismountpoint     vyhoví požadavku, pouze když NÁZEV je bod připojení "
-"FS\n"
+"  -M,--ismountpoint     vyhoví požadavku, pouze když NÁZEV je bod připojení FS\n"
 "  -n,--namespace PROSTOR    hledá v tomto jmenném prostoru\n"
 "                        (file [soubor], udp, nebo tcp)\n"
 "  -s,--silent           tichý běh\n"
@@ -152,9 +147,9 @@ msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Soubor s protokoly „%s“ nelze otevřít: %s\n"
 
 #: src/fuser.c:896
-#, fuzzy, c-format
+#, c-format
 msgid "Specified filename %s is not a mountpoint.\n"
-msgstr "Soubor zadaného názvu %s neexistuje.\n"
+msgstr "Soubor zadaného názvu %s není přípojným bodem.\n"
 
 #: src/fuser.c:995
 #, c-format
@@ -261,10 +256,8 @@ msgstr "%s: žádný proces nenalezen\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Usage: killall [-Z KONTEXT] [-u UŽIVATEL] [-eIgiqrvw] [-SIGNÁL] NÁZEV…\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Usage: killall [-Z KONTEXT] [-u UŽIVATEL] [-eIgiqrvw] [-SIGNÁL] NÁZEV…\n"
 
 #: src/killall.c:618
 #, c-format
@@ -296,8 +289,7 @@ msgstr ""
 "         killall -V, --version\n"
 "\n"
 "  -e,--exact          u velmi dlouhých názvu vyžaduje přesnou shodu\n"
-"  -I,--ignore-case    porovnávání názvů procesů nebere ohled na velikost "
-"písmen\n"
+"  -I,--ignore-case    porovnávání názvů procesů nebere ohled na velikost písmen\n"
 "  -g,--process-group  zabije skupinu procesů namísto procesu\n"
 "  -y,--younger-than   zabije procesy mladší než ČAS\n"
 "  -o,--older-than     zabije procesy starší než ČAS\n"
@@ -562,8 +554,7 @@ msgstr "%s je prázdný (není připojen?)\n"
 #: src/pstree.c:993
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -579,8 +570,7 @@ msgid ""
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
 "  -N type,\n"
-"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
-"uts)\n"
+"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
 "  -S, --ns-changes    show namespace transitions\n"

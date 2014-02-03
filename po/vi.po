@@ -1,16 +1,16 @@
 # Vietnamese translation for PSmisc.
 # Bản dịch tiếng Việt cho PSmisc.
-# Copyright © 2013 Free Software Foundation, Inc.
+# Copyright © 2014 Free Software Foundation, Inc.
 # This file is distributed under the same license as the psmisc package.
 # Clytie Siddall <clytie@riverland.net.au>, 2005, 2006, 2007, 2008, 2009, 2010.
-# Trần Ngọc Quân <vnwildman@gmail.com>, 2012-2013.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2012-2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc 22.21\n"
+"Project-Id-Version: psmisc 22.21-pre2\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2014-02-02 17:04+1100\n"
-"PO-Revision-Date: 2013-11-27 08:12+0700\n"
+"PO-Revision-Date: 2014-02-03 08:27+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <translation-team-vi@lists.sourceforge.net>\n"
 "Language: vi\n"
@@ -24,8 +24,7 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -34,8 +33,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -45,22 +43,17 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Cách dùng: fuser [ -fMuvw ] [-a|-s] [-4|-6] [-c|-m|-n KHOẢNG] [-k [-i] [-"
-"TÍN_HIỆU]] TÊN...\n"
+"Cách dùng: fuser [ -fMuvw ] [-a|-s] [-4|-6] [-c|-m|-n KHOẢNG] [-k [-i] [-TÍN_HIỆU]] TÊN...\n"
 "           fuser -l\n"
 "           fuser -V\n"
-"Hiển thị những tiến trình nào đang dùng những tập tin, ổ cắm hay hệ thống "
-"tập tin có tên đưa ra.\n"
+"Hiển thị những tiến trình nào đang dùng những tập tin, ổ cắm hay hệ thống tập tin có tên đưa ra.\n"
 "\n"
 "  -a,--all              cũng hiển thị các tập tin không dùng\n"
-"  -i,--interactive      hỏi trước khi buộc kết thúc (bị bỏ qua nếu không có "
-"\"-k\")\n"
-"  -k,--kill             buộc kết thúc mỗi tiến trình đang truy cập đến tập "
-"tin có tên đưa ra\n"
+"  -i,--interactive      hỏi trước khi buộc kết thúc (bị bỏ qua nếu không có \"-k\")\n"
+"  -k,--kill             buộc kết thúc mỗi tiến trình đang truy cập đến tập tin có tên đưa ra\n"
 "  -l,--list-signals     liệt kê những tên tín hiệu vẫn sẵn sàng\n"
 "  -m,--mount            hiển thị tất cả các tiến trình đang sử dụng\n"
-"                          những hệ thống tập tin hay thiết bị khối có tên "
-"đưa ra\n"
+"                          những hệ thống tập tin hay thiết bị khối có tên đưa ra\n"
 "  -M,--ismountpoint     đáp ứng chỉ khi TÊN là một điểm gắn (moutpoint)\n"
 "  -n,--namespace KHOẢNG tìm kiếm trong miền tên này (file, udp hay tcp)\n"
 "  -s,--silent           không xuất chi tiết\n"
@@ -115,7 +108,7 @@ msgid ""
 "the terms of the GNU General Public License.\n"
 "For more information about these matters, see the files named COPYING.\n"
 msgstr ""
-"PSmisc không bảo đảm gì cả.\n"
+"PSmisc KHÔNG BẢO ĐẢM GÌ CẢ.\n"
 "Đây là phần mềm tự do, và bạn có thể phân phối nó với điều kiện của\n"
 "Giấy Phép Công của Gnu (GPL).\n"
 "Để tìm thấy thông tin thêm thì hãy xem tập tin có tên COPYING (Giấy phép)\n"
@@ -123,17 +116,17 @@ msgstr ""
 #: src/fuser.c:184
 #, c-format
 msgid "Cannot open /proc directory: %s\n"
-msgstr "Không thể mở thư mục </proc>: %s\n"
+msgstr "Không thể mở thư mục /proc: %s\n"
 
 #: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1946
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
-msgstr "Không thể cấp phát bộ nhớ cho tiến trình được khớp: %s\n"
+msgstr "Không thể cấp phát bộ nhớ cho tiến trình khớp: %s\n"
 
 #: src/fuser.c:478
 #, c-format
 msgid "Specified filename %s does not exist.\n"
-msgstr "Đưa ra tên tập tin %s không tồn tại.\n"
+msgstr "Tên tập tin đã cho %s không tồn tại.\n"
 
 #: src/fuser.c:481
 #, c-format
@@ -156,9 +149,9 @@ msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Không thể mở tập tin giao thức \"%s\": %s\n"
 
 #: src/fuser.c:896
-#, fuzzy, c-format
+#, c-format
 msgid "Specified filename %s is not a mountpoint.\n"
-msgstr "Đưa ra tên tập tin %s không tồn tại.\n"
+msgstr "Tên tập tin đã cho %s không phải là một điểm gắn.\n"
 
 #: src/fuser.c:995
 #, c-format
@@ -206,7 +199,7 @@ msgstr "Không thể lấy các thông tin về tập tin %s: %s\n"
 #: src/fuser.c:1563
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
-msgstr "Không thể mở thư mục </proc/net/unix>: %s\n"
+msgstr "Không thể mở thư mục /proc/net/unix: %s\n"
 
 #: src/fuser.c:1639
 #, c-format
@@ -265,11 +258,8 @@ msgstr "%s: không tìm thấy tiến trình\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Cách dùng: killall [-Z NGỮ_CẢNH] [-u NGƯỜI_DÙNG] [ -eIgiqrvw ] [ -TÍN_HIỆU ] "
-"TÊN...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Cách dùng: killall [-Z NGỮ_CẢNH] [-u NGƯỜI_DÙNG] [ -eIgiqrvw ] [ -TÍN_HIỆU ] TÊN...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -355,7 +345,7 @@ msgstr "killall: Số lượng tên tối đa là %d\n"
 #: src/killall.c:835
 #, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
-msgstr "killall: %s thiếu các mục tuyến trình (đã gắn (mount) chưa?)\n"
+msgstr "killall: %s thiếu các mục tuyến trình (đã gắn chưa?)\n"
 
 #: src/peekfd.c:102
 #, c-format
@@ -393,8 +383,8 @@ msgstr ""
 "    -8 xuất luồng dữ liệu sạch 8 bít.\n"
 "    -n khôNg hiển thị đọc/viết từ phần đầu fd.\n"
 "    -c Cũng hé nhìn tiến trình con mới nào.\n"
-"    -d gỡ bỏ đọc/viết trùng ra Dữ liệu xuất.\n"
-"    -V hiển thị thông tin Về phiên bản.\n"
+"    -d gỡ bỏ đọc/viết trùng lặp ra khỏi kết xuất.\n"
+"    -V hiển thị thông tin về phiên bản.\n"
 "    -h Hiển thị trợ giúp này.\n"
 "\n"
 "  Bấm tổ hợp phím CTRL-C để kết thúc.\n"
@@ -477,9 +467,9 @@ msgid ""
 "\n"
 msgstr ""
 "Mã số cho tiến trình, nhóm và phiên làm việc\n"
-"   Mã số Tiến trình: %d\t        Mã số cha mẹ: %d\n"
-"         Mã số Nhóm: %d\tMã số phiên làm việc: %d\n"
-"       Mã số Nhóm T: %d\n"
+"  Mã số tiến trình: %d\t        Mã số cha mẹ: %d\n"
+"        Mã số nhóm: %d\tMã số phiên làm việc: %d\n"
+"      Mã số nhóm T: %d\n"
 "\n"
 
 #: src/prtstat.c:175
@@ -515,11 +505,11 @@ msgid ""
 "  Stack Pointer (ESP): %#10lx\t Inst Pointer (EIP): %#10lx\n"
 msgstr ""
 "Bộ nhớ\n"
-"  Cỡ ảo:       %-10s\n"
-"  RSS:         %-10s \t\t Giới hạn RSS: %s\n"
-"  Đầu mã:      %#-10lx\t\t Cuối mã:  %#-10lx\n"
-"  Đầu đống:    %#-10lx\n"
-"  Con trỏ đống (ESP): %#10lx\t Con trỏ thể hiện (EIP): %#10lx\n"
+"  Cỡ ảo:        %-10s\n"
+"  RSS:          %-10s\t\t Giới hạn RSS: %s\n"
+"  Đầu mã:       %#-10lx\t\t Cuối mã: %#-10lx\n"
+"  Đầu ngăn xếp: %#-10lx\n"
+"  Con trỏ ngăn xếp (ESP): %#10lx\t Con trỏ thể hiện (EIP): %#10lx\n"
 
 #: src/prtstat.c:199
 #, c-format
@@ -529,7 +519,7 @@ msgid ""
 "  Nice:   %ld \t\t RT Priority: %ld %s\n"
 msgstr ""
 "Định thời\n"
-"  Chính sách: %s\n"
+"   Chính sách: %s\n"
 "  Mức ưu tiên: %ld \t\t Mức ưu tiên RT: %ld %s\n"
 
 #: src/prtstat.c:221
@@ -548,7 +538,7 @@ msgstr "Không thể mở tập tin thống kê về PID %d (%s)\n"
 
 #: src/prtstat.c:308
 msgid "Invalid option"
-msgstr "Sai tuỳ chọn"
+msgstr "Tuỳ chọn không hợp lệ"
 
 #: src/prtstat.c:313
 msgid "You must provide at least one PID."
@@ -557,8 +547,7 @@ msgstr "Phải cung cấp ít nhất một PID (mã số tiến trình)."
 #: src/prtstat.c:317
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
-msgstr ""
-"Chưa gắn \"/proc\" thì không thể lấy thống kê về \"/proc/self/stat\".\n"
+msgstr "Chưa gắn \"/proc\" thì không thể lấy thống kê về \"/proc/self/stat\".\n"
 
 #: src/pstree.c:961
 #, c-format
@@ -568,8 +557,7 @@ msgstr "%s trống rỗng (đã gắn chưa?)\n"
 #: src/pstree.c:993
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -585,8 +573,7 @@ msgid ""
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
 "  -N type,\n"
-"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
-"uts)\n"
+"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
 "  -S, --ns-changes    show namespace transitions\n"
@@ -594,8 +581,7 @@ msgid ""
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
 msgstr ""
-"Cách dùng: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] "
-"[ -u ]\n"
+"Cách dùng: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "                  [ -A | -G | -U ] [ PID | NGƯỜI_DÙNG]\n"
 "           pstree -V\n"
 "\n"
@@ -612,14 +598,12 @@ msgstr ""
 "  -l, --long          đừng cắt ngắn dòng dài\n"
 "  -n, --numeric-sort  sắp xếp kết xuất theo PID (mã số tiến trình)\n"
 "  -N type,\n"
-"  --ns-sort=kiểu      sắp xếp theo không gian tên (ipc, mnt, net, pid, user, "
-"uts)\n"
+"  --ns-sort=kiểu      sắp xếp theo không gian tên (ipc, mnt, net, pid, user, uts)\n"
 "  -p, --show-pids     hiển thị các PID (ngầm sử dụng \"-c\")\n"
 "  -s, --show-parents  hiển thị cha mẹ của tiến trình đã chọn\n"
 "  -S, --ns-changes    hiển thị sự chuyển tiếp không gian tên\n"
 "  -u, --uid-changes   hiển thị các sự chuyển tiếp UID (mã số người dùng)\n"
-"  -U, --unicode       dùng các ký tự thuộc bảng mã UTF-8 (Unicode) để vẽ "
-"đường kẻ\n"
+"  -U, --unicode       dùng các ký tự thuộc bảng mã UTF-8 (Unicode) để vẽ đường kẻ\n"
 "  -V, --version       hiển thị thông tin về phiên bản\n"
 
 #: src/pstree.c:1016
@@ -680,13 +664,12 @@ msgstr "Không tìm thấy tiến trình.\n"
 #: src/pstree.c:1243
 #, c-format
 msgid "Press return to close\n"
-msgstr "Bấm phím Return để đóng\n"
+msgstr "Bấm phím Enter để đóng\n"
 
 #: src/signals.c:84
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
-msgstr ""
-"%s: không hiểu tín hiệu; câu lệnh \"%s -l\" giúp bạn liệt kê các tín hiệu.\n"
+msgstr "%s: không hiểu tín hiệu; câu lệnh \"%s -l\" giúp bạn liệt kê các tín hiệu.\n"
 
 #~ msgid ""
 #~ "Usage: pidof [ -eg ] NAME...\n"

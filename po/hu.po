@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2014-02-02 17:04+1100\n"
+"POT-Creation-Date: 2012-08-31 14:46+1000\n"
 "PO-Revision-Date: 2012-09-16 13:22+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -22,8 +22,7 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -32,8 +31,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -43,19 +41,15 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"Használat: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n NÉVTÉR] [-k [-i] [-"
-"SZIGNÁL]] NÉV...\n"
+"Használat: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n NÉVTÉR] [-k [-i] [-SZIGNÁL]] NÉV...\n"
 "       fuser -l\n"
 "       fuser -V\n"
-"Megjeleníti a megnevezett fájlokat, foglalatokat vagy fájlrendszereket "
-"használó\n"
+"Megjeleníti a megnevezett fájlokat, foglalatokat vagy fájlrendszereket használó\n"
 "folyamatokat.\n"
 "\n"
 "  -a,--all              a nem használt fájlok is jelenjenek meg\n"
-"  -i,--interactive      kérdés kilövés előtt (a -k nélkül figyelmen kívül "
-"marad)\n"
-"  -k,--kill             a megnevezett fájlokhoz hozzáférő folyamatok "
-"kilövése\n"
+"  -i,--interactive      kérdés kilövés előtt (a -k nélkül figyelmen kívül marad)\n"
+"  -k,--kill             a megnevezett fájlokhoz hozzáférő folyamatok kilövése\n"
 "  -l,--list-signals     elérhető szignálnevek felsorolása\n"
 "  -m,--mount            a megnevezett fájlrendszereket vagy blokkeszközöket\n"
 "                          használó összes folyamat megjelenítése\n"
@@ -65,8 +59,7 @@ msgstr ""
 "  -SZIGNÁL              ezen szignál elküldése a SIGKILL helyett\n"
 "  -u,--user             felhasználói azonosítók megjelenítése\n"
 "  -v,--verbose          részletes kimenet\n"
-"  -w,--writeonly        csak írási hozzáféréssel rendelkező folyamatok "
-"kilövése\n"
+"  -w,--writeonly        csak írási hozzáféréssel rendelkező folyamatok kilövése\n"
 "  -V,--version          verzióinformációk megjelenítése\n"
 
 #: src/fuser.c:150
@@ -105,8 +98,8 @@ msgstr ""
 "Copyright (C) 1993-2010 Werner Almesberger és Craig Small\n"
 "\n"
 
-#: src/fuser.c:165 src/killall.c:653 src/peekfd.c:114 src/prtstat.c:68
-#: src/pstree.c:1030
+#: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
+#: src/pstree.c:854
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -123,7 +116,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr "A /proc könyvtár nem nyitható meg: %s\n"
 
-#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1946
+#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1923
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Nem foglalható memória az illeszkedő folyamat részére: %s\n"
@@ -153,75 +146,70 @@ msgstr "Ismeretlen helyi port AF: %d\n"
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Nem nyitható meg a(z) \"%s\" protokollfájl: %s\n"
 
-#: src/fuser.c:896
-#, fuzzy, c-format
-msgid "Specified filename %s is not a mountpoint.\n"
-msgstr "A megadott %s fájlnév nem létezik.\n"
-
-#: src/fuser.c:995
+#: src/fuser.c:972
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr "%s: érvénytelen kapcsoló: %s\n"
 
-#: src/fuser.c:1046
+#: src/fuser.c:1023
 msgid "Namespace option requires an argument."
 msgstr "A névtér kapcsoló argumentumot igényel."
 
-#: src/fuser.c:1064
+#: src/fuser.c:1041
 msgid "Invalid namespace name"
 msgstr "Érvénytelen névtérnév"
 
-#: src/fuser.c:1125
+#: src/fuser.c:1102
 msgid "You can only use files with mountpoint options"
 msgstr "Fájlok csak csatolási pont kapcsolókkal használhatók"
 
-#: src/fuser.c:1174
+#: src/fuser.c:1156
 msgid "No process specification given"
 msgstr "Nincs megadva folyamatmeghatározás"
 
-#: src/fuser.c:1186
+#: src/fuser.c:1163
 msgid "all option cannot be used with silent option."
 msgstr "az összes kapcsoló nem használható a néma kapcsolóval."
 
-#: src/fuser.c:1191
+#: src/fuser.c:1168
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr "Nem lehet egyszerre csak IPv4 és csak IPv6 foglalatokat keresni"
 
-#: src/fuser.c:1269
+#: src/fuser.c:1246
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr "%*s FELHASZNÁLÓ  PID HOZZÁFÉRÉS PARANCS\n"
 
-#: src/fuser.c:1302 src/fuser.c:1359
+#: src/fuser.c:1279 src/fuser.c:1336
 msgid "(unknown)"
 msgstr "(ismeretlen)"
 
-#: src/fuser.c:1438 src/fuser.c:1477
+#: src/fuser.c:1415 src/fuser.c:1454
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr "A(z) %s fájl nem érhető el: %s\n"
 
-#: src/fuser.c:1563
+#: src/fuser.c:1540
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr "A /proc/net/unix könyvtár nem nyitható meg: %s\n"
 
-#: src/fuser.c:1639
+#: src/fuser.c:1616
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "Kilövi a(z) %d folyamatot? (i/N) "
 
-#: src/fuser.c:1675
+#: src/fuser.c:1652
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr "A(z) %d folymat kilövése nem sikerült: %s\n"
 
-#: src/fuser.c:1690
+#: src/fuser.c:1667
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr "Nem nyitható meg hálózati foglalat\n"
 
-#: src/fuser.c:1694
+#: src/fuser.c:1671
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr "Nem található a foglalat eszközszáma.\n"
@@ -239,8 +227,7 @@ msgstr "Elküldi a(z) %s(%s%d) szignált? (i/N) "
 #: src/killall.c:211
 #, c-format
 msgid "killall: Cannot get UID from process status\n"
-msgstr ""
-"killall: Nem kérhető le a felhasználói azonosító a folyamat állapotából\n"
+msgstr "killall: Nem kérhető le a felhasználói azonosító a folyamat állapotából\n"
 
 #: src/killall.c:237
 #, c-format
@@ -264,11 +251,8 @@ msgstr "%s: nem található folyamat\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Használat: killall [-Z KONTEXTUS] [-u FELHASZNÁLÓ] [ -eIgiqrvw ] [ -"
-"SZIGNÁL ] NÉV...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Használat: killall [-Z KONTEXTUS] [-u FELHASZNÁLÓ] [ -eIgiqrvw ] [ -SZIGNÁL ] NÉV...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -299,8 +283,7 @@ msgstr ""
 "       killall -l, --list\n"
 "       killall -V, --version\n"
 "\n"
-"  -e,--exact          megköveteli a pontos egyezést nagyon hosszú nevek "
-"esetén;\n"
+"  -e,--exact          megköveteli a pontos egyezést nagyon hosszú nevek esetén;\n"
 "  -I,--ignore-case    a folyamatnév-illesztés ne legyen kis- és\n"
 "                        nagybetűérzékeny\n"
 "  -g,--process-group  folyamatcsoport kilövése folyamat helyett\n"
@@ -309,11 +292,9 @@ msgstr ""
 "  -i,--interactive    megerősítés kérése kilövés előtt\n"
 "  -l,--list           az összes ismert szignálnév felsorolása\n"
 "  -q,--quiet          ne kérdezzen\n"
-"  -r,--regexp         a NÉV értelmezése kiterjesztett reguláris "
-"kifejezésként\n"
+"  -r,--regexp         a NÉV értelmezése kiterjesztett reguláris kifejezésként\n"
 "  -s,--signal SZIGNÁL ezen szignál elküldése a SIGTERM helyett\n"
-"  -u,--user FELHASZNÁLÓ  csak a FELHASZNÁLÓ nevében futó folyamatok "
-"kilövése\n"
+"  -u,--user FELHASZNÁLÓ  csak a FELHASZNÁLÓ nevében futó folyamatok kilövése\n"
 "  -v,--verbose        értesítés, ha a szignál küldése sikeres\n"
 "  -V,--version        verzióinformációk megjelenítése\n"
 "  -w,--wait           várja meg, amíg a folyamatok meghalnak\n"
@@ -360,17 +341,17 @@ msgstr "killall: A nevek maximális száma %d\n"
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "killall: %s nem tartalmaz folyamatbejegyzéseket (nincs csatolva?)\n"
 
-#: src/peekfd.c:102
+#: src/peekfd.c:96
 #, c-format
 msgid "Error attaching to pid %i\n"
 msgstr "Hiba a csatlakozás közben a(z) %i folyamatazonosítóhoz\n"
 
-#: src/peekfd.c:110
+#: src/peekfd.c:104
 #, c-format
 msgid "peekfd (PSmisc) %s\n"
 msgstr "peekfd (PSmisc) %s\n"
 
-#: src/peekfd.c:112
+#: src/peekfd.c:106
 #, c-format
 msgid ""
 "Copyright (C) 2007 Trent Waddington\n"
@@ -379,7 +360,7 @@ msgstr ""
 "Copyright (C) 2007 Trent Waddington\n"
 "\n"
 
-#: src/peekfd.c:122
+#: src/peekfd.c:116
 #, c-format
 msgid ""
 "Usage: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
@@ -560,16 +541,15 @@ msgstr "Legalább egy PID-et meg kell adnia."
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "a /proc nincs csatolva, nem érhető el a /proc/self/stat.\n"
 
-#: src/pstree.c:961
+#: src/pstree.c:784
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "a(z) %s üres (nincs csatlakoztatva?)\n"
 
-#: src/pstree.c:993
-#, fuzzy, c-format
+#: src/pstree.c:820
+#, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -584,12 +564,8 @@ msgid ""
 "  -G, --vt100         use VT100 line drawing characters\n"
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
-"  -N type,\n"
-"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
-"uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
-"  -S, --ns-changes    show namespace transitions\n"
 "  -u, --uid-changes   show uid transitions\n"
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
@@ -610,18 +586,17 @@ msgstr ""
 "  -G, --vt100         VT100 sorrajzoló karakterek használata\n"
 "  -l, --long          ne csonkítsa a hoszú sorokat\n"
 "  -n, --numeric-sort  kimenet rendezése PID szerint\n"
-"  -p, --show-pids     a PID-ek megjelenítése; magába foglalja a -c "
-"kapcsolót\n"
+"  -p, --show-pids     a PID-ek megjelenítése; magába foglalja a -c kapcsolót\n"
 "  -u, --uid-changes   az uid átmenetek megjelenítése\n"
 "  -U, --unicode       UTF-8 (Unicode) sorrajzoló karakterek használata\n"
 "  -V, --version       verzióinformációk megjelenítése\n"
 
-#: src/pstree.c:1016
+#: src/pstree.c:840
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     show         a SELinux biztonsági kontextusok megjelenítése\n"
 
-#: src/pstree.c:1018
+#: src/pstree.c:842
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -633,12 +608,12 @@ msgstr ""
 "                        megjelenítése\n"
 "\n"
 
-#: src/pstree.c:1025
+#: src/pstree.c:849
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:1028
+#: src/pstree.c:852
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -647,32 +622,27 @@ msgstr ""
 "Copyright (C) 1993-2009 Werner Almesberger és Craig Small\n"
 "\n"
 
-#: src/pstree.c:1142
+#: src/pstree.c:965
 #, c-format
 msgid "TERM is not set\n"
 msgstr "A TERM nincs beállítva\n"
 
-#: src/pstree.c:1146
+#: src/pstree.c:969
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "A terminál képességei nem kérhetők le\n"
 
-#: src/pstree.c:1164
-#, c-format
-msgid "procfs file for %s namespace not available\n"
-msgstr ""
-
-#: src/pstree.c:1211
+#: src/pstree.c:1018
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Nincs ilyen felhasználónév: %s\n"
 
-#: src/pstree.c:1237
+#: src/pstree.c:1041
 #, c-format
 msgid "No processes found.\n"
 msgstr "Nem találhatók folyamatok.\n"
 
-#: src/pstree.c:1243
+#: src/pstree.c:1047
 #, c-format
 msgid "Press return to close\n"
 msgstr "A bezáráshoz nyomj entert\n"

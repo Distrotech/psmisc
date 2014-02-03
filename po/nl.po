@@ -1,18 +1,18 @@
 # Dutch translations for psmisc.
-# Copyright (C) 2013 Free Software Foundation, Inc.
+# Copyright (C) 2014 Free Software Foundation, Inc.
 # This file is distributed under the same license as the PSmisc package.
 #
 # « Que dites-vous là, monsieur? » dit elle en colère.
 # « Madame, dit il, il ne faut pas tromper l'enfance. »
 #
-# Benno Schulenberg <benno@vertaalt.nl>, 2004, 2005, 2006, 2007, 2010, 2012, 2013.
+# Benno Schulenberg <benno@vertaalt.nl>, 2004, 2005, 2006, 2007, 2010, 2012, 2013, 2014.
 # Erwin Poeze <erwin.poeze@gmail.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: psmisc-22.21\n"
+"Project-Id-Version: psmisc-22.21-pre2\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
 "POT-Creation-Date: 2014-02-02 17:04+1100\n"
-"PO-Revision-Date: 2013-10-09 17:57+0200\n"
+"PO-Revision-Date: 2014-02-02 11:44+0100\n"
 "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
@@ -25,8 +25,7 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -35,8 +34,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -54,18 +52,13 @@ msgstr ""
 "sockets of bestandssystemen\n"
 "\n"
 "  -a, --all               de ongebruikte bestanden ook noemen\n"
-"  -i, --interactive       bevestiging vragen voor afbreken (genegeerd zonder "
-"-k)\n"
-"  -k, --kill              processen afbreken die het gegeven bestand "
-"gebruiken\n"
+"  -i, --interactive       bevestiging vragen voor afbreken (genegeerd zonder -k)\n"
+"  -k, --kill              processen afbreken die het gegeven bestand gebruiken\n"
 "  -l, --list-signals      lijst van beschikbare signalen tonen\n"
-"  -m, --mount             alle processen tonen die het gegeven "
-"bestandssysteem\n"
+"  -m, --mount             alle processen tonen die het gegeven bestandssysteem\n"
 "                            of blokapparaat gebruiken\n"
-"  -M, --ismountpoint      alleen aan verzoek voldoen als NAAM aankoppelpunt "
-"is\n"
-"  -n, --namespace RUIMTE  in gegeven naamsruimte ('file', 'udp', 'tcp') "
-"zoeken\n"
+"  -M, --ismountpoint      alleen aan verzoek voldoen als NAAM aankoppelpunt is\n"
+"  -n, --namespace RUIMTE  in gegeven naamsruimte ('file', 'udp', 'tcp') zoeken\n"
 "  -s, --silent            geen uitvoer produceren\n"
 "  -SIGNAAL                dit signaal sturen in plaats van SIGKILL\n"
 "  -u, --user              de gebruiker-IDs tonen\n"
@@ -159,9 +152,9 @@ msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Kan protocolbestand '%s' niet openen: %s\n"
 
 #: src/fuser.c:896
-#, fuzzy, c-format
+#, c-format
 msgid "Specified filename %s is not a mountpoint.\n"
-msgstr "Opgegeven bestandsnaam %s bestaat niet.\n"
+msgstr "Opgegeven bestandsnaam %s is geen aankoppelpunt.\n"
 
 #: src/fuser.c:995
 #, c-format
@@ -186,11 +179,11 @@ msgstr "Geen naam van bestand of socket opgegeven"
 
 #: src/fuser.c:1186
 msgid "all option cannot be used with silent option."
-msgstr "Opties -a en -s gaan niet samen"
+msgstr "Opties '-a' en '-s' gaan niet samen"
 
 #: src/fuser.c:1191
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
-msgstr "Opties -4 en -6 gaan niet samen"
+msgstr "Opties '-4' en '-6' gaan niet samen"
 
 #: src/fuser.c:1269
 #, c-format
@@ -268,11 +261,8 @@ msgstr "%s: geen proces gevonden\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr ""
-"Gebruik:  killall [-Z CONTEXT] [-egIiqrvw] [-SIGNAAL] [-u GEBRUIKER] "
-"NAAM...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr "Gebruik:  killall [-Z CONTEXT] [-egIiqrvw] [-SIGNAAL] [-u GEBRUIKER] NAAM...\n"
 
 #: src/killall.c:618
 #, c-format
@@ -561,8 +551,7 @@ msgstr "Er moet minstens één PID gegeven worden."
 #: src/prtstat.c:317
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
-msgstr ""
-"/proc is niet aangekoppeld, kan status van /proc/self/stat niet bepalen.\n"
+msgstr "/proc is niet aangekoppeld, kan status van /proc/self/stat niet bepalen.\n"
 
 #: src/pstree.c:961
 #, c-format
@@ -572,8 +561,7 @@ msgstr "%s is leeg -- misschien niet aangekoppeld?\n"
 #: src/pstree.c:993
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -589,8 +577,7 @@ msgid ""
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
 "  -N type,\n"
-"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
-"uts)\n"
+"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
 "  -S, --ns-changes    show namespace transitions\n"
@@ -635,8 +622,7 @@ msgid ""
 "\n"
 msgstr ""
 "  PID     bij dit proces-ID beginnen; standaard is 1 (init)\n"
-"  NAAM    alleen de bomen tonen die beginnen bij processen van deze "
-"gebruiker\n"
+"  NAAM    alleen de bomen tonen die beginnen bij processen van deze gebruiker\n"
 "\n"
 
 #: src/pstree.c:1025
@@ -686,8 +672,7 @@ msgstr "Druk op Enter om af te sluiten\n"
 #: src/signals.c:84
 #, c-format
 msgid "%s: unknown signal; %s -l lists signals.\n"
-msgstr ""
-"Onbekend signaal: %s -- '%s -l' toont een lijst van mogelijke signalen.\n"
+msgstr "Onbekend signaal: %s -- '%s -l' toont een lijst van mogelijke signalen.\n"
 
 #~ msgid ""
 #~ "Usage: pidof [ -eg ] NAME...\n"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.21\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2014-02-02 17:04+1100\n"
+"POT-Creation-Date: 2013-10-09 17:30+1100\n"
 "PO-Revision-Date: 2013-10-10 20:43+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <gnu@mx.ru>\n"
@@ -18,14 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
-"NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -34,8 +32,7 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or "
-"block device\n"
+"  -m,--mount            show all processes using the named filesystems or block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -61,8 +58,7 @@ msgstr ""
 "  -M,--ismountpoint    выполнять запрос, только если ИМЯ является точкой\n"
 "                       монтирования\n"
 "    -n,--namespace ОБЛАСТЬ\n"
-"                     искать в указанном пространстве имён (file, udp или "
-"tcp)\n"
+"                     искать в указанном пространстве имён (file, udp или tcp)\n"
 "    -s,--silent        не выводить сообщения\n"
 "    -СИГНАЛ            посылать указанный сигнал вместо SIGKILL\n"
 "    -u,--user          показывать идентификатор пользователя (uid)\n"
@@ -106,8 +102,8 @@ msgstr ""
 "Copyright (C) 1993-2010 Werner Almesberger and Craig Small\n"
 "\n"
 
-#: src/fuser.c:165 src/killall.c:653 src/peekfd.c:114 src/prtstat.c:68
-#: src/pstree.c:1030
+#: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
+#: src/pstree.c:1018
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -125,7 +121,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr "Не удалось открыть каталог /proc: %s\n"
 
-#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1946
+#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1923
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "Не удалось выделить память для проверяемого proc: %s\n"
@@ -155,77 +151,70 @@ msgstr "Неизвестный локальный порт AF %d\n"
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "Не удалось открыть файл протокола \"%s\": %s\n"
 
-#: src/fuser.c:896
-#, fuzzy, c-format
-msgid "Specified filename %s is not a mountpoint.\n"
-msgstr "Указанное имя файла %s не существует.\n"
-
-#: src/fuser.c:995
+#: src/fuser.c:972
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr "%s: неправильный параметр %s\n"
 
-#: src/fuser.c:1046
+#: src/fuser.c:1023
 msgid "Namespace option requires an argument."
 msgstr "Для параметра области требуется значение."
 
-#: src/fuser.c:1064
+#: src/fuser.c:1041
 msgid "Invalid namespace name"
 msgstr "Неверное имя области"
 
-#: src/fuser.c:1125
+#: src/fuser.c:1102
 msgid "You can only use files with mountpoint options"
 msgstr "Вы можете использовать файлы только с параметрами mountpoint"
 
-#: src/fuser.c:1174
+#: src/fuser.c:1156
 msgid "No process specification given"
 msgstr "Не указан процесс"
 
-#: src/fuser.c:1186
+#: src/fuser.c:1163
 msgid "all option cannot be used with silent option."
-msgstr ""
-"Параметр показа всех файлов нельзя использовать вместе с параметром "
-"отключения сообщений."
+msgstr "Параметр показа всех файлов нельзя использовать вместе с параметром отключения сообщений."
 
-#: src/fuser.c:1191
+#: src/fuser.c:1168
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr "Нельзя выполнять поиск только по сокетам IPv4 и IPv6 одновременно"
 
-#: src/fuser.c:1269
+#: src/fuser.c:1246
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr "%*s ПОЛЬЗ-ЛЬ    PID ДОСТУП КОМАНДА\n"
 
-#: src/fuser.c:1302 src/fuser.c:1359
+#: src/fuser.c:1279 src/fuser.c:1336
 msgid "(unknown)"
 msgstr "(неизвестно)"
 
-#: src/fuser.c:1438 src/fuser.c:1477
+#: src/fuser.c:1415 src/fuser.c:1454
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr "Не удалось выполнить функцию stat для файла %s: %s\n"
 
-#: src/fuser.c:1563
+#: src/fuser.c:1540
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr "Не удалось открыть /proc/net/unix: %s\n"
 
-#: src/fuser.c:1639
+#: src/fuser.c:1616
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "Завершить процесс %d? (y/N) "
 
-#: src/fuser.c:1675
+#: src/fuser.c:1652
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr "Не удалось завершить процесс %d: %s\n"
 
-#: src/fuser.c:1690
+#: src/fuser.c:1667
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr "Не удалось открыть сетевой сокет.\n"
 
-#: src/fuser.c:1694
+#: src/fuser.c:1671
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr "Не удалось найти номер устройства сокета.\n"
@@ -267,8 +256,7 @@ msgstr "%s: процесс не найден\n"
 
 #: src/killall.c:615
 #, c-format
-msgid ""
-"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
 msgstr ""
 "Использование: killall [-Z КОНТЕКСТ] [-u ПОЛЬЗОВАТЕЛЬ]\n"
 "                       [ -eIgiqrvw ] [ -СИГНАЛ ] ИМЯ…\n"
@@ -307,15 +295,12 @@ msgstr ""
 "  -g,--process-group   завершать группу процесса вместо одного процесса\n"
 "  -y,--younger-than    завершить процессы, новее чем заданного ВРЕМЕНИ\n"
 "  -o,--older-than      завершить процессы, старее чем заданного ВРЕМЕНИ\n"
-"  -i,--interactive     запрашивать подтверждение перед завершением "
-"процессов\n"
+"  -i,--interactive     запрашивать подтверждение перед завершением процессов\n"
 "  -l,--list            вывести список допустимых имён сигналов\n"
 "  -q,--quiet           не показывать подробные сообщения\n"
-"  -r,--regexp          рассматривать ИМЯ как расширенное регулярное "
-"выражение\n"
+"  -r,--regexp          рассматривать ИМЯ как расширенное регулярное выражение\n"
 "  -s,--signal СИГНАЛ   посылать указанный СИГНАЛ, а не SIGTERM\n"
-"  -u,--user ПОЛЬЗВ      завершить процесс(ы), запущенный только "
-"ПОЛЬЗОВАТЕЛЕМ\n"
+"  -u,--user ПОЛЬЗВ      завершить процесс(ы), запущенный только ПОЛЬЗОВАТЕЛЕМ\n"
 "  -v,--verbose         уведомлять только при успешной отправке сигнала\n"
 "  -V,--version         показать информацию о версии\n"
 "  -w,--wait            ожидать завершения процессов\n"
@@ -363,17 +348,17 @@ msgstr "killall: количество имён не может превышат�
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "killall: в %s нет записей о процессах (не смонтирован?)\n"
 
-#: src/peekfd.c:102
+#: src/peekfd.c:96
 #, c-format
 msgid "Error attaching to pid %i\n"
 msgstr "Ошибка присоединения к процессу с pid %i\n"
 
-#: src/peekfd.c:110
+#: src/peekfd.c:104
 #, c-format
 msgid "peekfd (PSmisc) %s\n"
 msgstr "peekfd (PSmisc) %s\n"
 
-#: src/peekfd.c:112
+#: src/peekfd.c:106
 #, c-format
 msgid ""
 "Copyright (C) 2007 Trent Waddington\n"
@@ -382,7 +367,7 @@ msgstr ""
 "Copyright (C) 2007 Trent Waddington\n"
 "\n"
 
-#: src/peekfd.c:122
+#: src/peekfd.c:116
 #, c-format
 msgid ""
 "Usage: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
@@ -505,8 +490,7 @@ msgid ""
 "  Child processes (user system guest):       %6.2f %6.2f %6.2f\n"
 msgstr ""
 "Процессорное время\n"
-"  Этот процесс      (польз. систем. гостевое blkio): %6.2f %6.2f %6.2f "
-"%6.2f\n"
+"  Этот процесс      (польз. систем. гостевое blkio): %6.2f %6.2f %6.2f %6.2f\n"
 "  Дочерние процессы (польз. систем. гостевое):       %6.2f %6.2f %6.2f\n"
 
 #: src/prtstat.c:189
@@ -564,16 +548,15 @@ msgstr "Вы должны указать не менее одного PID."
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "/proc не смонтирован, возможно выполнить stat /proc/self/stat.\n"
 
-#: src/pstree.c:961
+#: src/pstree.c:949
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s пуст (не смонтирован?)\n"
 
-#: src/pstree.c:993
+#: src/pstree.c:981
 #, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
-"u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -589,8 +572,7 @@ msgid ""
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
 "  -N type,\n"
-"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
-"uts)\n"
+"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
 "  -S, --ns-changes    show namespace transitions\n"
@@ -611,28 +593,25 @@ msgstr ""
 "  --highlight-pid=PID выделить цветом процесс PID и его предков\n"
 "  -g, --show-pgids    показывать идентификаторы групп процесса;\n"
 "                      включает -c\n"
-"  -G, --vt100         использовать символы терминала VT100 для рисования "
-"линий\n"
+"  -G, --vt100         использовать символы терминала VT100 для рисования линий\n"
 "  -l, --long          не обрезать длинные строки\n"
 "  -n, --numeric-sort  сортировать вывод по PID\n"
 "  -N тип,\n"
 "  --ns-sort=тип       сортировать по типу пространства имён\n"
 "                      (ipc, mnt, net, pid, user, uts)\n"
-"  -p, --show-pids     показывать идентификаторы процессов (PID); включает -"
-"c\n"
+"  -p, --show-pids     показывать идентификаторы процессов (PID); включает -c\n"
 "  -s, --show-parents  показывать родителей выбранного процесса\n"
 "  -S, --ns-changes    показывать переходы пространств имён\n"
 "  -u, --uid-changes   показывать переходы идентификаторов пользователей\n"
-"  -U, --unicode       использовать символы UTF-8 (юникод) для рисования "
-"линий\n"
+"  -U, --unicode       использовать символы UTF-8 (юникод) для рисования линий\n"
 "  -V, --version       показать информацию о версии\n"
 
-#: src/pstree.c:1016
+#: src/pstree.c:1004
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     show         показывать контексты безопасности SELinux\n"
 
-#: src/pstree.c:1018
+#: src/pstree.c:1006
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -640,16 +619,15 @@ msgid ""
 "\n"
 msgstr ""
 "  PID                 начинать от указанного PID; по умолчанию 1 (init)\n"
-"  ПОЛЬЗОВАТЕЛЬ        показать только дерево процессов указанного "
-"пользователя\n"
+"  ПОЛЬЗОВАТЕЛЬ        показать только дерево процессов указанного пользователя\n"
 "\n"
 
-#: src/pstree.c:1025
+#: src/pstree.c:1013
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:1028
+#: src/pstree.c:1016
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -658,32 +636,32 @@ msgstr ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
 "\n"
 
-#: src/pstree.c:1142
+#: src/pstree.c:1130
 #, c-format
 msgid "TERM is not set\n"
 msgstr "Переменная окружения TERM не установлена\n"
 
-#: src/pstree.c:1146
+#: src/pstree.c:1134
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "Не удалось определить характеристики терминала\n"
 
-#: src/pstree.c:1164
+#: src/pstree.c:1152
 #, c-format
 msgid "procfs file for %s namespace not available\n"
 msgstr "недоступен файл procfs для пространства имён %s\n"
 
-#: src/pstree.c:1211
+#: src/pstree.c:1199
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "Неизвестное имя пользователя: %s\n"
 
-#: src/pstree.c:1237
+#: src/pstree.c:1225
 #, c-format
 msgid "No processes found.\n"
 msgstr "Не найдено ни одного процесса.\n"
 
-#: src/pstree.c:1243
+#: src/pstree.c:1231
 #, c-format
 msgid "Press return to close\n"
 msgstr "Нажмите Enter для выхода\n"
@@ -708,8 +686,7 @@ msgstr "%s: неизвестный сигнал; %s -l выводит списо
 #~ "\n"
 #~ "   -e          требовать полного совпадения для очень длинных имён;\n"
 #~ "               игнорировать, если командная строка недоступна\n"
-#~ "   -g          показывать идентификатор группы вместо идентификатора "
-#~ "процесса\n"
+#~ "   -g          показывать идентификатор группы вместо идентификатора процесса\n"
 #~ "   -V          показать информацию о версии\n"
 #~ "\n"
 
