@@ -941,12 +941,22 @@ static void read_proc(void)
               else {
                 sprintf(path, "%s/%d/cmdline", PROC_BASE, pid);
                 if ((fd = open(path, O_RDONLY)) < 0) {
-                  perror(path);
-                  exit(1);
-                }
+		  /* If this fails then the process is gone.  If a PID
+		   * was specified on the command-line then we might
+		   * not even be interested in the current process.
+		   * There's no sensible way of dealing with this race
+		   * so we might as well behave as if the current
+		   * process did not exist.  */
+		  (void) fclose(file);
+		  free(path);
+		  continue;
+		}
                 if ((size = read(fd, buffer, buffer_size)) < 0) {
-                  perror(path);
-                  exit(1);
+			/* As above. */
+		  close(fd);
+		  (void) fclose(file);
+		  free(path);
+		  continue;
                 }
                 (void) close(fd);
                 /* If we have read the maximum screen length of args, bring it back by one to stop overflow */
