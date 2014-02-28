@@ -78,6 +78,8 @@ extern const char *__progname;
 
 #define NUM_NS 6
 
+#define THREAD_FORMAT        "{%.*s}"        /* Format for thread names */
+
 typedef struct _proc {
     char comm[COMM_LEN + 2 + 1]; /* add another 2 for thread brackets */
     char **argv;                /* only used : argv[0] is 1st arg; undef if argc < 1 */
@@ -133,7 +135,8 @@ static int *width = NULL;
 static int *more = NULL;
 
 static int print_args = 0, compact = 1, user_change = 0, pids = 0, pgids = 0,
-    show_parents = 0, by_pid = 0, trunc = 1, wait_end = 0, ns_change = 0;
+    show_parents = 0, by_pid = 0, trunc = 1, wait_end = 0, ns_change = 0,
+    thread_names = 0;
 static int show_scontext = 0;
 static int output_width = 132;
 static int cur_x = 1;
@@ -803,6 +806,10 @@ static char* get_threadname(const pid_t pid, const int tid, const char *comm)
     if (! (threadname = malloc(COMM_LEN + 2 + 1))) {
 	exit(2);
     }
+    if (!thread_names) {
+        sprintf(threadname, THREAD_FORMAT, COMM_LEN, comm);
+        return threadname;
+    }
     if (snprintf(path, PATH_MAX, "%s/%d/task/%d/stat", PROC_BASE, pid, tid) < 0)
 	perror("get_threadname: asprintf");
     if ( (file = fopen(path, "r")) != NULL) {
@@ -811,15 +818,16 @@ static char* get_threadname(const pid_t pid, const int tid, const char *comm)
 		    && (endcomm = strrchr(thread_comm, ')'))) {
 		++thread_comm;
 		*endcomm = '\0';
-		sprintf(threadname, "{%.*s}", COMM_LEN, thread_comm);
+		sprintf(threadname, THREAD_FORMAT, COMM_LEN, thread_comm);
 		(void) fclose(file);
 		return threadname;
 	    }
 	}
+        fclose(file);
     }
+
     /* Fall back to old method */
-    sprintf(threadname, "{%.*s}", COMM_LEN, comm);
-    fclose(file);
+    sprintf(threadname, THREAD_FORMAT, COMM_LEN, comm);
     return threadname;
 }
 
@@ -1008,6 +1016,7 @@ static void usage(void)
              "  -p, --show-pids     show PIDs; implies -c\n"
              "  -s, --show-parents  show parents of the selected process\n"
              "  -S, --ns-changes    show namespace transitions\n"
+             "  -t, --thread-names  show full thread names\n"
              "  -u, --uid-changes   show uid transitions\n"
              "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
              "  -V, --version       display version information\n"));
@@ -1059,6 +1068,7 @@ int main(int argc, char **argv)
         {"show-pgids", 0, NULL, 'g'},
         {"show-parents", 0, NULL, 's'},
         {"ns-changes", 0, NULL, 'S' },
+        {"thread-names", 0, NULL, 't'},
         {"uid-changes", 0, NULL, 'u'},
         {"unicode", 0, NULL, 'U'},
         {"version", 0, NULL, 'V'},
@@ -1109,11 +1119,11 @@ int main(int argc, char **argv)
 
 #ifdef WITH_SELINUX
     while ((c =
-            getopt_long(argc, argv, "aAcGhH:nN:pglsSuUVZ", options,
+            getopt_long(argc, argv, "aAcGhH:nN:pglsStuUVZ", options,
                         NULL)) != -1)
 #else                                /*WITH_SELINUX */
     while ((c =
-            getopt_long(argc, argv, "aAcGhH:nN:pglsSuUV", options, NULL)) != -1)
+            getopt_long(argc, argv, "aAcGhH:nN:pglsStuUV", options, NULL)) != -1)
 #endif                                /*WITH_SELINUX */
         switch (c) {
         case 'a':
@@ -1179,6 +1189,9 @@ int main(int argc, char **argv)
             break;
         case 'S':
             ns_change = 1;
+            break;
+        case 't':
+            thread_names = 1;
             break;
         case 'u':
             user_change = 1;

@@ -1,6 +1,8 @@
 Changes in 22.22
 ================
 	* Fixed typo in fuser which has -M on Debian #740275
+	* pstree by default doesn't show threadnames, use -t to show
+	  as it disables compaction. SF Patch#33
 
 Changes in 22.21
 ================

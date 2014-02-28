@@ -6,7 +6,7 @@
 .\" the Free Software Foundation; either version 2 of the License, or
 .\" (at your option) any later version.
 .\"
-.TH PSTREE 1 "2014-01-31" "psmisc" "User Commands"
+.TH PSTREE 1 "2014-03-01" "psmisc" "User Commands"
 .SH NAME
 pstree \- display a tree of processes
 .SH SYNOPSIS
@@ -22,6 +22,7 @@ pstree \- display a tree of processes
 .RB [ \-p  , \ \-\-show\-pids ]
 .RB [ \-s  , \ \-\-show\-parents ]
 .RB [ \-S  , \ \-\-ns-changes ]
+.RB [ \-t  , \ \-\-thread-names ]
 .RB [ \-u  , \ \-\-uid\-changes ]
 .RB [ \-Z  , \ \-\-security\-context ]
 .RB [ \-A  , \ \-\-ascii  , \ \-G  , \ \-\-vt100  , \ \-U  , \ \-\-unicode ]
@@ -138,6 +139,8 @@ Show parent processes of the specified process.
 .IP \fB\-S\fP
 Show namespaces transitions.  Like \-N, the output is limited when running
 as a regular user.
+.IP \fB\-t\fP
+Show full names for threads when available.
 .IP \fB\-u\fP
 Show uid transitions.  Whenever the uid of a process differs from the
 uid of its parent, the new uid is shown in parentheses after the
