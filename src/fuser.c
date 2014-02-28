@@ -1174,7 +1174,7 @@ int main(int argc, char *argv[])
 		usage(_("No process specification given"));
 
 	/* Check if -M flag was used and if so check mounts */
-	if (opts * OPT_ISMOUNTPOINT) {
+	if (opts & OPT_ISMOUNTPOINT) {
 	    check_mountpoints(&mounts, &names_head, &names_tail);
 	}
 
