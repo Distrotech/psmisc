@@ -528,7 +528,7 @@ parse_mounts(struct names *this_name, struct device_list **dev_list,
 
 #ifdef WITH_IPV6
 int
-parse_inet(struct names *this_name, const int ipv6_only, const int ipv4_only,
+parse_inet(struct names *this_name, const int ipv4_only, const int ipv6_only,
 	   struct ip_connections **ip_list, struct ip6_connections **ip6_list)
 #else
 int parse_inet(struct names *this_name, struct ip_connections **ip_list)
