@@ -866,6 +866,20 @@ static void read_proc_mounts(struct mount_list **mnt_list)
 	fclose(fp);
 }
 
+static void
+free_proc_mounts(struct mount_list *mnt_list)
+{
+    struct mount_list *mnt_tmp, *mnt_next;
+
+    mnt_tmp = mnt_list;
+    while(mnt_tmp != NULL) {
+	mnt_next = mnt_tmp->next;
+	free(mnt_tmp->mountpoint);
+	free(mnt_tmp);
+	mnt_tmp = mnt_next;
+    }
+}
+
 static int is_mountpoint(struct mount_list **mnt_list, char *arg)
 {
 	char *p;
@@ -1216,6 +1230,7 @@ int main(int argc, char *argv[])
 	scan_knfsd(names_head, match_inodes, match_devices);
 	scan_mounts(names_head, match_inodes, match_devices);
 	scan_swaps(names_head, match_inodes, match_devices);
+	free_proc_mounts(mounts);
 	return print_matches(names_head, opts, sig_number);
 }
 

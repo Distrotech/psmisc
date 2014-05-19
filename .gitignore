@@ -11,6 +11,7 @@ config.h.in
 config.log
 config.status
 configure
+cov-int/
 doc/Makefile
 doc/Makefile.in
 icons/Makefile

@@ -1,7 +1,7 @@
 /*
  * prtstat.c - Print a processes stat file
  *
- * Copyright (C) 2009 Craig Small
+ * Copyright (C) 2009-2014 Craig Small
  * Based upon a shell script pstat by martin f. krafft <madduck@madduck.net>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -215,7 +215,6 @@ static void print_stat(const int pid, const opt_type options)
   FILE *fp;
 
   struct proc_info *pr;
-  pr = malloc(sizeof(struct proc_info));
 
   if ( (asprintf(&pathname, "/proc/%d/stat",(int)pid)) < 0) {
 	perror(_("asprintf in print_stat failed.\n"));
@@ -227,14 +226,20 @@ static void print_stat(const int pid, const opt_type options)
 	else
 	  fprintf(stderr, _("Unable to open stat file for pid %d (%s)\n"),(int)pid,strerror(errno));
 	free(pathname);
+	free(pr);
 	return;
   }
   free(pathname);
 
-  if (fgets(buf,BUFSIZ,fp) == NULL) return;
+  if (fgets(buf,BUFSIZ,fp) == NULL) {
+      fclose(fp);
+      return;
+  }
+  fclose(fp);
   bptr = strchr(buf, '(');
   if (bptr == NULL) return;
   bptr++;
+  pr = malloc(sizeof(struct proc_info));
   sscanf(bptr,
 	  "%a[^)]) "
 	  "%c "
@@ -266,13 +271,11 @@ static void print_stat(const int pid, const opt_type options)
 	   &pr->policy, &pr->blkio, 
 	   &pr->guest_time, &pr->cguest_time
 		 );
-  if (options & OPT_RAW) {
-	print_raw_stat(pid, pr);
-	return;
-  }
-  print_formated_stat(pid, pr);
-
-
+  if (options & OPT_RAW)
+      print_raw_stat(pid, pr);
+  else
+      print_formated_stat(pid, pr);
+  free(pr);
 }
 
 int main(int argc, char *argv[])

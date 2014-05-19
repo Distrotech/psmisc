@@ -259,7 +259,7 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
   char *command_buf;
   char *command;
   pid_t *pid_table, pid, self, *pid_killed;
-  pid_t *pgids;
+  pid_t *pgids = NULL;
   int i, j, okay, length, got_long, error;
   int pids, max_pids, pids_killed;
   unsigned long found;
@@ -330,16 +330,14 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
       exit (1);
     }
   if (!process_group)
-    pgids = NULL;		/* silence gcc */
-  else
-    {
+  {
       pgids = calloc (pids, sizeof (pid_t));
       if (!pgids)
 	{
 	  perror ("malloc");
 	  exit (1);
 	}
-    }
+  }
   for (i = 0; i < pids; i++)
     {
       pid_t id;
@@ -400,13 +398,13 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	    continue;
 	  }
 	  free (path);
+	  int cmd_size = 128;
+	  command_buf = (char *)malloc (cmd_size);
+	  if (!command_buf)
+	    exit (1);
           while (1) {
             /* look for actual command so we skip over initial "sh" if any */
             char *p;
-	    int cmd_size = 128;
-	    command_buf = (char *)malloc (cmd_size);
-	    if (!command_buf)
-	      exit (1);
 
             /* 'cmdline' has arguments separated by nulls */
             for (p=command_buf; ; p++) {
@@ -440,6 +438,7 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
               break;
             }
           }
+	  free(command_buf);
           (void) fclose(file);
 	  if (exact && !okay)
 	    {
@@ -530,6 +529,8 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	  found_name = j;
 	  break;
 	}  
+        free(reglist);
+        free(name_len);
         
         if (names && found_name==-1)
 	  continue;  /* match by process name faild */
@@ -570,6 +571,7 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	  fprintf (stderr, "%s(%d): %s\n", got_long ? command :
 	    	comm, id, strerror (errno));
     }
+  free(pgids);
   if (!quiet)
     for (i = 0; i < names; i++)
       if (!(found & (1 << i)))
@@ -601,6 +603,8 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	}
       sleep (1);		/* wait a bit longer */
     }
+  free(pid_killed);
+  free(pid_table);
   return error;
 }
 

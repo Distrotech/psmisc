@@ -813,7 +813,7 @@ static char* get_threadname(const pid_t pid, const int tid, const char *comm)
     if (snprintf(path, PATH_MAX, "%s/%d/task/%d/stat", PROC_BASE, pid, tid) < 0)
 	perror("get_threadname: asprintf");
     if ( (file = fopen(path, "r")) != NULL) {
-	if (fread(readbuf, 1, BUFSIZ, file) > 0) {
+	if (fgets(readbuf, BUFSIZ, file) != NULL) {
 	    if ((thread_comm = strchr(readbuf, '('))
 		    && (endcomm = strrchr(thread_comm, ')'))) {
 		++thread_comm;
