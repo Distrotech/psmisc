@@ -438,7 +438,6 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
               break;
             }
           }
-	  free(command_buf);
           (void) fclose(file);
 	  if (exact && !okay)
 	    {
@@ -529,7 +528,6 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	  found_name = j;
 	  break;
 	}  
-        free(reglist);
         free(name_len);
         
         if (names && found_name==-1)
@@ -571,6 +569,7 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	  fprintf (stderr, "%s(%d): %s\n", got_long ? command :
 	    	comm, id, strerror (errno));
     }
+  free(reglist);
   free(pgids);
   if (!quiet)
     for (i = 0; i < names; i++)

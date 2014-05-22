@@ -214,7 +214,7 @@ static void print_stat(const int pid, const opt_type options)
   char *bptr;
   FILE *fp;
 
-  struct proc_info *pr;
+  struct proc_info *pr = NULL;
 
   if ( (asprintf(&pathname, "/proc/%d/stat",(int)pid)) < 0) {
 	perror(_("asprintf in print_stat failed.\n"));
