@@ -45,6 +45,10 @@
 #include "i18n.h"
 #include "comm.h"
 
+#ifndef PATH_MAX
+#define PATH_MAX 4096
+#endif /* PATH_MAX */
+
 #ifdef WITH_SELINUX
 #include <selinux/selinux.h>
 #else
