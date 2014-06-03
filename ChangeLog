@@ -4,6 +4,7 @@ Changes in 22.22
 	* pstree by default doesn't show threadnames, use -t to show
 	  as it disables compaction. SF Patch#33
 	* PATH_MAX defined in pstree for FreeBSD Debian #750405
+	* pstree ignores disappeared processes SF Patch#34
 
 Changes in 22.21
 ================
