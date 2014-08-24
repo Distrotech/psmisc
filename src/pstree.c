@@ -41,6 +41,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/ioctl.h>
+#include <limits.h>
 
 #include "i18n.h"
 #include "comm.h"
