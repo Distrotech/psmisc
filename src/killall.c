@@ -131,8 +131,7 @@ uptime()
       fprintf(stderr, "killall: error opening uptime file\n");	
       exit(1);
    }
-   savelocale = setlocale(LC_NUMERIC, NULL);
-   setlocale(LC_NUMERIC,"C");
+   savelocale = setlocale(LC_NUMERIC,"C");
    if (fscanf(file, "%2047s", buf) == EOF) perror("uptime");
    fclose(file);
    setlocale(LC_NUMERIC,savelocale);
@@ -528,7 +527,6 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
 	  found_name = j;
 	  break;
 	}  
-        free(name_len);
         
         if (names && found_name==-1)
 	  continue;  /* match by process name faild */
@@ -571,6 +569,7 @@ kill_all (int signal, int names, char **namelist, struct passwd *pwent)
     }
   free(reglist);
   free(pgids);
+  free(name_len);
   if (!quiet)
     for (i = 0; i < names; i++)
       if (!(found & (1 << i)))
