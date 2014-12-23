@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: psmisc 22.20rc1\n"
 "Report-Msgid-Bugs-To: csmall@small.dropbear.id.au\n"
-"POT-Creation-Date: 2012-08-31 14:46+1000\n"
+"POT-Creation-Date: 2014-05-19 22:31+1000\n"
 "PO-Revision-Date: 2013-05-31 23:39+0800\n"
 "Last-Translator: Wei-Lun Chao <bluebat@member.fsf.org>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -20,7 +20,8 @@ msgstr ""
 #: src/fuser.c:133
 #, c-format
 msgid ""
-"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] NAME...\n"
+"Usage: fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n SPACE] [-k [-i] [-SIGNAL]] "
+"NAME...\n"
 "       fuser -l\n"
 "       fuser -V\n"
 "Show which processes use the named files, sockets, or filesystems.\n"
@@ -29,7 +30,8 @@ msgid ""
 "  -i,--interactive      ask before killing (ignored without -k)\n"
 "  -k,--kill             kill processes accessing the named file\n"
 "  -l,--list-signals     list available signal names\n"
-"  -m,--mount            show all processes using the named filesystems or block device\n"
+"  -m,--mount            show all processes using the named filesystems or "
+"block device\n"
 "  -M,--ismountpoint     fulfill request only if NAME is a mount point\n"
 "  -n,--namespace SPACE  search in this name space (file, udp, or tcp)\n"
 "  -s,--silent           silent operation\n"
@@ -39,7 +41,8 @@ msgid ""
 "  -w,--writeonly        kill only processes with write access\n"
 "  -V,--version          display version information\n"
 msgstr ""
-"用法：fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n 空格] [-k [-i] [-信號]] 名稱…\n"
+"用法：fuser [-fMuvw] [-a|-s] [-4|-6] [-c|-m|-n 空格] [-k [-i] [-信號]] 名"
+"稱…\n"
 "     fuser -l\n"
 "     fuser -V\n"
 "顯示何項行程使用指名的檔案、通訊端或檔案系統。\n"
@@ -94,8 +97,8 @@ msgstr ""
 "著作權©1993-2010 Werner Almesberger 和 Craig Small\n"
 "\n"
 
-#: src/fuser.c:165 src/killall.c:653 src/peekfd.c:108 src/prtstat.c:68
-#: src/pstree.c:854
+#: src/fuser.c:165 src/killall.c:657 src/peekfd.c:114 src/prtstat.c:68
+#: src/pstree.c:1039
 #, c-format
 msgid ""
 "PSmisc comes with ABSOLUTELY NO WARRANTY.\n"
@@ -113,7 +116,7 @@ msgstr ""
 msgid "Cannot open /proc directory: %s\n"
 msgstr "無法開啟 /proc 目錄：%s\n"
 
-#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1923
+#: src/fuser.c:397 src/fuser.c:450 src/fuser.c:1961
 #, c-format
 msgid "Cannot allocate memory for matched proc: %s\n"
 msgstr "無法為符合的行程配置記憶體：%s\n"
@@ -143,70 +146,75 @@ msgstr "不明的本機通訊埠 AF %d\n"
 msgid "Cannot open protocol file \"%s\": %s\n"
 msgstr "無法開啟協定檔案「%s」：%s\n"
 
-#: src/fuser.c:972
+#: src/fuser.c:910
+#, fuzzy, c-format
+msgid "Specified filename %s is not a mountpoint.\n"
+msgstr "指定的檔名 %s 不存在。\n"
+
+#: src/fuser.c:1009
 #, c-format
 msgid "%s: Invalid option %s\n"
 msgstr "%s：無效的選項 %s\n"
 
-#: src/fuser.c:1023
+#: src/fuser.c:1060
 msgid "Namespace option requires an argument."
 msgstr "名稱空間選項需要一個引數。"
 
-#: src/fuser.c:1041
+#: src/fuser.c:1078
 msgid "Invalid namespace name"
 msgstr "無效的名稱空間名稱"
 
-#: src/fuser.c:1102
+#: src/fuser.c:1139
 msgid "You can only use files with mountpoint options"
 msgstr "您只能使用具備掛載點選項的檔案"
 
-#: src/fuser.c:1156
+#: src/fuser.c:1188
 msgid "No process specification given"
 msgstr "沒有給定任何行程規格"
 
-#: src/fuser.c:1163
+#: src/fuser.c:1200
 msgid "all option cannot be used with silent option."
 msgstr "所有選項無法與安靜選項一起使用。"
 
-#: src/fuser.c:1168
+#: src/fuser.c:1205
 msgid "You cannot search for only IPv4 and only IPv6 sockets at the same time"
 msgstr "您無法同時只搜尋 IPv4 又只搜尋 IPv6 通訊端"
 
-#: src/fuser.c:1246
+#: src/fuser.c:1284
 #, c-format
 msgid "%*s USER        PID ACCESS COMMAND\n"
 msgstr "%*s 使用者      PID 存取命令\n"
 
-#: src/fuser.c:1279 src/fuser.c:1336
+#: src/fuser.c:1317 src/fuser.c:1374
 msgid "(unknown)"
 msgstr "(不明)"
 
-#: src/fuser.c:1415 src/fuser.c:1454
+#: src/fuser.c:1453 src/fuser.c:1492
 #, c-format
 msgid "Cannot stat file %s: %s\n"
 msgstr "無法顯示檔案 %s：%s\n"
 
-#: src/fuser.c:1540
+#: src/fuser.c:1578
 #, c-format
 msgid "Cannot open /proc/net/unix: %s\n"
 msgstr "無法開啟 /proc/net/unix：%s\n"
 
-#: src/fuser.c:1616
+#: src/fuser.c:1654
 #, c-format
 msgid "Kill process %d ? (y/N) "
 msgstr "砍除行程 %d？(y/N) "
 
-#: src/fuser.c:1652
+#: src/fuser.c:1690
 #, c-format
 msgid "Could not kill process %d: %s\n"
 msgstr "無法砍除行程 %d：%s\n"
 
-#: src/fuser.c:1667
+#: src/fuser.c:1705
 #, c-format
 msgid "Cannot open a network socket.\n"
 msgstr "無法開啟網路通訊端。\n"
 
-#: src/fuser.c:1671
+#: src/fuser.c:1709
 #, c-format
 msgid "Cannot find socket's device number.\n"
 msgstr "找不到通訊端裝置編號。\n"
@@ -231,32 +239,34 @@ msgstr "killall：無法從程序狀態提取 UID\n"
 msgid "killall: Bad regular expression: %s\n"
 msgstr "killall：不當的正規表示式：%s\n"
 
-#: src/killall.c:447
+#: src/killall.c:446
 #, c-format
 msgid "killall: skipping partial match %s(%d)\n"
 msgstr "killall：跳過部分匹配 %s(%d)\n"
 
-#: src/killall.c:562
+#: src/killall.c:563
 #, c-format
 msgid "Killed %s(%s%d) with signal %d\n"
 msgstr "藉由信號 %4$d 砍除 %1$s(%2$s%3$d)\n"
 
-#: src/killall.c:576
+#: src/killall.c:578
 #, c-format
 msgid "%s: no process found\n"
 msgstr "%s：找不到任何行程\n"
 
-#: src/killall.c:615
+#: src/killall.c:619
 #, c-format
-msgid "Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
-msgstr "用法：killall [-Z 上下文] [-u 使用者] [ -eIgiqrvw ] [ -SIGNAL ] 名稱…\n"
+msgid ""
+"Usage: killall [-Z CONTEXT] [-u USER] [ -eIgiqrvw ] [ -SIGNAL ] NAME...\n"
+msgstr ""
+"用法：killall [-Z 上下文] [-u 使用者] [ -eIgiqrvw ] [ -SIGNAL ] 名稱…\n"
 
-#: src/killall.c:618
+#: src/killall.c:622
 #, c-format
 msgid "Usage: killall [OPTION]... [--] NAME...\n"
 msgstr "用法：killall [選項]… [--] 名稱…\n"
 
-#: src/killall.c:621
+#: src/killall.c:625
 #, c-format
 msgid ""
 "       killall -l, --list\n"
@@ -295,7 +305,7 @@ msgstr ""
 "  -V,--version        顯示版本資訊\n"
 "  -w,--wait           等待行程的消滅\n"
 
-#: src/killall.c:639
+#: src/killall.c:643
 #, c-format
 msgid ""
 "  -Z,--context REGEXP kill only process(es) having context\n"
@@ -304,7 +314,7 @@ msgstr ""
 "  -Z,--context REGEXP 只砍除有此上下文的行程\n"
 "                     (必須位於其他引數之前)\n"
 
-#: src/killall.c:651
+#: src/killall.c:655
 #, c-format
 msgid ""
 "Copyright (C) 1993-2012 Werner Almesberger and Craig Small\n"
@@ -313,41 +323,41 @@ msgstr ""
 "著作權©1993-2012 Werner Almesberger 和 Craig Small\n"
 "\n"
 
-#: src/killall.c:741 src/killall.c:747
+#: src/killall.c:745 src/killall.c:751
 msgid "Invalid time format"
 msgstr "無效的時間格式"
 
-#: src/killall.c:767
+#: src/killall.c:771
 #, c-format
 msgid "Cannot find user %s\n"
 msgstr "找不到使用者 %s\n"
 
-#: src/killall.c:798
+#: src/killall.c:802
 #, c-format
 msgid "Bad regular expression: %s\n"
 msgstr "不當的正規表示式：%s\n"
 
-#: src/killall.c:830
+#: src/killall.c:834
 #, c-format
 msgid "killall: Maximum number of names is %d\n"
 msgstr "killall：名稱數量最大值是 %d\n"
 
-#: src/killall.c:835
+#: src/killall.c:839
 #, c-format
 msgid "killall: %s lacks process entries (not mounted ?)\n"
 msgstr "killall：%s 缺乏行程條目 (未掛載？)\n"
 
-#: src/peekfd.c:96
+#: src/peekfd.c:102
 #, c-format
 msgid "Error attaching to pid %i\n"
 msgstr "附加到 pid %i 時發生錯誤\n"
 
-#: src/peekfd.c:104
+#: src/peekfd.c:110
 #, c-format
 msgid "peekfd (PSmisc) %s\n"
 msgstr "peekfd (PSmisc) %s\n"
 
-#: src/peekfd.c:106
+#: src/peekfd.c:112
 #, c-format
 msgid ""
 "Copyright (C) 2007 Trent Waddington\n"
@@ -356,7 +366,7 @@ msgstr ""
 "著作權 © 2007 Trent Waddington\n"
 "\n"
 
-#: src/peekfd.c:116
+#: src/peekfd.c:122
 #, c-format
 msgid ""
 "Usage: peekfd [-8] [-n] [-c] [-d] [-V] [-h] <pid> [<fd> ..]\n"
@@ -510,42 +520,43 @@ msgstr ""
 "  策略：%s\n"
 "  善意：%ld \t\t RT 優先權：%ld %s\n"
 
-#: src/prtstat.c:221
+#: src/prtstat.c:220
 msgid "asprintf in print_stat failed.\n"
 msgstr "print_stat 中的 asprintf 失敗。\n"
 
-#: src/prtstat.c:226
+#: src/prtstat.c:225
 #, c-format
 msgid "Process with pid %d does not exist.\n"
 msgstr "具有 pid %d 的行程不存在。\n"
 
-#: src/prtstat.c:228
+#: src/prtstat.c:227
 #, c-format
 msgid "Unable to open stat file for pid %d (%s)\n"
 msgstr "無法開啟 pid %d (%s) 的 stat 檔案\n"
 
-#: src/prtstat.c:308
+#: src/prtstat.c:311
 msgid "Invalid option"
 msgstr "無效的選項"
 
-#: src/prtstat.c:313
+#: src/prtstat.c:316
 msgid "You must provide at least one PID."
 msgstr "您必須提供至少一個 PID。"
 
-#: src/prtstat.c:317
+#: src/prtstat.c:320
 #, c-format
 msgid "/proc is not mounted, cannot stat /proc/self/stat.\n"
 msgstr "/proc 未被掛載，無法取得 /proc/self/stat 的狀態。\n"
 
-#: src/pstree.c:784
+#: src/pstree.c:969
 #, c-format
 msgid "%s is empty (not mounted ?)\n"
 msgstr "%s 是空的 (尚未掛載？)\n"
 
-#: src/pstree.c:820
-#, c-format
+#: src/pstree.c:1001
+#, fuzzy, c-format
 msgid ""
-"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -u ]\n"
+"Usage: pstree [ -a ] [ -c ] [ -h | -H PID ] [ -l ] [ -n ] [ -p ] [ -g ] [ -"
+"u ]\n"
 "              [ -A | -G | -U ] [ PID | USER ]\n"
 "       pstree -V\n"
 "Display a tree of processes.\n"
@@ -560,8 +571,13 @@ msgid ""
 "  -G, --vt100         use VT100 line drawing characters\n"
 "  -l, --long          don't truncate long lines\n"
 "  -n, --numeric-sort  sort output by PID\n"
+"  -N type,\n"
+"  --ns-sort=type      sort by namespace type (ipc, mnt, net, pid, user, "
+"uts)\n"
 "  -p, --show-pids     show PIDs; implies -c\n"
 "  -s, --show-parents  show parents of the selected process\n"
+"  -S, --ns-changes    show namespace transitions\n"
+"  -t, --thread-names  show full thread names\n"
 "  -u, --uid-changes   show uid transitions\n"
 "  -U, --unicode       use UTF-8 (Unicode) line drawing characters\n"
 "  -V, --version       display version information\n"
@@ -587,12 +603,12 @@ msgstr ""
 "  -U, --unicode       使用 UTF-8 (萬國碼) 線條繪製字元\n"
 "  -V, --version       顯示版本資訊\n"
 
-#: src/pstree.c:840
+#: src/pstree.c:1025
 #, c-format
 msgid "  -Z     show         SELinux security contexts\n"
 msgstr "  -Z     顯示         SELinux 安全語境\n"
 
-#: src/pstree.c:842
+#: src/pstree.c:1027
 #, c-format
 msgid ""
 "  PID    start at this PID; default is 1 (init)\n"
@@ -603,12 +619,12 @@ msgstr ""
 "  使用者  只顯示源自此使用者行程的樹狀結構\n"
 "\n"
 
-#: src/pstree.c:849
+#: src/pstree.c:1034
 #, c-format
 msgid "pstree (PSmisc) %s\n"
 msgstr "pstree (PSmisc) %s\n"
 
-#: src/pstree.c:852
+#: src/pstree.c:1037
 #, c-format
 msgid ""
 "Copyright (C) 1993-2009 Werner Almesberger and Craig Small\n"
@@ -617,27 +633,32 @@ msgstr ""
 "著作權©1993-2009 Werner Almesberger 和 Craig Small\n"
 "\n"
 
-#: src/pstree.c:965
+#: src/pstree.c:1152
 #, c-format
 msgid "TERM is not set\n"
 msgstr "TERM 尚未設定\n"
 
-#: src/pstree.c:969
+#: src/pstree.c:1156
 #, c-format
 msgid "Can't get terminal capabilities\n"
 msgstr "無法取得終端機功能\n"
 
-#: src/pstree.c:1018
+#: src/pstree.c:1174
+#, c-format
+msgid "procfs file for %s namespace not available\n"
+msgstr ""
+
+#: src/pstree.c:1224
 #, c-format
 msgid "No such user name: %s\n"
 msgstr "無此類使用者名稱：%s\n"
 
-#: src/pstree.c:1041
+#: src/pstree.c:1250
 #, c-format
 msgid "No processes found.\n"
 msgstr "找不到任何行程。\n"
 
-#: src/pstree.c:1047
+#: src/pstree.c:1256
 #, c-format
 msgid "Press return to close\n"
 msgstr "按下輸入鍵以關閉\n"
