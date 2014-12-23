@@ -1,10 +1,11 @@
 Changes in 22.22
 ================
-	* Fixed typo in fuser which has -M on Debian #740275
-	* pstree by default doesn't show threadnames, use -t to show
-	  as it disables compaction. SF Patch#33
-	* PATH_MAX defined in pstree for FreeBSD Debian #750405
-	* pstree ignores disappeared processes SF Patch#34
+	* fuser: Fixed typo for  -M flag. Debian #740275
+	* pstree: by default doesn't show threadnames, use -t to show
+	  as it disables compaction. SF [#33]
+	* pstree: PATH_MAX defined for FreeBSD. Debian #750405
+	* pstree: ignores disappeared processes. SF [#34]
+	* killall: -o and -y work with -r flags. SF [#64]
 
 Changes in 22.21
 ================
