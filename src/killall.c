@@ -375,9 +375,10 @@ load_proc_cmdline(const pid_t pid, const char *comm, char **command, int *got_lo
 	if (verbose)
 	    fprintf (stderr, _("killall: skipping partial match %s(%d)\n"),
 		    comm, pid);
-	return -1;
 	*got_long = okay;
+	return -1;
     }
+    *got_long = okay;
     return 0;
 }
 
@@ -469,6 +470,7 @@ kill_all (int signal, int name_count, char **namelist, struct passwd *pwent)
 	  exit (1);
 	}
   }
+    got_long = 0;
     for (i = 0; i < pids; i++)
     {
 	pid_t id;
@@ -501,6 +503,8 @@ kill_all (int signal, int name_count, char **namelist, struct passwd *pwent)
 	if ( older_than   && process_age_sec && (process_age_sec < older_than ) )
 	    continue;
 
+        if (command)
+            free(command);
         got_long = 0;
         command = NULL;		/* make gcc happy */
         if (length == COMM_LEN - 1)
