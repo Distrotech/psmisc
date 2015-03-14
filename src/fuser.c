@@ -1397,7 +1397,7 @@ print_matches(struct names *names_head, const opt_type opts,
 			}
 		}		/* be silent */
 		if (opts & OPT_KILL)
-			have_kill = kill_matched_proc(nptr->matched_procs,
+			have_kill |= kill_matched_proc(nptr->matched_procs,
 						      opts, sig_number);
 
 	}			/* next name */
