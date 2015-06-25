@@ -17,7 +17,11 @@
 #ifndef _TIMEOUT_H
 #define _TIMEOUT_H
 
-#include "config.h"		/* For _FILE_OFFSET_BITS */
+#include "config.h"
+
+#ifndef WITH_TIMEOUT_STAT
+# define WITH_TIMEOUT_STAT 0
+#endif
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -30,7 +34,12 @@
 # endif
 #endif
 
-typedef int (*stat_t)(const char *, struct stat *restrict);
+typedef int (*stat_t)(const char *, struct stat *);
+
+#if WITH_TIMEOUT_STAT > 0
 extern int timeout(stat_t, const char *, struct stat *restrict, time_t);
+#else
+# define timeout(func,path,buf,dummy)	(func)((path),(buf))
+#endif
 
 #endif

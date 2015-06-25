@@ -1,5 +1,10 @@
 Changes in 22.22
 ================
+	* Make usage of linked lists of devices found in
+	  /proc/self/mountinfo optional
+	* Make timeout() in timeout.c work with shared mmap to
+	  reduce the load due write/read the stat buffers
+	* Add list_sort() to lists.h to be able to sort lists
 	* fuser: Fixed typo for  -M flag. Debian #740275
 	* pstree: by default doesn't show threadnames, use -t to show
 	  as it disables compaction. SF [#33]

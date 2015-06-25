@@ -42,6 +42,17 @@ if test "$enable_timeout_stat" = "static"; then
 fi
 AM_CONDITIONAL([WANT_TIMEOUT_STAT], [test "$enable_timeout_stat" = "static"])
 
+# Use string search for network based file systems but only if the system
+# has /proc/self/mountinfo
+AC_SUBST([WITH_MOUNTINFO_LIST])
+AC_ARG_ENABLE([mountinfo_list],
+  [AS_HELP_STRING([--enable-mountinfo-list], [Use the list in /proc/self/mountinfo to replace stat(2) syscall on network file systems shares])],
+  [enable_mountinfo_list="yes"],
+  [enable_mountinfo_list="no"])
+if test "$enable_mountinfo_list" = "yes" -a -e /proc/self/mountinfo ; then
+  AC_DEFINE([WITH_MOUNTINFO_LIST], [1], [Use list in /proc/self/mountinfo to replace stat calls])
+fi
+
 # Enable hardened compile and link flags
 AC_ARG_ENABLE([harden_flags],
   [AS_HELP_STRING([--disable-harden-flags], [disable hardened compilier and linker flags])],

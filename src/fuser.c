@@ -58,6 +58,7 @@
 #include "fuser.h"
 #include "signals.h"
 #include "i18n.h"
+#include "timeout.h"
 
 //#define DEBUG 1
 
@@ -104,24 +105,13 @@ static void debug_match_lists(struct names *names_head,
 			      struct device_list *dev_head);
 #endif
 
-#ifdef _LISTS_H
+#if defined(WITH_MOUNTINFO_LIST)
 static void clear_mntinfo(void) __attribute__ ((__destructor__));
 static void init_mntinfo(void) __attribute__ ((__constructor__));
-static dev_t device(const char *path);
+static int mntstat(const char *path, struct stat *buf);
 #endif
+static stat_t thestat = stat;
 static char *expandpath(const char *path);
-
-#ifdef WITH_TIMEOUT_STAT
-#if (WITH_TIMEOUT_STAT == 2)
-#include "timeout.h"
-#else
-typedef int (*stat_t) (const char *, struct stat *);
-static int timeout(stat_t func, const char *path, struct stat *buf,
-		   unsigned int seconds);
-#endif
-#else
-#define timeout(func,path,buf,dummy) (func)((path),(buf))
-#endif				/* WITH_TIMEOUT_STAT */
 
 static void usage(const char *errormsg)
 {
@@ -135,6 +125,7 @@ static void usage(const char *errormsg)
 		 "Show which processes use the named files, sockets, or filesystems.\n\n"
 		 "  -a,--all              display unused files too\n"
 		 "  -i,--interactive      ask before killing (ignored without -k)\n"
+		 "  -I,--inode            use always inodes to compare files\n"
 		 "  -k,--kill             kill processes accessing the named file\n"
 		 "  -l,--list-signals     list available signal names\n"
 		 "  -m,--mount            show all processes using the named filesystems or block device\n"
@@ -191,10 +182,6 @@ scan_procs(struct names *names_head, struct inode_list *ino_head,
 		struct stat *cwd_stat = NULL;
 		struct stat *exe_stat = NULL;
 		struct stat *root_stat = NULL;
-#ifdef _LISTS_H
-		char path[256] = "/proc/", *slash;
-		ssize_t len;
-#endif
 
 		if (topproc_dent->d_name[0] < '0' || topproc_dent->d_name[0] > '9')	/* Not a process */
 			continue;
@@ -204,30 +191,12 @@ scan_procs(struct names *names_head, struct inode_list *ino_head,
 			continue;
 		uid = getpiduid(pid);
 
-#ifdef _LISTS_H
-		strcpy(&path[6], topproc_dent->d_name);
-		len = strlen(path);
-		slash = &path[len];
-
-		*slash = '\0';
-		strcat(slash, "/cwd");
-		cwd_dev = device(path);
-
-		*slash = '\0';
-		strcat(slash, "/exe");
-		exe_dev = device(path);
-
-		*slash = '\0';
-		strcat(slash, "/root");
-		root_dev = device(path);
-#else
 		cwd_stat = get_pidstat(pid, "cwd");
 		exe_stat = get_pidstat(pid, "exe");
 		root_stat = get_pidstat(pid, "root");
 		cwd_dev = cwd_stat ? cwd_stat->st_dev : 0;
 		exe_dev = exe_stat ? exe_stat->st_dev : 0;
 		root_dev = root_stat ? root_stat->st_dev : 0;
-#endif
 
 		/* Scan the devices */
 		for (dev_tmp = dev_head; dev_tmp != NULL;
@@ -463,7 +432,7 @@ add_special_proc(struct names *name_list, const char ptype, const uid_t uid,
 }
 
 int parse_file(struct names *this_name, struct inode_list **ino_list,
-	       const char opts)
+	       const opt_type opts)
 {
 	char *new = expandpath(this_name->filename);
 	if (new) {
@@ -471,8 +440,7 @@ int parse_file(struct names *this_name, struct inode_list **ino_list,
 			free(this_name->filename);
 		this_name->filename = strdup(new);
 	}
-
-	if (timeout(stat, this_name->filename, &(this_name->st), 5) != 0) {
+	if (timeout(thestat, this_name->filename, &(this_name->st), 5) != 0) {
 		if (errno == ENOENT)
 			fprintf(stderr,
 				_("Specified filename %s does not exist.\n"),
@@ -514,7 +482,7 @@ parse_unixsockets(struct names *this_name, struct inode_list **ino_list,
 
 int
 parse_mounts(struct names *this_name, struct device_list **dev_list,
-	     const char opts)
+	     const opt_type opts)
 {
 	dev_t match_device;
 
@@ -953,6 +921,7 @@ int main(int argc, char *argv[])
 		{"all", 0, NULL, 'a'},
 		{"kill", 0, NULL, 'k'},
 		{"interactive", 0, NULL, 'i'},
+		{"inode", 0, NULL, 'I'},
 		{"list-signals", 0, NULL, 'l'},
 		{"mount", 0, NULL, 'm'},
 		{"ismountpoint", 0, NULL, 'M'},
@@ -1029,6 +998,7 @@ int main(int argc, char *argv[])
 					break;
 				case 'c':
 					opts |= OPT_MOUNTS;
+					read_proc_mounts(&mounts);
 					break;
 				case 'f':
 					/* ignored */
@@ -1038,6 +1008,11 @@ int main(int argc, char *argv[])
 					break;
 				case 'i':
 					opts |= OPT_INTERACTIVE;
+					break;
+				case 'I':
+#if defined(WITH_MOUNTINFO_LIST)
+					opts |= OPT_ALWAYSSTAT;
+#endif
 					break;
 				case 'k':
 					opts |= OPT_KILL;
@@ -1112,6 +1087,10 @@ int main(int argc, char *argv[])
 			continue;
 		}
 
+#if defined(WITH_MOUNTINFO_LIST)
+		if ((opts & OPT_ALWAYSSTAT) == 0)
+			thestat = mntstat;
+#endif
 		/* an option */
 		/* Not an option, must be a file specification */
 		if ((this_name = malloc(sizeof(struct names))) == NULL)
@@ -1416,7 +1395,7 @@ static struct stat *get_pidstat(const pid_t pid, const char *filename)
 	if ((st = (struct stat *)malloc(sizeof(struct stat))) == NULL)
 		return NULL;
 	snprintf(pathname, 256, "/proc/%d/%s", pid, filename);
-	if (timeout(stat, pathname, st, 5) != 0) {
+	if (timeout(thestat, pathname, st, 5) != 0) {
 		free(st);
 		return NULL;
 	}
@@ -1448,7 +1427,7 @@ check_dir(const pid_t pid, const char *dirname, struct device_list *dev_head,
 		snprintf(filepath, MAX_PATHNAME, "/proc/%d/%s/%s",
 			 pid, dirname, direntry->d_name);
 
-		if (timeout(stat, filepath, &st, 5) != 0) {
+		if (timeout(thestat, filepath, &st, 5) != 0) {
 			if (errno != ENOENT && errno != ENOTDIR) {
 				fprintf(stderr, _("Cannot stat file %s: %s\n"),
 					filepath, strerror(errno));
@@ -1487,7 +1466,7 @@ check_dir(const pid_t pid, const char *dirname, struct device_list *dev_head,
 				if (thedev != ino_tmp->device)
 					continue;
 				if (!st.st_ino
-				    && timeout(stat, filepath, &st, 5) != 0) {
+				    && timeout(thestat, filepath, &st, 5) != 0) {
 					fprintf(stderr,
 						_("Cannot stat file %s: %s\n"),
 						filepath, strerror(errno));
@@ -1557,7 +1536,7 @@ static uid_t getpiduid(const pid_t pid)
 
 	if (snprintf(pathname, MAX_PATHNAME, "/proc/%d", pid) < 0)
 		return 0;
-	if (timeout(stat, pathname, &st, 5) != 0)
+	if (timeout(thestat, pathname, &st, 5) != 0)
 		return 0;
 	return st.st_uid;
 }
@@ -1593,7 +1572,7 @@ void fill_unix_cache(struct unixsocket_list **unixsocket_head)
 		path = scanned_path;
 		if (*scanned_path == '@')
 			scanned_path++;
-		if (timeout(stat, scanned_path, &st, 5) < 0) {
+		if (timeout(thestat, scanned_path, &st, 5) < 0) {
 			free(path);
 			continue;
 		}
@@ -1738,7 +1717,7 @@ scan_knfsd(struct names *names_head, struct inode_list *ino_head,
 		if ((find_space = strpbrk(line, " \t")) == NULL)
 			continue;
 		*find_space = '\0';
-		if (timeout(stat, line, &st, 5) != 0) {
+		if (timeout(thestat, line, &st, 5) != 0) {
 			continue;
 		}
 		/* Scan the devices */
@@ -1782,7 +1761,7 @@ scan_mounts(struct names *names_head, struct inode_list *ino_head,
 		if ((find_space = strchr(find_mountp, ' ')) == NULL)
 			continue;
 		*find_space = '\0';
-		if (timeout(stat, find_mountp, &st, 5) != 0) {
+		if (timeout(thestat, find_mountp, &st, 5) != 0) {
 			continue;
 		}
 		/* Scan the devices */
@@ -1829,7 +1808,7 @@ scan_swaps(struct names *names_head, struct inode_list *ino_head,
 			if (*find_space == '\0')
 				continue;
 		}
-		if (timeout(stat, line, &st, 5) != 0) {
+		if (timeout(thestat, line, &st, 5) != 0) {
 			continue;
 		}
 		/* Scan the devices */
@@ -1850,73 +1829,7 @@ scan_swaps(struct names *names_head, struct inode_list *ino_head,
 	fclose(fp);
 }
 
-/*
- * Execute stat(2) system call with timeout to avoid deadlock
- * on network based file systems.
- */
-#if defined(WITH_TIMEOUT_STAT) && (WITH_TIMEOUT_STAT == 1)
-
-static sigjmp_buf jenv;
-
-static void sigalarm(int sig)
-{
-	if (sig == SIGALRM)
-		siglongjmp(jenv, 1);
-}
-
-static int
-timeout(stat_t func, const char *path, struct stat *buf, unsigned int seconds)
-{
-	pid_t pid = 0;
-	int ret = 0, pipes[4];
-	ssize_t len;
-
-	if (pipe(&pipes[0]) < 0)
-		goto err;
-	switch ((pid = fork())) {
-	case -1:
-		close(pipes[0]);
-		close(pipes[1]);
-		goto err;
-	case 0:
-		(void)signal(SIGALRM, SIG_DFL);
-		close(pipes[0]);
-		if ((ret = func(path, buf)) == 0)
-			do
-				len = write(pipes[1], buf, sizeof(struct stat));
-			while (len < 0 && errno == EINTR);
-		close(pipes[1]);
-		exit(ret);
-	default:
-		close(pipes[1]);
-		if (sigsetjmp(jenv, 1)) {
-			(void)alarm(0);
-			(void)signal(SIGALRM, SIG_DFL);
-			if (waitpid(0, (int *)0, WNOHANG) == 0)
-				kill(pid, SIGKILL);
-			errno = ETIMEDOUT;
-			seconds = 1;
-			goto err;
-		}
-		(void)signal(SIGALRM, sigalarm);
-		(void)alarm(seconds);
-		if (read(pipes[0], buf, sizeof(struct stat)) == 0) {
-			errno = EFAULT;
-			ret = -1;
-		}
-		(void)alarm(0);
-		(void)signal(SIGALRM, SIG_DFL);
-		close(pipes[0]);
-		waitpid(pid, NULL, 0);
-		break;
-	}
-	return ret;
- err:
-	return -1;
-}
-#endif				/* WITH_TIMEOUT_STAT */
-
-#ifdef _LISTS_H
+#if defined(WITH_MOUNTINFO_LIST)
 /*
  * Use /proc/self/mountinfo of modern linux system to determine
  * the device numbers of the mount points. Use this to avoid the
@@ -2005,42 +1918,46 @@ static void init_mntinfo(void)
 /*
  * Determine device of links below /proc/
  */
-static dev_t device(const char *path)
+static int mntstat(const char *path, struct stat *buf)
 {
 	char name[PATH_MAX + 1];
 	const char *use;
 	ssize_t nlen;
 	list_t *ptr;
 
-	if ((nlen = readlink(path, name, PATH_MAX)) < 0) {
-		nlen = strlen(path);
-		use = &path[0];
-	} else {
-		name[nlen] = '\0';
-		use = &name[0];
+	if ((use = realpath(path, name)) == NULL || *use != '/')
+	{
+		if (errno == ENOENT)
+			return -1;
+		/*
+		 * Could be a special file (socket, pipe, inotify)
+		 */
+		errno = 0;
+		return stat(path, buf);
 	}
 
-	if (*use != '/') {	/* special file (socket, pipe, inotify) */
-		struct stat st;
-		if (timeout(stat, path, &st, 5) != 0)
-			return (dev_t) - 1;
-		return st.st_dev;
-	}
-
+	nlen = strlen(use);
 	list_for_each(ptr, &mntinfo) {
 		mntinfo_t *mnt = list_entry(ptr, mntinfo_t);
 		if (nlen < mnt->nlen)
 			continue;
-		if (mnt->nlen == 1)	/* root fs is the last entry */
-			return mnt->dev;
+		if (mnt->nlen == 1) {	/* root fs is the last entry */
+			buf->st_dev = mnt->dev;
+			buf->st_ino = 0;
+			return 0;
+		}
 		if (use[mnt->nlen] != '\0' && use[mnt->nlen] != '/')
 			continue;
-		if (strncmp(use, mnt->mpoint, mnt->nlen) == 0)
-			return mnt->dev;
+		if (strncmp(use, mnt->mpoint, mnt->nlen) == 0) {
+			buf->st_dev = mnt->dev;
+			buf->st_ino = 0;
+			return 0;
+		}
 	}
-	return (dev_t) - 1;
+	errno = ENOENT;
+	return -1;
 }
-#endif				/* _LISTS_H */
+#endif				/* WITH_MOUNTINFO_LIST */
 
 /*
  * Somehow the realpath(3) glibc function call, nevertheless
