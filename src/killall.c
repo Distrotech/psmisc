@@ -435,7 +435,7 @@ kill_all (int signal, int name_count, char **namelist, struct passwd *pwent)
     struct stat st;
     NAMEINFO *name_info = NULL;
     char *path, comm[COMM_LEN];
-    char *command;
+    char *command = NULL;
     pid_t *pid_table, *pid_killed;
     pid_t *pgids = NULL;
     int i, j, length, got_long, error;
@@ -503,8 +503,6 @@ kill_all (int signal, int name_count, char **namelist, struct passwd *pwent)
 	if ( older_than   && process_age_sec && (process_age_sec < older_than ) )
 	    continue;
 
-        if (command)
-            free(command);
         got_long = 0;
         command = NULL;		/* make gcc happy */
         if (length == COMM_LEN - 1)
@@ -612,6 +610,10 @@ kill_all (int signal, int name_count, char **namelist, struct passwd *pwent)
 	else if (errno != ESRCH || interactive)
 	    fprintf (stderr, "%s(%d): %s\n", got_long ? command :
 		    comm, id, strerror (errno));
+        if (command) {
+            free(command);
+	    command = NULL;
+	}
     }
     free(reglist);
     free(pgids);
